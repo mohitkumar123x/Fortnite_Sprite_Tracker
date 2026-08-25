@@ -41,11 +41,11 @@
       .el, .halo { animation: none !important; }
     }
 </style>
-  <rect width="128" height="128" rx="28" fill="#ECEFF1"/>
+  <rect width="128" height="128" rx="28" fill="#263238"/>
   <ellipse class="halo" cx="64" cy="42" rx="42" ry="28" fill="#ffffff"/>
   <g class="el floaty">
-       <path d="M40 56 C40 36 52 24 64 24 C76 24 88 36 88 56 L88 100 L76 90 L64 100 L52 90 L40 100 Z" fill="#FAFAFA" stroke="#B0BEC5" stroke-width="3"/>
-       <circle class="el blink" cx="54" cy="56" r="5" fill="#37474F"/>
-       <circle class="el blink" cx="74" cy="56" r="5" fill="#37474F"/>
+       <path d="M40 56 C40 36 52 24 64 24 C76 24 88 36 88 56 L88 100 L76 90 L64 100 L52 90 L40 100 Z" fill="#F5F7FA" stroke="#90A4AE" stroke-width="3"/>
+       <circle class="el blink" cx="54" cy="56" r="5" fill="#1A237E"/>
+       <circle class="el blink" cx="74" cy="56" r="5" fill="#1A237E"/>
      </g>
 </svg>

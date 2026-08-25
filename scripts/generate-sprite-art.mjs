@@ -193,11 +193,11 @@ const art = {
      <path class="el wave" d="M28 92 C44 84 56 100 76 88 C88 82 104 90 108 98" stroke="#E1F5FE" stroke-width="6" fill="none" stroke-linecap="round"/>`,
   ),
   's3-ghost': frame(
-    '#ECEFF1',
+    '#263238',
     `<g class="el floaty">
-       <path d="M40 56 C40 36 52 24 64 24 C76 24 88 36 88 56 L88 100 L76 90 L64 100 L52 90 L40 100 Z" fill="#FAFAFA" stroke="#B0BEC5" stroke-width="3"/>
-       <circle class="el blink" cx="54" cy="56" r="5" fill="#37474F"/>
-       <circle class="el blink" cx="74" cy="56" r="5" fill="#37474F"/>
+       <path d="M40 56 C40 36 52 24 64 24 C76 24 88 36 88 56 L88 100 L76 90 L64 100 L52 90 L40 100 Z" fill="#F5F7FA" stroke="#90A4AE" stroke-width="3"/>
+       <circle class="el blink" cx="54" cy="56" r="5" fill="#1A237E"/>
+       <circle class="el blink" cx="74" cy="56" r="5" fill="#1A237E"/>
      </g>`,
   ),
   's3-llama': frame(

@@ -1,5 +1,5 @@
 export function spriteArtSrc(id: string): string {
-  return `/sprites/${id}.svg?v=3`;
+  return `/sprites/${id}.svg?v=4`;
 }
 
 const glowById: Record<string, string> = {
@@ -20,7 +20,7 @@ const glowById: Record<string, string> = {
   's3-earth': '#81C784',
   's3-fire': '#FF8A50',
   's3-water': '#4FC3F7',
-  's3-ghost': '#B0BEC5',
+  's3-ghost': '#90A4AE',
   's3-llama': '#D7CCC8',
   's3-peeky-peely': '#FFD54F',
   's3-zero-point': '#7C4DFF',
