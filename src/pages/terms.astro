@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LegalDoc from '../components/LegalDoc.astro';
+import { breadcrumbJsonLd, CONTACT_EMAIL, SITE_NAME, SITE_URL } from '../lib/seo';
+
+const jsonLd = [
+  breadcrumbJsonLd([{ name: 'Terms & conditions', path: '/terms' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: `Terms & conditions · ${SITE_NAME}`,
+    url: `${SITE_URL}/terms`,
+  },
+];
+---
+
+<Layout
+  title="Terms & Conditions — Fortnite Sprite Tracker"
+  description="Terms and conditions for using Fortnite Sprite Tracker: unofficial fan site, no Epic affiliation, local progress, acceptable use, and limitation of liability."
+  canonicalPath="/terms"
+  jsonLd={jsonLd}
+>
+  <Header slot="header" />
+  <LegalDoc
+    eyebrow="Legal"
+    heading="Terms & conditions."
+    intro="These terms govern use of fortnitespritetracking.com. By using the site, you agree to them. If you do not agree, do not use the tracker."
+    updated="2026-08-25"
+  >
+    <h2>Unofficial fan project</h2>
+    <p>
+      Fortnite Sprite Tracker is an independent fan website. It is not affiliated with, endorsed by, or sponsored by Epic
+      Games, Inc. Fortnite and other Epic marks are Epic’s property. We do not provide Fortnite itself, V-Bucks, cosmetics,
+      or account services.
+    </p>
+
+    <h2>The service</h2>
+    <p>
+      We provide a free browser checklist and reference for Sprites. Features may change, break, or be withdrawn without
+      notice. Roster data, rarities, and “where to find” notes can be incomplete or outdated relative to the live game.
+    </p>
+    <p>
+      Progress is stored locally in your browser unless you export it. We are not responsible for lost checklist data after
+      you clear storage, change devices, or use a share link incorrectly.
+    </p>
+
+    <h2>Acceptable use</h2>
+    <ul>
+      <li>Do not use the site to phish, harvest Epic credentials, or distribute malware.</li>
+      <li>Do not attempt to disrupt hosting, scrape in a way that harms the service, or impersonate the site.</li>
+      <li>Do not present this tool as an official Epic product.</li>
+      <li>Share links should only encode your own checklist (or a friend’s, with their permission).</li>
+    </ul>
+
+    <h2>Intellectual property</h2>
+    <p>
+      Site layout, copy, and original code are provided for personal, non-commercial use of this website. Game names, sprite
+      concepts, and related art remain with their owners. You may not copy the site wholesale or wrap it as a paid “official”
+      tracker.
+    </p>
+
+    <h2>No warranty</h2>
+    <p>
+      The site is provided “as is.” We do not warrant uninterrupted availability, error-free data, or fitness for a particular
+      purpose — including competitive play, trading, or completionist claims.
+    </p>
+
+    <h2>Limitation of liability</h2>
+    <p>
+      To the fullest extent permitted by law, we are not liable for indirect, incidental, or consequential damages, or for
+      lost progress, lost profits, or disputes arising from share codes you publish. Your sole remedy for dissatisfaction is
+      to stop using the site.
+    </p>
+
+    <h2>Privacy</h2>
+    <p>
+      How local storage, share links, and hosting logs work is described in the <a href="/privacy">Privacy policy</a>.
+    </p>
+
+    <h2>Changes</h2>
+    <p>
+      We may update these terms. Continued use after a posted change means you accept the new terms. The date at the top is
+      the latest revision.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions: <a href="/contact">Contact us</a> or <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+    </p>
+  </LegalDoc>
+  <Footer slot="footer" />
+</Layout>

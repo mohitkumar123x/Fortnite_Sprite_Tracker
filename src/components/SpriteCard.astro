@@ -1,0 +1,32 @@
+---
+import SpriteArt from './SpriteArt.astro';
+
+interface Props {
+  id: string;
+  name: string;
+  rarity: string;
+  seasonLabel: string;
+  variantCount: number;
+  href: string;
+}
+
+const { id, name, rarity, seasonLabel, variantCount, href } = Astro.props;
+---
+
+<a
+  href={href}
+  class="group block rounded-md bg-canvas p-5 shadow-card no-underline transition-transform hover:-translate-y-0.5 hover:text-ink"
+>
+  <div class="flex items-start gap-4">
+    <SpriteArt id={id} name={name} />
+    <div>
+      <h3 class="text-display-sm text-ink group-hover:text-ink">{name}</h3>
+      <p class="mt-1 text-sm text-body">
+        <span class="capitalize">{rarity}</span>
+        <span class="mx-1 text-mute">·</span>
+        {seasonLabel}
+      </p>
+      <p class="mt-2 text-xs text-mute">{variantCount} variants</p>
+    </div>
+  </div>
+</a>

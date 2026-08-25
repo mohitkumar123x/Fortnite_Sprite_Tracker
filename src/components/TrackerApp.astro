@@ -1,0 +1,540 @@
+---
+import type { CatalogEntry, Season } from '../lib/types';
+import SpriteArt from './SpriteArt.astro';
+
+interface Props {
+  season: Season;
+  catalog: CatalogEntry[];
+  seasonHref?: string;
+  showSeasonLink?: boolean;
+}
+
+const { season, catalog, seasonHref, showSeasonLink = false } = Astro.props;
+
+const rarities = [...new Set(catalog.map((c) => c.rarity))];
+const variants = [...new Set(catalog.map((c) => c.variantId))];
+const variantLabels = Object.fromEntries(catalog.map((c) => [c.variantId, c.variantLabel]));
+const total = catalog.length;
+const rarityOrder = ['mythic', 'legendary', 'epic', 'rare', 'special'];
+rarities.sort((a, b) => rarityOrder.indexOf(a) - rarityOrder.indexOf(b));
+
+const catalogJson = JSON.stringify(catalog);
+const seasonJson = JSON.stringify(season);
+---
+
+<section id="tracker" class="scroll-mt-20 border-b border-hairline bg-canvas-soft" data-tracker-root>
+  <div class="mx-auto max-w-[1400px] px-4 py-16 md:px-6 md:py-24">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="text-caption-mono text-mute">Checklist</p>
+        <h2 class="mt-2 text-display-lg text-ink">{season.label}</h2>
+        <p class="mt-2 text-sm text-body">{season.patchNote}</p>
+      </div>
+      {
+        showSeasonLink && seasonHref && (
+          <a
+            href={seasonHref}
+            class="inline-flex h-9 items-center rounded-pill border border-hairline bg-canvas px-3 text-sm font-medium text-ink no-underline hover:bg-canvas-soft-2 hover:text-ink"
+          >
+            Season page
+          </a>
+        )
+      }
+    </div>
+
+    <div class="mt-8 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-lg bg-canvas p-5 shadow-card">
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-body">Owned</span>
+          <span class="font-medium text-ink" data-owned-count>0 / {total}</span>
+        </div>
+        <div class="mt-3 h-2 overflow-hidden rounded-full bg-canvas-soft-2">
+          <div class="h-full rounded-full bg-ink transition-all duration-300" data-owned-bar style="width:0%"></div>
+        </div>
+      </div>
+      <div class="rounded-lg bg-canvas p-5 shadow-card">
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-body">Mastered</span>
+          <span class="font-medium text-ink" data-mastered-count>0 / {total}</span>
+        </div>
+        <div class="mt-3 h-2 overflow-hidden rounded-full bg-canvas-soft-2">
+          <div class="h-full rounded-full bg-link transition-all duration-300" data-mastered-bar style="width:0%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 flex flex-col gap-4 rounded-lg bg-canvas p-4 shadow-card md:p-5">
+      <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+        <div class="flex flex-wrap gap-2" role="group" aria-label="Ownership filter">
+          {
+            ['all', 'owned', 'missing'].map((status) => (
+              <button
+                type="button"
+                class="filter-chip inline-flex h-9 items-center rounded-pill-sm border border-hairline bg-canvas px-4 text-sm text-ink transition-colors data-[active=true]:border-ink data-[active=true]:bg-ink data-[active=true]:text-on-primary"
+                data-filter-status={status}
+                data-active={status === 'all' ? 'true' : 'false'}
+              >
+                {status === 'all' ? 'All' : status === 'owned' ? 'Owned' : 'Missing'}
+              </button>
+            ))
+          }
+          <button
+            type="button"
+            class="inline-flex h-9 items-center rounded-pill-sm border border-hairline bg-canvas px-4 text-sm font-medium text-ink transition-colors data-[active=true]:border-ink data-[active=true]:bg-canvas-soft-2"
+            data-hunt-toggle
+            data-active="false"
+            aria-pressed="false"
+          >
+            Hunt Mode
+          </button>
+        </div>
+        <label class="relative block w-full max-w-sm">
+          <span class="sr-only">Search sprites</span>
+          <input
+            type="search"
+            placeholder="Search sprites…"
+            data-search
+            class="h-10 w-full rounded-sm border border-hairline bg-canvas px-3 text-sm text-ink outline-none placeholder:text-mute focus:border-hairline-strong"
+          />
+        </label>
+      </div>
+
+      <div class="-mx-1 flex flex-wrap gap-2 overflow-x-auto px-1 pb-1" role="group" aria-label="Rarity filter">
+        <button
+          type="button"
+          class="filter-chip inline-flex h-8 shrink-0 items-center rounded-full bg-canvas-soft px-3 text-xs text-body data-[active=true]:bg-ink data-[active=true]:text-on-primary"
+          data-filter-rarity="all"
+          data-active="true"
+        >
+          All rarities
+        </button>
+        {
+          rarities.map((rarity) => (
+            <button
+              type="button"
+              class="filter-chip inline-flex h-8 shrink-0 items-center rounded-full bg-canvas-soft px-3 text-xs capitalize text-body data-[active=true]:bg-ink data-[active=true]:text-on-primary"
+              data-filter-rarity={rarity}
+              data-active="false"
+            >
+              {rarity}
+            </button>
+          ))
+        }
+      </div>
+
+      <div class="-mx-1 flex flex-wrap gap-2 overflow-x-auto px-1 pb-1" role="group" aria-label="Variant filter">
+        <button
+          type="button"
+          class="filter-chip inline-flex h-8 shrink-0 items-center rounded-full border border-hairline px-3 text-xs text-body data-[active=true]:border-ink data-[active=true]:text-ink"
+          data-filter-variant="all"
+          data-active="true"
+        >
+          All variants
+        </button>
+        {
+          variants.map((variant) => (
+            <button
+              type="button"
+              class="filter-chip inline-flex h-8 shrink-0 items-center rounded-full border border-hairline px-3 text-xs text-body data-[active=true]:border-ink data-[active=true]:text-ink"
+              data-filter-variant={variant}
+              data-active="false"
+            >
+              {variantLabels[variant]}
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <p class="mt-4 text-sm text-mute" data-visible-count>{total} shown</p>
+    <p class="mt-2 hidden text-sm text-body" data-empty-state>
+      Nothing matches these filters. Clear search or turn off Hunt Mode.
+    </p>
+
+    <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" data-grid>
+      {
+        catalog.map((entry) => (
+          <article
+            class="sprite-cell group rounded-md bg-canvas p-4 shadow-card transition-transform duration-200 data-[hidden=true]:hidden data-[owned=true]:bg-canvas-soft"
+            data-key={entry.key}
+            data-rarity={entry.rarity}
+            data-variant={entry.variantId}
+            data-name={entry.spriteName.toLowerCase()}
+            data-owned="false"
+            data-mastered="false"
+            data-hidden="false"
+          >
+            <div class="flex items-start justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <SpriteArt id={entry.spriteId} name={entry.spriteName} size="sm" />
+                <div>
+                  <h3 class="text-sm font-medium text-ink">{entry.spriteName}</h3>
+                  <p class="text-xs text-mute">
+                    <span class="capitalize">{entry.rarity}</span>
+                    <span class="mx-1">·</span>
+                    {entry.variantLabel}
+                  </p>
+                </div>
+              </div>
+              <button
+                type="button"
+                class="master-btn inline-flex size-8 items-center justify-center rounded-full border border-hairline text-mute transition-colors hover:border-ink hover:text-ink data-[on=true]:border-link data-[on=true]:bg-link-bg-soft data-[on=true]:text-link"
+                data-master
+                data-on="false"
+                aria-label={`Toggle mastered for ${entry.spriteName} ${entry.variantLabel}`}
+                title="Mastered"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.2L12 16.8 5.7 20.8 8 13.6 2 9.2h7.6L12 2z" />
+                </svg>
+              </button>
+            </div>
+            {entry.bonus && <p class="mt-3 text-xs text-body">{entry.bonus}</p>}
+            <button
+              type="button"
+              class="own-btn mt-4 inline-flex h-9 w-full items-center justify-center rounded-sm border border-hairline text-sm font-medium text-ink transition-colors hover:bg-canvas-soft-2 data-[on=true]:border-ink data-[on=true]:bg-ink data-[on=true]:text-on-primary"
+              data-own
+              data-on="false"
+            >
+              Mark owned
+            </button>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="mt-10 grid gap-6 lg:grid-cols-2">
+      <div class="rounded-lg bg-canvas p-5 shadow-card-md" data-share-panel>
+        <h3 class="text-display-sm text-ink">Share & backup</h3>
+        <p class="mt-2 text-sm text-body">
+          Copy a share link, export JSON for another device, or paste a backup to restore.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <button
+            type="button"
+            data-copy-share
+            class="inline-flex h-10 items-center rounded-pill bg-ink px-4 text-sm font-medium text-on-primary"
+          >
+            Copy share link
+          </button>
+          <button
+            type="button"
+            data-copy-discord
+            class="inline-flex h-10 items-center rounded-pill border border-hairline bg-canvas px-4 text-sm font-medium text-ink"
+          >
+            Copy missing list
+          </button>
+          <button
+            type="button"
+            data-export-json
+            class="inline-flex h-10 items-center rounded-pill border border-hairline bg-canvas px-4 text-sm font-medium text-ink"
+          >
+            Export JSON
+          </button>
+        </div>
+        <label class="mt-4 block">
+          <span class="text-caption-mono text-mute">Import JSON</span>
+          <textarea
+            data-import-json
+            rows="4"
+            class="mt-2 w-full rounded-sm border border-hairline bg-canvas p-3 font-mono text-xs text-ink outline-none focus:border-hairline-strong"
+            placeholder='{"version":1,"seasonId":"...","owned":[],"mastered":[]}'
+          ></textarea>
+        </label>
+        <button
+          type="button"
+          data-import-apply
+          class="mt-3 inline-flex h-9 items-center rounded-sm bg-canvas-soft-2 px-3 text-sm font-medium text-ink"
+        >
+          Apply import
+        </button>
+        <p class="mt-3 min-h-5 text-xs text-mute" data-share-status aria-live="polite"></p>
+      </div>
+
+      <div class="rounded-lg bg-canvas p-5 shadow-card-md">
+        <h3 class="text-display-sm text-ink">Hunt Mode</h3>
+        <p class="mt-2 text-sm text-body">
+          Focus the board on missing variants, sorted by rarity so your next chest grab is intentional.
+        </p>
+        <ol class="mt-4 space-y-2" data-hunt-list>
+          <li class="text-sm text-mute">Enable Hunt Mode to see your priority list.</li>
+        </ol>
+        <div class="mt-6 border-t border-hairline pt-5">
+          <p class="text-sm text-body">Need a clean slate for this season?</p>
+          <button
+            type="button"
+            data-reset
+            class="mt-3 inline-flex h-9 items-center rounded-sm border border-error-soft bg-error-soft px-3 text-sm font-medium text-error"
+          >
+            Reset season progress
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="application/json" data-catalog-json set:html={catalogJson} />
+  <script type="application/json" data-season-json set:html={seasonJson} />
+</section>
+
+<script>
+  import {
+    emptyProgress,
+    emptyStore,
+    huntList,
+    normalizeProgress,
+    toggleMastered,
+    toggleOwned,
+  } from '../lib/progress';
+  import { decodeShare, encodeShare, exportJson, importJson, missingDiscordText } from '../lib/share';
+  import type { CatalogEntry, ProgressStore, Season, SeasonProgress } from '../lib/types';
+  import { STORAGE_KEY } from '../lib/progress';
+
+  const root = document.querySelector<HTMLElement>('[data-tracker-root]');
+  if (root) {
+    const catalog = JSON.parse(root.querySelector('[data-catalog-json]')?.textContent || '[]') as CatalogEntry[];
+    const season = JSON.parse(root.querySelector('[data-season-json]')?.textContent || '{}') as Season;
+    const catalogKeys = catalog.map((c) => c.key);
+
+    let progress = loadSeasonProgress(season.id);
+    let filters = {
+      status: 'all' as 'all' | 'owned' | 'missing',
+      rarity: 'all',
+      variant: 'all',
+      search: '',
+      hunt: false,
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const shareCode = params.get('c');
+    if (shareCode) {
+      const decoded = decodeShare(shareCode, catalogKeys);
+      if (decoded && decoded.seasonId === season.id) {
+        progress = decoded.progress;
+        saveSeasonProgress(season.id, progress);
+        queueMicrotask(() => setStatus('Loaded shared collection for this season.'));
+      }
+    }
+
+    root.querySelectorAll('[data-filter-status]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filters.status = (btn.getAttribute('data-filter-status') || 'all') as typeof filters.status;
+        setActiveGroup('[data-filter-status]', btn);
+        if (filters.hunt) {
+          filters.hunt = false;
+          syncHuntToggle();
+        }
+        render();
+      });
+    });
+
+    root.querySelectorAll('[data-filter-rarity]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filters.rarity = btn.getAttribute('data-filter-rarity') || 'all';
+        setActiveGroup('[data-filter-rarity]', btn);
+        render();
+      });
+    });
+
+    root.querySelectorAll('[data-filter-variant]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filters.variant = btn.getAttribute('data-filter-variant') || 'all';
+        setActiveGroup('[data-filter-variant]', btn);
+        render();
+      });
+    });
+
+    root.querySelector('[data-search]')?.addEventListener('input', (event) => {
+      filters.search = (event.target as HTMLInputElement).value.trim().toLowerCase();
+      render();
+    });
+
+    root.querySelector('[data-hunt-toggle]')?.addEventListener('click', () => {
+      filters.hunt = !filters.hunt;
+      if (filters.hunt) {
+        filters.status = 'missing';
+        setActiveGroup(
+          '[data-filter-status]',
+          root.querySelector('[data-filter-status="missing"]'),
+        );
+      }
+      syncHuntToggle();
+      render();
+    });
+
+    root.querySelectorAll('.sprite-cell').forEach((cell) => {
+      const key = cell.getAttribute('data-key');
+      if (!key) return;
+      cell.querySelector('[data-own]')?.addEventListener('click', () => {
+        progress = toggleOwned(progress, key);
+        saveSeasonProgress(season.id, progress);
+        cell.classList.add('animate-[check-pop_220ms_ease-out]');
+        window.setTimeout(() => cell.classList.remove('animate-[check-pop_220ms_ease-out]'), 220);
+        render();
+      });
+      cell.querySelector('[data-master]')?.addEventListener('click', () => {
+        progress = toggleMastered(progress, key);
+        saveSeasonProgress(season.id, progress);
+        render();
+      });
+    });
+
+    root.querySelector('[data-copy-share]')?.addEventListener('click', async () => {
+      const code = encodeShare(season.id, catalogKeys, progress);
+      const url = new URL(window.location.href);
+      url.searchParams.set('c', code);
+      url.hash = 'tracker';
+      await navigator.clipboard.writeText(url.toString());
+      setStatus('Share link copied.');
+    });
+
+    root.querySelector('[data-copy-discord]')?.addEventListener('click', async () => {
+      const owned = new Set(progress.owned);
+      const missing = catalog
+        .filter((c) => !owned.has(c.key))
+        .map((c) => ({ spriteName: c.spriteName, variantLabel: c.variantLabel }));
+      await navigator.clipboard.writeText(missingDiscordText(season.label, missing));
+      setStatus('Missing list copied.');
+    });
+
+    root.querySelector('[data-export-json]')?.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(exportJson(season.id, progress));
+      setStatus('JSON backup copied to clipboard.');
+    });
+
+    root.querySelector('[data-import-apply]')?.addEventListener('click', () => {
+      const raw = (root.querySelector('[data-import-json]') as HTMLTextAreaElement | null)?.value || '';
+      const parsed = importJson(raw);
+      if (!parsed) {
+        setStatus('Could not parse JSON backup.', true);
+        return;
+      }
+      if (parsed.seasonId !== season.id) {
+        setStatus(`This backup is for ${parsed.seasonId}, not ${season.id}.`, true);
+        return;
+      }
+      progress = parsed.progress;
+      saveSeasonProgress(season.id, progress);
+      setStatus('Backup restored for this season.');
+      render();
+    });
+
+    root.querySelector('[data-reset]')?.addEventListener('click', () => {
+      if (!window.confirm('Reset all Owned and Mastered marks for this season?')) return;
+      progress = emptyProgress();
+      saveSeasonProgress(season.id, progress);
+      setStatus('Season progress cleared.');
+      render();
+    });
+
+    function setActiveGroup(selector: string, active: Element | null) {
+      root!.querySelectorAll(selector).forEach((el) => {
+        el.setAttribute('data-active', el === active ? 'true' : 'false');
+      });
+    }
+
+    function syncHuntToggle() {
+      const btn = root!.querySelector('[data-hunt-toggle]');
+      btn?.setAttribute('data-active', filters.hunt ? 'true' : 'false');
+      btn?.setAttribute('aria-pressed', filters.hunt ? 'true' : 'false');
+    }
+
+    function setStatus(message: string, isError = false) {
+      const el = root!.querySelector('[data-share-status]');
+      if (!el) return;
+      el.textContent = message;
+      el.classList.toggle('text-error', isError);
+      el.classList.toggle('text-mute', !isError);
+    }
+
+    function render() {
+      const ownedSet = new Set(progress.owned);
+      const masteredSet = new Set(progress.mastered);
+      const ownedCount = progress.owned.length;
+      const masteredCount = progress.mastered.length;
+      const total = catalog.length;
+
+      const ownedCountEl = root!.querySelector('[data-owned-count]');
+      const masteredCountEl = root!.querySelector('[data-mastered-count]');
+      if (ownedCountEl) ownedCountEl.textContent = `${ownedCount} / ${total}`;
+      if (masteredCountEl) masteredCountEl.textContent = `${masteredCount} / ${total}`;
+      const ownedBar = root!.querySelector<HTMLElement>('[data-owned-bar]');
+      const masteredBar = root!.querySelector<HTMLElement>('[data-mastered-bar]');
+      if (ownedBar) ownedBar.style.width = `${total ? (ownedCount / total) * 100 : 0}%`;
+      if (masteredBar) masteredBar.style.width = `${total ? (masteredCount / total) * 100 : 0}%`;
+
+      let visible = 0;
+      root!.querySelectorAll<HTMLElement>('.sprite-cell').forEach((cell) => {
+        const key = cell.getAttribute('data-key') || '';
+        const rarity = cell.getAttribute('data-rarity') || '';
+        const variant = cell.getAttribute('data-variant') || '';
+        const name = cell.getAttribute('data-name') || '';
+        const isOwned = ownedSet.has(key);
+        const isMastered = masteredSet.has(key);
+
+        cell.setAttribute('data-owned', isOwned ? 'true' : 'false');
+        cell.setAttribute('data-mastered', isMastered ? 'true' : 'false');
+        const ownBtn = cell.querySelector('[data-own]');
+        const masterBtn = cell.querySelector('[data-master]');
+        ownBtn?.setAttribute('data-on', isOwned ? 'true' : 'false');
+        masterBtn?.setAttribute('data-on', isMastered ? 'true' : 'false');
+        if (ownBtn) ownBtn.textContent = isOwned ? 'Owned' : 'Mark owned';
+
+        const statusOk =
+          filters.status === 'all' ||
+          (filters.status === 'owned' && isOwned) ||
+          (filters.status === 'missing' && !isOwned);
+        const rarityOk = filters.rarity === 'all' || filters.rarity === rarity;
+        const variantOk = filters.variant === 'all' || filters.variant === variant;
+        const searchOk = !filters.search || name.includes(filters.search) || key.includes(filters.search);
+        const show = statusOk && rarityOk && variantOk && searchOk;
+        cell.setAttribute('data-hidden', show ? 'false' : 'true');
+        if (show) visible += 1;
+      });
+
+      const visibleEl = root!.querySelector('[data-visible-count]');
+      if (visibleEl) visibleEl.textContent = `${visible} shown`;
+      const empty = root!.querySelector('[data-empty-state]');
+      empty?.classList.toggle('hidden', visible !== 0);
+
+      const huntEl = root!.querySelector('[data-hunt-list]');
+      if (huntEl) {
+        const list = huntList(catalog, progress).slice(0, 8);
+        if (!filters.hunt) {
+          huntEl.innerHTML = '<li class="text-sm text-mute">Enable Hunt Mode to see your priority list.</li>';
+        } else if (list.length === 0) {
+          huntEl.innerHTML = '<li class="text-sm text-body">Nothing left to hunt — collection complete.</li>';
+        } else {
+          huntEl.innerHTML = list
+            .map(
+              (entry, i) =>
+                `<li class="flex items-center justify-between gap-3 rounded-sm bg-canvas-soft px-3 py-2 text-sm text-ink"><span>${i + 1}. ${entry.spriteName} · ${entry.variantLabel}</span><span class="text-caption-mono text-mute">${entry.rarity}</span></li>`,
+            )
+            .join('');
+        }
+      }
+    }
+
+    function loadStore(): ProgressStore {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return emptyStore();
+        return JSON.parse(raw) as ProgressStore;
+      } catch {
+        return emptyStore();
+      }
+    }
+
+    function saveSeasonProgress(seasonId: string, next: SeasonProgress) {
+      const store = loadStore();
+      store.seasons[seasonId] = normalizeProgress(next);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
+    }
+
+    function loadSeasonProgress(seasonId: string): SeasonProgress {
+      return normalizeProgress(loadStore().seasons[seasonId]);
+    }
+
+    render();
+  }
+</script>

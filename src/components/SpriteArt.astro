@@ -1,0 +1,31 @@
+---
+import { spriteArtSrc, spriteGlow, spriteMotionDelay } from '../lib/spriteArt';
+
+interface Props {
+  id: string;
+  name: string;
+  class?: string;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { id, name, class: className = '', size = 'md' } = Astro.props;
+
+const sizeClass = size === 'sm' ? 'size-11' : size === 'lg' ? 'size-16' : 'size-12';
+---
+
+<span
+  class:list={['sprite-art-wrap shrink-0', sizeClass]}
+  style={`--sprite-glow: ${spriteGlow(id)}; --sprite-delay: ${spriteMotionDelay(id)}`}
+>
+  <img
+    src={spriteArtSrc(id)}
+    alt=""
+    width="128"
+    height="128"
+    class:list={['sprite-art rounded-md object-cover', sizeClass, className]}
+    loading="lazy"
+    decoding="async"
+    data-sprite-id={id}
+    data-sprite-name={name}
+  />
+</span>

@@ -1,0 +1,155 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getCatalogForSeason, getCurrentSeason } from '../lib/catalog';
+
+const season = getCurrentSeason();
+const catalog = getCatalogForSeason(season.id);
+const catalogJson = JSON.stringify(catalog);
+const seasonJson = JSON.stringify(season);
+---
+
+<Layout
+  title="Compare Fortnite Sprite Tracker Collections"
+  description="Compare two Fortnite Sprite Tracker share codes side by side — see Fortnite Sprite Tracker my collection vs a friend’s locker for trades."
+  canonicalPath="/compare"
+>
+  <Header slot="header" />
+  <section class="border-b border-hairline bg-canvas" data-compare-root>
+    <div class="mx-auto max-w-[1100px] px-4 py-16 md:px-6 md:py-24">
+      <p class="text-caption-mono text-mute">Differentiator</p>
+      <h1 class="mt-3 text-display-lg text-ink">Compare lockers.</h1>
+      <p class="mt-3 max-w-2xl text-lg text-body">
+        Paste two share links or codes from the current season tracker. We highlight what only you own, only they own, and what’s still missing for both.
+      </p>
+
+      <div class="mt-10 grid gap-4 md:grid-cols-2">
+        <label class="block rounded-lg bg-canvas-soft p-5 shadow-card">
+          <span class="text-sm font-medium text-ink">Your share code / URL</span>
+          <textarea
+            data-code-a
+            rows="4"
+            class="mt-3 w-full rounded-sm border border-hairline bg-canvas p-3 font-mono text-xs text-ink outline-none focus:border-hairline-strong"
+            placeholder="Paste link or code…"
+          ></textarea>
+        </label>
+        <label class="block rounded-lg bg-canvas-soft p-5 shadow-card">
+          <span class="text-sm font-medium text-ink">Friend’s share code / URL</span>
+          <textarea
+            data-code-b
+            rows="4"
+            class="mt-3 w-full rounded-sm border border-hairline bg-canvas p-3 font-mono text-xs text-ink outline-none focus:border-hairline-strong"
+            placeholder="Paste link or code…"
+          ></textarea>
+        </label>
+      </div>
+
+      <button
+        type="button"
+        data-compare-run
+        class="mt-6 inline-flex h-12 items-center rounded-pill bg-ink px-5 text-base font-medium text-on-primary"
+      >
+        Compare
+      </button>
+      <p class="mt-3 min-h-5 text-sm text-mute" data-compare-status aria-live="polite"></p>
+
+      <div class="mt-10 grid gap-6 lg:grid-cols-3">
+        <div class="rounded-md border border-hairline bg-canvas-soft p-5">
+          <h2 class="text-display-sm text-ink">Only you</h2>
+          <ul class="mt-4 space-y-2 text-sm text-body" data-only-a>
+            <li class="text-mute">Run a compare to populate.</li>
+          </ul>
+        </div>
+        <div class="rounded-md border border-hairline bg-canvas-soft p-5">
+          <h2 class="text-display-sm text-ink">Only them</h2>
+          <ul class="mt-4 space-y-2 text-sm text-body" data-only-b>
+            <li class="text-mute">Run a compare to populate.</li>
+          </ul>
+        </div>
+        <div class="rounded-md border border-hairline bg-canvas-soft p-5">
+          <h2 class="text-display-sm text-ink">Both missing</h2>
+          <ul class="mt-4 space-y-2 text-sm text-body" data-neither>
+            <li class="text-mute">Run a compare to populate.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script type="application/json" data-catalog-json set:html={catalogJson} />
+    <script type="application/json" data-season-json set:html={seasonJson} />
+  </section>
+  <Footer slot="footer" />
+</Layout>
+
+<script>
+  import { compareProgress } from '../lib/progress';
+  import { decodeShare } from '../lib/share';
+  import type { CatalogEntry, Season } from '../lib/types';
+
+  const root = document.querySelector<HTMLElement>('[data-compare-root]');
+  if (root) {
+    const catalog = JSON.parse(root.querySelector('[data-catalog-json]')?.textContent || '[]') as CatalogEntry[];
+    const season = JSON.parse(root.querySelector('[data-season-json]')?.textContent || '{}') as Season;
+    const keys = catalog.map((c) => c.key);
+
+    root.querySelector('[data-compare-run]')?.addEventListener('click', () => {
+      const aRaw = (root.querySelector('[data-code-a]') as HTMLTextAreaElement).value;
+      const bRaw = (root.querySelector('[data-code-b]') as HTMLTextAreaElement).value;
+      const a = decodeInput(aRaw);
+      const b = decodeInput(bRaw);
+      const status = root.querySelector('[data-compare-status]');
+
+      if (!a || !b) {
+        if (status) status.textContent = 'Could not read one or both share codes.';
+        return;
+      }
+      if (a.seasonId !== season.id || b.seasonId !== season.id) {
+        if (status) {
+          status.textContent = `Compare currently supports ${season.shortLabel} share codes only.`;
+        }
+        return;
+      }
+
+      const result = compareProgress(catalog, a.progress, b.progress);
+      fillList('[data-only-a]', result.onlyA);
+      fillList('[data-only-b]', result.onlyB);
+      fillList('[data-neither]', result.neither.slice(0, 40));
+      if (status) {
+        status.textContent = `Compared ${result.both.length} shared owned · ${result.onlyA.length} only you · ${result.onlyB.length} only them.`;
+      }
+    });
+
+    function extractCode(raw: string): string {
+      const trimmed = raw.trim();
+      try {
+        if (trimmed.includes('http')) {
+          const url = new URL(trimmed);
+          return url.searchParams.get('c') || trimmed;
+        }
+      } catch {
+        /* plain code */
+      }
+      const match = trimmed.match(/[?&]c=([^&]+)/);
+      return match ? decodeURIComponent(match[1]) : trimmed;
+    }
+
+    function decodeInput(raw: string) {
+      const code = extractCode(raw);
+      if (!code) return null;
+      return decodeShare(code, keys);
+    }
+
+    function fillList(selector: string, entries: CatalogEntry[]) {
+      const el = root!.querySelector(selector);
+      if (!el) return;
+      if (entries.length === 0) {
+        el.innerHTML = '<li class="text-mute">None</li>';
+        return;
+      }
+      el.innerHTML = entries
+        .map((e) => `<li>${e.spriteName} · ${e.variantLabel}</li>`)
+        .join('');
+    }
+  }
+</script>

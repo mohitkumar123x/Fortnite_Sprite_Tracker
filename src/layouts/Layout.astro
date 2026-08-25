@@ -1,23 +1,127 @@
+---
+import '../styles/global.css';
+import { DEFAULT_KEYWORDS, HOME_DESCRIPTION, HOME_TITLE, SITE_NAME } from '../lib/seo';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+  keywords?: string;
+  ogType?: string;
+  noIndex?: boolean;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  title = HOME_TITLE,
+  description = HOME_DESCRIPTION,
+  canonicalPath = Astro.url.pathname,
+  keywords = DEFAULT_KEYWORDS,
+  ogType = 'website',
+  noIndex = false,
+  jsonLd,
+} = Astro.props;
+
+const site = Astro.site ?? new URL('https://fortnitespritetracking.com');
+const canonicalURL = new URL(canonicalPath, site);
+const ogImageURL = new URL('/og-image.png', site);
+const fullTitle = title.includes('Fortnite Sprite Tracker')
+  ? title
+  : `${title} · Fortnite Sprite Tracker`;
+
+const defaultJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: SITE_NAME,
+  url: site.href,
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'Web Browser',
+  description,
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: SITE_NAME,
+    url: site.href,
+  },
+};
+
+const schema = jsonLd ?? defaultJsonLd;
+const schemaList = Array.isArray(schema) ? schema : [schema];
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      (function () {
+        try {
+          var stored = localStorage.getItem('fst:theme');
+          var dark =
+            stored === 'dark' ||
+            (stored !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.classList.toggle('dark', dark);
+        } catch (_) {}
+      })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png?v=3" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png?v=3" sizes="96x96" />
+    <link rel="shortcut icon" href="/favicon.ico?v=3" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" href="/sitemap.xml" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#171717" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content={SITE_NAME} />
+    <meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
+    <meta name="googlebot" content={noIndex ? 'noindex, nofollow' : 'index, follow'} />
+    <link rel="canonical" href={canonicalURL.href} />
+
+    {/* Open Graph */}
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:image" content={ogImageURL.href} />
+    <meta property="og:image:secure_url" content={ogImageURL.href} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Fortnite Sprite Tracker — free online checklist, chart, and collection tracker" />
+
+    {/* Twitter / X */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL.href} />
+    <meta name="twitter:image:alt" content="Fortnite Sprite Tracker — free online checklist, chart, and collection tracker" />
+    <meta name="twitter:url" content={canonicalURL.href} />
+
+    {
+      schemaList.map((block) => (
+        <script type="application/ld+json" set:html={JSON.stringify(block)} />
+      ))
+    }
+  </head>
+  <body class="min-h-dvh flex flex-col">
+    <slot name="header" />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <slot name="footer" />
+  </body>
+</html>

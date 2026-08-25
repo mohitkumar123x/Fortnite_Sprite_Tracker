@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LegalDoc from '../components/LegalDoc.astro';
+import { breadcrumbJsonLd, CONTACT_EMAIL, SITE_NAME, SITE_URL } from '../lib/seo';
+
+const jsonLd = [
+  breadcrumbJsonLd([{ name: 'Contact us', path: '/contact' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: `Contact ${SITE_NAME}`,
+    url: `${SITE_URL}/contact`,
+    mainEntity: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL,
+      email: CONTACT_EMAIL,
+    },
+  },
+];
+---
+
+<Layout
+  title="Contact Fortnite Sprite Tracker"
+  description="Contact Fortnite Sprite Tracker: email hello@fortnitespritetracking.com for site, privacy, or data questions. Unofficial fan project — not Epic Games support."
+  canonicalPath="/contact"
+  jsonLd={jsonLd}
+>
+  <Header slot="header" />
+  <LegalDoc
+    eyebrow="Contact"
+    heading="Contact us."
+    intro="For the website, privacy, or a broken page, write to us. For Fortnite accounts, purchases, or in-game bugs, use Epic’s official support instead."
+    updated="2026-08-25"
+  >
+    <h2>Email</h2>
+    <p>
+      <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+    </p>
+    <p>
+      We read mail as we can. There is no guaranteed response time. Do not send Epic passwords, login codes, or payment
+      screenshots.
+    </p>
+
+    <h2>Send a message</h2>
+    <p>
+      This form opens your email app with a draft. Nothing is posted to our servers.
+    </p>
+
+    <form
+      class="mt-6 space-y-4 rounded-lg border border-hairline bg-canvas-soft p-5 shadow-card"
+      data-contact-form
+    >
+      <label class="block">
+        <span class="text-sm font-medium text-ink">Name</span>
+        <input
+          type="text"
+          name="name"
+          autocomplete="name"
+          class="mt-2 w-full rounded-sm border border-hairline bg-canvas px-3 py-2 text-sm text-ink outline-none focus:border-hairline-strong"
+        />
+      </label>
+      <label class="block">
+        <span class="text-sm font-medium text-ink">Your email</span>
+        <input
+          type="email"
+          name="email"
+          required
+          autocomplete="email"
+          class="mt-2 w-full rounded-sm border border-hairline bg-canvas px-3 py-2 text-sm text-ink outline-none focus:border-hairline-strong"
+        />
+      </label>
+      <label class="block">
+        <span class="text-sm font-medium text-ink">Message</span>
+        <textarea
+          name="message"
+          required
+          rows="6"
+          class="mt-2 w-full rounded-sm border border-hairline bg-canvas px-3 py-2 text-sm text-ink outline-none focus:border-hairline-strong"
+        ></textarea>
+      </label>
+      <button
+        type="submit"
+        class="inline-flex h-11 items-center rounded-pill bg-ink px-5 text-sm font-medium text-on-primary"
+      >
+        Open email draft
+      </button>
+      <p class="text-sm text-mute" data-contact-status aria-live="polite"></p>
+    </form>
+
+    <h2>Other pages</h2>
+    <ul>
+      <li><a href="/about">About us</a></li>
+      <li><a href="/privacy">Privacy policy</a></li>
+      <li><a href="/terms">Terms &amp; conditions</a></li>
+      <li><a href="/faq">FAQ</a></li>
+    </ul>
+  </LegalDoc>
+  <Footer slot="footer" />
+</Layout>
+
+<script define:vars={{ to: CONTACT_EMAIL }}>
+  const form = document.querySelector('[data-contact-form]');
+  const status = document.querySelector('[data-contact-status]');
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!(form instanceof HTMLFormElement)) return;
+    const data = new FormData(form);
+    const name = String(data.get('name') ?? '').trim();
+    const email = String(data.get('email') ?? '').trim();
+    const message = String(data.get('message') ?? '').trim();
+    const subject = encodeURIComponent(`Fortnite Sprite Tracker — ${name || 'site message'}`);
+    const body = encodeURIComponent(`From: ${name || '(not given)'}\nEmail: ${email}\n\n${message}`);
+    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    if (status) status.textContent = 'Your email app should open with a draft. If nothing happens, write us directly.';
+  });
+</script>

@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LegalDoc from '../components/LegalDoc.astro';
+import { breadcrumbJsonLd, SITE_NAME, SITE_URL } from '../lib/seo';
+
+const jsonLd = [
+  breadcrumbJsonLd([{ name: 'About us', path: '/about' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: `About ${SITE_NAME}`,
+    url: `${SITE_URL}/about`,
+    description:
+      'Fortnite Sprite Tracker is an unofficial, free browser checklist for Owned and Mastered Sprites. Progress stays on your device.',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+  },
+];
+---
+
+<Layout
+  title="About Fortnite Sprite Tracker — Unofficial Checklist & Collection Tool"
+  description="About Fortnite Sprite Tracker: a free, unofficial online checklist for Owned and Mastered Sprites, Hunt Mode, share links, and season archives including Batman. No account required."
+  canonicalPath="/about"
+  jsonLd={jsonLd}
+>
+  <Header slot="header" />
+  <LegalDoc
+    eyebrow="About us"
+    heading="A locker checklist that stays on your device."
+    intro="Fortnite Sprite Tracker is an unofficial fan site. We built a free online checklist so you can mark Owned and Mastered Sprites without creating an account or handing anyone your Epic login."
+    updated="2026-08-25"
+  >
+    <h2>What we do</h2>
+    <p>
+      The site is a <a href="/">Fortnite Sprite Tracker</a> for Battle Royale companions: current-season boards, past-season archives,
+      a <a href="/sprites">sprite reference</a>, <a href="/compare">share-code compare</a>, and a <a href="/faq">FAQ</a>.
+      Hunt Mode highlights what you still need. Export JSON and share links are backups you copy yourself.
+    </p>
+    <p>
+      We are not a marketplace, not a trading desk, and not a replacement for the in-game locker. Sprite names, abilities, and
+      season notes are a fan reference and can lag behind a live patch.
+    </p>
+
+    <h2>How it is built</h2>
+    <p>
+      Progress and theme preference live in your browser (localStorage). There is no cloud profile in this version. If you
+      clear site data, switch browsers, or use private mode, the checklist will look empty until you import a JSON backup or
+      open a share link you saved.
+    </p>
+
+    <h2>Who we are not</h2>
+    <p>
+      Fortnite Sprite Tracker is not affiliated with, endorsed by, or sponsored by Epic Games, Inc. Fortnite and related
+      marks belong to Epic. This is a fan project operated independently at fortnitespritetracking.com.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about the site, privacy, or a data issue go to <a href="/contact">Contact us</a>. Game bugs and account
+      recovery belong with Epic’s official support, not us.
+    </p>
+  </LegalDoc>
+  <Footer slot="footer" />
+</Layout>

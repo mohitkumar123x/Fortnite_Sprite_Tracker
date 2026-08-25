@@ -1,0 +1,20 @@
+[
+  {
+    "id": "c7-s4",
+    "slug": "c7-s4",
+    "label": "Chapter 7 — Season 4",
+    "shortLabel": "C7 S4",
+    "isCurrent": true,
+    "datasetVersion": "2026-08-24",
+    "patchNote": "Override roster · Normal / Gold / Cheat Master"
+  },
+  {
+    "id": "c7-s3",
+    "slug": "c7-s3",
+    "label": "Chapter 7 — Season 3",
+    "shortLabel": "C7 S3",
+    "isCurrent": false,
+    "datasetVersion": "2026-08-24",
+    "patchNote": "Runners archive · Base through Quack variants"
+  }
+]

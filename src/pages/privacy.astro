@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LegalDoc from '../components/LegalDoc.astro';
+import { breadcrumbJsonLd, CONTACT_EMAIL, SITE_NAME, SITE_URL } from '../lib/seo';
+
+const jsonLd = [
+  breadcrumbJsonLd([{ name: 'Privacy policy', path: '/privacy' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: `Privacy policy · ${SITE_NAME}`,
+    url: `${SITE_URL}/privacy`,
+  },
+];
+---
+
+<Layout
+  title="Privacy Policy — Fortnite Sprite Tracker"
+  description="Privacy policy for Fortnite Sprite Tracker: progress stays in your browser, no account, no Epic login. How localStorage, share links, and hosting logs work."
+  canonicalPath="/privacy"
+  jsonLd={jsonLd}
+>
+  <Header slot="header" />
+  <LegalDoc
+    eyebrow="Privacy"
+    heading="Privacy policy."
+    intro="This policy describes how fortnitespritetracking.com handles information. The tracker is local-first: checklist progress is stored on your device, not in an account on our servers."
+    updated="2026-08-25"
+  >
+    <h2>Who we are</h2>
+    <p>
+      Fortnite Sprite Tracker (“we”, “the site”) is an unofficial fan website at fortnitespritetracking.com. For privacy
+      questions, use <a href="/contact">Contact us</a> or email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+    </p>
+
+    <h2>What we do not collect</h2>
+    <ul>
+      <li>We do not require an account, email, or Epic Games login to use the checklist.</li>
+      <li>We do not ask for passwords, 2FA codes, or V-Bucks payment details.</li>
+      <li>We do not run a cloud sync of your locker in this version of the site.</li>
+    </ul>
+
+    <h2>Information stored on your device</h2>
+    <p>
+      The site uses your browser’s localStorage (and similar local storage) to remember:
+    </p>
+    <ul>
+      <li>Owned / Mastered checklist state for seasons you track</li>
+      <li>Theme preference (light or dark), if you set it</li>
+    </ul>
+    <p>
+      This data stays on that browser profile until you clear site data, uninstall the browser, or overwrite it with Import
+      JSON. We cannot read your localStorage from our side.
+    </p>
+
+    <h2>Share links and exported files</h2>
+    <p>
+      Share codes and Export JSON contain checklist bits you choose to copy. If you paste a link in Discord, a wiki, or an
+      email, anyone with the link can see that encoded progress. Treat share URLs like a screenshot of your board.
+    </p>
+
+    <h2>Information processed when you visit</h2>
+    <p>
+      Like most websites, our host or content delivery network may record technical logs (for example IP address, browser
+      type, requested URL, and time) to operate the site, stop abuse, and debug outages. We do not sell those logs. Retention
+      follows the host’s defaults unless we configure a shorter window.
+    </p>
+    <p>
+      If we later add a privacy-respecting analytics tool, we will update this page and, where required, ask before setting
+      non-essential cookies.
+    </p>
+
+    <h2>Cookies</h2>
+    <p>
+      The tracker itself does not set advertising cookies. Theme and progress use localStorage, not a tracking cookie. Third-party
+      embeds are not part of the core checklist pages.
+    </p>
+
+    <h2>Contact form and email</h2>
+    <p>
+      If you email us or use the contact page, we receive whatever you send (name, address, message). We use that only to
+      reply and to keep a record of the request. Do not include Epic passwords or account recovery codes.
+    </p>
+
+    <h2>Children</h2>
+    <p>
+      The site is a general-audience fan tool. We do not knowingly collect personal information from children. If you believe
+      a child submitted personal data by email, contact us and we will delete that message when we can identify it.
+    </p>
+
+    <h2>Your choices</h2>
+    <ul>
+      <li>Clear this site’s data in your browser to wipe local progress and theme.</li>
+      <li>Use Export JSON before switching devices if you want to keep a backup.</li>
+      <li>Stop using share links if you do not want others to load your encoded checklist.</li>
+    </ul>
+
+    <h2>Changes</h2>
+    <p>
+      We may update this policy when the product changes. The date at the top is the latest revision. Material changes will
+      be reflected on this page.
+    </p>
+  </LegalDoc>
+  <Footer slot="footer" />
+</Layout>

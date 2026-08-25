@@ -1,0 +1,40 @@
+---
+interface Props {
+  code: string;
+  eyebrow: string;
+  heading: string;
+  intro: string;
+}
+
+const { code, eyebrow, heading, intro } = Astro.props;
+---
+
+<section class="border-b border-hairline bg-canvas">
+  <div class="mx-auto max-w-[800px] px-4 py-20 md:px-6 md:py-28">
+    <p class="text-caption-mono text-mute">{eyebrow}</p>
+    <p class="mt-3 font-mono text-sm text-mute">{code}</p>
+    <h1 class="mt-3 text-display-lg text-ink">{heading}</h1>
+    <p class="mt-4 max-w-xl text-lg text-body">{intro}</p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a
+        href="/"
+        class="inline-flex h-12 items-center rounded-pill bg-ink px-4 text-base font-medium text-on-primary no-underline hover:text-on-primary"
+      >
+        Back to tracker
+      </a>
+      <a
+        href="/sprites"
+        class="inline-flex h-12 items-center rounded-pill border border-hairline bg-canvas px-4 text-base font-medium text-ink no-underline hover:bg-canvas-soft hover:text-ink"
+      >
+        Sprite list
+      </a>
+      <a
+        href="/faq"
+        class="inline-flex h-12 items-center rounded-pill border border-hairline bg-canvas px-4 text-base font-medium text-ink no-underline hover:bg-canvas-soft hover:text-ink"
+      >
+        FAQ
+      </a>
+    </div>
+    <slot />
+  </div>
+</section>

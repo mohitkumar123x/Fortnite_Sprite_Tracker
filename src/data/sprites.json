@@ -1,0 +1,367 @@
+[
+  {
+    "id": "bush",
+    "name": "Bush",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Grants a bush after a duration; at max level also grants a bush on elimination. Wait shortens with each level.",
+    "findNotes": "Found in chests and supply drops during Chapter 7 Season 4 matches. Extract before the match ends.",
+    "levelNotes": "Levels through normal play; bush cooldown improves each level.",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 100 },
+      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "adventure",
+    "name": "Adventure",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Upgrades a random item in your inventory with each level up.",
+    "findNotes": "Random chest / supply drop finds. Extract to keep permanently.",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 100 },
+      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "8-bit",
+    "name": "8-Bit",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Puts an 8-Bit Shotgun in your first chest and grants a score multiplier for it.",
+    "findNotes": "Season 4 chest drops. Extract before leaving the match.",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 100 },
+      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "jonesy",
+    "name": "Jonesy",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Recovers health or shields shortly after taking damage. Heal amount grows each level.",
+    "findNotes": "Random finds in Season 4. Extract to unlock permanently.",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 100 },
+      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "killswitch",
+    "name": "Killswitch",
+    "seasonId": "c7-s4",
+    "rarity": "epic",
+    "ability": "Aim while mid-air to slow down and gain improved accuracy. Accuracy grows with levels.",
+    "findNotes": "Epic chest drop in Season 4. Extract to keep.",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 200 },
+      { "id": "gold", "label": "Gold", "dustCost": 500, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 600, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "sonic",
+    "name": "Sonic",
+    "seasonId": "c7-s4",
+    "rarity": "epic",
+    "ability": "Sprint faster with each level up.",
+    "findNotes": "Sonic collab sprite — chests and supply drops. Extract to unlock.",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 200 },
+      { "id": "gold", "label": "Gold", "dustCost": 500, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 600, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "tails",
+    "name": "Tails",
+    "seasonId": "c7-s4",
+    "rarity": "epic",
+    "ability": "Double jump to hover in mid-air. Hover speed grows with each level.",
+    "findNotes": "Sonic collab — find in chests, extract before the end of the match.",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 200 },
+      { "id": "gold", "label": "Gold", "dustCost": 500, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 600, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "shadow",
+    "name": "Shadow",
+    "seasonId": "c7-s4",
+    "rarity": "epic",
+    "ability": "Automatically reloads unequipped weapons over time. At max level also reloads the equipped weapon.",
+    "findNotes": "Sonic collab epic. Extract from chests / drops.",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 200 },
+      { "id": "gold", "label": "Gold", "dustCost": 500, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 600, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "jackrabbit",
+    "name": "Jackrabbit",
+    "seasonId": "c7-s4",
+    "rarity": "legendary",
+    "ability": "Grants a second mid-air jump. Cooldown shortens with each level.",
+    "findNotes": "Legendary Season 4 drop. Extract to add to your locker.",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 400 },
+      { "id": "gold", "label": "Gold", "dustCost": 800, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 900, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "crown",
+    "name": "Crown",
+    "seasonId": "c7-s4",
+    "rarity": "mythic",
+    "ability": "Levels only by winning matches — faster with Crown Wins. Mastering unlocks new variants.",
+    "findNotes": "Mythic Season 4 sprite. Rare chest finds; extract carefully.",
+    "levelNotes": "Only levels from match wins (boosted by Crown Wins).",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 600 },
+      { "id": "gold", "label": "Gold", "dustCost": 1200, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 1400, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "klombo",
+    "name": "Klombo",
+    "seasonId": "c7-s4",
+    "rarity": "mythic",
+    "ability": "Grants random items at each level. Levels only by consuming items; item quality improves each level.",
+    "findNotes": "Mythic Season 4. Find, extract, then feed items to level.",
+    "levelNotes": "Levels only by consuming items — not by eliminations or wins.",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 600 },
+      { "id": "gold", "label": "Gold", "dustCost": 1200, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 1400, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "s3-batman",
+    "name": "Batman",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 collab companion — refer to in-game tooltip for live ability values from that season.",
+    "findNotes": "Chapter 7 Season 3 archive (collab). Tracked on the past-season checklist; no longer dropping in live Season 4 matches.",
+    "variants": [
+      { "id": "normal", "label": "Normal" },
+      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
+      { "id": "gummy", "label": "Gummy" },
+      { "id": "galaxy", "label": "Galaxy" },
+      { "id": "holofoil", "label": "Holofoil" },
+      { "id": "gem", "label": "Gem" }
+    ]
+  },
+  {
+    "id": "s3-air",
+    "name": "Air",
+    "seasonId": "c7-s3",
+    "rarity": "rare",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive. No longer dropping in live matches.",
+    "variants": [
+      { "id": "normal", "label": "Normal" },
+      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
+      { "id": "gummy", "label": "Gummy" },
+      { "id": "galaxy", "label": "Galaxy" },
+      { "id": "gem", "label": "Gem" },
+      { "id": "holofoil", "label": "Holofoil" }
+    ]
+  },
+  {
+    "id": "s3-aura",
+    "name": "Aura",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      { "id": "normal", "label": "Normal" },
+      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
+      { "id": "gummy", "label": "Gummy" },
+      { "id": "galaxy", "label": "Galaxy" },
+      { "id": "gem", "label": "Gem" },
+      { "id": "holofoil", "label": "Holofoil" }
+    ]
+  },
+  {
+    "id": "s3-earth",
+    "name": "Earth",
+    "seasonId": "c7-s3",
+    "rarity": "rare",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      { "id": "normal", "label": "Normal" },
+      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
+      { "id": "gummy", "label": "Gummy" },
+      { "id": "galaxy", "label": "Galaxy" },
+      { "id": "cube", "label": "Cube" },
+      { "id": "quack", "label": "Quack" }
+    ]
+  },
+  {
+    "id": "s3-fire",
+    "name": "Fire",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      { "id": "normal", "label": "Normal" },
+      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
+      { "id": "gummy", "label": "Gummy" },
+      { "id": "galaxy", "label": "Galaxy" },
+      { "id": "gem", "label": "Gem" },
+      { "id": "holofoil", "label": "Holofoil" }
+    ]
+  },
+  {
+    "id": "s3-water",
+    "name": "Water",
+    "seasonId": "c7-s3",
+    "rarity": "rare",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      { "id": "normal", "label": "Normal" },
+      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
+      { "id": "gummy", "label": "Gummy" },
+      { "id": "galaxy", "label": "Galaxy" },
+      { "id": "gem", "label": "Gem" },
+      { "id": "quack", "label": "Quack" }
+    ]
+  },
+  {
+    "id": "s3-ghost",
+    "name": "Ghost",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      { "id": "normal", "label": "Normal" },
+      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
+      { "id": "gummy", "label": "Gummy" },
+      { "id": "galaxy", "label": "Galaxy" },
+      { "id": "holofoil", "label": "Holofoil" },
+      { "id": "cube", "label": "Cube" }
+    ]
+  },
+  {
+    "id": "s3-llama",
+    "name": "Llama",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      { "id": "normal", "label": "Normal" },
+      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
+      { "id": "gummy", "label": "Gummy" },
+      { "id": "galaxy", "label": "Galaxy" },
+      { "id": "gem", "label": "Gem" },
+      { "id": "holofoil", "label": "Holofoil" }
+    ]
+  },
+  {
+    "id": "s3-peeky-peely",
+    "name": "Peeky Peely",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      { "id": "normal", "label": "Normal" },
+      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
+      { "id": "gummy", "label": "Gummy" },
+      { "id": "galaxy", "label": "Galaxy" },
+      { "id": "quack", "label": "Quack" },
+      { "id": "cube", "label": "Cube" }
+    ]
+  },
+  {
+    "id": "s3-zero-point",
+    "name": "Zero Point",
+    "seasonId": "c7-s3",
+    "rarity": "mythic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      { "id": "normal", "label": "Normal" },
+      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
+      { "id": "galaxy", "label": "Galaxy" },
+      { "id": "gem", "label": "Gem" },
+      { "id": "holofoil", "label": "Holofoil" },
+      { "id": "cube", "label": "Cube" }
+    ]
+  },
+  {
+    "id": "s3-storm-scout",
+    "name": "Storm Scout",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive. Some variants were delayed or unreleased.",
+    "variants": [
+      { "id": "normal", "label": "Normal" },
+      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
+      { "id": "gummy", "label": "Gummy" },
+      { "id": "galaxy", "label": "Galaxy" }
+    ]
+  },
+  {
+    "id": "s3-fishy",
+    "name": "Fishy",
+    "seasonId": "c7-s3",
+    "rarity": "rare",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      { "id": "normal", "label": "Normal" },
+      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
+      { "id": "gummy", "label": "Gummy" },
+      { "id": "quack", "label": "Quack" },
+      { "id": "holofoil", "label": "Holofoil" }
+    ]
+  },
+  {
+    "id": "s3-demon",
+    "name": "Demon",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      { "id": "normal", "label": "Normal" },
+      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
+      { "id": "gummy", "label": "Gummy" },
+      { "id": "galaxy", "label": "Galaxy" },
+      { "id": "gem", "label": "Gem" }
+    ]
+  },
+  {
+    "id": "s3-king",
+    "name": "King",
+    "seasonId": "c7-s3",
+    "rarity": "mythic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      { "id": "normal", "label": "Normal" },
+      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
+      { "id": "galaxy", "label": "Galaxy" },
+      { "id": "holofoil", "label": "Holofoil" },
+      { "id": "gem", "label": "Gem" }
+    ]
+  }
+]

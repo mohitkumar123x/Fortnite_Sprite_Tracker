@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrackerApp from '../../components/TrackerApp.astro';
+import { getCatalogForSeason, getPastSeasons, getSeasonBySlug } from '../../lib/catalog';
+
+export function getStaticPaths() {
+  return getPastSeasons().map((season) => ({
+    params: { slug: season.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const season = getSeasonBySlug(slug!);
+if (!season) {
+  return Astro.redirect('/seasons');
+}
+const catalog = getCatalogForSeason(season.id);
+---
+
+<Layout
+  title={`${season.label} | Fortnite Sprite Tracker Checklist`}
+  description={`Fortnite Sprite Tracker archive for ${season.label}. Mark Owned and Mastered variants on this season checklist — part of the Fortnite Sprite Tracker chart.`}
+  canonicalPath={`/seasons/${season.slug}`}
+>
+  <Header slot="header" />
+  <section class="border-b border-hairline bg-canvas">
+    <div class="mx-auto max-w-[1400px] px-4 py-12 md:px-6">
+      <p class="text-caption-mono text-mute">Past season</p>
+      <h1 class="mt-3 text-display-lg text-ink">{season.label}.</h1>
+      <p class="mt-3 max-w-2xl text-body">
+        This board no longer drops in live matches, but your checklist still lives locally keyed to this season.
+      </p>
+      <a href="/seasons" class="mt-6 inline-flex text-sm font-medium">← All seasons</a>
+    </div>
+  </section>
+  <TrackerApp season={season} catalog={catalog} />
+  <Footer slot="footer" />
+</Layout>

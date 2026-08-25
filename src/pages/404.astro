@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ErrorPage from '../components/ErrorPage.astro';
+
+Astro.response.status = 404;
+---
+
+<Layout
+  title="Page not found — Fortnite Sprite Tracker"
+  description="That Fortnite Sprite Tracker page does not exist. Open the checklist, sprite list, or FAQ instead."
+  canonicalPath="/404"
+  noIndex={true}
+>
+  <Header slot="header" />
+  <ErrorPage
+    code="404"
+    eyebrow="Not found"
+    heading="This page is not in the locker."
+    intro="The URL may be mistyped or the page may have moved. The tracker, sprite list, and FAQ are still here."
+  />
+  <Footer slot="footer" />
+</Layout>

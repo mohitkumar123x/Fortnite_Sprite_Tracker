@@ -1,0 +1,62 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import SpriteCard from '../../components/SpriteCard.astro';
+import { allSeasons, allSprites, getSeasonById } from '../../lib/catalog';
+
+const bySeason = allSeasons.map((season) => ({
+  season,
+  sprites: allSprites.filter((s) => s.seasonId === season.id),
+}));
+---
+
+<Layout
+  title="Fortnite Sprite Tracker List — All Sprites & Variants"
+  description="Complete Fortnite Sprite Tracker list across seasons: abilities, rarities, variants, Batman archive, and links to mark Owned on the checklist."
+  canonicalPath="/sprites"
+>
+  <Header slot="header" />
+  <section class="border-b border-hairline bg-canvas">
+    <div class="mx-auto max-w-[1400px] px-4 py-16 md:px-6 md:py-24">
+      <p class="text-caption-mono text-mute">Reference</p>
+      <h1 class="mt-3 text-display-lg text-ink">Fortnite Sprite Tracker list.</h1>
+      <p class="mt-3 max-w-2xl text-lg text-body">
+        Browse every sprite in the Fortnite Sprite Tracker chart — rarity, variants, and abilities — then open the checklist to mark Owned and Mastered.
+        Icons on this site are original diagrams we drew for the tracker. They are not Epic, Sega, or DC game art.
+      </p>
+
+      {
+        bySeason.map(({ season, sprites }) => (
+          <div class="mt-14">
+            <div class="flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <h2 class="text-display-md text-ink">{season.label}</h2>
+                <p class="mt-1 text-sm text-mute">{season.patchNote}</p>
+              </div>
+              <a
+                href={season.isCurrent ? '/#tracker' : `/seasons/${season.slug}`}
+                class="text-sm font-medium"
+              >
+                Open checklist →
+              </a>
+            </div>
+            <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {sprites.map((sprite) => (
+                <SpriteCard
+                  id={sprite.id}
+                  name={sprite.name}
+                  rarity={sprite.rarity}
+                  seasonLabel={getSeasonById(sprite.seasonId)?.shortLabel ?? sprite.seasonId}
+                  variantCount={sprite.variants.length}
+                  href={`/sprites/${sprite.id}`}
+                />
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+  <Footer slot="footer" />
+</Layout>

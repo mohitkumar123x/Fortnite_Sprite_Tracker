@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ErrorPage from '../components/ErrorPage.astro';
+
+interface Props {
+  error: unknown;
+}
+
+const { error } = Astro.props;
+const isDev = import.meta.env.DEV;
+const detail =
+  isDev && error instanceof Error
+    ? error.message
+    : isDev && error != null
+      ? String(error)
+      : null;
+
+Astro.response.status = 500;
+---
+
+<Layout
+  title="Something went wrong — Fortnite Sprite Tracker"
+  description="Fortnite Sprite Tracker hit a server error. Try the checklist again, or come back in a moment."
+  canonicalPath="/500"
+  noIndex={true}
+>
+  <Header slot="header" />
+  <ErrorPage
+    code="500"
+    eyebrow="Server error"
+    heading="The board failed to load."
+    intro="Something broke on our side. Your checklist in this browser should still be there. Try again, or open the tracker from the home page."
+  >
+    {
+      detail && (
+        <p class="mt-8 rounded-md border border-hairline bg-canvas-soft p-4 font-mono text-sm text-mute">
+          {detail}
+        </p>
+      )
+    }
+  </ErrorPage>
+  <Footer slot="footer" />
+</Layout>

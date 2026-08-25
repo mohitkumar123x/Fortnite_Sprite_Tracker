@@ -1,11 +1,170 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import TrackerApp from '../components/TrackerApp.astro';
+import SeoArticle from '../components/SeoArticle.astro';
+import FaqSection from '../components/FaqSection.astro';
+import { getCatalogForSeason, getCurrentSeason } from '../lib/catalog';
+import { faqPageJsonLd } from '../data/faqs';
+import { HOME_DESCRIPTION, HOME_TITLE, SITE_URL } from '../lib/seo';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const season = getCurrentSeason();
+const catalog = getCatalogForSeason(season.id);
+const site = Astro.site ?? new URL(SITE_URL);
+
+const homeDescription = HOME_DESCRIPTION;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'Fortnite Sprite Tracker',
+    alternateName: [
+      'Online Fortnite Sprite Tracker',
+      'Fortnite Sprite Tracker Checklist',
+      'Fortnite Sprite Tracker Chart',
+    ],
+    url: site.href,
+    applicationCategory: 'GameApplication',
+    operatingSystem: 'Web Browser',
+    browserRequirements: 'Requires JavaScript and HTML5',
+    description: homeDescription,
+    featureList: [
+      'Owned and Mastered checklist',
+      'Hunt Mode for missing sprites',
+      'Season archives including Batman collab board',
+      'Share link and JSON backup',
+      'Compare two collections',
+      'Dark mode',
+    ],
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Fortnite Sprite Tracker',
+      url: site.href,
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Fortnite Sprite Tracker',
+    url: site.href,
+    description: homeDescription,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Fortnite Sprite Tracker',
+        item: site.href,
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'What this Fortnite Sprite Tracker is — and how to use it',
+    description: homeDescription,
+    image: `${site.origin}/og-image.png`,
+    datePublished: '2026-08-24',
+    dateModified: '2026-08-24',
+    author: {
+      '@type': 'Organization',
+      name: 'Fortnite Sprite Tracker',
+      url: site.href,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Fortnite Sprite Tracker',
+      url: site.href,
+    },
+    mainEntityOfPage: `${site.origin}/#about`,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to use the Fortnite Sprite Tracker checklist',
+    description: 'Mark Owned and Mastered sprites, hunt missing variants, and back up your collection.',
+    step: [
+      {
+        '@type': 'HowToStep',
+        name: 'Open the checklist',
+        text: 'Scroll to the Fortnite Sprite Tracker chart on the home page.',
+      },
+      {
+        '@type': 'HowToStep',
+        name: 'Mark Owned and Mastered',
+        text: 'Tap each extracted variant as Owned and star it when Mastered.',
+      },
+      {
+        '@type': 'HowToStep',
+        name: 'Hunt missing sprites',
+        text: 'Enable Hunt Mode or the Missing filter to focus the next match.',
+      },
+      {
+        '@type': 'HowToStep',
+        name: 'Share or print',
+        text: 'Copy a share link, export JSON, or print the Missing view as a printable checklist.',
+      },
+    ],
+  },
+  faqPageJsonLd(),
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title={HOME_TITLE}
+  description={homeDescription}
+  canonicalPath="/"
+  jsonLd={jsonLd}
+>
+  <Header slot="header" />
+  <Hero />
+  <TrackerApp season={season} catalog={catalog} />
+  <section class="bg-canvas" aria-labelledby="why-heading">
+    <div class="mx-auto max-w-[1400px] px-4 py-20 md:px-6 md:py-28">
+      <p class="text-caption-mono text-mute">Why this tracker</p>
+      <h2 id="why-heading" class="mt-3 max-w-2xl text-display-lg text-ink">
+        Built for the next chest, not another screenshot dump.
+      </h2>
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <div class="rounded-md bg-canvas-soft p-6">
+          <h3 class="text-display-sm text-ink">Hunt Mode</h3>
+          <p class="mt-2 text-sm leading-6 text-body">
+            Missing-only Fortnite Sprite Tracker chart sorted by rarity so you know what to grab before extract.
+          </p>
+        </div>
+        <div class="rounded-md bg-canvas-soft p-6">
+          <h3 class="text-display-sm text-ink">Local-first</h3>
+          <p class="mt-2 text-sm leading-6 text-body">
+            Fortnite Sprite Tracker my collection stays on this device. Export JSON or copy a share link when you need it elsewhere.
+          </p>
+        </div>
+        <div class="rounded-md bg-canvas-soft p-6">
+          <h3 class="text-display-sm text-ink">Season memory</h3>
+          <p class="mt-2 text-sm leading-6 text-body">
+            Current roster up front; past seasons and collabs like Batman archived without cluttering the board.
+          </p>
+        </div>
+      </div>
+      <p class="mt-10 text-sm text-body">
+        Read the full guide below, or jump to the <a href="#tracker">checklist</a> ·
+        <a href="/sprites">sprite list</a> ·
+        <a href="#about">about this Fortnite Sprite Tracker</a> ·
+        <a href="#faq">FAQ</a>
+      </p>
+    </div>
+  </section>
+  <SeoArticle />
+  <FaqSection />
+  <Footer slot="footer" />
 </Layout>
