@@ -286,9 +286,9 @@
 
 @utility mesh-gradient {
   background:
-    radial-gradient(ellipse 80% 60% at 20% 30%, color-mix(in srgb, var(--color-gradient-develop-start) 55%, transparent), transparent 60%),
-    radial-gradient(ellipse 70% 50% at 75% 25%, color-mix(in srgb, var(--color-gradient-preview-start) 45%, transparent), transparent 55%),
-    radial-gradient(ellipse 60% 50% at 60% 70%, color-mix(in srgb, var(--color-gradient-preview-end) 40%, transparent), transparent 55%),
-    radial-gradient(ellipse 50% 40% at 30% 80%, color-mix(in srgb, var(--color-gradient-ship-end) 35%, transparent), transparent 50%),
-    radial-gradient(ellipse 40% 30% at 85% 75%, color-mix(in srgb, var(--color-gradient-develop-end) 40%, transparent), transparent 50%);
+    radial-gradient(ellipse 85% 70% at 12% 18%, color-mix(in srgb, var(--color-gradient-develop-start) 88%, transparent), transparent 62%),
+    radial-gradient(ellipse 75% 60% at 82% 12%, color-mix(in srgb, var(--color-gradient-preview-start) 82%, transparent), transparent 58%),
+    radial-gradient(ellipse 70% 55% at 68% 72%, color-mix(in srgb, var(--color-gradient-preview-end) 78%, transparent), transparent 58%),
+    radial-gradient(ellipse 55% 45% at 22% 88%, color-mix(in srgb, var(--color-gradient-ship-end) 72%, transparent), transparent 52%),
+    radial-gradient(ellipse 50% 40% at 92% 82%, color-mix(in srgb, var(--color-gradient-develop-end) 80%, transparent), transparent 52%);
 }
