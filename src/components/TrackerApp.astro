@@ -43,34 +43,34 @@ const seasonJson = JSON.stringify(season);
     </div>
 
     <div class="mt-8 grid gap-4 sm:grid-cols-2">
-      <div class="rounded-lg bg-canvas p-5 shadow-card">
+      <div class="rounded-lg border border-hairline bg-canvas p-5 shadow-card">
         <div class="flex items-center justify-between text-sm">
           <span class="text-body">Owned</span>
           <span class="font-medium text-ink" data-owned-count>0 / {total}</span>
         </div>
-        <div class="mt-3 h-2 overflow-hidden rounded-full bg-canvas-soft-2">
+        <div class="mt-3 h-2 overflow-hidden rounded-full bg-hairline">
           <div class="h-full rounded-full bg-ink transition-all duration-300" data-owned-bar style="width:0%"></div>
         </div>
       </div>
-      <div class="rounded-lg bg-canvas p-5 shadow-card">
+      <div class="rounded-lg border border-hairline bg-canvas p-5 shadow-card">
         <div class="flex items-center justify-between text-sm">
           <span class="text-body">Mastered</span>
           <span class="font-medium text-ink" data-mastered-count>0 / {total}</span>
         </div>
-        <div class="mt-3 h-2 overflow-hidden rounded-full bg-canvas-soft-2">
+        <div class="mt-3 h-2 overflow-hidden rounded-full bg-hairline">
           <div class="h-full rounded-full bg-link transition-all duration-300" data-mastered-bar style="width:0%"></div>
         </div>
       </div>
     </div>
 
-    <div class="mt-8 flex flex-col gap-4 rounded-lg bg-canvas p-4 shadow-card md:p-5">
+    <div class="mt-8 flex flex-col gap-4 rounded-lg border border-hairline bg-canvas p-4 shadow-card md:p-5">
       <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
         <div class="flex flex-wrap gap-2" role="group" aria-label="Ownership filter">
           {
             ['all', 'owned', 'missing'].map((status) => (
               <button
                 type="button"
-                class="filter-chip inline-flex h-9 items-center rounded-pill-sm border border-hairline bg-canvas px-4 text-sm text-ink transition-colors data-[active=true]:border-ink data-[active=true]:bg-ink data-[active=true]:text-on-primary"
+                class="filter-chip inline-flex h-9 items-center rounded-pill-sm border border-hairline-strong bg-canvas px-4 text-sm font-medium text-ink transition-colors data-[active=true]:border-ink data-[active=true]:bg-ink data-[active=true]:text-on-primary"
                 data-filter-status={status}
                 data-active={status === 'all' ? 'true' : 'false'}
               >
@@ -80,7 +80,7 @@ const seasonJson = JSON.stringify(season);
           }
           <button
             type="button"
-            class="inline-flex h-9 items-center rounded-pill-sm border border-hairline bg-canvas px-4 text-sm font-medium text-ink transition-colors data-[active=true]:border-ink data-[active=true]:bg-canvas-soft-2"
+            class="inline-flex h-9 items-center rounded-pill-sm border border-hairline-strong bg-canvas px-4 text-sm font-medium text-ink transition-colors data-[active=true]:border-ink data-[active=true]:bg-canvas-soft-2"
             data-hunt-toggle
             data-active="false"
             aria-pressed="false"
@@ -94,7 +94,7 @@ const seasonJson = JSON.stringify(season);
             type="search"
             placeholder="Search sprites…"
             data-search
-            class="h-10 w-full rounded-sm border border-hairline bg-canvas px-3 text-sm text-ink outline-none placeholder:text-mute focus:border-hairline-strong"
+            class="h-10 w-full rounded-sm border border-hairline-strong bg-canvas px-3 text-sm text-ink outline-none placeholder:text-mute focus:border-ink"
           />
         </label>
       </div>
@@ -102,7 +102,7 @@ const seasonJson = JSON.stringify(season);
       <div class="-mx-1 flex flex-wrap gap-2 overflow-x-auto px-1 pb-1" role="group" aria-label="Rarity filter">
         <button
           type="button"
-          class="filter-chip inline-flex h-8 shrink-0 items-center rounded-full bg-canvas-soft px-3 text-xs text-body data-[active=true]:bg-ink data-[active=true]:text-on-primary"
+          class="filter-chip inline-flex h-8 shrink-0 items-center rounded-full border border-hairline-strong bg-canvas-soft px-3 text-xs font-medium text-ink data-[active=true]:border-ink data-[active=true]:bg-ink data-[active=true]:text-on-primary"
           data-filter-rarity="all"
           data-active="true"
         >
@@ -112,7 +112,7 @@ const seasonJson = JSON.stringify(season);
           rarities.map((rarity) => (
             <button
               type="button"
-              class="filter-chip inline-flex h-8 shrink-0 items-center rounded-full bg-canvas-soft px-3 text-xs capitalize text-body data-[active=true]:bg-ink data-[active=true]:text-on-primary"
+              class="filter-chip inline-flex h-8 shrink-0 items-center rounded-full border border-hairline-strong bg-canvas-soft px-3 text-xs font-medium capitalize text-ink data-[active=true]:border-ink data-[active=true]:bg-ink data-[active=true]:text-on-primary"
               data-filter-rarity={rarity}
               data-active="false"
             >
@@ -125,7 +125,7 @@ const seasonJson = JSON.stringify(season);
       <div class="-mx-1 flex flex-wrap gap-2 overflow-x-auto px-1 pb-1" role="group" aria-label="Variant filter">
         <button
           type="button"
-          class="filter-chip inline-flex h-8 shrink-0 items-center rounded-full border border-hairline px-3 text-xs text-body data-[active=true]:border-ink data-[active=true]:text-ink"
+          class="filter-chip inline-flex h-8 shrink-0 items-center rounded-full border border-hairline-strong px-3 text-xs font-medium text-ink data-[active=true]:border-ink data-[active=true]:bg-ink data-[active=true]:text-on-primary"
           data-filter-variant="all"
           data-active="true"
         >
@@ -135,7 +135,7 @@ const seasonJson = JSON.stringify(season);
           variants.map((variant) => (
             <button
               type="button"
-              class="filter-chip inline-flex h-8 shrink-0 items-center rounded-full border border-hairline px-3 text-xs text-body data-[active=true]:border-ink data-[active=true]:text-ink"
+              class="filter-chip inline-flex h-8 shrink-0 items-center rounded-full border border-hairline-strong px-3 text-xs font-medium text-ink data-[active=true]:border-ink data-[active=true]:bg-ink data-[active=true]:text-on-primary"
               data-filter-variant={variant}
               data-active="false"
             >
@@ -146,7 +146,7 @@ const seasonJson = JSON.stringify(season);
       </div>
     </div>
 
-    <p class="mt-4 text-sm text-mute" data-visible-count>{total} shown</p>
+    <p class="mt-4 text-sm text-body" data-visible-count>{total} shown</p>
     <p class="mt-2 hidden text-sm text-body" data-empty-state>
       Nothing matches these filters. Clear search or turn off Hunt Mode.
     </p>
@@ -155,7 +155,7 @@ const seasonJson = JSON.stringify(season);
       {
         catalog.map((entry) => (
           <article
-            class="sprite-cell group rounded-md bg-canvas p-4 shadow-card transition-transform duration-200 data-[hidden=true]:hidden data-[owned=true]:bg-canvas-soft"
+            class="sprite-cell group rounded-md border border-hairline bg-canvas p-4 shadow-card transition-transform duration-200 data-[hidden=true]:hidden data-[owned=true]:bg-canvas-soft"
             data-key={entry.key}
             data-rarity={entry.rarity}
             data-variant={entry.variantId}
@@ -169,7 +169,7 @@ const seasonJson = JSON.stringify(season);
                 <SpriteArt id={entry.spriteId} name={entry.spriteName} size="sm" />
                 <div>
                   <h3 class="text-sm font-medium text-ink">{entry.spriteName}</h3>
-                  <p class="text-xs text-mute">
+                  <p class="text-xs text-body">
                     <span class="capitalize">{entry.rarity}</span>
                     <span class="mx-1">·</span>
                     {entry.variantLabel}
@@ -178,7 +178,7 @@ const seasonJson = JSON.stringify(season);
               </div>
               <button
                 type="button"
-                class="master-btn inline-flex size-8 items-center justify-center rounded-full border border-hairline text-mute transition-colors hover:border-ink hover:text-ink data-[on=true]:border-link data-[on=true]:bg-link-bg-soft data-[on=true]:text-link"
+                class="master-btn inline-flex size-8 items-center justify-center rounded-full border border-hairline-strong text-body transition-colors hover:border-ink hover:text-ink data-[on=true]:border-link data-[on=true]:bg-link-bg-soft data-[on=true]:text-link"
                 data-master
                 data-on="false"
                 aria-label={`Toggle mastered for ${entry.spriteName} ${entry.variantLabel}`}
@@ -192,7 +192,7 @@ const seasonJson = JSON.stringify(season);
             {entry.bonus && <p class="mt-3 text-xs text-body">{entry.bonus}</p>}
             <button
               type="button"
-              class="own-btn mt-4 inline-flex h-9 w-full items-center justify-center rounded-sm border border-hairline text-sm font-medium text-ink transition-colors hover:bg-canvas-soft-2 data-[on=true]:border-ink data-[on=true]:bg-ink data-[on=true]:text-on-primary"
+              class="own-btn mt-4 inline-flex h-9 w-full items-center justify-center rounded-sm border border-hairline-strong text-sm font-medium text-ink transition-colors hover:bg-canvas-soft-2 data-[on=true]:border-ink data-[on=true]:bg-ink data-[on=true]:text-on-primary"
               data-own
               data-on="false"
             >
@@ -204,7 +204,7 @@ const seasonJson = JSON.stringify(season);
     </div>
 
     <div class="mt-10 grid gap-6 lg:grid-cols-2">
-      <div class="rounded-lg bg-canvas p-5 shadow-card-md" data-share-panel>
+      <div class="rounded-lg border border-hairline bg-canvas p-5 shadow-card-md" data-share-panel>
         <h3 class="text-display-sm text-ink">Share & backup</h3>
         <p class="mt-2 text-sm text-body">
           Copy a share link, export JSON for another device, or paste a backup to restore.
@@ -220,14 +220,14 @@ const seasonJson = JSON.stringify(season);
           <button
             type="button"
             data-copy-discord
-            class="inline-flex h-10 items-center rounded-pill border border-hairline bg-canvas px-4 text-sm font-medium text-ink"
+            class="inline-flex h-10 items-center rounded-pill border border-hairline-strong bg-canvas px-4 text-sm font-medium text-ink"
           >
             Copy missing list
           </button>
           <button
             type="button"
             data-export-json
-            class="inline-flex h-10 items-center rounded-pill border border-hairline bg-canvas px-4 text-sm font-medium text-ink"
+            class="inline-flex h-10 items-center rounded-pill border border-hairline-strong bg-canvas px-4 text-sm font-medium text-ink"
           >
             Export JSON
           </button>
@@ -237,21 +237,21 @@ const seasonJson = JSON.stringify(season);
           <textarea
             data-import-json
             rows="4"
-            class="mt-2 w-full rounded-sm border border-hairline bg-canvas p-3 font-mono text-xs text-ink outline-none focus:border-hairline-strong"
+            class="mt-2 w-full rounded-sm border border-hairline-strong bg-canvas p-3 font-mono text-xs text-ink outline-none focus:border-ink"
             placeholder='{"version":1,"seasonId":"...","owned":[],"mastered":[]}'
           ></textarea>
         </label>
         <button
           type="button"
           data-import-apply
-          class="mt-3 inline-flex h-9 items-center rounded-sm bg-canvas-soft-2 px-3 text-sm font-medium text-ink"
+          class="mt-3 inline-flex h-9 items-center rounded-sm border border-hairline-strong bg-canvas-soft-2 px-3 text-sm font-medium text-ink"
         >
           Apply import
         </button>
         <p class="mt-3 min-h-5 text-xs text-mute" data-share-status aria-live="polite"></p>
       </div>
 
-      <div class="rounded-lg bg-canvas p-5 shadow-card-md">
+      <div class="rounded-lg border border-hairline bg-canvas p-5 shadow-card-md">
         <h3 class="text-display-sm text-ink">Hunt Mode</h3>
         <p class="mt-2 text-sm text-body">
           Focus the board on missing variants, sorted by rarity so your next chest grab is intentional.
