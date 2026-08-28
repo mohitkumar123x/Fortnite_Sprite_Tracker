@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { DEFAULT_KEYWORDS, HOME_DESCRIPTION, HOME_TITLE, SITE_NAME } from '../lib/seo';
+import { LOCALES, localeFromPath, localeMeta, localizedPath, stripLocale } from '../lib/i18n';
 
 interface Props {
   title?: string;
@@ -23,7 +24,14 @@ const {
 } = Astro.props;
 
 const site = Astro.site ?? new URL('https://fortnitespritetracking.com');
-const canonicalURL = new URL(canonicalPath, site);
+const locale = localeFromPath(Astro.url.pathname);
+const pathNoLocale = stripLocale(canonicalPath);
+const canonicalURL = new URL(localizedPath(locale, pathNoLocale), site);
+const hreflangUrls = LOCALES.map((code) => ({
+  code,
+  href: new URL(localizedPath(code, pathNoLocale), site).href,
+}));
+const defaultHreflang = new URL(localizedPath('en', pathNoLocale), site).href;
 const ogImageURL = new URL('/og-image.png', site);
 const fullTitle = title.includes('Fortnite Sprite Tracker')
   ? title
@@ -54,7 +62,7 @@ const schemaList = Array.isArray(schema) ? schema : [schema];
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={localeMeta[locale].htmlLang}>
   <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VQN0PC7BF" is:inline></script>
@@ -85,7 +93,7 @@ const schemaList = Array.isArray(schema) ? schema : [schema];
     <link rel="shortcut icon" href="/favicon.ico?v=3" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="sitemap" href="/sitemap.xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
@@ -98,11 +106,22 @@ const schemaList = Array.isArray(schema) ? schema : [schema];
     <meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
     <meta name="googlebot" content={noIndex ? 'noindex, nofollow' : 'index, follow'} />
     <link rel="canonical" href={canonicalURL.href} />
+    {
+      hreflangUrls.map(({ code, href }) => (
+        <link rel="alternate" hreflang={localeMeta[code].htmlLang} href={href} />
+      ))
+    }
+    <link rel="alternate" hreflang="x-default" href={defaultHreflang} />
 
     {/* Open Graph */}
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={SITE_NAME} />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content={localeMeta[locale].ogLocale} />
+    {
+      LOCALES.filter((code) => code !== locale).map((code) => (
+        <meta property="og:locale:alternate" content={localeMeta[code].ogLocale} />
+      ))
+    }
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL.href} />

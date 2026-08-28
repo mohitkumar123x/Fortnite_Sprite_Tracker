@@ -4,6 +4,8 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import TrackerApp from '../../components/TrackerApp.astro';
 import { getCatalogForSeason, getPastSeasons, getSeasonBySlug } from '../../lib/catalog';
+import { localeFromPath, localizedPath, t } from '../../lib/i18n';
+import { localizeCatalog, localizeSeason } from '../../lib/localizeData';
 
 export function getStaticPaths() {
   return getPastSeasons().map((season) => ({
@@ -12,27 +14,30 @@ export function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
-const season = getSeasonBySlug(slug!);
-if (!season) {
-  return Astro.redirect('/seasons');
+const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
+const rawSeason = getSeasonBySlug(slug!);
+if (!rawSeason) {
+  return Astro.redirect(lp('/seasons'));
 }
-const catalog = getCatalogForSeason(season.id);
+const season = localizeSeason(rawSeason, locale);
+const catalog = localizeCatalog(getCatalogForSeason(season.id), locale);
 ---
 
 <Layout
-  title={`${season.label} | Fortnite Sprite Tracker Checklist`}
-  description={`Fortnite Sprite Tracker archive for ${season.label}. Mark Owned and Mastered variants on this season checklist — part of the Fortnite Sprite Tracker chart.`}
-  canonicalPath={`/seasons/${season.slug}`}
+  title={t(locale, 'pageSeasonDetailTitle', { label: season.label })}
+  description={t(locale, 'pageSeasonDetailDesc', { label: season.label })}
+  canonicalPath={lp(`/seasons/${season.slug}`)}
 >
   <Header slot="header" />
   <section class="border-b border-hairline bg-canvas">
     <div class="mx-auto max-w-[1400px] px-4 py-12 md:px-6">
-      <p class="text-caption-mono text-mute">Past season</p>
+      <p class="text-caption-mono text-mute">{t(locale, 'pastSeason')}</p>
       <h1 class="mt-3 text-display-lg text-ink">{season.label}.</h1>
       <p class="mt-3 max-w-2xl text-body">
-        This board no longer drops in live matches, but your checklist still lives locally keyed to this season.
+        {t(locale, 'seasonArchiveIntro')}
       </p>
-      <a href="/seasons" class="mt-6 inline-flex text-sm font-medium">← All seasons</a>
+      <a href={lp('/seasons')} class="mt-6 inline-flex text-sm font-medium">{t(locale, 'allSeasons')}</a>
     </div>
   </section>
   <TrackerApp season={season} catalog={catalog} />

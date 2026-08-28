@@ -18,6 +18,7 @@ export function buildCatalog(sprites: Sprite[]): CatalogEntry[] {
       spriteId: sprite.id,
       spriteName: sprite.name,
       rarity: sprite.rarity,
+      ability: sprite.ability,
       variantId: variant.id,
       variantLabel: variant.label,
       dustCost: variant.dustCost,

@@ -4,6 +4,10 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import LegalDoc from '../components/LegalDoc.astro';
 import { breadcrumbJsonLd, CONTACT_EMAIL, SITE_NAME, SITE_URL } from '../lib/seo';
+import { localeFromPath, localizedPath } from '../lib/i18n';
+
+const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
 
 const jsonLd = [
   breadcrumbJsonLd([{ name: 'Privacy policy', path: '/privacy' }]),
@@ -19,7 +23,7 @@ const jsonLd = [
 <Layout
   title="Privacy Policy — Fortnite Sprite Tracker"
   description="Privacy policy for Fortnite Sprite Tracker: progress stays in your browser, no account, no Epic login. How localStorage, share links, and hosting logs work."
-  canonicalPath="/privacy"
+  canonicalPath={lp('/privacy')}
   jsonLd={jsonLd}
 >
   <Header slot="header" />
@@ -32,7 +36,7 @@ const jsonLd = [
     <h2>Who we are</h2>
     <p>
       Fortnite Sprite Tracker (“we”, “the site”) is an unofficial fan website at fortnitespritetracking.com. For privacy
-      questions, use <a href="/contact">Contact us</a> or email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+      questions, use <a href={lp('/contact')}>Contact us</a> or email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
     </p>
 
     <h2>What we do not collect</h2>

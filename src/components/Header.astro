@@ -1,37 +1,44 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
 import Logo from './Logo.astro';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import FlagIcon from './FlagIcon.astro';
+import { LOCALES, localeFromPath, localeMeta, localizedPath, stripLocale, switchLocalePath, t } from '../lib/i18n';
 
 const pathname = Astro.url.pathname;
+const locale = localeFromPath(pathname);
+const path = stripLocale(pathname);
+const lp = (href: string) => localizedPath(locale, href);
 
 const links = [
-  { href: '/#tracker', label: 'Tracker' },
-  { href: '/seasons', label: 'Seasons' },
-  { href: '/sprites', label: 'Sprites' },
-  { href: '/compare', label: 'Compare' },
-  { href: '/faq', label: 'FAQ' },
+  { href: '/#tracker', label: t(locale, 'navTracker') },
+  { href: '/seasons', label: t(locale, 'navSeasons') },
+  { href: '/sprites', label: t(locale, 'navSprites') },
+  { href: '/compare', label: t(locale, 'navCompare') },
+  { href: '/cheat-codes', label: t(locale, 'navCheatCodes') },
+  { href: '/faq', label: t(locale, 'navFaq') },
 ];
 
 function isActive(href: string) {
-  if (href.startsWith('/#')) return pathname === '/';
-  return pathname === href || pathname.startsWith(`${href}/`);
+  if (href.startsWith('/#')) return path === '/';
+  return path === href || path.startsWith(`${href}/`);
 }
 ---
 
 <header class="sticky top-0 z-40 border-b border-hairline bg-canvas/90 backdrop-blur-md">
   <div class="mx-auto flex h-16 max-w-[1400px] items-center justify-between gap-3 px-4 md:gap-4 md:px-6">
-    <a href="/" class="group flex min-w-0 items-center gap-2 text-ink no-underline hover:text-ink">
+    <a href={lp('/')} class="group flex min-w-0 items-center gap-2 text-ink no-underline hover:text-ink">
       <span class="flex size-8 shrink-0 overflow-hidden rounded-md" aria-hidden="true">
         <Logo />
       </span>
       <span class="truncate text-sm font-medium tracking-tight">Fortnite Sprite Tracker</span>
     </a>
 
-    <nav class="hidden items-center gap-1 md:flex" aria-label="Primary">
+    <nav class="hidden items-center gap-1 md:flex" aria-label={t(locale, 'navPrimary')}>
       {
         links.map((link) => (
           <a
-            href={link.href}
+            href={lp(link.href)}
             class:list={[
               'rounded-full px-3 py-2 text-sm font-medium no-underline transition-colors',
               isActive(link.href)
@@ -46,12 +53,13 @@ function isActive(href: string) {
     </nav>
 
     <div class="flex shrink-0 items-center gap-2">
+      <LanguageSwitcher />
       <ThemeToggle />
       <a
-        href="/#tracker"
+        href={lp('/#tracker')}
         class="inline-flex h-9 items-center justify-center whitespace-nowrap rounded-sm bg-ink px-3 text-sm font-medium leading-none text-on-primary no-underline hover:bg-ink/90 hover:text-on-primary"
       >
-        Open tracker
+        {t(locale, 'openTracker')}
       </a>
       <button
         type="button"
@@ -59,7 +67,9 @@ function isActive(href: string) {
         class="inline-flex size-9 items-center justify-center rounded-full border border-hairline-strong bg-canvas text-ink md:hidden"
         aria-expanded="false"
         aria-controls="mobile-nav"
-        aria-label="Open menu"
+        aria-label={t(locale, 'openMenu')}
+        data-label-open={t(locale, 'openMenu')}
+        data-label-close={t(locale, 'closeMenu')}
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M4 7h16M4 12h16M4 17h16"></path>
@@ -69,11 +79,11 @@ function isActive(href: string) {
   </div>
 
   <div id="mobile-nav" class="hidden border-t border-hairline bg-canvas md:hidden" hidden>
-    <nav class="mx-auto flex max-w-[1400px] flex-col gap-1 px-4 py-3" aria-label="Mobile">
+    <nav class="mx-auto flex max-w-[1400px] flex-col gap-1 px-4 py-3" aria-label={t(locale, 'navMobile')}>
       {
         links.map((link) => (
           <a
-            href={link.href}
+            href={lp(link.href)}
             class="rounded-md px-3 py-2.5 text-sm text-body no-underline hover:bg-canvas-soft-2 hover:text-ink"
             data-mobile-link
           >
@@ -81,6 +91,31 @@ function isActive(href: string) {
           </a>
         ))
       }
+      <div class="mt-2 border-t border-hairline pt-3">
+        <p class="px-3 pb-1.5 text-caption-mono text-mute">{t(locale, 'language')}</p>
+        <div class="flex gap-1.5 px-3">
+          {
+            LOCALES.map((code) => (
+              <a
+                href={switchLocalePath(pathname, code)}
+                hreflang={localeMeta[code].htmlLang}
+                lang={localeMeta[code].htmlLang}
+                aria-current={code === locale ? 'page' : undefined}
+                class:list={[
+                  'inline-flex items-center gap-1.5 rounded-sm px-2.5 py-1.5 text-sm font-medium no-underline transition-colors',
+                  code === locale
+                    ? 'bg-canvas-soft-2 text-ink'
+                    : 'text-body hover:bg-canvas-soft-2 hover:text-ink',
+                ]}
+                data-mobile-link
+              >
+                <FlagIcon locale={code} class="w-4.5 h-3" />
+                <span class="text-xs">{localeMeta[code].label}</span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
     </nav>
   </div>
 </header>
@@ -88,6 +123,8 @@ function isActive(href: string) {
 <script>
   const toggle = document.getElementById('nav-toggle');
   const panel = document.getElementById('mobile-nav');
+  const openLabel = toggle?.getAttribute('data-label-open') || 'Open menu';
+  const closeLabel = toggle?.getAttribute('data-label-close') || 'Close menu';
   toggle?.addEventListener('click', () => {
     const open = panel?.hasAttribute('hidden') === false;
     if (!panel || !toggle) return;
@@ -95,12 +132,12 @@ function isActive(href: string) {
       panel.hidden = true;
       panel.classList.add('hidden');
       toggle.setAttribute('aria-expanded', 'false');
-      toggle.setAttribute('aria-label', 'Open menu');
+      toggle.setAttribute('aria-label', openLabel);
     } else {
       panel.hidden = false;
       panel.classList.remove('hidden');
       toggle.setAttribute('aria-expanded', 'true');
-      toggle.setAttribute('aria-label', 'Close menu');
+      toggle.setAttribute('aria-label', closeLabel);
     }
   });
   panel?.querySelectorAll('[data-mobile-link]').forEach((link) => {
@@ -109,6 +146,7 @@ function isActive(href: string) {
       panel.hidden = true;
       panel.classList.add('hidden');
       toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', openLabel);
     });
   });
 </script>

@@ -1,7 +1,8 @@
 ---
-/**
- * Homepage SEO article. Target 800–1200 words. Main keyword + supporting phrases used in headings and body.
- */
+import { localeFromPath, localizedPath } from '../lib/i18n';
+
+const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
 ---
 
 <article
@@ -39,7 +40,7 @@
       <h3 class="text-display-sm text-ink">Fortnite Sprite Tracker chart, list, and checklist</h3>
       <p>
         The home board is an interactive Fortnite Sprite Tracker chart: each sprite-variant pair is a cell you can mark.
-        Under that sits a Fortnite Sprite Tracker list by season on the <a href="/sprites">Sprites</a> pages, with
+        Under that sits a Fortnite Sprite Tracker list by season on the <a href={lp('/sprites')}>Sprites</a> pages, with
         ability notes and dust costs. Together they replace a static Fortnite Sprite Tracker template in Docs or Excel.
         Spreadsheets are fine until you need rarity filters, mastery stars, and a link you can paste in Discord.
       </p>
@@ -81,8 +82,8 @@
       <h3 class="text-display-sm text-ink">Fortnite Sprite Tracker with Batman (season archive)</h3>
       <p>
         Collabs leave the live pool. If you need a Fortnite Sprite Tracker with Batman or a Fortnite Sprite Tracker
-        Batman row from Chapter 7 Season 3, open <a href="/seasons">Seasons</a> and the
-        <a href="/sprites/s3-batman">Batman sprite page</a>. The archive keeps Fortnite Sprite Tracker Batman variants
+        Batman row from Chapter 7 Season 3, open <a href={lp('/seasons')}>Seasons</a> and the
+        <a href={lp('/sprites/s3-batman')}>Batman sprite page</a>. The archive keeps Fortnite Sprite Tracker Batman variants
         on a past-season chart so Fortnite Sprite Tracker my collection still shows those unlocks after Season 4 Override
         became the live board. That is how a new Fortnite Sprite Tracker / Fortnite Sprite Tracker new roster can exist
         without deleting last season’s work.
@@ -96,7 +97,7 @@
         <li>Copy a share link or export JSON to back up Fortnite Sprite Tracker my collection.</li>
         <li>Print the Missing filter if you want a Fortnite Sprite Tracker printable sheet for offline sessions.</li>
         <li>
-          Read abilities on the <a href="/sprites">Fortnite Sprite Tracker list</a>, then return to tick the checklist.
+          Read abilities on the <a href={lp('/sprites')}>Fortnite Sprite Tracker list</a>, then return to tick the checklist.
         </li>
       </ol>
       <p>
@@ -124,13 +125,13 @@
       <p>
         This Fortnite Sprite Tracker website is a fan project. It is not affiliated with Epic Games, fortnite.gg, IGN, or
         any publisher named in Fortnite Sprite Tracker gg or Fortnite Sprite Tracker IGN searches. It cannot grant
-        sprites. Check the <a href="/faq">FAQ</a> after patches. For trades, use
-        <a href="/compare">Compare</a> with two share codes rather than guessing from a blurry Fortnite Sprite Tracker
+        sprites. Check the <a href={lp('/faq')}>FAQ</a> after patches. For trades, use
+        <a href={lp('/compare')}>Compare</a> with two share codes rather than guessing from a blurry Fortnite Sprite Tracker
         image.
       </p>
       <p>
         Jump to the <a href="#tracker">Fortnite Sprite Tracker checklist</a>, the
-        <a href="/sprites">full Fortnite Sprite Tracker list</a>, or keep reading this guide when you are planning a
+        <a href={lp('/sprites')}>full Fortnite Sprite Tracker list</a>, or keep reading this guide when you are planning a
         completion run. Whether you needed a Fortnite Sprite Tracker chart, a Fortnite Sprite Tracker sheet replacement,
         a Fortnite Sprite Tracker with Batman archive, or simply the best online Fortnite Sprite Tracker for your locker
         — start marking. The next extract is easier when the board is honest.

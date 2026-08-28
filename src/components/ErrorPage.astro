@@ -1,4 +1,6 @@
 ---
+import { localeFromPath, localizedPath, t } from '../lib/i18n';
+
 interface Props {
   code: string;
   eyebrow: string;
@@ -7,6 +9,8 @@ interface Props {
 }
 
 const { code, eyebrow, heading, intro } = Astro.props;
+const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
 ---
 
 <section class="border-b border-hairline bg-canvas">
@@ -17,22 +21,22 @@ const { code, eyebrow, heading, intro } = Astro.props;
     <p class="mt-4 max-w-xl text-lg text-body">{intro}</p>
     <div class="mt-8 flex flex-wrap gap-3">
       <a
-        href="/"
+        href={lp('/')}
         class="inline-flex h-12 items-center rounded-pill bg-ink px-4 text-base font-medium text-on-primary no-underline hover:text-on-primary"
       >
-        Back to tracker
+        {t(locale, 'backTracker')}
       </a>
       <a
-        href="/sprites"
+        href={lp('/sprites')}
         class="inline-flex h-12 items-center rounded-pill border border-hairline bg-canvas px-4 text-base font-medium text-ink no-underline hover:bg-canvas-soft hover:text-ink"
       >
-        Sprite list
+        {t(locale, 'spriteList')}
       </a>
       <a
-        href="/faq"
+        href={lp('/faq')}
         class="inline-flex h-12 items-center rounded-pill border border-hairline bg-canvas px-4 text-base font-medium text-ink no-underline hover:bg-canvas-soft hover:text-ink"
       >
-        FAQ
+        {t(locale, 'navFaq')}
       </a>
     </div>
     <slot />

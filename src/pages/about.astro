@@ -4,6 +4,10 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import LegalDoc from '../components/LegalDoc.astro';
 import { breadcrumbJsonLd, SITE_NAME, SITE_URL } from '../lib/seo';
+import { localeFromPath, localizedPath } from '../lib/i18n';
+
+const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
 
 const jsonLd = [
   breadcrumbJsonLd([{ name: 'About us', path: '/about' }]),
@@ -26,7 +30,7 @@ const jsonLd = [
 <Layout
   title="About Fortnite Sprite Tracker — Unofficial Checklist & Collection Tool"
   description="About Fortnite Sprite Tracker: a free, unofficial online checklist for Owned and Mastered Sprites, Hunt Mode, share links, and season archives including Batman. No account required."
-  canonicalPath="/about"
+  canonicalPath={lp('/about')}
   jsonLd={jsonLd}
 >
   <Header slot="header" />
@@ -38,8 +42,8 @@ const jsonLd = [
   >
     <h2>What we do</h2>
     <p>
-      The site is a <a href="/">Fortnite Sprite Tracker</a> for Battle Royale companions: current-season boards, past-season archives,
-      a <a href="/sprites">sprite reference</a>, <a href="/compare">share-code compare</a>, and a <a href="/faq">FAQ</a>.
+      The site is a <a href={lp('/')}>Fortnite Sprite Tracker</a> for Battle Royale companions: current-season boards, past-season archives,
+      a <a href={lp('/sprites')}>sprite reference</a>, <a href={lp('/compare')}>share-code compare</a>, and a <a href={lp('/faq')}>FAQ</a>.
       Hunt Mode highlights what you still need. Export JSON and share links are backups you copy yourself.
     </p>
     <p>
@@ -62,7 +66,7 @@ const jsonLd = [
 
     <h2>Contact</h2>
     <p>
-      Questions about the site, privacy, or a data issue go to <a href="/contact">Contact us</a>. Game bugs and account
+      Questions about the site, privacy, or a data issue go to <a href={lp('/contact')}>Contact us</a>. Game bugs and account
       recovery belong with Epic’s official support, not us.
     </p>
   </LegalDoc>

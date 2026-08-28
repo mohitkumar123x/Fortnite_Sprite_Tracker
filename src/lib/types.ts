@@ -26,6 +26,7 @@ export type Season = {
   isCurrent: boolean;
   datasetVersion: string;
   patchNote: string;
+  archiveNote?: string;
 };
 
 export type SeasonProgress = {
@@ -42,6 +43,7 @@ export type CatalogEntry = {
   spriteId: string;
   spriteName: string;
   rarity: Rarity;
+  ability: string;
   variantId: string;
   variantLabel: string;
   dustCost?: number;

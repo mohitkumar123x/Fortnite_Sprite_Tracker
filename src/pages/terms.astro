@@ -4,6 +4,10 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import LegalDoc from '../components/LegalDoc.astro';
 import { breadcrumbJsonLd, CONTACT_EMAIL, SITE_NAME, SITE_URL } from '../lib/seo';
+import { localeFromPath, localizedPath } from '../lib/i18n';
+
+const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
 
 const jsonLd = [
   breadcrumbJsonLd([{ name: 'Terms & conditions', path: '/terms' }]),
@@ -19,7 +23,7 @@ const jsonLd = [
 <Layout
   title="Terms & Conditions — Fortnite Sprite Tracker"
   description="Terms and conditions for using Fortnite Sprite Tracker: unofficial fan site, no Epic affiliation, local progress, acceptable use, and limitation of liability."
-  canonicalPath="/terms"
+  canonicalPath={lp('/terms')}
   jsonLd={jsonLd}
 >
   <Header slot="header" />
@@ -76,7 +80,7 @@ const jsonLd = [
 
     <h2>Privacy</h2>
     <p>
-      How local storage, share links, and hosting logs work is described in the <a href="/privacy">Privacy policy</a>.
+      How local storage, share links, and hosting logs work is described in the <a href={lp('/privacy')}>Privacy policy</a>.
     </p>
 
     <h2>Changes</h2>
@@ -87,7 +91,7 @@ const jsonLd = [
 
     <h2>Contact</h2>
     <p>
-      Questions: <a href="/contact">Contact us</a> or <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+      Questions: <a href={lp('/contact')}>Contact us</a> or <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
     </p>
   </LegalDoc>
   <Footer slot="footer" />

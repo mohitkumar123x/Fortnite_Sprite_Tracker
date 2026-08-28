@@ -1,6 +1,8 @@
 ---
-import type { CatalogEntry, Season } from '../lib/types';
+import type { CatalogEntry, Rarity, Season } from '../lib/types';
 import SpriteArt from './SpriteArt.astro';
+import { localeFromPath, t, trackerCopy } from '../lib/i18n';
+import { localizeCatalog, localizeRarity, localizeVariantLabel } from '../lib/localizeData';
 
 interface Props {
   season: Season;
@@ -9,13 +11,16 @@ interface Props {
   showSeasonLink?: boolean;
 }
 
-const { season, catalog, seasonHref, showSeasonLink = false } = Astro.props;
+const { season, catalog: rawCatalog, seasonHref, showSeasonLink = false } = Astro.props;
+const locale = localeFromPath(Astro.url.pathname);
+const catalog = localizeCatalog(rawCatalog, locale);
+const i18nJson = JSON.stringify(trackerCopy(locale));
 
 const rarities = [...new Set(catalog.map((c) => c.rarity))];
 const variants = [...new Set(catalog.map((c) => c.variantId))];
 const variantLabels = Object.fromEntries(catalog.map((c) => [c.variantId, c.variantLabel]));
 const total = catalog.length;
-const rarityOrder = ['mythic', 'legendary', 'epic', 'rare', 'special'];
+const rarityOrder: Rarity[] = ['mythic', 'legendary', 'epic', 'rare', 'special'];
 rarities.sort((a, b) => rarityOrder.indexOf(a) - rarityOrder.indexOf(b));
 
 const catalogJson = JSON.stringify(catalog);
@@ -26,7 +31,7 @@ const seasonJson = JSON.stringify(season);
   <div class="mx-auto max-w-[1400px] px-4 py-16 md:px-6 md:py-24">
     <div class="flex flex-wrap items-end justify-between gap-4">
       <div>
-        <p class="text-caption-mono text-mute">Checklist</p>
+        <p class="text-caption-mono text-mute">{t(locale, 'checklist')}</p>
         <h2 class="mt-2 text-display-lg text-ink">{season.label}</h2>
         <p class="mt-2 text-sm text-body">{season.patchNote}</p>
       </div>
@@ -36,7 +41,7 @@ const seasonJson = JSON.stringify(season);
             href={seasonHref}
             class="inline-flex h-9 items-center rounded-pill border border-hairline bg-canvas px-3 text-sm font-medium text-ink no-underline hover:bg-canvas-soft-2 hover:text-ink"
           >
-            Season page
+            {t(locale, 'seasonPage')}
           </a>
         )
       }
@@ -45,7 +50,7 @@ const seasonJson = JSON.stringify(season);
     <div class="mt-8 grid gap-4 sm:grid-cols-2">
       <div class="rounded-lg border border-hairline bg-canvas p-5 shadow-card">
         <div class="flex items-center justify-between text-sm">
-          <span class="text-body">Owned</span>
+          <span class="text-body">{t(locale, 'owned')}</span>
           <span class="font-medium text-ink" data-owned-count>0 / {total}</span>
         </div>
         <div class="mt-3 h-2 overflow-hidden rounded-full bg-hairline">
@@ -54,7 +59,7 @@ const seasonJson = JSON.stringify(season);
       </div>
       <div class="rounded-lg border border-hairline bg-canvas p-5 shadow-card">
         <div class="flex items-center justify-between text-sm">
-          <span class="text-body">Mastered</span>
+          <span class="text-body">{t(locale, 'mastered')}</span>
           <span class="font-medium text-ink" data-mastered-count>0 / {total}</span>
         </div>
         <div class="mt-3 h-2 overflow-hidden rounded-full bg-hairline">
@@ -74,7 +79,7 @@ const seasonJson = JSON.stringify(season);
                 data-filter-status={status}
                 data-active={status === 'all' ? 'true' : 'false'}
               >
-                {status === 'all' ? 'All' : status === 'owned' ? 'Owned' : 'Missing'}
+                {status === 'all' ? t(locale, 'all') : status === 'owned' ? t(locale, 'owned') : t(locale, 'missing')}
               </button>
             ))
           }
@@ -85,14 +90,14 @@ const seasonJson = JSON.stringify(season);
             data-active="false"
             aria-pressed="false"
           >
-            Hunt Mode
+            {t(locale, 'huntMode')}
           </button>
         </div>
         <label class="relative block w-full max-w-sm">
-          <span class="sr-only">Search sprites</span>
+          <span class="sr-only">{t(locale, 'searchSprites')}</span>
           <input
             type="search"
-            placeholder="Search sprites…"
+            placeholder={t(locale, 'searchPlaceholder')}
             data-search
             class="h-10 w-full rounded-sm border border-hairline-strong bg-canvas px-3 text-sm text-ink outline-none placeholder:text-mute focus:border-ink"
           />
@@ -106,7 +111,7 @@ const seasonJson = JSON.stringify(season);
           data-filter-rarity="all"
           data-active="true"
         >
-          All rarities
+          {t(locale, 'allRarities')}
         </button>
         {
           rarities.map((rarity) => (
@@ -116,7 +121,7 @@ const seasonJson = JSON.stringify(season);
               data-filter-rarity={rarity}
               data-active="false"
             >
-              {rarity}
+              {localizeRarity(rarity as Rarity, locale)}
             </button>
           ))
         }
@@ -129,7 +134,7 @@ const seasonJson = JSON.stringify(season);
           data-filter-variant="all"
           data-active="true"
         >
-          All variants
+          {t(locale, 'allVariants')}
         </button>
         {
           variants.map((variant) => (
@@ -146,9 +151,9 @@ const seasonJson = JSON.stringify(season);
       </div>
     </div>
 
-    <p class="mt-4 text-sm text-body" data-visible-count>{total} shown</p>
+    <p class="mt-4 text-sm text-body" data-visible-count>{t(locale, 'shown', { n: total })}</p>
     <p class="mt-2 hidden text-sm text-body" data-empty-state>
-      Nothing matches these filters. Clear search or turn off Hunt Mode.
+      {t(locale, 'emptyFilters')}
     </p>
 
     <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" data-grid>
@@ -170,7 +175,7 @@ const seasonJson = JSON.stringify(season);
                 <div>
                   <h3 class="text-sm font-medium text-ink">{entry.spriteName}</h3>
                   <p class="text-xs text-body">
-                    <span class="capitalize">{entry.rarity}</span>
+                    <span class="capitalize">{localizeRarity(entry.rarity, locale)}</span>
                     <span class="mx-1">·</span>
                     {entry.variantLabel}
                   </p>
@@ -182,21 +187,30 @@ const seasonJson = JSON.stringify(season);
                 data-master
                 data-on="false"
                 aria-label={`Toggle mastered for ${entry.spriteName} ${entry.variantLabel}`}
-                title="Mastered"
+                title={t(locale, 'mastered')}
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.2L12 16.8 5.7 20.8 8 13.6 2 9.2h7.6L12 2z" />
                 </svg>
               </button>
             </div>
-            {entry.bonus && <p class="mt-3 text-xs text-body">{entry.bonus}</p>}
+            <p class="mt-3 text-xs leading-5 text-body line-clamp-2">{entry.ability}</p>
+            {
+              (entry.dustCost != null || entry.bonus) && (
+                <p class="mt-1.5 text-xs text-mute">
+                  {entry.dustCost != null ? t(locale, 'dustAmount', { n: entry.dustCost }) : null}
+                  {entry.dustCost != null && entry.bonus ? <span class="mx-1">·</span> : null}
+                  {entry.bonus}
+                </p>
+              )
+            }
             <button
               type="button"
               class="own-btn mt-4 inline-flex h-9 w-full items-center justify-center rounded-sm border border-hairline-strong text-sm font-medium text-ink transition-colors hover:bg-canvas-soft-2 data-[on=true]:border-ink data-[on=true]:bg-ink data-[on=true]:text-on-primary"
               data-own
               data-on="false"
             >
-              Mark owned
+              {t(locale, 'markOwned')}
             </button>
           </article>
         ))
@@ -205,9 +219,9 @@ const seasonJson = JSON.stringify(season);
 
     <div class="mt-10 grid gap-6 lg:grid-cols-2">
       <div class="rounded-lg border border-hairline bg-canvas p-5 shadow-card-md" data-share-panel>
-        <h3 class="text-display-sm text-ink">Share & backup</h3>
+        <h3 class="text-display-sm text-ink">{t(locale, 'shareBackup')}</h3>
         <p class="mt-2 text-sm text-body">
-          Copy a share link, export JSON for another device, or paste a backup to restore.
+          {t(locale, 'shareBackupBody')}
         </p>
         <div class="mt-4 flex flex-wrap gap-2">
           <button
@@ -215,25 +229,25 @@ const seasonJson = JSON.stringify(season);
             data-copy-share
             class="inline-flex h-10 items-center rounded-pill bg-ink px-4 text-sm font-medium text-on-primary"
           >
-            Copy share link
+            {t(locale, 'copyShare')}
           </button>
           <button
             type="button"
             data-copy-discord
             class="inline-flex h-10 items-center rounded-pill border border-hairline-strong bg-canvas px-4 text-sm font-medium text-ink"
           >
-            Copy missing list
+            {t(locale, 'copyMissing')}
           </button>
           <button
             type="button"
             data-export-json
             class="inline-flex h-10 items-center rounded-pill border border-hairline-strong bg-canvas px-4 text-sm font-medium text-ink"
           >
-            Export JSON
+            {t(locale, 'exportJson')}
           </button>
         </div>
         <label class="mt-4 block">
-          <span class="text-caption-mono text-mute">Import JSON</span>
+          <span class="text-caption-mono text-mute">{t(locale, 'importJson')}</span>
           <textarea
             data-import-json
             rows="4"
@@ -246,27 +260,27 @@ const seasonJson = JSON.stringify(season);
           data-import-apply
           class="mt-3 inline-flex h-9 items-center rounded-sm border border-hairline-strong bg-canvas-soft-2 px-3 text-sm font-medium text-ink"
         >
-          Apply import
+          {t(locale, 'applyImport')}
         </button>
         <p class="mt-3 min-h-5 text-xs text-mute" data-share-status aria-live="polite"></p>
       </div>
 
       <div class="rounded-lg border border-hairline bg-canvas p-5 shadow-card-md">
-        <h3 class="text-display-sm text-ink">Hunt Mode</h3>
+        <h3 class="text-display-sm text-ink">{t(locale, 'huntMode')}</h3>
         <p class="mt-2 text-sm text-body">
-          Focus the board on missing variants, sorted by rarity so your next chest grab is intentional.
+          {t(locale, 'huntBody')}
         </p>
         <ol class="mt-4 space-y-2" data-hunt-list>
-          <li class="text-sm text-mute">Enable Hunt Mode to see your priority list.</li>
+          <li class="text-sm text-mute">{t(locale, 'huntEnable')}</li>
         </ol>
         <div class="mt-6 border-t border-hairline pt-5">
-          <p class="text-sm text-body">Need a clean slate for this season?</p>
+          <p class="text-sm text-body">{t(locale, 'resetNeed')}</p>
           <button
             type="button"
             data-reset
             class="mt-3 inline-flex h-9 items-center rounded-sm border border-error-soft bg-error-soft px-3 text-sm font-medium text-error"
           >
-            Reset season progress
+            {t(locale, 'resetSeason')}
           </button>
         </div>
       </div>
@@ -275,6 +289,7 @@ const seasonJson = JSON.stringify(season);
 
   <script type="application/json" data-catalog-json set:html={catalogJson} />
   <script type="application/json" data-season-json set:html={seasonJson} />
+  <script type="application/json" data-i18n-json set:html={i18nJson} />
 </section>
 
 <script>
@@ -294,7 +309,18 @@ const seasonJson = JSON.stringify(season);
   if (root) {
     const catalog = JSON.parse(root.querySelector('[data-catalog-json]')?.textContent || '[]') as CatalogEntry[];
     const season = JSON.parse(root.querySelector('[data-season-json]')?.textContent || '{}') as Season;
+    const copy = JSON.parse(root.querySelector('[data-i18n-json]')?.textContent || '{}') as Record<string, string>;
     const catalogKeys = catalog.map((c) => c.key);
+
+    function msg(key: string, vars?: Record<string, string | number>) {
+      let value = copy[key] || key;
+      if (vars) {
+        for (const [k, v] of Object.entries(vars)) {
+          value = value.replaceAll(`{${k}}`, String(v));
+        }
+      }
+      return value;
+    }
 
     let progress = loadSeasonProgress(season.id);
     let filters = {
@@ -312,7 +338,7 @@ const seasonJson = JSON.stringify(season);
       if (decoded && decoded.seasonId === season.id) {
         progress = decoded.progress;
         saveSeasonProgress(season.id, progress);
-        queueMicrotask(() => setStatus('Loaded shared collection for this season.'));
+        queueMicrotask(() => setStatus(msg('loadedShare')));
       }
     }
 
@@ -385,7 +411,7 @@ const seasonJson = JSON.stringify(season);
       url.searchParams.set('c', code);
       url.hash = 'tracker';
       await navigator.clipboard.writeText(url.toString());
-      setStatus('Share link copied.');
+      setStatus(msg('shareCopied'));
     });
 
     root.querySelector('[data-copy-discord]')?.addEventListener('click', async () => {
@@ -394,36 +420,36 @@ const seasonJson = JSON.stringify(season);
         .filter((c) => !owned.has(c.key))
         .map((c) => ({ spriteName: c.spriteName, variantLabel: c.variantLabel }));
       await navigator.clipboard.writeText(missingDiscordText(season.label, missing));
-      setStatus('Missing list copied.');
+      setStatus(msg('missingCopied'));
     });
 
     root.querySelector('[data-export-json]')?.addEventListener('click', async () => {
       await navigator.clipboard.writeText(exportJson(season.id, progress));
-      setStatus('JSON backup copied to clipboard.');
+      setStatus(msg('jsonCopied'));
     });
 
     root.querySelector('[data-import-apply]')?.addEventListener('click', () => {
       const raw = (root.querySelector('[data-import-json]') as HTMLTextAreaElement | null)?.value || '';
       const parsed = importJson(raw);
       if (!parsed) {
-        setStatus('Could not parse JSON backup.', true);
+        setStatus(msg('jsonParseFail'), true);
         return;
       }
       if (parsed.seasonId !== season.id) {
-        setStatus(`This backup is for ${parsed.seasonId}, not ${season.id}.`, true);
+        setStatus(msg('jsonWrongSeason', { got: parsed.seasonId, want: season.id }), true);
         return;
       }
       progress = parsed.progress;
       saveSeasonProgress(season.id, progress);
-      setStatus('Backup restored for this season.');
+      setStatus(msg('backupRestored'));
       render();
     });
 
     root.querySelector('[data-reset]')?.addEventListener('click', () => {
-      if (!window.confirm('Reset all Owned and Mastered marks for this season?')) return;
+      if (!window.confirm(msg('confirmReset'))) return;
       progress = emptyProgress();
       saveSeasonProgress(season.id, progress);
-      setStatus('Season progress cleared.');
+      setStatus(msg('seasonCleared'));
       render();
     });
 
@@ -478,7 +504,7 @@ const seasonJson = JSON.stringify(season);
         const masterBtn = cell.querySelector('[data-master]');
         ownBtn?.setAttribute('data-on', isOwned ? 'true' : 'false');
         masterBtn?.setAttribute('data-on', isMastered ? 'true' : 'false');
-        if (ownBtn) ownBtn.textContent = isOwned ? 'Owned' : 'Mark owned';
+        if (ownBtn) ownBtn.textContent = isOwned ? msg('owned') : msg('markOwned');
 
         const statusOk =
           filters.status === 'all' ||
@@ -493,7 +519,7 @@ const seasonJson = JSON.stringify(season);
       });
 
       const visibleEl = root!.querySelector('[data-visible-count]');
-      if (visibleEl) visibleEl.textContent = `${visible} shown`;
+      if (visibleEl) visibleEl.textContent = msg('shown', { n: visible });
       const empty = root!.querySelector('[data-empty-state]');
       empty?.classList.toggle('hidden', visible !== 0);
 
@@ -501,9 +527,9 @@ const seasonJson = JSON.stringify(season);
       if (huntEl) {
         const list = huntList(catalog, progress).slice(0, 8);
         if (!filters.hunt) {
-          huntEl.innerHTML = '<li class="text-sm text-mute">Enable Hunt Mode to see your priority list.</li>';
+          huntEl.innerHTML = `<li class="text-sm text-mute">${msg('huntEnable')}</li>`;
         } else if (list.length === 0) {
-          huntEl.innerHTML = '<li class="text-sm text-body">Nothing left to hunt — collection complete.</li>';
+          huntEl.innerHTML = `<li class="text-sm text-body">${msg('huntComplete')}</li>`;
         } else {
           huntEl.innerHTML = list
             .map(

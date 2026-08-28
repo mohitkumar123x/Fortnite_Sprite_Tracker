@@ -1,5 +1,6 @@
 ---
-import { seoFaqs, type FaqItem } from '../data/faqs';
+import { getSeoFaqs, type FaqItem } from '../data/faqs';
+import { localeFromPath, t } from '../lib/i18n';
 
 interface Props {
   items?: FaqItem[];
@@ -8,11 +9,12 @@ interface Props {
   intro?: string;
 }
 
+const locale = localeFromPath(Astro.url.pathname);
 const {
-  items = seoFaqs,
-  heading = 'Fortnite Sprite Tracker FAQ',
-  eyebrow = 'FAQ',
-  intro = 'Straight answers on Sprites, rarity, this tracker, and related Fortnite questions.',
+  items = getSeoFaqs(locale),
+  heading = t(locale, 'faqHeading'),
+  eyebrow = t(locale, 'faqEyebrow'),
+  intro = t(locale, 'faqIntro'),
 } = Astro.props;
 
 function answerPlain(html: string) {

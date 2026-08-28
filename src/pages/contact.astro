@@ -4,6 +4,10 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import LegalDoc from '../components/LegalDoc.astro';
 import { breadcrumbJsonLd, CONTACT_EMAIL, SITE_NAME, SITE_URL } from '../lib/seo';
+import { localeFromPath, localizedPath } from '../lib/i18n';
+
+const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
 
 const jsonLd = [
   breadcrumbJsonLd([{ name: 'Contact us', path: '/contact' }]),
@@ -25,7 +29,7 @@ const jsonLd = [
 <Layout
   title="Contact Fortnite Sprite Tracker"
   description="Contact Fortnite Sprite Tracker: email hello@fortnitespritetracking.com for site, privacy, or data questions. Unofficial fan project — not Epic Games support."
-  canonicalPath="/contact"
+  canonicalPath={lp('/contact')}
   jsonLd={jsonLd}
 >
   <Header slot="header" />
@@ -92,10 +96,10 @@ const jsonLd = [
 
     <h2>Other pages</h2>
     <ul>
-      <li><a href="/about">About us</a></li>
-      <li><a href="/privacy">Privacy policy</a></li>
-      <li><a href="/terms">Terms &amp; conditions</a></li>
-      <li><a href="/faq">FAQ</a></li>
+      <li><a href={lp('/about')}>About us</a></li>
+      <li><a href={lp('/privacy')}>Privacy policy</a></li>
+      <li><a href={lp('/terms')}>Terms &amp; conditions</a></li>
+      <li><a href={lp('/faq')}>FAQ</a></li>
     </ul>
   </LegalDoc>
   <Footer slot="footer" />

@@ -2,21 +2,27 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import { allSeasons, getCatalogForSeason, getSpritesForSeason } from '../../lib/catalog';
+import { allSeasons as rawSeasons, getCatalogForSeason, getSpritesForSeason } from '../../lib/catalog';
+import { localeFromPath, localizedPath, t } from '../../lib/i18n';
+import { localizeSeasons } from '../../lib/localizeData';
+
+const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
+const allSeasons = localizeSeasons(rawSeasons, locale);
 ---
 
 <Layout
-  title="Fortnite Sprite Tracker Seasons — Current & Archive Checklists"
-  description="Fortnite Sprite Tracker seasons: live Season 4 checklist plus Season 3 archive (Batman and more). Keep past Fortnite Sprite Tracker charts without losing progress."
-  canonicalPath="/seasons"
+  title={t(locale, 'pageSeasonsTitle')}
+  description={t(locale, 'pageSeasonsDesc')}
+  canonicalPath={lp('/seasons')}
 >
   <Header slot="header" />
   <section class="border-b border-hairline bg-canvas">
     <div class="mx-auto max-w-[1400px] px-4 py-16 md:px-6 md:py-24">
-      <p class="text-caption-mono text-mute">Archives</p>
-      <h1 class="mt-3 text-display-lg text-ink">Seasons.</h1>
+      <p class="text-caption-mono text-mute">{t(locale, 'archives')}</p>
+      <h1 class="mt-3 text-display-lg text-ink">{t(locale, 'seasonsTitle')}</h1>
       <p class="mt-3 max-w-2xl text-lg text-body">
-        Track the live season on the home page, or reopen a past board without losing your local progress.
+        {t(locale, 'seasonsIntro')}
       </p>
       <div class="mt-10 grid gap-4 md:grid-cols-2">
         {
@@ -25,20 +31,20 @@ import { allSeasons, getCatalogForSeason, getSpritesForSeason } from '../../lib/
             const catalog = getCatalogForSeason(season.id);
             return (
               <a
-                href={season.isCurrent ? '/#tracker' : `/seasons/${season.slug}`}
+                href={season.isCurrent ? lp('/#tracker') : lp(`/seasons/${season.slug}`)}
                 class="block rounded-lg bg-canvas-soft p-6 shadow-card no-underline transition-transform hover:-translate-y-0.5 hover:text-ink"
               >
                 <div class="flex items-center justify-between gap-3">
                   <h2 class="text-display-md text-ink">{season.label}</h2>
                   {season.isCurrent ? (
-                    <span class="rounded-full bg-link-bg-soft px-2 py-1 text-caption-mono text-link-deep">Current</span>
+                    <span class="rounded-full bg-link-bg-soft px-2 py-1 text-caption-mono text-link-deep">{t(locale, 'current')}</span>
                   ) : (
-                    <span class="rounded-full bg-canvas px-2 py-1 text-caption-mono text-mute">Archive</span>
+                    <span class="rounded-full bg-canvas px-2 py-1 text-caption-mono text-mute">{t(locale, 'archive')}</span>
                   )}
                 </div>
                 <p class="mt-2 text-sm text-body">{season.patchNote}</p>
                 <p class="mt-4 text-sm text-mute">
-                  {sprites.length} sprites · {catalog.length} variants
+                  {t(locale, 'spritesMeta', { sprites: sprites.length, variants: catalog.length })}
                 </p>
               </a>
             );

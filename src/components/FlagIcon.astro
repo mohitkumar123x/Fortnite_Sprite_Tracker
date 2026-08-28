@@ -1,0 +1,116 @@
+---
+import type { Locale } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+  class?: string;
+}
+
+const { locale, class: className = 'w-5 h-3.5' } = Astro.props;
+---
+
+{
+  locale === 'en' && (
+    <svg
+      class:list={['inline-block overflow-hidden rounded-[2px] border border-black/15 shrink-0 align-middle', className]}
+      viewBox="0 0 640 480"
+      aria-hidden="true"
+    >
+      <path fill="#bd3d44" d="M0 0h640v480H0z" />
+      <path stroke="#fff" stroke-width="37" d="M0 55.5h640M0 129.5h640M0 203.5h640M0 277.5h640M0 351.5h640M0 425.5h640" />
+      <path fill="#192f5d" d="M0 0h286v258H0z" />
+      <g fill="#fff">
+        <g id="s">
+          <polygon points="14,3 17,12 26,12 19,17 21,26 14,21 7,26 9,17 2,12 11,12" />
+        </g>
+        <use href="#s" x="46" />
+        <use href="#s" x="92" />
+        <use href="#s" x="138" />
+        <use href="#s" x="184" />
+        <use href="#s" x="230" />
+        <use href="#s" x="23" y="24" />
+        <use href="#s" x="69" y="24" />
+        <use href="#s" x="115" y="24" />
+        <use href="#s" x="161" y="24" />
+        <use href="#s" x="207" y="24" />
+        <use href="#s" y="48" />
+        <use href="#s" x="46" y="48" />
+        <use href="#s" x="92" y="48" />
+        <use href="#s" x="138" y="48" />
+        <use href="#s" x="184" y="48" />
+        <use href="#s" x="230" y="48" />
+        <use href="#s" x="23" y="72" />
+        <use href="#s" x="69" y="72" />
+        <use href="#s" x="115" y="72" />
+        <use href="#s" x="161" y="72" />
+        <use href="#s" x="207" y="72" />
+        <use href="#s" y="96" />
+        <use href="#s" x="46" y="96" />
+        <use href="#s" x="92" y="96" />
+        <use href="#s" x="138" y="96" />
+        <use href="#s" x="184" y="96" />
+        <use href="#s" x="230" y="96" />
+        <use href="#s" x="23" y="120" />
+        <use href="#s" x="69" y="120" />
+        <use href="#s" x="115" y="120" />
+        <use href="#s" x="161" y="120" />
+        <use href="#s" x="207" y="120" />
+        <use href="#s" y="144" />
+        <use href="#s" x="46" y="144" />
+        <use href="#s" x="92" y="144" />
+        <use href="#s" x="138" y="144" />
+        <use href="#s" x="184" y="144" />
+        <use href="#s" x="230" y="144" />
+        <use href="#s" x="23" y="168" />
+        <use href="#s" x="69" y="168" />
+        <use href="#s" x="115" y="168" />
+        <use href="#s" x="161" y="168" />
+        <use href="#s" x="207" y="168" />
+        <use href="#s" y="192" />
+        <use href="#s" x="46" y="192" />
+        <use href="#s" x="92" y="192" />
+        <use href="#s" x="138" y="192" />
+        <use href="#s" x="184" y="192" />
+        <use href="#s" x="230" y="192" />
+      </g>
+    </svg>
+  )
+}
+
+{
+  locale === 'es' && (
+    <svg
+      class:list={['inline-block overflow-hidden rounded-[2px] border border-black/15 shrink-0 align-middle', className]}
+      viewBox="0 0 750 500"
+      aria-hidden="true"
+    >
+      <rect width="750" height="500" fill="#c60b1e" />
+      <rect y="125" width="750" height="250" fill="#ffc400" />
+      {/* Crown & Shield emblem simplified graphic */}
+      <g transform="translate(180, 185) scale(0.75)">
+        <path d="M20 20 h60 v70 a30 30 0 0 1 -60 0 z" fill="#ad1519" stroke="#7e080b" stroke-width="4" />
+        <path d="M50 20 v70 M20 55 h60" stroke="#ffc400" stroke-width="4" />
+        <circle cx="50" cy="55" r="10" fill="#003882" />
+        <path d="M10 10 h80 v8 h-80 z" fill="#ffc400" />
+        <circle cx="25" cy="5" r="5" fill="#c60b1e" />
+        <circle cx="50" cy="5" r="5" fill="#ffc400" />
+        <circle cx="75" cy="5" r="5" fill="#c60b1e" />
+      </g>
+    </svg>
+  )
+}
+
+{
+  locale === 'pt' && (
+    <svg
+      class:list={['inline-block overflow-hidden rounded-[2px] border border-black/15 shrink-0 align-middle', className]}
+      viewBox="0 0 700 490"
+      aria-hidden="true"
+    >
+      <rect width="700" height="490" fill="#009b3a" />
+      <polygon points="350,56 644,245 350,434 56,245" fill="#fedf00" />
+      <circle cx="350" cy="245" r="120" fill="#002776" />
+      <path d="M 233 260 A 120 120 0 0 1 467 220" fill="none" stroke="#ffffff" stroke-width="18" />
+    </svg>
+  )
+}
