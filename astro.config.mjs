@@ -65,7 +65,9 @@ export default defineConfig({
           unprefixed === '/seasons' ||
           unprefixed === '/compare' ||
           unprefixed === '/cheat-codes' ||
-          unprefixed === '/faq'
+          unprefixed === '/faq' ||
+          unprefixed === '/blog' ||
+          unprefixed === '/dust-calculator'
         ) {
           item.changefreq = EnumChangefreq.WEEKLY;
           item.priority = 0.8;

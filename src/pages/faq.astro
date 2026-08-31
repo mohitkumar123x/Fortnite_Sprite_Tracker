@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 import FaqSection from '../components/FaqSection.astro';
 import { faqPageJsonLd, getAllFaqs } from '../data/faqs';
 import { localeFromPath, localizedPath, t } from '../lib/i18n';
@@ -18,6 +19,25 @@ const allFaqs = getAllFaqs(locale);
   jsonLd={faqPageJsonLd(allFaqs)}
 >
   <Header slot="header" />
+  <div class="mx-auto max-w-[800px] px-4 pt-8 md:px-6 md:pt-12">
+    <Breadcrumb locale={locale} items={[{ label: t(locale, 'bcFaq') }]} />
+    <div class="flex justify-end">
+      <button
+        type="button"
+        data-print-btn
+        class="inline-flex items-center gap-2 rounded-full border border-hairline bg-canvas-soft px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-canvas-soft-2"
+        title={t(locale, 'printPage')}
+        aria-label={t(locale, 'printPage')}
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        {t(locale, 'printPage')}
+      </button>
+    </div>
+  </div>
   <FaqSection
     items={allFaqs}
     heading={t(locale, 'faqPageHeading')}
@@ -35,3 +55,9 @@ const allFaqs = getAllFaqs(locale);
   </section>
   <Footer slot="footer" />
 </Layout>
+
+<script is:inline>
+  document.querySelectorAll('[data-print-btn]').forEach(function (btn) {
+    btn.addEventListener('click', function () { window.print(); });
+  });
+</script>

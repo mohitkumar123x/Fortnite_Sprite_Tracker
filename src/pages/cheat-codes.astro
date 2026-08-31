@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 import { getLocalizedCheats } from '../data/cheats';
 import { localeFromPath, localizedPath, t } from '../lib/i18n';
 import { SITE_URL } from '../lib/seo';
@@ -50,6 +51,9 @@ const jsonLd = [
 
 <Layout title={title} description={description} canonicalPath={lp('/cheat-codes')} jsonLd={jsonLd}>
   <Header slot="header" />
+  <div class="mx-auto max-w-[840px] px-4 pt-4 md:px-6">
+    <Breadcrumb locale={locale} items={[{ label: t(locale, 'bcCheatCodes') }]} />
+  </div>
 
   <section class="min-h-screen border-b border-hairline bg-canvas/95 py-8 md:py-14" data-cheats-root>
     <div class="mx-auto max-w-[840px] px-4 md:px-6">
@@ -70,9 +74,24 @@ const jsonLd = [
           <h1 class="text-2xl font-bold tracking-tight text-ink md:text-3xl">{t(locale, 'cheatCodesPageTitle')}</h1>
         </div>
 
-        <button
-          type="button"
-          data-reset-cheats
+        <div class="flex items-center gap-2">
+          <button
+            type="button"
+            data-print-btn
+            class="inline-flex size-10 items-center justify-center rounded-full border border-hairline bg-canvas-soft text-ink transition-colors hover:bg-canvas-soft-2"
+            title={t(locale, 'printPage')}
+            aria-label={t(locale, 'printPage')}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            data-reset-cheats
           data-confirm-text={t(locale, 'confirmResetCheats')}
           data-toast-reset={t(locale, 'allCheatsResetToast')}
           class="inline-flex size-10 items-center justify-center rounded-full border border-hairline bg-canvas-soft text-ink transition-colors hover:bg-canvas-soft-2 hover:text-error"
@@ -83,7 +102,8 @@ const jsonLd = [
             <path d="M21.5 2v6h-6"></path>
             <path d="M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
           </svg>
-        </button>
+          </button>
+        </div>
       </div>
 
       <!-- Subtitle Description -->
@@ -407,4 +427,10 @@ const jsonLd = [
 
     render();
   }
+</script>
+
+<script is:inline>
+  document.querySelectorAll('[data-print-btn]').forEach(function (btn) {
+    btn.addEventListener('click', function () { window.print(); });
+  });
 </script>

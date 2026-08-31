@@ -2,6 +2,7 @@
 import { localeFromPath, localizedPath, t } from '../lib/i18n';
 
 const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
 ---
 
 <section class="relative overflow-hidden border-b border-hairline bg-canvas">
@@ -26,10 +27,29 @@ const locale = localeFromPath(Astro.url.pathname);
         {t(locale, 'openTracker')}
       </a>
       <a
-        href={localizedPath(locale, '/sprites')}
+        href={lp('/sprites')}
         class="inline-flex h-12 items-center rounded-pill border border-hairline-strong bg-canvas px-4 text-base font-medium text-ink no-underline hover:bg-canvas-soft hover:text-ink"
       >
         {t(locale, 'browseSprites')}
+      </a>
+      <a
+        href={lp('/cheat-codes')}
+        class="inline-flex h-12 items-center rounded-pill border border-hairline-strong bg-canvas px-4 text-base font-medium text-ink no-underline hover:bg-canvas-soft hover:text-ink"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+          <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+          <path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"></path>
+        </svg>
+        {t(locale, 'heroCheatCodes')}
+      </a>
+      <a
+        href={lp('/dust-calculator')}
+        class="inline-flex h-12 items-center rounded-pill border border-hairline-strong bg-canvas px-4 text-base font-medium text-ink no-underline hover:bg-canvas-soft hover:text-ink"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+          <path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.2L12 16.8 5.7 20.8 8 13.6 2 9.2h7.6L12 2z"></path>
+        </svg>
+        {t(locale, 'heroDustCalc')}
       </a>
     </div>
   </div>

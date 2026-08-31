@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import SpriteArt from '../../components/SpriteArt.astro';
 import { allSprites, getSeasonById } from '../../lib/catalog';
 import { localeFromPath, localizedPath, t } from '../../lib/i18n';
@@ -33,6 +34,10 @@ const localizedAbility = localizeSpriteAbility(sprite.id, sprite.ability, locale
   <Header slot="header" />
   <article class="border-b border-hairline bg-canvas">
     <div class="mx-auto max-w-[900px] px-4 py-16 md:px-6 md:py-24">
+      <Breadcrumb locale={locale} items={[
+        { label: t(locale, 'bcSprites'), href: lp('/sprites') },
+        { label: sprite.name },
+      ]} />
       <a href={lp('/sprites')} class="text-sm font-medium">{t(locale, 'backSprites')}</a>
       <div class="mt-8 flex items-start gap-5">
         <SpriteArt id={sprite.id} name={sprite.name} size="lg" />

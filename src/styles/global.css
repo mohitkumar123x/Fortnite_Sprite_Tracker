@@ -321,3 +321,63 @@
     radial-gradient(ellipse 55% 45% at 22% 88%, color-mix(in srgb, var(--color-gradient-ship-end) 72%, transparent), transparent 52%),
     radial-gradient(ellipse 50% 40% at 92% 82%, color-mix(in srgb, var(--color-gradient-develop-end) 80%, transparent), transparent 52%);
 }
+
+/* Print styles */
+@media print {
+  header,
+  footer,
+  [data-print-hide],
+  .no-print,
+  nav,
+  #nav-toggle,
+  [data-toast],
+  [data-reset-cheats],
+  [data-copy-btn],
+  [data-filter-status] {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  main {
+    padding: 0 !important;
+  }
+
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #666;
+  }
+
+  nav a[href]::after,
+  header a[href]::after,
+  footer a[href]::after {
+    content: none;
+  }
+
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  td, th {
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+  }
+}
