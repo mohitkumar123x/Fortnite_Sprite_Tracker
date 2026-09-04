@@ -59,11 +59,11 @@ const jsonLd = [
     <div class="mx-auto max-w-[840px] px-4 md:px-6">
 
       <!-- Header Row -->
-      <div class="flex items-center justify-between gap-4">
-        <div class="flex items-center gap-3">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-3 min-w-0">
           <a
             href={lp('/')}
-            class="inline-flex size-10 items-center justify-center rounded-full border border-hairline bg-canvas-soft text-ink transition-colors hover:bg-canvas-soft-2"
+            class="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-hairline bg-canvas-soft text-ink transition-colors hover:bg-canvas-soft-2"
             aria-label={t(locale, 'backToTracker')}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -71,10 +71,10 @@ const jsonLd = [
               <polyline points="12 19 5 12 12 5"></polyline>
             </svg>
           </a>
-          <h1 class="text-2xl font-bold tracking-tight text-ink md:text-3xl">{t(locale, 'cheatCodesPageTitle')}</h1>
+          <h1 class="min-w-0 truncate text-2xl font-bold tracking-tight text-ink md:text-3xl">{t(locale, 'cheatCodesPageTitle')}</h1>
         </div>
 
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2 shrink-0">
           <button
             type="button"
             data-print-btn
@@ -127,7 +127,7 @@ const jsonLd = [
       </div>
 
       <!-- Search & Filters -->
-      <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <div class="mt-6 flex flex-col gap-3">
         <div class="flex flex-wrap gap-1.5" role="group" aria-label="Filter status">
           {['all', 'unused', 'used'].map((status) => (
             <button
@@ -141,7 +141,7 @@ const jsonLd = [
           ))}
         </div>
 
-        <label class="relative block w-full sm:w-64">
+        <label class="relative block w-full">
           <span class="sr-only">{t(locale, 'searchCheatsPlaceholder')}</span>
           <input
             type="search"
@@ -165,7 +165,7 @@ const jsonLd = [
       <div class="mt-6 space-y-3" data-cheats-list data-total-count={cheatCodes.length}>
         {cheatCodes.map((item) => (
           <div
-            class="cheat-row group relative flex items-center justify-between gap-3 rounded-xl border border-hairline bg-canvas p-4 shadow-card transition-all duration-200 hover:border-hairline-strong data-[hidden=true]:hidden data-[used=true]:bg-canvas-soft/80"
+            class="cheat-row group relative flex flex-col gap-3 rounded-xl border border-hairline bg-canvas p-4 shadow-card transition-all duration-200 hover:border-hairline-strong sm:flex-row sm:items-center sm:justify-between data-[hidden=true]:hidden data-[used=true]:bg-canvas-soft/80"
             data-id={item.id}
             data-code={item.code.toLowerCase()}
             data-title={item.title.toLowerCase()}
@@ -273,7 +273,7 @@ const jsonLd = [
             </div>
 
             {/* Right side: Actions (Copy + Circle Checkmark) */}
-            <div class="flex items-center gap-2 shrink-0">
+            <div class="flex items-center justify-end gap-2 shrink-0 sm:justify-start">
               {/* Copy Icon Button */}
               <button
                 type="button"

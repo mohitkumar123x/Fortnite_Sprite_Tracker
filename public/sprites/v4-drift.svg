@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <style>
+    .el { transform-box: fill-box; transform-origin: center; }
+    .bob { animation: bob 2.8s ease-in-out infinite; }
+    .sway { animation: sway 3.2s ease-in-out infinite; }
+    .pulse { animation: pulse 2.4s ease-in-out infinite; }
+    .spark { animation: spark 2s ease-in-out infinite; }
+    .wave { animation: wave 2.2s ease-in-out infinite; }
+    .halo { opacity: .14; animation: halo 2.8s ease-in-out infinite; pointer-events: none; }
+    @keyframes halo { 0%,100% { opacity: .14; } 50% { opacity: .32; } }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @keyframes sway { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+    @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: .85; } }
+    @keyframes spark { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.25); opacity: .7; } }
+    @keyframes wave { 0%,100% { transform: translateX(0); } 50% { transform: translateX(4px); } }
+    @media (prefers-reduced-motion: reduce) { .el, .halo { animation: none !important; } }
+  </style>
+  <rect width="128" height="128" rx="28" fill="#3D2B00"/>
+  <ellipse class="halo" cx="64" cy="42" rx="42" ry="28" fill="#ffffff"/>
+  <g class="el bob">
+    <path class="el wave" d="M32 64 Q48 44 64 64 Q80 84 96 64" stroke="#FFA500" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path class="el wave" d="M32 72 Q48 52 64 72 Q80 92 96 72" stroke="#FF8C00" stroke-width="4" fill="none" stroke-linecap="round" opacity=".6"/>
+    <circle cx="64" cy="64" r="16" fill="#FFA500"/>
+    <circle cx="64" cy="64" r="10" fill="#FFD700"/>
+    <circle class="el spark" cx="52" cy="52" r="3" fill="#FFE4B5"/>
+    <circle class="el spark" cx="76" cy="72" r="2.5" fill="#FFE4B5"/>
+  </g>
+</svg>

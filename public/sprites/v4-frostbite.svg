@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <style>
+    .el { transform-box: fill-box; transform-origin: center; }
+    .bob { animation: bob 2.8s ease-in-out infinite; }
+    .sway { animation: sway 3.2s ease-in-out infinite; }
+    .pulse { animation: pulse 2.4s ease-in-out infinite; }
+    .spark { animation: spark 2s ease-in-out infinite; }
+    .spin { animation: spin 12s linear infinite; }
+    .halo { opacity: .14; animation: halo 2.8s ease-in-out infinite; pointer-events: none; }
+    @keyframes halo { 0%,100% { opacity: .14; } 50% { opacity: .32; } }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @keyframes sway { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+    @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: .85; } }
+    @keyframes spark { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.25); opacity: .7; } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .el, .halo { animation: none !important; } }
+  </style>
+  <rect width="128" height="128" rx="28" fill="#1A3A4A"/>
+  <ellipse class="halo" cx="64" cy="42" rx="42" ry="28" fill="#ffffff"/>
+  <g class="el bob">
+    <polygon class="el spin" points="64,24 72,52 100,52 78,68 86,96 64,80 42,96 50,68 28,52 56,52" fill="#00BFFF"/>
+    <circle cx="64" cy="60" r="14" fill="#E0F7FF"/>
+    <circle class="el spark" cx="58" cy="56" r="3" fill="#FFFFFF"/>
+    <circle class="el spark" cx="70" cy="64" r="2.5" fill="#B0E0E6"/>
+  </g>
+</svg>

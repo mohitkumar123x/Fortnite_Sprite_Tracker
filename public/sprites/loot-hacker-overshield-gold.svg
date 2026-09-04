@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <style>.el{transform-box:fill-box;transform-origin:center}.pulse{animation:pulse 2.4s ease-in-out infinite}.sway{animation:sway 3.2s ease-in-out infinite}@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:.85}}@keyframes sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}@media(prefers-reduced-motion:reduce){.el{animation:none!important}}</style>
+  <rect width="128" height="128" rx="28" fill="#3a3a1a"/>
+  <g class="el pulse"><path d="M64 20L100 44L100 80L64 108L28 80L28 44Z" fill="none" stroke="#ffd54f" stroke-width="4" opacity=".9"/><path d="M64 32L90 50L90 76L64 96L38 76L38 50Z" fill="#ffd54f" opacity=".4"/><circle class="el sway" cx="64" cy="64" r="16" fill="#ffee58"/></g>
+</svg>

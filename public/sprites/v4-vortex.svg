@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <style>
+    .el { transform-box: fill-box; transform-origin: center; }
+    .bob { animation: bob 2.8s ease-in-out infinite; }
+    .spin { animation: spin 12s linear infinite; }
+    .spin-rev { animation: spin 16s linear infinite reverse; }
+    .pulse { animation: pulse 2.4s ease-in-out infinite; }
+    .spark { animation: spark 2s ease-in-out infinite; }
+    .halo { opacity: .14; animation: halo 2.8s ease-in-out infinite; pointer-events: none; }
+    @keyframes halo { 0%,100% { opacity: .14; } 50% { opacity: .32; } }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: .85; } }
+    @keyframes spark { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.25); opacity: .7; } }
+    @media (prefers-reduced-motion: reduce) { .el, .halo { animation: none !important; } }
+  </style>
+  <rect width="128" height="128" rx="28" fill="#0A3D3D"/>
+  <ellipse class="halo" cx="64" cy="42" rx="42" ry="28" fill="#ffffff"/>
+  <g class="el bob">
+    <circle class="el spin" cx="64" cy="64" r="32" fill="none" stroke="#00CED1" stroke-width="6" stroke-dasharray="16 8"/>
+    <circle class="el spin-rev" cx="64" cy="64" r="24" fill="none" stroke="#40E0D0" stroke-width="4" stroke-dasharray="12 6"/>
+    <circle cx="64" cy="64" r="14" fill="#008B8B"/>
+    <circle cx="64" cy="64" r="8" fill="#00CED1"/>
+    <circle class="el spark" cx="64" cy="64" r="4" fill="#E0FFFF"/>
+  </g>
+</svg>

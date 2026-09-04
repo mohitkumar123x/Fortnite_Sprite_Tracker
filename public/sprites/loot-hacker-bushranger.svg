@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <style>
+    .el { transform-box: fill-box; transform-origin: center; }
+    .bob { animation: bob 2.8s ease-in-out infinite; }
+    .sway { animation: sway 3.2s ease-in-out infinite; }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @keyframes sway { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+    @media (prefers-reduced-motion: reduce) { .el { animation: none !important; } }
+  </style>
+  <rect width="128" height="128" rx="28" fill="#1a3a2a"/>
+  <g class="el bob">
+    <ellipse cx="64" cy="78" rx="36" ry="26" fill="#2e8b4f"/>
+    <ellipse class="el sway" cx="46" cy="58" rx="22" ry="20" fill="#3cb86a"/>
+    <ellipse class="el sway" cx="82" cy="56" rx="24" ry="22" fill="#2e8b4f"/>
+    <ellipse cx="64" cy="48" rx="20" ry="18" fill="#4fd07a"/>
+    <circle cx="52" cy="70" r="4" fill="#c43b4b"/>
+    <circle cx="74" cy="76" r="3.5" fill="#c43b4b"/>
+    <text x="64" y="92" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold" opacity="0">LH</text>
+  </g>
+</svg>

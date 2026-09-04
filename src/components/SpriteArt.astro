@@ -4,11 +4,12 @@ import { spriteArtSrc, spriteGlow, spriteMotionDelay } from '../lib/spriteArt';
 interface Props {
   id: string;
   name: string;
+  variant?: string;
   class?: string;
   size?: 'sm' | 'md' | 'lg';
 }
 
-const { id, name, class: className = '', size = 'md' } = Astro.props;
+const { id, name, variant, class: className = '', size = 'md' } = Astro.props;
 
 const sizeClass = size === 'sm' ? 'size-11' : size === 'lg' ? 'size-16' : 'size-12';
 ---
@@ -18,7 +19,7 @@ const sizeClass = size === 'sm' ? 'size-11' : size === 'lg' ? 'size-16' : 'size-
   style={`--sprite-glow: ${spriteGlow(id)}; --sprite-delay: ${spriteMotionDelay(id)}`}
 >
   <img
-    src={spriteArtSrc(id)}
+    src={spriteArtSrc(id, variant)}
     alt=""
     width="128"
     height="128"

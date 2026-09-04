@@ -12,9 +12,11 @@ interface Props {
   variantCount: number;
   ability: string;
   href: string;
+  isNew?: boolean;
+  launchedAt?: string;
 }
 
-const { id, name, rarity, seasonLabel, variantCount, ability, href } = Astro.props;
+const { id, name, rarity, seasonLabel, variantCount, ability, href, isNew = false, launchedAt } = Astro.props;
 const locale = localeFromPath(Astro.url.pathname);
 const localizedRarity = localizeRarity(rarity as Rarity, locale);
 const localizedAbility = localizeSpriteAbility(id, ability, locale);
@@ -32,6 +34,18 @@ const localizedAbility = localizeSpriteAbility(id, ability, locale);
         <span class="capitalize">{localizedRarity}</span>
         <span class="mx-1 text-mute">·</span>
         {seasonLabel}
+        {isNew && launchedAt && (
+          <>
+            <span class="mx-1 text-mute">·</span>
+            <span class="text-mute">{launchedAt}</span>
+          </>
+        )}
+        {isNew && !launchedAt && (
+          <>
+            <span class="mx-1 text-mute">·</span>
+            <span class="text-mute">{t(locale, 'newTag')}</span>
+          </>
+        )}
       </p>
       <p class="mt-2 text-sm leading-5 text-body line-clamp-2">{localizedAbility}</p>
       <p class="mt-2 text-xs text-mute">{t(locale, 'variantsCount', { n: variantCount })}</p>

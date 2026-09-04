@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <style>
+    .el { transform-box: fill-box; transform-origin: center; }
+    .pulse { animation: pulse 2.4s ease-in-out infinite; }
+    .flicker { animation: flicker 1.4s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: .85; } }
+    @keyframes flicker { 0%,100% { transform: scaleY(1) translateY(0); } 40% { transform: scaleY(1.08) translateY(-2px); } 70% { transform: scaleY(.96) translateY(1px); } }
+    @media (prefers-reduced-motion: reduce) { .el { animation: none !important; } }
+  </style>
+  <rect width="128" height="128" rx="28" fill="#2a1a2a"/>
+  <g class="el pulse">
+    <circle cx="64" cy="64" r="28" fill="#ef5350" opacity=".8"/>
+    <circle cx="64" cy="64" r="20" fill="#c62828"/>
+    <circle class="el flicker" cx="56" cy="60" r="5" fill="#fff"/>
+    <circle class="el flicker" cx="72" cy="60" r="5" fill="#fff"/>
+    <circle cx="56" cy="60" r="2.5" fill="#1a1a1a"/>
+    <circle cx="72" cy="60" r="2.5" fill="#1a1a1a"/>
+    <path d="M56 72 Q64 80 72 72" stroke="#fff" stroke-width="2" fill="none"/>
+  </g>
+</svg>

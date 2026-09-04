@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <style>.el{transform-box:fill-box;transform-origin:center}.bob{animation:bob 2.8s ease-in-out infinite}.pulse{animation:pulse 2.4s ease-in-out infinite}@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:.85}}@media(prefers-reduced-motion:reduce){.el{animation:none!important}}</style>
+  <rect width="128" height="128" rx="28" fill="#4a1a1a"/>
+  <g class="el bob"><circle cx="64" cy="56" r="28" fill="#ff5252"/><circle cx="56" cy="52" r="6" fill="#fff"/><circle cx="72" cy="52" r="6" fill="#fff"/><circle cx="56" cy="52" r="3" fill="#4a1a1a"/><circle cx="72" cy="52" r="3" fill="#4a1a1a"/><path d="M56 66Q64 74 72 66" stroke="#4a1a1a" stroke-width="2" fill="none"/><g class="el pulse"><rect x="48" y="80" width="32" height="12" rx="4" fill="#ffcdd2" opacity=".7"/></g><text x="64" y="68" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">CM</text></g>
+</svg>

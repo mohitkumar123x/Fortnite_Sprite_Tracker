@@ -75,6 +75,8 @@ const bySeason = seasons.map((season) => ({
                   variantCount={sprite.variants.length}
                   ability={sprite.ability}
                   href={lp(`/sprites/${sprite.id}`)}
+                  isNew={sprite.new ?? false}
+                  launchedAt={sprite.launchedAt}
                 />
               ))}
             </div>

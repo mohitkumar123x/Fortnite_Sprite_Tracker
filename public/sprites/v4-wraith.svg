@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <style>
+    .el { transform-box: fill-box; transform-origin: center; }
+    .bob { animation: bob 2.8s ease-in-out infinite; }
+    .floaty { animation: floaty 3.6s ease-in-out infinite; }
+    .pulse { animation: pulse 2.4s ease-in-out infinite; }
+    .spark { animation: spark 2s ease-in-out infinite; }
+    .sway { animation: sway 3.2s ease-in-out infinite; }
+    .halo { opacity: .14; animation: halo 2.8s ease-in-out infinite; pointer-events: none; }
+    @keyframes halo { 0%,100% { opacity: .14; } 50% { opacity: .32; } }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+    @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: .85; } }
+    @keyframes spark { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.25); opacity: .7; } }
+    @keyframes sway { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+    @media (prefers-reduced-motion: reduce) { .el, .halo { animation: none !important; } }
+  </style>
+  <rect width="128" height="128" rx="28" fill="#1A1A2E"/>
+  <ellipse class="halo" cx="64" cy="42" rx="42" ry="28" fill="#ffffff"/>
+  <g class="el floaty">
+    <path d="M64 32 L80 52 L80 80 L64 96 L48 80 L48 52Z" fill="#483D8B"/>
+    <path d="M64 40 L74 54 L74 76 L64 88 L54 76 L54 54Z" fill="#6A5ACD"/>
+    <circle cx="56" cy="60" r="5" fill="#E6E6FF"/>
+    <circle cx="72" cy="60" r="5" fill="#E6E6FF"/>
+    <circle cx="56" cy="60" r="2.5" fill="#1A1A2E"/>
+    <circle cx="72" cy="60" r="2.5" fill="#1A1A2E"/>
+    <path class="el sway" d="M56 76 Q64 84 72 76" stroke="#E6E6FF" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <circle class="el spark" cx="40" cy="48" r="3" fill="#9370DB"/>
+    <circle class="el spark" cx="88" cy="76" r="2.5" fill="#9370DB"/>
+  </g>
+</svg>

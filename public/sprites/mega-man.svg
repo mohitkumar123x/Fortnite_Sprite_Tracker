@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <style>
+    .el { transform-box: fill-box; transform-origin: center; }
+    .bob { animation: bob 2.8s ease-in-out infinite; }
+    .pulse { animation: pulse 2.4s ease-in-out infinite; }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: .85; } }
+    @media (prefers-reduced-motion: reduce) { .el { animation: none !important; } }
+  </style>
+  <rect width="128" height="128" rx="28" fill="#1a2a5a"/>
+  <g class="el bob">
+    <circle cx="64" cy="56" r="28" fill="#2196f3"/>
+    <rect x="42" y="80" width="44" height="24" rx="8" fill="#1565c0"/>
+    <circle cx="54" cy="52" r="6" fill="#fff"/>
+    <circle cx="74" cy="52" r="6" fill="#fff"/>
+    <circle cx="54" cy="52" r="3" fill="#1a2a5a"/>
+    <circle cx="74" cy="52" r="3" fill="#1a2a5a"/>
+    <rect x="48" y="62" width="32" height="6" rx="3" fill="#0d47a1"/>
+    <circle class="el pulse" cx="64" cy="40" r="8" fill="#64b5f6"/>
+  </g>
+</svg>

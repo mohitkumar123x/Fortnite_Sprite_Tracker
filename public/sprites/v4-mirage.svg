@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <style>
+    .el { transform-box: fill-box; transform-origin: center; }
+    .bob { animation: bob 2.8s ease-in-out infinite; }
+    .floaty { animation: floaty 3.6s ease-in-out infinite; }
+    .pulse { animation: pulse 2.4s ease-in-out infinite; }
+    .spark { animation: spark 2s ease-in-out infinite; }
+    .sway { animation: sway 3.2s ease-in-out infinite; }
+    .halo { opacity: .14; animation: halo 2.8s ease-in-out infinite; pointer-events: none; }
+    @keyframes halo { 0%,100% { opacity: .14; } 50% { opacity: .32; } }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+    @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: .85; } }
+    @keyframes spark { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.25); opacity: .7; } }
+    @keyframes sway { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+    @media (prefers-reduced-motion: reduce) { .el, .halo { animation: none !important; } }
+  </style>
+  <rect width="128" height="128" rx="28" fill="#2D1A3D"/>
+  <ellipse class="halo" cx="64" cy="42" rx="42" ry="28" fill="#ffffff"/>
+  <g class="el floaty">
+    <ellipse cx="48" cy="64" rx="18" ry="22" fill="#DDA0DD" opacity=".4"/>
+    <ellipse cx="80" cy="64" rx="18" ry="22" fill="#DDA0DD" opacity=".4"/>
+    <ellipse cx="64" cy="64" rx="20" ry="24" fill="#DDA0DD" opacity=".8"/>
+    <circle cx="56" cy="56" r="4" fill="#FFFFFF"/>
+    <circle cx="72" cy="56" r="4" fill="#FFFFFF"/>
+    <circle cx="56" cy="56" r="2" fill="#2D1A3D"/>
+    <circle cx="72" cy="56" r="2" fill="#2D1A3D"/>
+    <path class="el sway" d="M56 72 Q64 78 72 72" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <circle class="el spark" cx="36" cy="48" r="3" fill="#E6C3E6"/>
+    <circle class="el spark" cx="92" cy="72" r="2.5" fill="#E6C3E6"/>
+  </g>
+</svg>

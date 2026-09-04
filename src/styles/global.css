@@ -322,6 +322,25 @@
     radial-gradient(ellipse 50% 40% at 92% 82%, color-mix(in srgb, var(--color-gradient-develop-end) 80%, transparent), transparent 52%);
 }
 
+.new-sprite-card {
+  position: relative;
+}
+
+.new-sprite-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(80, 227, 194, 0.15), rgba(121, 40, 202, 0.15));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.new-sprite-card:hover::before {
+  opacity: 1;
+}
+
 /* Print styles */
 @media print {
   header,

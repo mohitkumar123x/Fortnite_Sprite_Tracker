@@ -16,6 +16,8 @@ export type Sprite = {
   findNotes: string;
   levelNotes?: string;
   variants: SpriteVariant[];
+  new?: boolean;
+  launchedAt?: string;
 };
 
 export type Season = {

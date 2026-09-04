@@ -363,5 +363,245 @@
       { "id": "holofoil", "label": "Holofoil" },
       { "id": "gem", "label": "Gem" }
     ]
+  },
+  {
+    "id": "xray",
+    "name": "X-Ray",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Periodically marks nearby enemies. Its detection radius increases with each level.",
+    "findNotes": "Added in v42.10 update on September 3. Found in chests across the map.",
+    "levelNotes": "Detection radius increases with each level.",
+    "new": true,
+    "launchedAt": "3-sept-2026",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 100 },
+      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "mega-man",
+    "name": "Mega Man",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Reduces friction while sliding or swimming, allowing you to slide farther with each level.",
+    "findNotes": "Added in v42.10 update on September 3. Found in chests.",
+    "levelNotes": "Slide distance improves with each level.",
+    "new": true,
+    "launchedAt": "3-sept-2026",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 100 },
+      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "overshield",
+    "name": "Overshield",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Grants Overshield, with the amount increasing as the Sprite levels up.",
+    "findNotes": "Added in v42.10 update on September 3. Found in chests.",
+    "levelNotes": "Overshield amount increases with each level.",
+    "new": true,
+    "launchedAt": "3-sept-2026",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 100 },
+      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "onigiri",
+    "name": "Onigiri",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Activates Overdrive after you eat or drink a consumable. Overdrive lasts longer with each level.",
+    "findNotes": "Added in v42.10 update on September 3. Found in chests.",
+    "levelNotes": "Overdrive duration increases with each level.",
+    "new": true,
+    "launchedAt": "3-sept-2026",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 100 },
+      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "loot-hacker-xray",
+    "name": "Loot Hacker X-Ray",
+    "seasonId": "c7-s4",
+    "rarity": "epic",
+    "ability": "Loot Hacker variant of X-Ray Sprite — enhanced enemy detection.",
+    "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+    "levelNotes": "Detection radius increases with each level.",
+    "new": true,
+    "launchedAt": "3-sept-2026",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 200 },
+      { "id": "gold", "label": "Gold", "dustCost": 500, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 600, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "loot-hacker-tails",
+    "name": "Loot Hacker Tails",
+    "seasonId": "c7-s4",
+    "rarity": "epic",
+    "ability": "Loot Hacker variant of Tails Sprite — enhanced hover ability.",
+    "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+    "levelNotes": "Hover speed grows with each level.",
+    "new": true,
+    "launchedAt": "3-sept-2026",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 200 },
+      { "id": "gold", "label": "Gold", "dustCost": 500, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 600, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "loot-hacker-sonic",
+    "name": "Loot Hacker Sonic",
+    "seasonId": "c7-s4",
+    "rarity": "epic",
+    "ability": "Loot Hacker variant of Sonic Sprite — enhanced sprint speed.",
+    "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+    "levelNotes": "Sprint speed improves with each level.",
+    "new": true,
+    "launchedAt": "3-sept-2026",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 200 },
+      { "id": "gold", "label": "Gold", "dustCost": 500, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 600, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "loot-hacker-shadow",
+    "name": "Loot Hacker Shadow",
+    "seasonId": "c7-s4",
+    "rarity": "epic",
+    "ability": "Loot Hacker variant of Shadow Sprite — enhanced auto-reload.",
+    "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+    "levelNotes": "Reload speed improves with each level.",
+    "new": true,
+    "launchedAt": "3-sept-2026",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 200 },
+      { "id": "gold", "label": "Gold", "dustCost": 500, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 600, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "loot-hacker-8bit",
+    "name": "Loot Hacker 8-Bit",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Loot Hacker variant of 8-Bit Sprite — enhanced shotgun score multiplier.",
+    "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+    "levelNotes": "Score multiplier increases with each level.",
+    "new": true,
+    "launchedAt": "3-sept-2026",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 100 },
+      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "loot-hacker-bushranger",
+    "name": "Loot Hacker Bushranger",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Loot Hacker variant of Bush Sprite — enhanced bush disguise.",
+    "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+    "levelNotes": "Bush durability improves with each level.",
+    "new": true,
+    "launchedAt": "3-sept-2026",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 100 },
+      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "loot-hacker-adventure",
+    "name": "Loot Hacker Adventure",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Loot Hacker variant of Adventure Sprite — enhanced item upgrades.",
+    "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+    "levelNotes": "Upgrade quality improves with each level.",
+    "new": true,
+    "launchedAt": "3-sept-2026",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 100 },
+      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "loot-hacker-jonesy",
+    "name": "Loot Hacker Jonesy",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Loot Hacker variant of Jonesy Sprite — enhanced health recovery.",
+    "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+    "levelNotes": "Recovery amount improves with each level.",
+    "new": true,
+    "launchedAt": "3-sept-2026",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 100 },
+      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "loot-hacker-overshield",
+    "name": "Loot Hacker Overshield",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Loot Hacker variant of Overshield Sprite — enhanced shield amount.",
+    "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+    "levelNotes": "Shield amount improves with each level.",
+    "new": true,
+    "launchedAt": "3-sept-2026",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 100 },
+      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "loot-hacker-onigiri",
+    "name": "Loot Hacker Onigiri",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Loot Hacker variant of Onigiri Sprite — enhanced Overdrive duration.",
+    "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+    "levelNotes": "Overdrive duration improves with each level.",
+    "new": true,
+    "launchedAt": "3-sept-2026",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 100 },
+      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
+    ]
+  },
+  {
+    "id": "loot-hacker-storm-scout",
+    "name": "Loot Hacker Storm Scout",
+    "seasonId": "c7-s4",
+    "rarity": "legendary",
+    "ability": "Loot Hacker variant of Storm Scout Sprite — enhanced storm prediction.",
+    "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+    "levelNotes": "Prediction accuracy improves with each level.",
+    "new": true,
+    "launchedAt": "3-sept-2026",
+    "variants": [
+      { "id": "normal", "label": "Normal", "dustCost": 400 },
+      { "id": "gold", "label": "Gold", "dustCost": 800, "bonus": "3× elimination XP" },
+      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 900, "bonus": "Button Mash" }
+    ]
   }
 ]

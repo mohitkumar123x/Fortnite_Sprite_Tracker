@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <style>
+    .el { transform-box: fill-box; transform-origin: center; }
+    .bob { animation: bob 2.8s ease-in-out infinite; }
+    .pulse { animation: pulse 2.4s ease-in-out infinite; }
+    .spark { animation: spark 2s ease-in-out infinite; }
+    .sway { animation: sway 3.2s ease-in-out infinite; }
+    .halo { opacity: .14; animation: halo 2.8s ease-in-out infinite; pointer-events: none; }
+    @keyframes halo { 0%,100% { opacity: .14; } 50% { opacity: .32; } }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: .85; } }
+    @keyframes spark { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.25); opacity: .7; } }
+    @keyframes sway { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+    @media (prefers-reduced-motion: reduce) { .el, .halo { animation: none !important; } }
+  </style>
+  <rect width="128" height="128" rx="28" fill="#2F3640"/>
+  <ellipse class="halo" cx="64" cy="42" rx="42" ry="28" fill="#ffffff"/>
+  <g class="el bob">
+    <path d="M64 28 L96 48 L96 80 L64 100 L32 80 L32 48Z" fill="#708090"/>
+    <path d="M64 36 L88 52 L88 76 L64 92 L40 76 L40 52Z" fill="#A9A9A9"/>
+    <path d="M64 44 L80 56 L80 72 L64 84 L48 72 L48 56Z" fill="#C0C0C0"/>
+    <circle class="el spark" cx="64" cy="64" r="6" fill="#FFFFFF"/>
+    <circle class="el spark" cx="44" cy="52" r="3" fill="#B0C4DE"/>
+    <circle class="el spark" cx="84" cy="72" r="2.5" fill="#B0C4DE"/>
+  </g>
+</svg>

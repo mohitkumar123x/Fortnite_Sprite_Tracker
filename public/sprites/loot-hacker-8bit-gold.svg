@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <style>.el{transform-box:fill-box;transform-origin:center}.pulse{animation:pulse 2.4s ease-in-out infinite}.blink{animation:blink 3.8s steps(1,end) infinite}@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:.85}}@keyframes blink{0%,92%,100%{transform:scaleY(1)}94%,96%{transform:scaleY(.12)}}@media(prefers-reduced-motion:reduce){.el{animation:none!important}}</style>
+  <rect width="128" height="128" rx="28" fill="#3a3a1a"/>
+  <g class="el pulse"><rect x="32" y="32" width="64" height="64" rx="8" fill="#ffd54f"/><rect x="40" y="40" width="48" height="48" rx="4" fill="#3a3a1a"/><g class="el blink"><rect x="48" y="52" width="8" height="8" fill="#ffd54f"/><rect x="72" y="52" width="8" height="8" fill="#ffd54f"/><rect x="52" y="68" width="24" height="4" fill="#ffd54f"/></g></g>
+</svg>
