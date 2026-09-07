@@ -35,7 +35,7 @@ export default defineConfig({
   site,
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'es', 'pt'],
+    locales: ['en', 'es', 'pt', 'fr'],
     routing: {
       prefixDefaultLocale: false,
     },
@@ -52,11 +52,12 @@ export default defineConfig({
           en: 'en-US',
           es: 'es-ES',
           pt: 'pt-BR',
+          fr: 'fr-FR',
         },
       },
       serialize(item) {
         const path = new URL(item.url).pathname.replace(/\/$/, '') || '/';
-        const unprefixed = path.replace(/^\/(es|pt)(?=\/|$)/, '') || '/';
+        const unprefixed = path.replace(/^\/(es|pt|fr)(?=\/|$)/, '') || '/';
         if (unprefixed === '/') {
           item.changefreq = EnumChangefreq.WEEKLY;
           item.priority = 1.0;

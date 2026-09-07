@@ -47,6 +47,25 @@ export const DEFAULT_KEYWORDS = [
   'best fortnite sprite tracker',
 ].join(', ');
 
+export const FR_KEYWORDS = [
+  'fortnite sprite tracker',
+  'fortnite sprite tracker liste',
+  'fortnite sprite tracker graphique',
+  'fortnite sprite tracker application',
+  'nouveau fortnite sprite tracker',
+  'fortnite sprite tracker batman',
+  'fortnite sprite tracker checkliste',
+  'fortnite sprite tracker collection',
+  'fortnite sprite tracker site',
+  'fortnite sprite tracker impression',
+  'fortnite sprite tracker en ligne',
+  'meilleur fortnite sprite tracker',
+  'fortnite sprite tracker gratuit',
+  'fortnite sprite tracker saison',
+  'fortnite sprite tracker variants',
+  'fortnite sprite tracker chasse',
+].join(', ');
+
 export const HOME_TITLE = 'Fortnite Sprite Tracker | Free Online Checklist, Chart & Collection Tracker';
 
 export const HOME_DESCRIPTION =

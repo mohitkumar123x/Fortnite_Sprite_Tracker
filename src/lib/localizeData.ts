@@ -23,6 +23,13 @@ const rarityTranslations: Record<Locale, Record<Rarity, string>> = {
     mythic: 'Mítica',
     special: 'Especial',
   },
+  fr: {
+    rare: 'Rare',
+    epic: 'Épique',
+    legendary: 'Légendaire',
+    mythic: 'Mythique',
+    special: 'Spéciale',
+  },
 };
 
 const variantLabelTranslations: Record<Locale, Record<string, string>> = {
@@ -59,6 +66,17 @@ const variantLabelTranslations: Record<Locale, Record<string, string>> = {
     Cube: 'Cubo',
     Quack: 'Patinho',
   },
+  fr: {
+    Normal: 'Normal',
+    Gold: 'Or',
+    'Cheat Master': 'Maître de la Triche',
+    Gummy: 'Gummy',
+    Galaxy: 'Galaxie',
+    Holofoil: 'Holographique',
+    Gem: 'Gemme',
+    Cube: 'Cube',
+    Quack: 'Canard',
+  },
 };
 
 const bonusTranslations: Record<Locale, Record<string, string>> = {
@@ -73,6 +91,10 @@ const bonusTranslations: Record<Locale, Record<string, string>> = {
   pt: {
     '3× elimination XP': '3× XP por eliminação',
     'Button Mash': 'Aperto de Botões',
+  },
+  fr: {
+    '3× elimination XP': '3× XP par élimination',
+    'Button Mash': 'Mélange de boutons',
   },
 };
 
@@ -132,6 +154,33 @@ const spriteAbilityTranslations: Record<Locale, Record<string, string>> = {
     's3-demon': 'Habilidade de companheiro da temporada 3. Veja a descrição no jogo.',
     's3-king': 'Habilidade de companheiro da temporada 3. Veja a descrição no jogo.',
   },
+  fr: {
+    bush: 'Donne un buisson après un certain temps ; au niveau maximum donne aussi un buisson par élimination. Le temps de recharge diminue à chaque niveau.',
+    adventure: 'Améliore un objet aléatoire de votre inventaire à chaque passage de niveau.',
+    '8-bit': 'Place un fusil à pompe 8 bits dans votre premier coffre et donne un multiplicateur de score pour celui-ci.',
+    jonesy: 'Récupère de la vie ou des boucliers peu après avoir subi des dégâts. La quantité de soin augmente à chaque niveau.',
+    killswitch: 'Visez en l\'air pour ralentir et améliorer la précision. La précision augmente à chaque niveau.',
+    sonic: 'Sprintez plus vite à chaque passage de niveau.',
+    tails: 'Double saut pour flotter en l\'air. La vitesse de flottaison augmente à chaque niveau.',
+    shadow: 'Recharge automatiquement les armes non équipées avec le temps. Au niveau maximum recharge aussi l\'arme équipée.',
+    jackrabbit: 'Donne un deuxième saut en l\'air. Le temps de recharge diminue à chaque niveau.',
+    crown: 'Passe de niveau uniquement en gagnant des parties (plus vite avec les Victoires Couronnées). La maîtrise débloque de nouvelles variantes.',
+    klombo: 'Donne des objets aléatoires à chaque niveau. Passez de niveau en consommant des objets ; la qualité augmente à chaque niveau.',
+    's3-batman': 'Capacité de compagnon de la saison 3. Consultez la description en jeu pour les valeurs en direct.',
+    's3-air': 'Capacité de compagnon de la saison 3. Consultez la description en jeu.',
+    's3-aura': 'Capacité de compagnon de la saison 3. Consultez la description en jeu.',
+    's3-earth': 'Capacité de compagnon de la saison 3. Consultez la description en jeu.',
+    's3-fire': 'Capacité de compagnon de la saison 3. Consultez la description en jeu.',
+    's3-water': 'Capacité de compagnon de la saison 3. Consultez la description en jeu.',
+    's3-ghost': 'Capacité de compagnon de la saison 3. Consultez la description en jeu.',
+    's3-llama': 'Capacité de compagnon de la saison 3. Consultez la description en jeu.',
+    's3-peeky-peely': 'Capacité de compagnon de la saison 3. Consultez la description en jeu.',
+    's3-zero-point': 'Capacité de compagnon de la saison 3. Consultez la description en jeu.',
+    's3-storm-scout': 'Capacité de compagnon de la saison 3. Consultez la description en jeu.',
+    's3-fishy': 'Capacité de compagnon de la saison 3. Consultez la description en jeu.',
+    's3-demon': 'Capacité de compagnon de la saison 3. Consultez la description en jeu.',
+    's3-king': 'Capacité de compagnon de la saison 3. Consultez la description en jeu.',
+  },
 };
 
 export function localizeRarity(rarity: Rarity, locale: Locale): string {
@@ -187,6 +236,17 @@ const seasonTranslations: Record<Locale, Record<string, { label?: string; patchN
       label: 'Capítulo 7 Temporada 3 — Arquivo',
       patchNote: 'Lista de arquivo da Temporada 3: Batman e variantes clássicas.',
       archiveNote: 'Este painel não aparece mais em partidas ao vivo, mas sua lista permanece salva localmente para esta temporada.',
+    },
+  },
+  fr: {
+    'c7-s4': {
+      label: 'Chapitre 7 Saison 4 — Override',
+      patchNote: 'Liste de la saison en direct : extrayez des Sprites en matchs pour marquer Possédé et passez au niveau 5 pour marquer Maîtrisé.',
+    },
+    'c7-s3': {
+      label: 'Chapitre 7 Saison 3 — Archive',
+      patchNote: 'Liste d\'archive de la Saison 3 : Batman et variantes classiques.',
+      archiveNote: 'Ce tableau n\'apparaît plus en matchs en direct, mais votre liste reste enregistrée localement pour cette saison.',
     },
   },
 };

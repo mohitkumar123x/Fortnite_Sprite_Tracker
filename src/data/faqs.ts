@@ -222,6 +222,78 @@ const seoFaqsByLocale: Record<Locale, FaqItem[]> = {
         '<p>Encontre um Sprite em um baú, extraia-o antes do fim da partida para guardá-lo permanentemente e invoque-o com Pó de Sprite. Cada um concede habilidades passivas que sobem de nível.</p>',
     },
   ],
+  fr: [
+    {
+      question: 'À quoi servent les Sprites dans Fortnite ?',
+      answer:
+        '<p>Les Sprites sont des compagnons collectables dans Fortnite Battle Royale. Trouvez-en un, extrayez-le avant la fin de la partie et il restera déverrouillé pour l\'invoquer plus tard avec la Poussière de Sprite. Chaque Sprite confère une capacité passivate qui monte en niveau. Utilisez cette liste du Fortnite Sprite Tracker pour marquer les Possédés et Maîtrisés.</p>',
+    },
+    {
+      question: 'Que fait le Fortnite Sprite Tracker ?',
+      answer:
+        '<p>Beaucoup pensent aux sites de statistiques de parties. Ce Fortnite Sprite Tracker est différent : c\'est une liste gratuite pour vos Sprites (Possédés, Maîtrisés, Mode Chasse, sauvegardes JSON et archives de saisons). Il ne nécessite pas de connexion Epic Games et ne modifie pas votre compte.</p>',
+    },
+    {
+      question: 'Le Fortnite Sprite Tracker est-il sûr ?',
+      answer:
+        '<p>Oui. Ce site enregistre votre progression localement dans votre navigateur (localStorage). Il ne demande pas de mot de passe ni de données Epic Games. C\'est un projet non officiel et sûr pour suivre votre collection.</p>',
+    },
+    {
+      question: 'Quels sont quelques Sprites dans Fortnite ?',
+      answer:
+        '<p>Le Chapitre 7 Saison 4 comprend Bush, Adventure, 8-Bit, Jonesy, Killswitch, Sonic, Tails, Shadow, Jackrabbit, Crown et Klombo, avec les variantes Normal, Or et Maître de la Triche. L\'archive de la Saison 3 comprend Batman, Air, Aura et plus.</p>',
+    },
+    {
+      question: 'Les Sprites dans Fortnite sont-ils rares ?',
+      answer:
+        '<p>Oui. Il existe des niveaux Rare, Épique, Légendaire et Mythique. Les Sprites Mythiques (Crown, Klombo) et les variantes spéciales sont plus rares dans les coffres.</p>',
+    },
+    {
+      question: 'Pourquoi sont-ils appelés Sprites dans Fortnite ?',
+      answer:
+        '<p>Epic a nommé ces créatures compagnons "Sprites" comme des familiers ou des esprits qui confèrent des capacités passives dans le jeu.</p>',
+    },
+    {
+      question: 'Où trouver des Sprites dans Fortnite ?',
+      answer:
+        '<p>La plupart apparaissent dans les coffres et les livraisons de ravitaillement pendant les parties. Vous devez les extraire avant la fin de la partie pour les conserver.</p>',
+    },
+    {
+      question: 'Quels sont les 5 meilleurs Sprites dans Fortnite ?',
+      answer:
+        '<p>Cela dépend de votre style : (1) Jackrabbit pour le double saut aérien ; (2) Tails pour la flottaison ; (3) Sonic pour la vitesse ; (4) Shadow pour le rechargement automatique ; (5) Jonesy pour la guérison après les dégâts.</p>',
+    },
+    {
+      question: 'Quels sont les 10 Sprites les plus difficiles à trouver ?',
+      answer:
+        '<p>Les Mythiques et les variantes limitées : Crown, Klombo, Jackrabbit, Crown Or, Crown Maître de la Triche, Klombo Or, Klombo Maître de la Triche, Jackrabbit Maître de la Triche, et les variantes anciennes de la Saison 3 comme Batman Holographique ou Galaxie.</p>',
+    },
+    {
+      question: 'Comment puis-je créer un Sprite pour Fortnite ?',
+      answer:
+        '<p>Les Sprites sont créés officiellement par Epic Games et leurs collaborations. Vous pouvez créer des fan arts et des concepts pour partager avec la communauté.</p>',
+    },
+    {
+      question: 'Quel est le skin #1 dans Fortnite ?',
+      answer:
+        '<p>La popularité change selon la boutique et les événements. Ce site est consacré au suivi de la collection de Sprites compagnons.</p>',
+    },
+    {
+      question: 'Quel est le skin le plus rare de Fortnite ?',
+      answer:
+        '<p>Les skins les plus rares sont les anciens passes de bataille ou les promotions exclusives. Ce tracker enregistre la rareté des Sprites.</p>',
+    },
+    {
+      question: 'Qui est le joueur #1 de Fortnite ?',
+      answer:
+        '<p>Le classement change constamment selon les saisons et la FNCS. Ce site sert à suivre votre liste de Sprites.</p>',
+    },
+    {
+      question: 'Comment fonctionnent les Sprites dans Fortnite ?',
+      answer:
+        '<p>Trouvez un Sprite dans un coffre, extrayez-le avant la fin de la partie pour le conserver définitivement et invoquez-le avec la Poussière de Sprite. Chacun confère des capacités passives qui montent en niveau.</p>',
+    },
+  ],
 };
 
 const trackerFaqsByLocale: Record<Locale, FaqItem[]> = {
@@ -274,6 +346,23 @@ const trackerFaqsByLocale: Record<Locale, FaqItem[]> = {
       question: 'Posso imprimir a lista de verificação?',
       answer:
         '<p>Filtre por Faltando e use a opção de imprimir do navegador para obter uma folha para impressão.</p>',
+    },
+  ],
+  fr: [
+    {
+      question: 'Que signifie Possédé vs Maîtrisé sur ce Fortnite Sprite Tracker ?',
+      answer:
+        '<p>Possédé signifie que vous avez extrait ce sprite et cette variante. Maîtrisé est une marque distincte pour quand vous amenez un sprite au niveau 5. La liste enregistre les deux pour que vous puissiez suivre votre progression.</p>',
+    },
+    {
+      question: 'Ce site nécessite-t-il un compte ?',
+      answer:
+        '<p>Non. La progression est enregistrée dans votre navigateur (localStorage). Vous pouvez exporter le JSON ou partager votre lien.</p>',
+    },
+    {
+      question: 'Puis-je imprimer la liste de vérification ?',
+      answer:
+        '<p>Filtrez par Manquants puis utilisez la fonction d\'impression de votre navigateur pour obtenir une feuille imprimable.</p>',
     },
   ],
 };

@@ -1,0 +1,3 @@
+# Redirect WWW to Apex canonical domain
+http://www.fortnitespritetracking.com/* https://fortnitespritetracking.com/:splat 301
+https://www.fortnitespritetracking.com/* https://fortnitespritetracking.com/:splat 301
