@@ -4,6 +4,7 @@ import SpriteArt from './SpriteArt.astro';
 import { localeFromPath, localizedPath, t, trackerCopy } from '../lib/i18n';
 import { localizeCatalog, localizeRarity, localizeVariantLabel } from '../lib/localizeData';
 import { allSprites } from '../lib/catalog';
+import { availableCatalog } from '../lib/progress';
 
 interface Props {
   season: Season;
@@ -16,12 +17,15 @@ const { season, catalog: rawCatalog, seasonHref, showSeasonLink = false } = Astr
 const locale = localeFromPath(Astro.url.pathname);
 const lp = (href: string) => localizedPath(locale, href);
 const catalog = localizeCatalog(rawCatalog, locale);
+const obtainable = availableCatalog(catalog);
 const i18nJson = JSON.stringify(trackerCopy(locale));
 
 const rarities = [...new Set(catalog.map((c) => c.rarity))];
 const variants = [...new Set(catalog.map((c) => c.variantId))];
 const variantLabels = Object.fromEntries(catalog.map((c) => [c.variantId, c.variantLabel]));
 const total = catalog.length;
+const obtainableTotal = obtainable.length;
+const unreleasedCount = total - obtainableTotal;
 const rarityOrder: Rarity[] = ['mythic', 'legendary', 'epic', 'rare', 'special'];
 rarities.sort((a, b) => rarityOrder.indexOf(a) - rarityOrder.indexOf(b));
 
@@ -47,6 +51,7 @@ const newSprites = uniqueSprites.filter((s) => s.isNew);
 
 const catalogJson = JSON.stringify(catalog);
 const seasonJson = JSON.stringify(season);
+const obtainableJson = JSON.stringify(obtainableTotal);
 ---
 
 <section id="tracker" class="scroll-mt-20 border-b border-hairline bg-canvas-soft" data-tracker-root>
@@ -73,7 +78,7 @@ const seasonJson = JSON.stringify(season);
       <div class="rounded-lg border border-hairline bg-canvas p-5 shadow-card">
         <div class="flex items-center justify-between text-sm">
           <span class="text-body">{t(locale, 'owned')}</span>
-          <span class="font-medium text-ink" data-owned-count>0 / {total}</span>
+          <span class="font-medium text-ink" data-owned-count>0 / {obtainableTotal}</span>
         </div>
         <div class="mt-3 h-2 overflow-hidden rounded-full bg-hairline">
           <div class="h-full rounded-full bg-ink transition-all duration-300" data-owned-bar style="width:0%"></div>
@@ -82,7 +87,7 @@ const seasonJson = JSON.stringify(season);
       <div class="rounded-lg border border-hairline bg-canvas p-5 shadow-card">
         <div class="flex items-center justify-between text-sm">
           <span class="text-body">{t(locale, 'mastered')}</span>
-          <span class="font-medium text-ink" data-mastered-count>0 / {total}</span>
+          <span class="font-medium text-ink" data-mastered-count>0 / {obtainableTotal}</span>
         </div>
         <div class="mt-3 h-2 overflow-hidden rounded-full bg-hairline">
           <div class="h-full rounded-full bg-link transition-all duration-300" data-mastered-bar style="width:0%"></div>
@@ -114,6 +119,56 @@ const seasonJson = JSON.stringify(season);
           >
             {t(locale, 'huntMode')}
           </button>
+          <div class="hidden sm:flex items-center gap-2" role="group" aria-label="Availability filter">
+            <span class="text-xs text-mute">|</span>
+            <button
+              type="button"
+              class="filter-chip inline-flex h-8 shrink-0 items-center rounded-full border border-hairline-strong bg-canvas-soft px-3 text-xs font-medium text-ink data-[active=true]:border-ink data-[active=true]:bg-ink data-[active=true]:text-on-primary"
+              data-filter-availability="all"
+              data-active="true"
+            >
+              {t(locale, 'all')}
+            </button>
+            <button
+              type="button"
+              class="filter-chip inline-flex h-8 shrink-0 items-center rounded-full border border-hairline-strong bg-canvas-soft px-3 text-xs font-medium text-ink data-[active=true]:border-ink data-[active=true]:bg-ink data-[active=true]:text-on-primary"
+              data-filter-availability="available"
+              data-active="false"
+            >
+              {t(locale, 'available')}
+            </button>
+            <button
+              type="button"
+              class="filter-chip inline-flex h-8 shrink-0 items-center rounded-full border border-hairline-strong bg-canvas-soft px-3 text-xs font-medium text-ink data-[active=true]:border-ink data-[active=true]:bg-ink data-[active=true]:text-on-primary"
+              data-filter-availability="unreleased"
+              data-active="false"
+            >
+              {t(locale, 'unreleased')}
+            </button>
+          </div>
+          <div class="hidden sm:flex items-center gap-2" role="group" aria-label="View toggle">
+            <span class="text-xs text-mute">|</span>
+            <button
+              type="button"
+              class="inline-flex h-8 items-center gap-1 rounded-full border border-hairline-strong bg-canvas-soft px-3 text-xs font-medium text-ink data-[active=true]:border-ink data-[active=true]:bg-ink data-[active=true]:text-on-primary"
+              data-view-toggle="grid"
+              data-active="true"
+              title={t(locale, 'viewGrid')}
+            >
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>
+              {t(locale, 'viewGrid')}
+            </button>
+            <button
+              type="button"
+              class="inline-flex h-8 items-center gap-1 rounded-full border border-hairline-strong bg-canvas-soft px-3 text-xs font-medium text-ink data-[active=true]:border-ink data-[active=true]:bg-ink data-[active=true]:text-on-primary"
+              data-view-toggle="list"
+              data-active="false"
+              title={t(locale, 'viewList')}
+            >
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="2" width="14" height="2.5" rx="1"/><rect x="1" y="6.75" width="14" height="2.5" rx="1"/><rect x="1" y="11.5" width="14" height="2.5" rx="1"/></svg>
+              {t(locale, 'viewList')}
+            </button>
+          </div>
         </div>
         <label class="relative block w-full max-w-sm">
           <span class="sr-only">{t(locale, 'searchSprites')}</span>
@@ -124,6 +179,35 @@ const seasonJson = JSON.stringify(season);
             class="h-10 w-full rounded-sm border border-hairline-strong bg-canvas px-3 text-sm text-ink outline-none placeholder:text-mute focus:border-ink"
           />
         </label>
+        <div class="relative" data-sort-dropdown>
+          <button
+            type="button"
+            class="inline-flex h-10 items-center gap-2 rounded-sm border border-hairline-strong bg-canvas px-3 text-sm font-medium text-ink hover:bg-canvas-soft-2"
+            data-sort-trigger
+          >
+            <span class="text-xs uppercase tracking-wider text-mute">{t(locale, 'sortBy')}</span>
+            <span data-sort-label class="font-semibold">{t(locale, 'sortType')}</span>
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" class="text-mute"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <div class="absolute right-0 z-50 mt-1 hidden w-56 rounded-md border border-hairline-strong bg-canvas shadow-lg" data-sort-menu>
+            {[
+              { key: 'type-asc', label: t(locale, 'sortType') },
+              { key: 'level-desc', label: t(locale, 'sortLevelHigh') },
+              { key: 'level-asc', label: t(locale, 'sortLevelLow') },
+              { key: 'rarity-desc', label: t(locale, 'sortRarityHigh') },
+              { key: 'rarity-asc', label: t(locale, 'sortRarityLow') },
+            ].map((opt) => (
+              <button
+                type="button"
+                class="flex w-full items-center rounded-sm px-3 py-2 text-sm text-ink hover:bg-canvas-soft-2 data-[active=true]:bg-canvas-soft-2 data-[active=true]:font-semibold"
+                data-sort-option={opt.key}
+                data-active={opt.key === 'type-asc' ? 'true' : 'false'}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
       <div class="-mx-1 flex flex-wrap gap-2 overflow-x-auto px-1 pb-1" role="group" aria-label="Rarity filter">
@@ -173,131 +257,204 @@ const seasonJson = JSON.stringify(season);
       </div>
     </div>
 
-    <div id="new-sprites" class="mt-8 rounded-lg border border-hairline bg-canvas p-4 shadow-card sm:p-5">
-      <div class="flex items-end justify-between gap-2">
-        <div>
-          <p class="text-caption-mono text-mute">{t(locale, 'spritesSectionEyebrow')}</p>
-          <a href="#new-sprites" class="mt-1 text-display-sm text-ink no-underline hover:underline">{t(locale, 'spritesSectionTitle')}</a>
-        </div>
-        <a
-          href={lp('/sprites')}
-          class="hidden text-sm font-medium text-ink no-underline hover:underline sm:inline"
-        >
-          {t(locale, 'browseSprites')} →
-        </a>
-      </div>
-      <div class="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-        {
-          newSprites.map((sprite) => (
-            <a
-              href={lp(`/sprites/${sprite.id}`)}
-              class="group new-sprite-card flex items-center gap-2 rounded-md border border-hairline bg-canvas-soft p-2.5 no-underline transition-colors hover:border-ink hover:bg-canvas-soft-2 sm:gap-3 sm:p-3"
-            >
-              <SpriteArt id={sprite.id} name={sprite.name} size="sm" />
-              <div class="min-w-0">
-                <p class="truncate text-xs font-medium text-ink sm:text-sm">{sprite.name}</p>
-                <p class="text-[10px] text-body sm:text-xs">
-                  <span class="capitalize">{localizeRarity(sprite.rarity as Rarity, locale)}</span>
-                  {sprite.launchedAt && (
-                    <>
-                      <span class="mx-0.5 text-mute sm:mx-1">·</span>
-                      <span class="text-mute hidden md:inline">{sprite.launchedAt}</span>
-                    </>
-                  )}
-                  {!sprite.launchedAt && (
-                    <>
-                      <span class="mx-0.5 text-mute sm:mx-1">·</span>
-                      <span class="text-mute">{t(locale, 'newTag')}</span>
-                    </>
-                  )}
-                </p>
-              </div>
-            </a>
-          ))
-        }
-      </div>
-    </div>
-
     <p class="mt-4 text-sm text-body" data-visible-count>{t(locale, 'shown', { n: total })}</p>
     <p class="mt-2 hidden text-sm text-body" data-empty-state>
       {t(locale, 'emptyFilters')}
     </p>
 
-    <div class="mt-6 grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" data-grid>
+    <div class="mt-6 grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 data-[view=list]:!grid-cols-1 data-[view=list]:!gap-2" data-grid data-view="grid">
       {
         (() => {
-          const firstNewIdx = catalog.findIndex((e) => newSpriteIds.has(e.spriteId));
-          const hasNew = firstNewIdx !== -1;
-          return catalog.map((entry, i) => (
-            <>
-              {hasNew && i === firstNewIdx && (
-                <div id="new-sprites-divider" class="col-span-full flex items-center gap-3 py-2 scroll-mt-20">
-                  <div class="h-px flex-1 bg-hairline"></div>
-                  <span class="text-xs font-semibold uppercase tracking-wider text-mute">{t(locale, 'newTag')} {t(locale, 'navSprites')}</span>
-                  <div class="h-px flex-1 bg-hairline"></div>
+          const oldSprites = catalog.filter((e) => !newSpriteIds.has(e.spriteId));
+          const newCatalog = catalog.filter((e) => newSpriteIds.has(e.spriteId));
+          const divider = newCatalog.length > 0 ? (
+            <div class="col-span-full flex items-center gap-3 py-2 scroll-mt-20">
+              <div class="h-px flex-1 bg-hairline"></div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-mute">{t(locale, 'newTag')} {t(locale, 'navSprites')}</span>
+              <div class="h-px flex-1 bg-hairline"></div>
+            </div>
+          ) : null;
+          const newSpritesCard = newCatalog.length > 0 ? (
+            <div id="new-sprites" class="col-span-full rounded-lg border border-hairline bg-canvas p-4 shadow-card sm:p-5">
+              <div class="flex items-end justify-between gap-2">
+                <div>
+                  <p class="text-caption-mono text-mute">{t(locale, 'spritesSectionEyebrow')}</p>
+                  <a href="#new-sprites" class="mt-1 text-display-sm text-ink no-underline hover:underline">{t(locale, 'spritesSectionTitle')}</a>
                 </div>
-              )}
+                <a
+                  href={lp('/sprites')}
+                  class="hidden text-sm font-medium text-ink no-underline hover:underline sm:inline"
+                >
+                  {t(locale, 'browseSprites')} →
+                </a>
+              </div>
+              <div class="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                {newSprites.map((sprite) => (
+                  <a
+                    href={lp(`/sprites/${sprite.id}`)}
+                    class="group new-sprite-card flex items-center gap-2 rounded-md border border-hairline bg-canvas-soft p-2.5 no-underline transition-colors hover:border-ink hover:bg-canvas-soft-2 sm:gap-3 sm:p-3"
+                  >
+                    <SpriteArt id={sprite.id} name={sprite.name} rarity={sprite.rarity} size="sm" />
+                    <div class="min-w-0">
+                      <p class="truncate text-xs font-medium text-ink sm:text-sm">{sprite.name}</p>
+                      <p class="text-[10px] text-body sm:text-xs">
+                        <span class="capitalize">{localizeRarity(sprite.rarity as Rarity, locale)}</span>
+                        {sprite.launchedAt && (
+                          <>
+                            <span class="mx-0.5 text-mute sm:mx-1">·</span>
+                            <span class="text-mute hidden md:inline">{sprite.launchedAt}</span>
+                          </>
+                        )}
+                        {!sprite.launchedAt && (
+                          <>
+                            <span class="mx-0.5 text-mute sm:mx-1">·</span>
+                            <span class="text-mute">{t(locale, 'newTag')}</span>
+                          </>
+                        )}
+                      </p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ) : null;
+          const newCells = newCatalog.map((entry) => (
               <article
-                class="sprite-cell group rounded-md border border-hairline bg-canvas p-4 shadow-card transition-transform duration-200 data-[hidden=true]:hidden data-[owned=true]:bg-canvas-soft"
+                class="sprite-cell group rounded-md border border-hairline bg-canvas p-4 shadow-card transition-transform duration-200 data-[hidden=true]:hidden data-[owned=true]:bg-canvas-soft data-[unreleased=true]:opacity-60 data-[view=list]:flex data-[view=list]:items-center data-[view=list]:gap-4 data-[view=list]:p-3"
                 data-key={entry.key}
                 data-rarity={entry.rarity}
                 data-variant={entry.variantId}
                 data-name={entry.spriteName.toLowerCase()}
+                data-available={entry.available ? 'true' : 'false'}
                 data-owned="false"
                 data-mastered="false"
                 data-hidden="false"
+                data-dust-cost={entry.dustCost ?? ''}
               >
-            <div class="flex items-start justify-between gap-3">
-              <div class="flex items-center gap-3">
-                <SpriteArt id={entry.spriteId} name={entry.spriteName} variant={entry.variantId} size="sm" />
-                <div>
-                  <h3 class="text-sm font-medium text-ink">
-                    {entry.spriteName}
-                    {newSpriteIds.has(entry.spriteId) && (
-                      <span class="ml-1.5 inline-flex items-center rounded-full bg-ink px-1.5 py-0.5 text-[9px] font-semibold text-on-primary align-middle">{t(locale, 'newTag')}</span>
-                    )}
-                  </h3>
-                  <p class="text-xs text-body">
-                    <span class="capitalize">{localizeRarity(entry.rarity, locale)}</span>
-                    <span class="mx-1">·</span>
-                    {entry.variantLabel}
-                  </p>
+                <div class="flex items-start justify-between gap-3">
+                  <div class="flex items-center gap-3">
+                    <SpriteArt id={entry.spriteId} name={entry.spriteName} variant={entry.variantId} rarity={entry.rarity} size="sm" />
+                    <div>
+                      <h3 class="text-sm font-medium text-ink">
+                        {entry.spriteName}
+                        <span class="ml-1.5 inline-flex items-center rounded-full bg-ink px-1.5 py-0.5 text-[9px] font-semibold text-on-primary align-middle">{t(locale, 'newTag')}</span>
+                      </h3>
+                      <p class="text-xs text-body">
+                        <span class="capitalize">{localizeRarity(entry.rarity, locale)}</span>
+                        <span class="mx-1">·</span>
+                        {entry.variantLabel}
+                        {!entry.available && (
+                          <span class="ml-1.5 inline-flex items-center rounded-full bg-error-soft px-1.5 py-0.5 text-[9px] font-semibold text-error align-middle">{t(locale, 'unreleased')}</span>
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="master-btn inline-flex size-8 items-center justify-center rounded-full border border-hairline-strong text-body transition-colors hover:border-ink hover:text-ink data-[on=true]:border-link data-[on=true]:bg-link-bg-soft data-[on=true]:text-link data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-40"
+                    data-master
+                    data-on="false"
+                    data-disabled={!entry.available ? 'true' : 'false'}
+                    aria-label={`Toggle mastered for ${entry.spriteName} ${entry.variantLabel}`}
+                    title={t(locale, 'mastered')}
+                    disabled={!entry.available}
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.2L12 16.8 5.7 20.8 8 13.6 2 9.2h7.6L12 2z" />
+                    </svg>
+                  </button>
                 </div>
-              </div>
-              <button
-                type="button"
-                class="master-btn inline-flex size-8 items-center justify-center rounded-full border border-hairline-strong text-body transition-colors hover:border-ink hover:text-ink data-[on=true]:border-link data-[on=true]:bg-link-bg-soft data-[on=true]:text-link"
-                data-master
-                data-on="false"
-                aria-label={`Toggle mastered for ${entry.spriteName} ${entry.variantLabel}`}
-                title={t(locale, 'mastered')}
+                <p class="mt-3 text-xs leading-5 text-body line-clamp-2">{entry.ability}</p>
+                {(entry.dustCost != null || entry.bonus) && (
+                  <p class="mt-1.5 text-xs text-mute">
+                    {entry.dustCost != null ? t(locale, 'dustAmount', { n: entry.dustCost }) : null}
+                    {entry.dustCost != null && entry.bonus ? <span class="mx-1">·</span> : null}
+                    {entry.bonus}
+                  </p>
+                )}
+                {entry.available ? (
+                  <button
+                    type="button"
+                    class="own-btn mt-4 inline-flex h-9 w-full items-center justify-center rounded-sm border border-hairline-strong text-sm font-medium text-ink transition-colors hover:bg-canvas-soft-2 data-[on=true]:border-ink data-[on=true]:bg-ink data-[on=true]:text-on-primary"
+                    data-own
+                    data-on="false"
+                  >
+                    {t(locale, 'markOwned')}
+                  </button>
+                ) : (
+                  <div class="mt-4 inline-flex h-9 w-full items-center justify-center rounded-sm border border-hairline bg-canvas-soft text-sm font-medium text-mute cursor-not-allowed opacity-60">
+                    {t(locale, 'unreleased')}
+                  </div>
+                )}
+              </article>
+          ));
+          return [...oldSprites.length > 0 ? oldSprites.map((entry) => (
+              <article
+                class="sprite-cell group rounded-md border border-hairline bg-canvas p-4 shadow-card transition-transform duration-200 data-[hidden=true]:hidden data-[owned=true]:bg-canvas-soft data-[unreleased=true]:opacity-60 data-[view=list]:flex data-[view=list]:items-center data-[view=list]:gap-4 data-[view=list]:p-3"
+                data-key={entry.key}
+                data-rarity={entry.rarity}
+                data-variant={entry.variantId}
+                data-name={entry.spriteName.toLowerCase()}
+                data-available={entry.available ? 'true' : 'false'}
+                data-owned="false"
+                data-mastered="false"
+                data-hidden="false"
+                data-dust-cost={entry.dustCost ?? ''}
               >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.2L12 16.8 5.7 20.8 8 13.6 2 9.2h7.6L12 2z" />
-                </svg>
-              </button>
-            </div>
-            <p class="mt-3 text-xs leading-5 text-body line-clamp-2">{entry.ability}</p>
-            {
-              (entry.dustCost != null || entry.bonus) && (
-                <p class="mt-1.5 text-xs text-mute">
-                  {entry.dustCost != null ? t(locale, 'dustAmount', { n: entry.dustCost }) : null}
-                  {entry.dustCost != null && entry.bonus ? <span class="mx-1">·</span> : null}
-                  {entry.bonus}
-                </p>
-              )
-            }
-            <button
-              type="button"
-              class="own-btn mt-4 inline-flex h-9 w-full items-center justify-center rounded-sm border border-hairline-strong text-sm font-medium text-ink transition-colors hover:bg-canvas-soft-2 data-[on=true]:border-ink data-[on=true]:bg-ink data-[on=true]:text-on-primary"
-              data-own
-              data-on="false"
-            >
-              {t(locale, 'markOwned')}
-            </button>
-          </article>
-          </>
-        ))
+                <div class="flex items-start justify-between gap-3">
+                  <div class="flex items-center gap-3">
+                    <SpriteArt id={entry.spriteId} name={entry.spriteName} variant={entry.variantId} rarity={entry.rarity} size="sm" />
+                    <div>
+                      <h3 class="text-sm font-medium text-ink">{entry.spriteName}</h3>
+                      <p class="text-xs text-body">
+                        <span class="capitalize">{localizeRarity(entry.rarity, locale)}</span>
+                        <span class="mx-1">·</span>
+                        {entry.variantLabel}
+                        {!entry.available && (
+                          <span class="ml-1.5 inline-flex items-center rounded-full bg-error-soft px-1.5 py-0.5 text-[9px] font-semibold text-error align-middle">{t(locale, 'unreleased')}</span>
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="master-btn inline-flex size-8 items-center justify-center rounded-full border border-hairline-strong text-body transition-colors hover:border-ink hover:text-ink data-[on=true]:border-link data-[on=true]:bg-link-bg-soft data-[on=true]:text-link data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-40"
+                    data-master
+                    data-on="false"
+                    data-disabled={!entry.available ? 'true' : 'false'}
+                    aria-label={`Toggle mastered for ${entry.spriteName} ${entry.variantLabel}`}
+                    title={t(locale, 'mastered')}
+                    disabled={!entry.available}
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.2L12 16.8 5.7 20.8 8 13.6 2 9.2h7.6L12 2z" />
+                    </svg>
+                  </button>
+                </div>
+                <p class="mt-3 text-xs leading-5 text-body line-clamp-2">{entry.ability}</p>
+                {(entry.dustCost != null || entry.bonus) && (
+                  <p class="mt-1.5 text-xs text-mute">
+                    {entry.dustCost != null ? t(locale, 'dustAmount', { n: entry.dustCost }) : null}
+                    {entry.dustCost != null && entry.bonus ? <span class="mx-1">·</span> : null}
+                    {entry.bonus}
+                  </p>
+                )}
+                {entry.available ? (
+                  <button
+                    type="button"
+                    class="own-btn mt-4 inline-flex h-9 w-full items-center justify-center rounded-sm border border-hairline-strong text-sm font-medium text-ink transition-colors hover:bg-canvas-soft-2 data-[on=true]:border-ink data-[on=true]:bg-ink data-[on=true]:text-on-primary"
+                    data-own
+                    data-on="false"
+                  >
+                    {t(locale, 'markOwned')}
+                  </button>
+                ) : (
+                  <div class="mt-4 inline-flex h-9 w-full items-center justify-center rounded-sm border border-hairline bg-canvas-soft text-sm font-medium text-mute cursor-not-allowed opacity-60">
+                    {t(locale, 'unreleased')}
+                  </div>
+                )}
+              </article>
+          )) : [], divider, newSpritesCard, ...newCells];
         })()
       }
     </div>
@@ -374,6 +531,7 @@ const seasonJson = JSON.stringify(season);
 
   <script type="application/json" data-catalog-json set:html={catalogJson} />
   <script type="application/json" data-season-json set:html={seasonJson} />
+  <script type="application/json" data-obtainable-json set:html={obtainableJson} />
   <script type="application/json" data-i18n-json set:html={i18nJson} />
 </section>
 
@@ -382,11 +540,12 @@ const seasonJson = JSON.stringify(season);
     emptyProgress,
     emptyStore,
     huntList,
+    migrateProgress,
     normalizeProgress,
     toggleMastered,
     toggleOwned,
   } from '../lib/progress';
-  import { decodeShare, encodeShare, exportJson, importJson, missingDiscordText } from '../lib/share';
+  import { decodeShare, encodeShare, exportJson, importJsonWithValidation, missingDiscordText } from '../lib/share';
   import type { CatalogEntry, ProgressStore, Season, SeasonProgress } from '../lib/types';
   import { STORAGE_KEY } from '../lib/progress';
 
@@ -394,8 +553,10 @@ const seasonJson = JSON.stringify(season);
   if (root) {
     const catalog = JSON.parse(root.querySelector('[data-catalog-json]')?.textContent || '[]') as CatalogEntry[];
     const season = JSON.parse(root.querySelector('[data-season-json]')?.textContent || '{}') as Season;
+    const obtainableTotal = JSON.parse(root.querySelector('[data-obtainable-json]')?.textContent || '0') as number;
     const copy = JSON.parse(root.querySelector('[data-i18n-json]')?.textContent || '{}') as Record<string, string>;
     const catalogKeys = catalog.map((c) => c.key);
+    const validKeys = new Set(catalog.filter((c) => c.available).map((c) => c.key));
 
     function msg(key: string, vars?: Record<string, string | number>) {
       let value = copy[key] || key;
@@ -408,12 +569,15 @@ const seasonJson = JSON.stringify(season);
     }
 
     let progress = loadSeasonProgress(season.id);
+    progress = migrateProgress(progress, validKeys);
     let filters = {
       status: 'all' as 'all' | 'owned' | 'missing',
+      availability: 'all' as 'all' | 'available' | 'unreleased',
       rarity: 'all',
       variant: 'all',
       search: '',
       hunt: false,
+      sort: 'type-asc' as string,
     };
 
     const params = new URLSearchParams(window.location.search);
@@ -421,7 +585,7 @@ const seasonJson = JSON.stringify(season);
     if (shareCode) {
       const decoded = decodeShare(shareCode, catalogKeys);
       if (decoded && decoded.seasonId === season.id) {
-        progress = decoded.progress;
+        progress = migrateProgress(decoded.progress, validKeys);
         saveSeasonProgress(season.id, progress);
         queueMicrotask(() => setStatus(msg('loadedShare')));
       }
@@ -455,9 +619,48 @@ const seasonJson = JSON.stringify(season);
       });
     });
 
+    root.querySelectorAll('[data-filter-availability]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filters.availability = (btn.getAttribute('data-filter-availability') || 'all') as typeof filters.availability;
+        setActiveGroup('[data-filter-availability]', btn);
+        render();
+      });
+    });
+
+    let currentView = 'grid' as 'grid' | 'list';
+    root.querySelectorAll('[data-view-toggle]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const view = btn.getAttribute('data-view-toggle') as 'grid' | 'list';
+        if (!view || view === currentView) return;
+        currentView = view;
+        setActiveGroup('[data-view-toggle]', btn);
+        root!.querySelector('[data-grid]')?.setAttribute('data-view', view);
+      });
+    });
+
     root.querySelector('[data-search]')?.addEventListener('input', (event) => {
       filters.search = (event.target as HTMLInputElement).value.trim().toLowerCase();
       render();
+    });
+
+    const sortTrigger = root.querySelector('[data-sort-trigger]');
+    const sortMenu = root.querySelector<HTMLElement>('[data-sort-menu]');
+    sortTrigger?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      sortMenu?.classList.toggle('hidden');
+    });
+    document.addEventListener('click', () => sortMenu?.classList.add('hidden'));
+    sortMenu?.querySelectorAll('[data-sort-option]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-sort-option') || 'type-asc';
+        filters.sort = key;
+        sortMenu.querySelectorAll('[data-sort-option]').forEach((b) => b.setAttribute('data-active', 'false'));
+        btn.setAttribute('data-active', 'true');
+        const label = root.querySelector('[data-sort-label]');
+        if (label) label.textContent = btn.textContent;
+        sortMenu.classList.add('hidden');
+        render();
+      });
     });
 
     root.querySelector('[data-hunt-toggle]')?.addEventListener('click', () => {
@@ -475,7 +678,13 @@ const seasonJson = JSON.stringify(season);
 
     root.querySelectorAll('.sprite-cell').forEach((cell) => {
       const key = cell.getAttribute('data-key');
+      const available = cell.getAttribute('data-available') !== 'false';
       if (!key) return;
+      if (!available) {
+        cell.querySelector('[data-own]')?.setAttribute('disabled', 'true');
+        cell.querySelector('[data-master]')?.setAttribute('disabled', 'true');
+        return;
+      }
       cell.querySelector('[data-own]')?.addEventListener('click', () => {
         progress = toggleOwned(progress, key);
         saveSeasonProgress(season.id, progress);
@@ -502,7 +711,7 @@ const seasonJson = JSON.stringify(season);
     root.querySelector('[data-copy-discord]')?.addEventListener('click', async () => {
       const owned = new Set(progress.owned);
       const missing = catalog
-        .filter((c) => !owned.has(c.key))
+        .filter((c) => c.available && !owned.has(c.key))
         .map((c) => ({ spriteName: c.spriteName, variantLabel: c.variantLabel }));
       await navigator.clipboard.writeText(missingDiscordText(season.label, missing));
       setStatus(msg('missingCopied'));
@@ -515,7 +724,7 @@ const seasonJson = JSON.stringify(season);
 
     root.querySelector('[data-import-apply]')?.addEventListener('click', () => {
       const raw = (root.querySelector('[data-import-json]') as HTMLTextAreaElement | null)?.value || '';
-      const parsed = importJson(raw);
+      const parsed = importJsonWithValidation(raw, validKeys);
       if (!parsed) {
         setStatus(msg('jsonParseFail'), true);
         return;
@@ -561,18 +770,17 @@ const seasonJson = JSON.stringify(season);
     function render() {
       const ownedSet = new Set(progress.owned);
       const masteredSet = new Set(progress.mastered);
-      const ownedCount = progress.owned.length;
-      const masteredCount = progress.mastered.length;
-      const total = catalog.length;
+      const ownedCount = progress.owned.filter((k) => validKeys.has(k)).length;
+      const masteredCount = progress.mastered.filter((k) => validKeys.has(k)).length;
 
       const ownedCountEl = root!.querySelector('[data-owned-count]');
       const masteredCountEl = root!.querySelector('[data-mastered-count]');
-      if (ownedCountEl) ownedCountEl.textContent = `${ownedCount} / ${total}`;
-      if (masteredCountEl) masteredCountEl.textContent = `${masteredCount} / ${total}`;
+      if (ownedCountEl) ownedCountEl.textContent = `${ownedCount} / ${obtainableTotal}`;
+      if (masteredCountEl) masteredCountEl.textContent = `${masteredCount} / ${obtainableTotal}`;
       const ownedBar = root!.querySelector<HTMLElement>('[data-owned-bar]');
       const masteredBar = root!.querySelector<HTMLElement>('[data-mastered-bar]');
-      if (ownedBar) ownedBar.style.width = `${total ? (ownedCount / total) * 100 : 0}%`;
-      if (masteredBar) masteredBar.style.width = `${total ? (masteredCount / total) * 100 : 0}%`;
+      if (ownedBar) ownedBar.style.width = `${obtainableTotal ? (ownedCount / obtainableTotal) * 100 : 0}%`;
+      if (masteredBar) masteredBar.style.width = `${obtainableTotal ? (masteredCount / obtainableTotal) * 100 : 0}%`;
 
       let visible = 0;
       root!.querySelectorAll<HTMLElement>('.sprite-cell').forEach((cell) => {
@@ -591,14 +799,19 @@ const seasonJson = JSON.stringify(season);
         masterBtn?.setAttribute('data-on', isMastered ? 'true' : 'false');
         if (ownBtn) ownBtn.textContent = isOwned ? msg('owned') : msg('markOwned');
 
+        const avail = cell.getAttribute('data-available') !== 'false';
         const statusOk =
           filters.status === 'all' ||
-          (filters.status === 'owned' && isOwned) ||
-          (filters.status === 'missing' && !isOwned);
+          (filters.status === 'owned' && isOwned && avail) ||
+          (filters.status === 'missing' && !isOwned && avail);
         const rarityOk = filters.rarity === 'all' || filters.rarity === rarity;
         const variantOk = filters.variant === 'all' || filters.variant === variant;
+        const availOk =
+          filters.availability === 'all' ||
+          (filters.availability === 'available' && avail) ||
+          (filters.availability === 'unreleased' && !avail);
         const searchOk = !filters.search || name.includes(filters.search) || key.includes(filters.search);
-        const show = statusOk && rarityOk && variantOk && searchOk;
+        const show = statusOk && rarityOk && variantOk && availOk && searchOk;
         cell.setAttribute('data-hidden', show ? 'false' : 'true');
         if (show) visible += 1;
       });
@@ -607,6 +820,29 @@ const seasonJson = JSON.stringify(season);
       if (visibleEl) visibleEl.textContent = msg('shown', { n: visible });
       const empty = root!.querySelector('[data-empty-state]');
       empty?.classList.toggle('hidden', visible !== 0);
+
+      const grid = root!.querySelector('[data-grid]');
+      if (grid) {
+        const cells = Array.from(grid.querySelectorAll<HTMLElement>('.sprite-cell'));
+        const rarityOrder: Record<string, number> = { mythic: 4, legendary: 3, epic: 2, rare: 1, special: 0 };
+        cells.sort((a, b) => {
+          const [sortField, sortDir] = filters.sort.split('-');
+          let cmp = 0;
+          if (sortField === 'type') {
+            cmp = (a.getAttribute('data-name') || '').localeCompare(b.getAttribute('data-name') || '');
+          } else if (sortField === 'level') {
+            const costA = parseInt(a.querySelector('[data-dust-cost]')?.textContent?.replace(/\D/g, '') || '0', 10);
+            const costB = parseInt(b.querySelector('[data-dust-cost]')?.textContent?.replace(/\D/g, '') || '0', 10);
+            cmp = costA - costB;
+          } else if (sortField === 'rarity') {
+            const rA = rarityOrder[a.getAttribute('data-rarity') || 'rare'] ?? 0;
+            const rB = rarityOrder[b.getAttribute('data-rarity') || 'rare'] ?? 0;
+            cmp = rA - rB;
+          }
+          return sortDir === 'desc' ? -cmp : cmp;
+        });
+        cells.forEach((cell) => grid.appendChild(cell));
+      }
 
       const huntEl = root!.querySelector('[data-hunt-list]');
       if (huntEl) {

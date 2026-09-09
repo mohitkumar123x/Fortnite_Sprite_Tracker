@@ -58,21 +58,6 @@ const seoFaqsByLocale: Record<Locale, FaqItem[]> = {
         '<p>You cannot upload a custom Sprite into live Fortnite through this site or any unofficial tracker. Epic owns the companion roster. You can still concept-art a Sprite for fun (silhouette, ability, variant colors) and share it as fan art. Official additions come from Epic and collabs only. Use this Fortnite Sprite Tracker as a checklist for official Sprites, not as a design submission tool.</p>',
     },
     {
-      question: 'What is the #1 skin in Fortnite?',
-      answer:
-        '<p>There is no permanent official #1 skin. Popularity shifts with shops, collabs, and competitive scenes. Skins are cosmetics; Sprites are a separate companion system. This Fortnite Sprite Tracker tracks Sprites, not outfit rankings. Check the in-game shop and current competitive usage if you need a live skin meta.</p>',
-    },
-    {
-      question: 'What is the #1 rarest Fortnite skin?',
-      answer:
-        '<p>Rarest skins are usually old Battle Pass exclusives, limited collabs, or shop items that never returned — not one static #1. Epic does not publish a live outfit rarity leaderboard. Sprite rarity (Rare through Mythic, plus Gold and Cheat Master) is what this Fortnite Sprite Tracker records. For outfit rarity, use community wikis and item-shop history.</p>',
-    },
-    {
-      question: 'Who is the #1 Fortnite player?',
-      answer:
-        '<p>Competitive #1 changes by region, season, and FNCS or cash-cup results. There is no all-time #1 that stays true every week. This Fortnite Sprite Tracker does not rank players or pull Epic stats. Use official Competitive Fortnite channels or dedicated stats sites for leaderboards, then mark Sprite variants you extracted here.</p>',
-    },
-    {
       question: 'How do Fortnite Sprites work?',
       answer:
         '<p>Find a Sprite in a chest or supply drop, then extract it before the match ends to keep it permanently. Summon it later with Sprite Dust. Each Sprite has a passive that levels up — often to level 5 for mastery. Crown levels from wins; Klombo levels by consuming items. Variants are separate collectibles. This Fortnite Sprite Tracker checklist stores Owned (extracted) and Mastered (typically level 5) in your browser.</p>',
@@ -128,21 +113,6 @@ const seoFaqsByLocale: Record<Locale, FaqItem[]> = {
       question: '¿Cómo puedo diseñar un Sprite para Fortnite?',
       answer:
         '<p>Los Sprites son creados oficialmente por Epic Games y sus colaboraciones. Puedes diseñar fan art o conceptos e ideas para la comunidad.</p>',
-    },
-    {
-      question: '¿Cuál es la skin #1 de Fortnite?',
-      answer:
-        '<p>La popularidad cambia según la tienda y eventos. Este sitio está enfocado en seguir la colección de Sprites acompañantes.</p>',
-    },
-    {
-      question: '¿Cuál es la skin más rara de Fortnite?',
-      answer:
-        '<p>Las skins más raras son pases de batalla antiguos o promociones exclusivas. Este tracker registra la rareza de los Sprites.</p>',
-    },
-    {
-      question: '¿Quién es el jugador #1 de Fortnite?',
-      answer:
-        '<p>El ranking cambia constantemente según las temporadas y la FNCS. Este sitio sirve para seguir tu lista de Sprites.</p>',
     },
     {
       question: '¿Cómo funcionan los Sprites en Fortnite?',
@@ -202,21 +172,6 @@ const seoFaqsByLocale: Record<Locale, FaqItem[]> = {
         '<p>Os Sprites são criados oficialmente pela Epic Games e suas colaborações. Você pode criar fan arts e conceitos para compartilhar na comunidade.</p>',
     },
     {
-      question: 'Qual é a skin #1 no Fortnite?',
-      answer:
-        '<p>A popularidade muda de acordo com a loja e eventos. Este site é focado em acompanhar a coleção de Sprites companheiros.</p>',
-    },
-    {
-      question: 'Qual é a skin mais rara do Fortnite?',
-      answer:
-        '<p>As skins mais raras são passes de batalha antigos ou promoções exclusivas. Este tracker registra a raridade dos Sprites.</p>',
-    },
-    {
-      question: 'Quem é o jogador #1 do Fortnite?',
-      answer:
-        '<p>O ranking muda constantemente de acordo com as temporadas e a FNCS. Este site serve para acompanhar sua lista de Sprites.</p>',
-    },
-    {
       question: 'Como funcionam os Sprites no Fortnite?',
       answer:
         '<p>Encontre um Sprite em um baú, extraia-o antes do fim da partida para guardá-lo permanentemente e invoque-o com Pó de Sprite. Cada um concede habilidades passivas que sobem de nível.</p>',
@@ -272,21 +227,6 @@ const seoFaqsByLocale: Record<Locale, FaqItem[]> = {
       question: 'Comment puis-je créer un Sprite pour Fortnite ?',
       answer:
         '<p>Les Sprites sont créés officiellement par Epic Games et leurs collaborations. Vous pouvez créer des fan arts et des concepts pour partager avec la communauté.</p>',
-    },
-    {
-      question: 'Quel est le skin #1 dans Fortnite ?',
-      answer:
-        '<p>La popularité change selon la boutique et les événements. Ce site est consacré au suivi de la collection de Sprites compagnons.</p>',
-    },
-    {
-      question: 'Quel est le skin le plus rare de Fortnite ?',
-      answer:
-        '<p>Les skins les plus rares sont les anciens passes de bataille ou les promotions exclusives. Ce tracker enregistre la rareté des Sprites.</p>',
-    },
-    {
-      question: 'Qui est le joueur #1 de Fortnite ?',
-      answer:
-        '<p>Le classement change constamment selon les saisons et la FNCS. Ce site sert à suivre votre liste de Sprites.</p>',
     },
     {
       question: 'Comment fonctionnent les Sprites dans Fortnite ?',

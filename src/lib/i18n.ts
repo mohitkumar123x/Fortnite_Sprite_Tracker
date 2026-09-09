@@ -60,6 +60,18 @@ const ui = {
     allRarities: 'All rarities',
     allVariants: 'All variants',
     shown: '{n} shown',
+    unreleased: 'Unreleased',
+    available: 'Available',
+    viewGrid: 'Grid',
+    viewList: 'List',
+    sortBy: 'Sort by',
+    sortType: 'Type',
+    sortLevelHigh: 'Level: High to Low',
+    sortLevelLow: 'Level: Low to High',
+    sortRarityHigh: 'Rarity: High to Low',
+    sortRarityLow: 'Rarity: Low to High',
+    obtainableCount: '{n} obtainable variants',
+    knownCount: '{n} known · {m} unreleased',
     emptyFilters: 'Nothing matches these filters. Clear search or turn off Hunt Mode.',
     markOwned: 'Mark owned',
     dust: 'dust',
@@ -140,7 +152,7 @@ const ui = {
     faqIntro: 'Straight answers on Sprites, rarity, this tracker, and related Fortnite questions.',
     faqPageHeading: 'FAQ',
     faqPageEyebrow: 'Help',
-    faqPageIntro: 'Sprites, this tracker, rarity, and related Fortnite questions — with JSON-LD FAQPage markup for search.',
+    faqPageIntro: 'Sprites, this tracker, rarity, and related Fortnite questions.',
     faqReady: 'Ready to check something off?',
     faqOpenChecklist: 'Open the Fortnite Sprite Tracker checklist',
     faqOrBrowse: 'or browse the',
@@ -151,6 +163,10 @@ const ui = {
       'This board no longer drops in live matches, but your checklist still lives locally keyed to this season.',
     spritesMeta: '{sprites} sprites · {variants} variants',
     dustAmount: '{n} dust',
+    spriteStats: 'Sprite Stats',
+    summonCost: 'Summon Cost',
+    dropChance: 'Drop Chance',
+    location: 'Location',
     legalEnglishNote: 'Legal pages are provided in English.',
     pageHomeTitle: 'Fortnite Sprite Tracker | Free Online Checklist, Chart & Collection Tracker',
     pageHomeDesc:
@@ -198,25 +214,44 @@ const ui = {
     backToTracker: 'Back to tracker',
     navBlog: 'Blog',
     blogPageTitle: 'Blog',
-    blogEyebrow: 'Blog',
-    blogTitle: 'Fortnite Sprite Tracker Blog',
+    blogEyebrow: 'FROM THE BLOG',
+    blogTitle: 'Sprite Tracker Blog',
     blogIntro:
-      'Tips, patch notes, and seasonal guides for the Fortnite Sprite Tracker — how to track sprites, use Hunt Mode, compare lockers, and get the most out of your collection.',
-    blogPost1Title: 'How to Track Your Fortnite Sprite Collection',
-    blogPost1Body:
-      'Open the checklist on the home page and mark each sprite as Owned or Mastered. Your progress stays in the browser — no account needed. Use Export JSON to back up your collection, or copy a share link to move to another device.',
-    blogPost2Title: 'Hunt Mode: Find Missing Sprites Faster',
-    blogPost2Body:
-      'Hunt Mode filters the board to show only the sprites you are missing, sorted by rarity. That means your next chest grab targets the uncommon and common variants first, so you finish the set quicker.',
-    blogPost3Title: 'Compare Lockers with a Friend',
-    blogPost3Body:
-      'Copy your share code from the Share & Backup section, then paste it into the Compare page along with a friend\'s code. You will see what only you own, only they own, and what is still missing for both.',
-    blogPost4Title: 'Fortnite Cheat Codes: How to Unlock Sprite Variants',
-    blogPost4Body:
-      'Visit the Cheat Codes page to find every working code and Button Mash combo. Enter them in the Fortnite lobby admin panel — each code works once per account. Mark them as used so you never re-enter the same one.',
-    blogPost5Title: 'Season Archives: Never Lose Past Progress',
-    blogPost5Body:
-      'When a new season starts, your old checklist moves to the Seasons archive page. You can reopen any past season without losing your local data. Past boards stay read-only so you can see what you completed.',
+      'Guides, patch notes, and tips for tracking your Fortnite sprite collection.',
+    blogReadMore: 'Read more →',
+    blogPublished: 'Published',
+    blogUpdated: 'Updated',
+    blogBackToPosts: '← Back to all posts',
+    blogPost_v42_10_title: 'Fortnite v42.10 Update: Every New and Loot Hacker Sprite',
+    blogPost_v42_10_meta:
+      'Full breakdown of the v42.10 patch: five new base sprites, the Loot Hacker system, rarities, abilities, and availability status.',
+    blogPost_v42_10_excerpt:
+      'The v42.10 update added five new base sprites and introduced the Loot Hacker variant system. Here is every sprite, its rarity, and whether it is available today.',
+    blogPost_howToTrack_title: 'How to Track Your Fortnite Sprite Collection',
+    blogPost_howToTrack_meta:
+      'Step-by-step guide to marking Owned and Mastered sprites, exporting JSON backups, and sharing your collection with friends.',
+    blogPost_howToTrack_excerpt:
+      'Learn how to mark sprites as Owned or Mastered, back up your progress, and share a read-only link with friends — all from your browser.',
+    blogPost_huntMode_title: 'Hunt Mode: Find Missing Sprites Faster',
+    blogPost_huntMode_meta:
+      'How to use Hunt Mode to filter your board to only missing sprites, sorted by rarity, so you know exactly what to chase next.',
+    blogPost_huntMode_excerpt:
+      'Hunt Mode hides every sprite you already own and shows only the missing ones, sorted by rarity. Here is how to turn it on and use it effectively.',
+    blogPost_compare_title: 'Compare Lockers with a Friend',
+    blogPost_compare_meta:
+      'Use share codes to compare your sprite collection with a friend and see who owns what — side by side, no login required.',
+    blogPost_compare_excerpt:
+      'Two share codes, one side-by-side view. Find out which sprites you both own, which only you have, and which your friend is missing.',
+    blogPost_cheatCodes_title: 'Fortnite Cheat Codes: How to Unlock Sprite Variants',
+    blogPost_cheatCodes_meta:
+      'Complete list of cheat codes that unlock Cheat Master sprite variants, dust, XP, and items — with button combos and dust costs.',
+    blogPost_cheatCodes_excerpt:
+      'Every cheat code in Chapter 7 Season 4, what it unlocks, the button combo to enter it, and how much Sprite Dust each one costs.',
+    blogPost_seasonArchives_title: 'Season Archives: Never Lose Past Progress',
+    blogPost_seasonArchives_meta:
+      'How past-season sprites from Chapter 7 Season 3 stay in your collection even after a new season goes live.',
+    blogPost_seasonArchives_excerpt:
+      'Your Season 3 sprites — including Batman, Zero Point, and King — remain tracked even when Season 4 becomes the live roster.',
     navDustCalc: 'Dust Calc',
     dustCalcPageTitle: 'Sprite Dust Calculator',
     dustCalcEyebrow: 'Planning tool',
@@ -252,7 +287,7 @@ const ui = {
     heroCheatCodes: 'Cheat Codes',
     heroDustCalc: 'Dust Calculator',
     heroSprites: 'New Sprites',
-    spritesSectionEyebrow: 'v41.10 Update',
+    spritesSectionEyebrow: 'v42.10 Update',
     spritesSectionTitle: 'New Sprites',
     newTag: 'New',
     printSprites: 'Print sprite list',
@@ -315,6 +350,18 @@ const ui = {
     allRarities: 'Todas las rarezas',
     allVariants: 'Todas las variantes',
     shown: '{n} visibles',
+    unreleased: 'No disponible',
+    available: 'Disponible',
+    viewGrid: 'Cuadrícula',
+    viewList: 'Lista',
+    sortBy: 'Ordenar por',
+    sortType: 'Tipo',
+    sortLevelHigh: 'Nivel: Alto a Bajo',
+    sortLevelLow: 'Nivel: Bajo a Alto',
+    sortRarityHigh: 'Rareza: Alta a Baja',
+    sortRarityLow: 'Rareza: Baja a Alta',
+    obtainableCount: '{n} variantes obtenibles',
+    knownCount: '{n} conocidas · {m} no disponibles',
     emptyFilters: 'Nada coincide con estos filtros. Limpia la búsqueda o desactiva el modo Caza.',
     markOwned: 'Marcar obtenido',
     dust: 'polvo',
@@ -403,6 +450,10 @@ const ui = {
       'Este tablero ya no aparece en partidas en vivo, pero tu lista sigue guardada en este dispositivo para esta temporada.',
     spritesMeta: '{sprites} sprites · {variants} variantes',
     dustAmount: '{n} polvo',
+    spriteStats: 'Estadísticas del Sprite',
+    summonCost: 'Costo de Invocación',
+    dropChance: 'Probabilidad',
+    location: 'Ubicación',
     legalEnglishNote: 'Las páginas legales están en inglés.',
     pageHomeTitle: 'Fortnite Sprite Tracker | Lista, tabla y colección online gratis',
     pageHomeDesc:
@@ -450,25 +501,44 @@ const ui = {
     backToTracker: 'Volver al tracker',
     navBlog: 'Blog',
     blogPageTitle: 'Blog',
-    blogEyebrow: 'Blog',
-    blogTitle: 'Blog del Fortnite Sprite Tracker',
+    blogEyebrow: 'DEL BLOG',
+    blogTitle: 'Blog del Sprite Tracker',
     blogIntro:
-      'Consejos, notas de parche y guías para el Fortnite Sprite Tracker: cómo rastrear sprites, usar el modo Caza, comparar lockers y aprovechar tu colección.',
-    blogPost1Title: 'Cómo rastrear tu colección de sprites de Fortnite',
-    blogPost1Body:
-      'Abre la lista en la página principal y marca cada sprite como Obtenido o Dominado. Tu progreso se queda en el navegador, sin cuenta. Usa Exportar JSON para respaldar tu colección o copia un enlace de compartir para cambiar de dispositivo.',
-    blogPost2Title: 'Modo Caza: encuentra sprites faltantes más rápido',
-    blogPost2Body:
-      'El modo Caza filtra la tabla para mostrar solo los sprites que te faltan, ordenados por rareza. Tu próximo cofre apunta a las variantes no comunes y comunes primero, para completar el set más rápido.',
-    blogPost3Title: 'Compara lockers con un amigo',
-    blogPost3Body:
-      'Copia tu código de compartir desde Compartir y respaldo, luego pégalo en la página Comparar con el código de un amigo. Verás qué tienes solo tú, solo ellos, y qué les falta a ambos.',
-    blogPost4Title: 'Códigos de truco: cómo desbloquear variantes de sprites',
-    blogPost4Body:
-      'Visita la página de Códigos de truco para encontrar cada código funcional y combo de Button Mash. Escríbelos en el panel de administración del lobby de Fortnite, cada código funciona una vez por cuenta. Cópialos para nunca repetir uno.',
-    blogPost5Title: 'Archivos de temporada: nunca pierdas tu progreso anterior',
-    blogPost5Body:
-      'Cuando empieza una nueva temporada, tu lista anterior pasa al archivo de Temporadas. Puedes reabrir cualquier temporada pasada sin perder tus datos locales. Las tablas anteriores quedan como solo lectura para ver qué completaste.',
+      'Guías, notas de parche y consejos para rastrear tu colección de sprites de Fortnite.',
+    blogReadMore: 'Leer más →',
+    blogPublished: 'Publicado',
+    blogUpdated: 'Actualizado',
+    blogBackToPosts: '← Volver a todas las publicaciones',
+    blogPost_v42_10_title: 'Actualización v42.10 de Fortnite: Todos los nuevos sprites y Loot Hacker',
+    blogPost_v42_10_meta:
+      'Desglose completo del parche v42.10: cinco nuevos sprites base, el sistema Loot Hacker, rarezas, habilidades y estado de disponibilidad.',
+    blogPost_v42_10_excerpt:
+      'La actualización v42.10 agregó cinco nuevos sprites base e introdujo el sistema de variantes Loot Hacker. Aquí está cada sprite, su rareza y si está disponible hoy.',
+    blogPost_howToTrack_title: 'Cómo rastrear tu colección de sprites de Fortnite',
+    blogPost_howToTrack_meta:
+      'Guía paso a paso para marcar sprites Obtenidos y Dominados, exportar respaldos JSON y compartir tu colección con amigos.',
+    blogPost_howToTrack_excerpt:
+      'Aprende a marcar sprites como Obtenido o Dominado, respaldar tu progreso y compartir un enlace de solo lectura con amigos, todo desde tu navegador.',
+    blogPost_huntMode_title: 'Modo Caza: encuentra sprites faltantes más rápido',
+    blogPost_huntMode_meta:
+      'Cómo usar el Modo Caza para filtrar tu tabla y mostrar solo sprites faltantes, ordenados por rareza.',
+    blogPost_huntMode_excerpt:
+      'El Modo Caza oculta todos los sprites que ya tienes y muestra solo los que faltan, ordenados por rareza. Así es como se activa y se usa efectivamente.',
+    blogPost_compare_title: 'Compara lockers con un amigo',
+    blogPost_compare_meta:
+      'Usa códigos de compartir para comparar tu colección de sprites con un amigo y ver quién tiene qué, lado a lado, sin iniciar sesión.',
+    blogPost_compare_excerpt:
+      'Dos códigos de compartir, una vista lado a lado. Descubre qué sprites tienes ambos, cuáles solo tienes tú y cuáles le faltan a tu amigo.',
+    blogPost_cheatCodes_title: 'Códigos de truco de Fortnite: cómo desbloquear variantes de sprites',
+    blogPost_cheatCodes_meta:
+      'Lista completa de códigos de truco que desbloquean variantes de sprites, polvo, XP y objetos, con combinaciones de botones y costos.',
+    blogPost_cheatCodes_excerpt:
+      'Cada código de truco en la Temporada 4 del Capítulo 7, qué desbloquea, la combinación de botones para ingresarlo y cuánto polvo de sprite cuesta.',
+    blogPost_seasonArchives_title: 'Archivos de temporada: nunca pierdas tu progreso anterior',
+    blogPost_seasonArchives_meta:
+      'Cómo los sprites de temporadas anteriores del Capítulo 7 Temporada 3 permanecen en tu colección incluso después de que comience una nueva temporada.',
+    blogPost_seasonArchives_excerpt:
+      'Tus sprites de la Temporada 3, incluidos Batman, Zero Point y King, permanecen rastreados incluso cuando la Temporada 4 se convierte en la roster activa.',
     navDustCalc: 'Calc. Polvo',
     dustCalcPageTitle: 'Calculadora de Polvo de Sprite',
     dustCalcEyebrow: 'Herramienta de planificación',
@@ -504,7 +574,7 @@ const ui = {
     heroCheatCodes: 'Códigos',
     heroDustCalc: 'Calculadora de Polvo',
     heroSprites: 'Nuevos Sprites',
-    spritesSectionEyebrow: 'Actualización v41.10',
+    spritesSectionEyebrow: 'Actualización v42.10',
     spritesSectionTitle: 'Nuevos Sprites',
     newTag: 'Nuevo',
     printSprites: 'Imprimir lista de sprites',
@@ -567,6 +637,18 @@ const ui = {
     allRarities: 'Todas as raridades',
     allVariants: 'Todas as variantes',
     shown: '{n} visíveis',
+    unreleased: 'Indisponível',
+    available: 'Disponível',
+    viewGrid: 'Grade',
+    viewList: 'Lista',
+    sortBy: 'Ordenar por',
+    sortType: 'Tipo',
+    sortLevelHigh: 'Nível: Alto para Baixo',
+    sortLevelLow: 'Nível: Baixo para Alto',
+    sortRarityHigh: 'Raridade: Alta para Baixa',
+    sortRarityLow: 'Raridade: Baixa para Alta',
+    obtainableCount: '{n} variantes obtíveis',
+    knownCount: '{n} conhecidas · {m} indisponíveis',
     emptyFilters: 'Nada corresponde a estes filtros. Limpe a busca ou desative o modo Caça.',
     markOwned: 'Marcar obtido',
     dust: 'pó',
@@ -655,6 +737,10 @@ const ui = {
       'Este quadro não cai mais nas partidas ao vivo, mas sua lista continua neste dispositivo para esta temporada.',
     spritesMeta: '{sprites} sprites · {variants} variantes',
     dustAmount: '{n} pó',
+    spriteStats: 'Estatísticas do Sprite',
+    summonCost: 'Custo de Invocação',
+    dropChance: 'Chance de Drop',
+    location: 'Localização',
     legalEnglishNote: 'As páginas legais estão em inglês.',
     pageHomeTitle: 'Fortnite Sprite Tracker | Lista, tabela e coleção online grátis',
     pageHomeDesc:
@@ -702,25 +788,44 @@ const ui = {
     backToTracker: 'Voltar ao tracker',
     navBlog: 'Blog',
     blogPageTitle: 'Blog',
-    blogEyebrow: 'Blog',
-    blogTitle: 'Blog do Fortnite Sprite Tracker',
+    blogEyebrow: 'DO BLOG',
+    blogTitle: 'Blog do Sprite Tracker',
     blogIntro:
-      'Dicas, notas de patch e guias para o Fortnite Sprite Tracker: como rastrear sprites, usar o modo Caça, comparar lockers e aproveitar sua coleção.',
-    blogPost1Title: 'Como rastrear sua coleção de sprites do Fortnite',
-    blogPost1Body:
-      'Abra a lista na página principal e marque cada sprite como Obtido ou Dominado. Seu progresso fica no navegador, sem conta. Use Exportar JSON para fazer backup ou copie um link de compartilhamento para trocar de dispositivo.',
-    blogPost2Title: 'Modo Caça: encontre sprites faltantes mais rápido',
-    blogPost2Body:
-      'O modo Caça filtra a tabela para mostrar apenas os sprites que faltam, ordenados por raridade. Seu próximo cofre aponta para as variantes incomuns e comuns primeiro, para completar o conjunto mais rápido.',
-    blogPost3Title: 'Compare lockers com um amigo',
-    blogPost3Body:
-      'Copie seu código de compartilhamento em Compartilhar e backup, depois cole na página Comparar com o código de um amigo. Você verá o que tem só você, só eles, e o que falta para ambos.',
-    blogPost4Title: 'Códigos de trapaça: como desbloquear variantes de sprites',
-    blogPost4Body:
-      'Visite a página de Códigos de trapaça para encontrar todos os códigos funcionais e combos de Button Mash. Digite-os no painel de administração do lobby do Fortnite, cada código funciona uma vez por conta. Copie-os para nunca repetir um.',
-    blogPost5Title: 'Arquivos de temporada: nunca perca seu progresso anterior',
-    blogPost5Body:
-      'Quando uma nova temporada começa, sua lista anterior vai para o arquivo de Temporadas. Você pode reabrir qualquer temporada passada sem perder seus dados locais. As tabelas anteriores ficam como somente leitura para ver o que completou.',
+      'Guias, notas de patch e dicas para rastrear sua coleção de sprites do Fortnite.',
+    blogReadMore: 'Ler mais →',
+    blogPublished: 'Publicado',
+    blogUpdated: 'Atualizado',
+    blogBackToPosts: '← Voltar a todas as publicações',
+    blogPost_v42_10_title: 'Atualização v42.10 do Fortnite: Todos os novos sprites e Loot Hacker',
+    blogPost_v42_10_meta:
+      'Análise completa do patch v42.10: cinco novos sprites base, o sistema Loot Hacker, raridades, habilidades e status de disponibilidade.',
+    blogPost_v42_10_excerpt:
+      'A atualização v42.10 adicionou cinco novos sprites base e introduziu o sistema de variantes Loot Hacker. Aqui está cada sprite, sua raridade e se está disponível hoje.',
+    blogPost_howToTrack_title: 'Como rastrear sua coleção de sprites do Fortnite',
+    blogPost_howToTrack_meta:
+      'Guia passo a passo para marcar sprites Obtidos e Dominados, exportar backups JSON e compartilhar sua coleção com amigos.',
+    blogPost_howToTrack_excerpt:
+      'Aprenda a marcar sprites como Obtido ou Dominado, fazer backup do seu progresso e compartilhar um link somente leitura com amigos, tudo pelo seu navegador.',
+    blogPost_huntMode_title: 'Modo Caça: encontre sprites faltantes mais rápido',
+    blogPost_huntMode_meta:
+      'Como usar o Modo Caça para filtrar sua tabela e mostrar apenas sprites faltantes, ordenados por raridade.',
+    blogPost_huntMode_excerpt:
+      'O Modo Caça oculta todos os sprites que você já tem e mostra apenas os que faltam, ordenados por raridade. Assim se ativa e se usa efetivamente.',
+    blogPost_compare_title: 'Compare lockers com um amigo',
+    blogPost_compare_meta:
+      'Use códigos de compartilhar para comparar sua coleção de sprites com um amigo e ver quem tem o que, lado a lado, sem login.',
+    blogPost_compare_excerpt:
+      'Dois códigos de compartilhar, uma vista lado a lado. Descubra quais sprites vocês dois têm, quais só você tem e quais faltam para o seu amigo.',
+    blogPost_cheatCodes_title: 'Códigos de trapaça do Fortnite: como desbloquear variantes de sprites',
+    blogPost_cheatCodes_meta:
+      'Lista completa de códigos de trapaça que desbloqueiam variantes de sprites, pó, XP e itens, com combinações de botões e custos.',
+    blogPost_cheatCodes_excerpt:
+      'Cada código de trapaça na Temporada 4 do Capítulo 7, o que desbloqueia, a combinação de botões para digitar e quanto pó de sprite cada um custa.',
+    blogPost_seasonArchives_title: 'Arquivos de temporada: nunca perca seu progresso anterior',
+    blogPost_seasonArchives_meta:
+      'Como sprites de temporadas anteriores do Capítulo 7 Temporada 3 permanecem na sua coleção mesmo após o início de uma nova temporada.',
+    blogPost_seasonArchives_excerpt:
+      'Seus sprites da Temporada 3, incluindo Batman, Zero Point e King, permanecem rastreados mesmo quando a Temporada 4 se torna o elenco ativo.',
     navDustCalc: 'Calc. Pó',
     dustCalcPageTitle: 'Calculadora de Pó de Sprite',
     dustCalcEyebrow: 'Ferramenta de planejamento',
@@ -756,7 +861,7 @@ const ui = {
     heroCheatCodes: 'Códigos',
     heroDustCalc: 'Calculadora de Pó',
     heroSprites: 'Novos Sprites',
-    spritesSectionEyebrow: 'Atualização v41.10',
+    spritesSectionEyebrow: 'Atualização v42.10',
     spritesSectionTitle: 'Novos Sprites',
     newTag: 'Novo',
     printSprites: 'Imprimir lista de sprites',
@@ -819,6 +924,18 @@ const ui = {
     allRarities: 'Toutes les raretés',
     allVariants: 'Toutes les variantes',
     shown: '{n} affichés',
+    unreleased: 'Non disponible',
+    available: 'Disponible',
+    viewGrid: 'Grille',
+    viewList: 'Liste',
+    sortBy: 'Trier par',
+    sortType: 'Type',
+    sortLevelHigh: 'Niveau : Élevé à Bas',
+    sortLevelLow: 'Niveau : Bas à Élevé',
+    sortRarityHigh: 'Rareté : Élevée à Basse',
+    sortRarityLow: 'Rareté : Basse à Élevée',
+    obtainableCount: '{n} variantes obtainables',
+    knownCount: '{n} connues · {m} non disponibles',
     emptyFilters: 'Aucun résultat ne correspond à ces filtres. Effacez la recherche ou désactivez le Mode Chasse.',
     markOwned: 'Marquer possédé',
     dust: 'poussière',
@@ -907,6 +1024,10 @@ const ui = {
       'Ce tableau n\'apparaît plus en matchs en direct, mais votre liste reste enregistrée localement pour cette saison.',
     spritesMeta: '{sprites} sprites · {variants} variantes',
     dustAmount: '{n} poussière',
+    spriteStats: 'Statistiques du Sprite',
+    summonCost: 'Coût d\'invocation',
+    dropChance: 'Chance de drop',
+    location: 'Emplacement',
     legalEnglishNote: 'Les pages légales sont fournies en anglais.',
     pageHomeTitle: 'Fortnite Sprite Tracker | Liste, tableau et collection en ligne gratuits',
     pageHomeDesc:
@@ -954,25 +1075,44 @@ const ui = {
     backToTracker: 'Retour au tracker',
     navBlog: 'Blog',
     blogPageTitle: 'Blog',
-    blogEyebrow: 'Blog',
-    blogTitle: 'Blog du Fortnite Sprite Tracker',
+    blogEyebrow: 'DU BLOG',
+    blogTitle: 'Blog du Sprite Tracker',
     blogIntro:
-      'Conseils, notes de correctif et guides pour le Fortnite Sprite Tracker — comment suivre les sprites, utiliser le Mode Chasse, comparer les lockers et tirer le meilleur parti de votre collection.',
-    blogPost1Title: 'Comment suivre votre collection de sprites Fortnite',
-    blogPost1Body:
-      'Ouvrez la liste sur la page d\'accueil et marquez chaque sprite comme Possédé ou Maîtrisé. Votre progression reste dans le navigateur — aucun compte nécessaire. Utilisez Exporter le JSON pour sauvegarder votre collection ou copiez un lien de partage pour changer d\'appareil.',
-    blogPost2Title: 'Mode Chasse : trouvez les sprites manquants plus vite',
-    blogPost2Body:
-      'Le Mode Chasse filtre le tableau pour afficher uniquement les sprites que vous manquez, triés par rareté. Votre prochaine fouille de coffre cible d\'abord les variantes peu communes et communes, pour compléter l\'ensemble plus rapidement.',
-    blogPost3Title: 'Comparez les lockers avec un ami',
-    blogPost3Body:
-      'Copiez votre code de partage depuis Partager et sauvegarde, puis collez-le sur la page Comparer avec le code d\'un ami. Vous verrez ce que vous possédez seul, ce qu\'ils possèdent seul, et ce qui manque aux deux.',
-    blogPost4Title: 'Codes de triche : comment déverrouiller les variantes de sprites',
-    blogPost4Body:
-      'Visitez la page Codes de triche pour trouver chaque code fonctionnel et combo Button Mash. Entrez-les dans le panneau d\'administration du lobby Fortnite — chaque code ne fonctionne qu\'une seule fois par compte. Copiez-les pour ne jamais en refaire un.',
-    blogPost5Title: 'Archives de saison : ne perdez jamais votre progression passée',
-    blogPost5Body:
-      'Quand une nouvelle saison commence, votre ancienne liste passe dans l\'archive des Saisons. Vous pouvez rouvrir n\'importe quelle saison passée sans perdre vos données locales. Les anciens tableaux restent en lecture seule pour voir ce que vous avez complété.',
+      'Guides, notes de patch et astuces pour suivre votre collection de sprites Fortnite.',
+    blogReadMore: 'Lire la suite →',
+    blogPublished: 'Publié',
+    blogUpdated: 'Mis à jour',
+    blogBackToPosts: '← Retour à tous les articles',
+    blogPost_v42_10_title: 'Mise à jour v42.10 de Fortnite : Tous les nouveaux sprites et Loot Hacker',
+    blogPost_v42_10_meta:
+      'Analyse complète du patch v42.10 : cinq nouveaux sprites de base, le système Loot Hacker, les raretés, les capacités et le statut de disponibilité.',
+    blogPost_v42_10_excerpt:
+      'La mise à jour v42.10 a ajouté cinq nouveaux sprites de base et introduit le système de variantes Loot Hacker. Voici chaque sprite, sa rareté et s\'il est disponible aujourd\'hui.',
+    blogPost_howToTrack_title: 'Comment suivre votre collection de sprites Fortnite',
+    blogPost_howToTrack_meta:
+      'Guide étape par étape pour marquer les sprites Possédés et Maîtrisés, exporter des sauvegardes JSON et partager votre collection avec des amis.',
+    blogPost_howToTrack_excerpt:
+      'Apprenez à marquer les sprites comme Possédé ou Maîtrisé, à sauvegarder votre progression et à partager un lien en lecture seule avec des amis, directement depuis votre navigateur.',
+    blogPost_huntMode_title: 'Mode Chasse : trouvez les sprites manquants plus vite',
+    blogPost_huntMode_meta:
+      'Comment utiliser le Mode Chasse pour filtrer votre tableau et n\'afficher que les sprites manquants, triés par rareté.',
+    blogPost_huntMode_excerpt:
+      'Le Mode Chasse masque tous les sprites que vous possédez déjà et n\'affiche que les manquants, triés par rareté. Voici comment l\'activer et l\'utiliser efficacement.',
+    blogPost_compare_title: 'Comparez les lockers avec un ami',
+    blogPost_compare_meta:
+      'Utilisez des codes de partage pour comparer votre collection de sprites avec un ami et voir qui possède quoi, côte à côte, sans connexion.',
+    blogPost_compare_excerpt:
+      'Deux codes de partage, une vue côte à côte. Découvrez quels sprites vous possédez tous les deux, lesquels vous possédez seul et ceux qui manquent à votre ami.',
+    blogPost_cheatCodes_title: 'Codes de triche Fortnite : comment déverrouiller les variantes de sprites',
+    blogPost_cheatCodes_meta:
+      'Liste complète des codes de triche qui déverrouillent les variantes de sprites, la poussière, l\'XP et les objets, avec des combos de boutons et des coûts.',
+    blogPost_cheatCodes_excerpt:
+      'Chaque code de triche de la Saison 4 Chapitre 7, ce qu\'il déverrouille, le combo de boutons pour l\'entrer et combien de poussière de sprite chaque code coûte.',
+    blogPost_seasonArchives_title: 'Archives de saison : ne perdez jamais votre progression passée',
+    blogPost_seasonArchives_meta:
+      'Comment les sprites des saisons passées du Chapitre 7 Saison 3 restent dans votre collection même après le début d\'une nouvelle saison.',
+    blogPost_seasonArchives_excerpt:
+      'Vos sprites de la Saison 3, y compris Batman, Zero Point et King, restent suivis même lorsque la Saison 4 devient l\'effectif actif.',
     navDustCalc: 'Calc. Poussière',
     dustCalcPageTitle: 'Calculatrice de Poussière de Sprite',
     dustCalcEyebrow: 'Outil de planification',
@@ -1008,7 +1148,7 @@ const ui = {
     heroCheatCodes: 'Codes de triche',
     heroDustCalc: 'Calculatrice de Poussière',
     heroSprites: 'Nouveaux Sprites',
-    spritesSectionEyebrow: 'Mise à jour v41.10',
+    spritesSectionEyebrow: 'Mise à jour v42.10',
     spritesSectionTitle: 'Nouveaux Sprites',
     newTag: 'Nouveau',
     printSprites: 'Imprimer la liste des sprites',
@@ -1070,6 +1210,9 @@ export function trackerCopy(locale: Locale) {
     owned: t(locale, 'owned'),
     markOwned: t(locale, 'markOwned'),
     shown: t(locale, 'shown'),
+    unreleased: t(locale, 'unreleased'),
+    obtainableCount: t(locale, 'obtainableCount'),
+    knownCount: t(locale, 'knownCount'),
     huntEnable: t(locale, 'huntEnable'),
     huntComplete: t(locale, 'huntComplete'),
     confirmReset: t(locale, 'confirmReset'),

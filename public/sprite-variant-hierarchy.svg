@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 220" role="img" aria-label="Fortnite Sprite variant hierarchy: each base Sprite has Normal, Gold, Cheat Master, and Loot Hacker versions with increasing dust cost">
+  <title>Sprite Variant Hierarchy</title>
+  <rect width="620" height="220" rx="8" fill="#0f172a"/>
+
+  <!-- Root node -->
+  <rect x="230" y="15" width="160" height="40" rx="6" fill="#22d3ee" fill-opacity="0.15" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="310" y="40" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Base Sprite</text>
+
+  <!-- Branch lines -->
+  <path d="M270 55 L100 100" stroke="#334155" stroke-width="1.5"/>
+  <path d="M290 55 L250 100" stroke="#334155" stroke-width="1.5"/>
+  <path d="M330 55 L390 100" stroke="#334155" stroke-width="1.5"/>
+  <path d="M350 55 L530 100" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- Normal -->
+  <rect x="30" y="100" width="140" height="44" rx="6" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
+  <text x="100" y="118" text-anchor="middle" fill="#34d399" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Normal</text>
+  <text x="100" y="134" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">100 Dust (Rare)</text>
+
+  <!-- Gold -->
+  <rect x="180" y="100" width="140" height="44" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="250" y="118" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Gold</text>
+  <text x="250" y="134" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">300 Dust + 3x XP</text>
+
+  <!-- Cheat Master -->
+  <rect x="320" y="100" width="140" height="44" rx="6" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="390" y="118" text-anchor="middle" fill="#a78bfa" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Cheat Master</text>
+  <text x="390" y="134" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">400 Dust + Ability</text>
+
+  <!-- Loot Hacker -->
+  <rect x="460" y="100" width="140" height="44" rx="6" fill="#1e293b" stroke="#fb923c" stroke-width="1.5"/>
+  <text x="530" y="118" text-anchor="middle" fill="#fb923c" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Loot Hacker</text>
+  <text x="530" y="134" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">Separate Sprite (v42.10)</text>
+
+  <!-- Cost tier labels -->
+  <text x="100" y="170" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="9">Lowest cost</text>
+  <text x="530" y="170" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="9">New system</text>
+
+  <!-- Legend -->
+  <text x="310" y="205" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Each variant is a separate collectible with its own dust cost and bonus</text>
+</svg>

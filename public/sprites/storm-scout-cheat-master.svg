@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <style>
+    .el { transform-box: fill-box; transform-origin: center; }
+    .bob { animation: bob 2.8s ease-in-out infinite; }
+    .sway { animation: sway 3.2s ease-in-out infinite; }
+    .floaty { animation: floaty 3.6s ease-in-out infinite; }
+    .flash { animation: flash 2.8s ease-in-out infinite; }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @keyframes sway { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+    @keyframes flash { 0%,72%,100% { opacity: 1; } 78% { opacity: .35; } 84% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .el { animation: none !important; } }
+  </style>
+  <rect width="128" height="128" rx="28" fill="#4a1a1a"/>
+  <ellipse class="el floaty" cx="58" cy="56" rx="28" ry="18" fill="#ff5252"/>
+  <ellipse class="el floaty" cx="80" cy="60" rx="22" ry="16" fill="#ff8a80"/>
+  <path class="el flash" d="M60 76 L52 96 L66 96 L58 114 L84 86 L70 86 L78 76 Z" fill="#ff5252"/>
+  <text x="64" y="68" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">CM</text>
+</svg>

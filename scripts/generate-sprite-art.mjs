@@ -231,6 +231,14 @@ const art = {
      </g>
      <path class="el flash" d="M60 76 L52 96 L66 96 L58 114 L84 86 L70 86 L78 76 Z" fill="#FFD54F"/>`,
   ),
+  'storm-scout': frame(
+    '#37474F',
+    `<g class="el floaty">
+       <ellipse cx="58" cy="56" rx="28" ry="18" fill="#78909C"/>
+       <ellipse cx="80" cy="60" rx="22" ry="16" fill="#90A4AE"/>
+     </g>
+     <path class="el flash" d="M60 76 L52 96 L66 96 L58 114 L84 86 L70 86 L78 76 Z" fill="#FFD54F"/>`,
+  ),
   's3-fishy': frame(
     '#0288D1',
     `<g class="el swim">

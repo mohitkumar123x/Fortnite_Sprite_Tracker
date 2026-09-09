@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <style>.el{transform-box:fill-box;transform-origin:center}.bob{animation:bob 2.8s ease-in-out infinite}.spark{animation:spark 2s ease-in-out infinite}@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}@keyframes spark{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.25);opacity:.7}}@media(prefers-reduced-motion:reduce){.el{animation:none!important}}</style>
+  <rect width="128" height="128" rx="28" fill="#4a1a1a"/>
+  <g class="el bob">
+    <path d="M24 84 L32 44 L52 68 L64 36 L76 68 L96 44 L104 84 Z" fill="#ff5252"/>
+    <rect x="24" y="80" width="80" height="14" rx="3" fill="#ff8a80"/>
+    <circle class="el spark" cx="64" cy="36" r="6" fill="#ff8a80"/>
+    <text x="64" y="108" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">CM</text>
+  </g>
+</svg>

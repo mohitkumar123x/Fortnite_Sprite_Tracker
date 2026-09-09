@@ -8,10 +8,25 @@
     "findNotes": "Found in chests and supply drops during Chapter 7 Season 4 matches. Extract before the match ends.",
     "levelNotes": "Levels through normal play; bush cooldown improves each level.",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 100 },
-      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 100
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "dustCost": 300,
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "dustCost": 400,
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": true
   },
   {
     "id": "adventure",
@@ -21,10 +36,25 @@
     "ability": "Upgrades a random item in your inventory with each level up.",
     "findNotes": "Random chest / supply drop finds. Extract to keep permanently.",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 100 },
-      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 100
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "dustCost": 300,
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "dustCost": 400,
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": true
   },
   {
     "id": "8-bit",
@@ -34,10 +64,25 @@
     "ability": "Puts an 8-Bit Shotgun in your first chest and grants a score multiplier for it.",
     "findNotes": "Season 4 chest drops. Extract before leaving the match.",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 100 },
-      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 100
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "dustCost": 300,
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "dustCost": 400,
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": true
   },
   {
     "id": "jonesy",
@@ -47,10 +92,25 @@
     "ability": "Recovers health or shields shortly after taking damage. Heal amount grows each level.",
     "findNotes": "Random finds in Season 4. Extract to unlock permanently.",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 100 },
-      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 100
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "dustCost": 300,
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "dustCost": 400,
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": true
   },
   {
     "id": "killswitch",
@@ -60,10 +120,25 @@
     "ability": "Aim while mid-air to slow down and gain improved accuracy. Accuracy grows with levels.",
     "findNotes": "Epic chest drop in Season 4. Extract to keep.",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 200 },
-      { "id": "gold", "label": "Gold", "dustCost": 500, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 600, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 200
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "dustCost": 500,
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "dustCost": 600,
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": true
   },
   {
     "id": "sonic",
@@ -73,10 +148,25 @@
     "ability": "Sprint faster with each level up.",
     "findNotes": "Sonic collab sprite — chests and supply drops. Extract to unlock.",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 200 },
-      { "id": "gold", "label": "Gold", "dustCost": 500, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 600, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 200
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "dustCost": 500,
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "dustCost": 600,
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": true
   },
   {
     "id": "tails",
@@ -86,10 +176,25 @@
     "ability": "Double jump to hover in mid-air. Hover speed grows with each level.",
     "findNotes": "Sonic collab — find in chests, extract before the end of the match.",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 200 },
-      { "id": "gold", "label": "Gold", "dustCost": 500, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 600, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 200
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "dustCost": 500,
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "dustCost": 600,
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": true
   },
   {
     "id": "shadow",
@@ -99,10 +204,25 @@
     "ability": "Automatically reloads unequipped weapons over time. At max level also reloads the equipped weapon.",
     "findNotes": "Sonic collab epic. Extract from chests / drops.",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 200 },
-      { "id": "gold", "label": "Gold", "dustCost": 500, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 600, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 200
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "dustCost": 500,
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "dustCost": 600,
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": true
   },
   {
     "id": "jackrabbit",
@@ -112,38 +232,83 @@
     "ability": "Grants a second mid-air jump. Cooldown shortens with each level.",
     "findNotes": "Legendary Season 4 drop. Extract to add to your locker.",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 400 },
-      { "id": "gold", "label": "Gold", "dustCost": 800, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 900, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 400
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "dustCost": 800,
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "dustCost": 900,
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": true
   },
   {
     "id": "crown",
     "name": "Crown",
     "seasonId": "c7-s4",
     "rarity": "mythic",
-    "ability": "Levels only by winning matches — faster with Crown Wins. Mastering unlocks new variants.",
+    "ability": "Grants extra Crown Wins after winning a Victory Royale. It can only be leveled up by winning matches and new variants are also unlocked by mastering it.",
     "findNotes": "Mythic Season 4 sprite. Rare chest finds; extract carefully.",
     "levelNotes": "Only levels from match wins (boosted by Crown Wins).",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 600 },
-      { "id": "gold", "label": "Gold", "dustCost": 1200, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 1400, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 600
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "dustCost": 1200,
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "dustCost": 1400,
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": true
   },
   {
     "id": "klombo",
     "name": "Klombo",
     "seasonId": "c7-s4",
     "rarity": "mythic",
-    "ability": "Grants random items at each level. Levels only by consuming items; item quality improves each level.",
+    "ability": "Drops random items at each level. It can only be leveled up by using consumables that grant Health or Shield.",
     "findNotes": "Mythic Season 4. Find, extract, then feed items to level.",
     "levelNotes": "Levels only by consuming items — not by eliminations or wins.",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 600 },
-      { "id": "gold", "label": "Gold", "dustCost": 1200, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 1400, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 600
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "dustCost": 1200,
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "dustCost": 1400,
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": true
   },
   {
     "id": "s3-batman",
@@ -153,13 +318,37 @@
     "ability": "Season 3 collab companion — refer to in-game tooltip for live ability values from that season.",
     "findNotes": "Chapter 7 Season 3 archive (collab). Tracked on the past-season checklist; no longer dropping in live Season 4 matches.",
     "variants": [
-      { "id": "normal", "label": "Normal" },
-      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
-      { "id": "gummy", "label": "Gummy" },
-      { "id": "galaxy", "label": "Galaxy" },
-      { "id": "holofoil", "label": "Holofoil" },
-      { "id": "gem", "label": "Gem" }
-    ]
+      {
+        "id": "normal",
+        "label": "Base"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "gummy",
+        "label": "Gummy"
+      },
+      {
+        "id": "galaxy",
+        "label": "Galaxy"
+      },
+      {
+        "id": "holofoil",
+        "label": "Holo"
+      },
+      {
+        "id": "cube",
+        "label": "Cube"
+      }
+    ],
+    "available": true,
+    "summonCost": 6750,
+    "variantCost": 10000,
+    "dropChance": 2.97,
+    "location": "Sprite Chests, Cheat Codes"
   },
   {
     "id": "s3-air",
@@ -169,13 +358,33 @@
     "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
     "findNotes": "Chapter 7 Season 3 archive. No longer dropping in live matches.",
     "variants": [
-      { "id": "normal", "label": "Normal" },
-      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
-      { "id": "gummy", "label": "Gummy" },
-      { "id": "galaxy", "label": "Galaxy" },
-      { "id": "gem", "label": "Gem" },
-      { "id": "holofoil", "label": "Holofoil" }
-    ]
+      {
+        "id": "normal",
+        "label": "Base"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "gummy",
+        "label": "Gummy"
+      },
+      {
+        "id": "galaxy",
+        "label": "Galaxy"
+      },
+      {
+        "id": "holofoil",
+        "label": "Holo"
+      }
+    ],
+    "available": true,
+    "summonCost": 100,
+    "variantCost": 2700,
+    "dropChance": 13.92,
+    "location": "Sprite Chests, World spawns"
   },
   {
     "id": "s3-aura",
@@ -185,13 +394,33 @@
     "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
     "findNotes": "Chapter 7 Season 3 archive.",
     "variants": [
-      { "id": "normal", "label": "Normal" },
-      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
-      { "id": "gummy", "label": "Gummy" },
-      { "id": "galaxy", "label": "Galaxy" },
-      { "id": "gem", "label": "Gem" },
-      { "id": "holofoil", "label": "Holofoil" }
-    ]
+      {
+        "id": "normal",
+        "label": "Base"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "gummy",
+        "label": "Gummy"
+      },
+      {
+        "id": "galaxy",
+        "label": "Galaxy"
+      },
+      {
+        "id": "gem",
+        "label": "Gem"
+      }
+    ],
+    "available": true,
+    "summonCost": 2700,
+    "variantCost": 4000,
+    "dropChance": 7.54,
+    "location": "Sprite Chests, Cheat Codes"
   },
   {
     "id": "s3-earth",
@@ -201,13 +430,41 @@
     "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
     "findNotes": "Chapter 7 Season 3 archive.",
     "variants": [
-      { "id": "normal", "label": "Normal" },
-      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
-      { "id": "gummy", "label": "Gummy" },
-      { "id": "galaxy", "label": "Galaxy" },
-      { "id": "cube", "label": "Cube" },
-      { "id": "quack", "label": "Quack" }
-    ]
+      {
+        "id": "normal",
+        "label": "Base"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "gummy",
+        "label": "Gummy"
+      },
+      {
+        "id": "galaxy",
+        "label": "Galaxy"
+      },
+      {
+        "id": "gem",
+        "label": "Gem"
+      },
+      {
+        "id": "cube",
+        "label": "Cube"
+      },
+      {
+        "id": "quack",
+        "label": "Quack"
+      }
+    ],
+    "available": true,
+    "summonCost": 100,
+    "variantCost": 2700,
+    "dropChance": 13.92,
+    "location": "Sprite Chests, World spawns (starter)"
   },
   {
     "id": "s3-fire",
@@ -217,13 +474,41 @@
     "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
     "findNotes": "Chapter 7 Season 3 archive.",
     "variants": [
-      { "id": "normal", "label": "Normal" },
-      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
-      { "id": "gummy", "label": "Gummy" },
-      { "id": "galaxy", "label": "Galaxy" },
-      { "id": "gem", "label": "Gem" },
-      { "id": "holofoil", "label": "Holofoil" }
-    ]
+      {
+        "id": "normal",
+        "label": "Base"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "gummy",
+        "label": "Gummy"
+      },
+      {
+        "id": "galaxy",
+        "label": "Galaxy"
+      },
+      {
+        "id": "quack",
+        "label": "Quack"
+      },
+      {
+        "id": "cube",
+        "label": "Cube"
+      },
+      {
+        "id": "holofoil",
+        "label": "Holo"
+      }
+    ],
+    "available": true,
+    "summonCost": 100,
+    "variantCost": 4000,
+    "dropChance": 13.92,
+    "location": "Sprite Chests, World spawns (starter)"
   },
   {
     "id": "s3-water",
@@ -233,13 +518,41 @@
     "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
     "findNotes": "Chapter 7 Season 3 archive.",
     "variants": [
-      { "id": "normal", "label": "Normal" },
-      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
-      { "id": "gummy", "label": "Gummy" },
-      { "id": "galaxy", "label": "Galaxy" },
-      { "id": "gem", "label": "Gem" },
-      { "id": "quack", "label": "Quack" }
-    ]
+      {
+        "id": "normal",
+        "label": "Base"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "gummy",
+        "label": "Gummy"
+      },
+      {
+        "id": "galaxy",
+        "label": "Galaxy"
+      },
+      {
+        "id": "holofoil",
+        "label": "Holo"
+      },
+      {
+        "id": "gem",
+        "label": "Gem"
+      },
+      {
+        "id": "quack",
+        "label": "Quack"
+      }
+    ],
+    "available": true,
+    "summonCost": 100,
+    "variantCost": 4000,
+    "dropChance": 13.92,
+    "location": "Sprite Chests, World spawns (starter)"
   },
   {
     "id": "s3-ghost",
@@ -249,13 +562,33 @@
     "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
     "findNotes": "Chapter 7 Season 3 archive.",
     "variants": [
-      { "id": "normal", "label": "Normal" },
-      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
-      { "id": "gummy", "label": "Gummy" },
-      { "id": "galaxy", "label": "Galaxy" },
-      { "id": "holofoil", "label": "Holofoil" },
-      { "id": "cube", "label": "Cube" }
-    ]
+      {
+        "id": "normal",
+        "label": "Base"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "gummy",
+        "label": "Gummy"
+      },
+      {
+        "id": "galaxy",
+        "label": "Galaxy"
+      },
+      {
+        "id": "holofoil",
+        "label": "Holo"
+      }
+    ],
+    "available": true,
+    "summonCost": 2700,
+    "variantCost": 4000,
+    "dropChance": 7.5,
+    "location": "Sprite Chests, Cheat Codes"
   },
   {
     "id": "s3-llama",
@@ -265,13 +598,33 @@
     "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
     "findNotes": "Chapter 7 Season 3 archive.",
     "variants": [
-      { "id": "normal", "label": "Normal" },
-      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
-      { "id": "gummy", "label": "Gummy" },
-      { "id": "galaxy", "label": "Galaxy" },
-      { "id": "gem", "label": "Gem" },
-      { "id": "holofoil", "label": "Holofoil" }
-    ]
+      {
+        "id": "normal",
+        "label": "Base"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "gummy",
+        "label": "Gummy"
+      },
+      {
+        "id": "galaxy",
+        "label": "Galaxy"
+      },
+      {
+        "id": "gem",
+        "label": "Gem"
+      }
+    ],
+    "available": true,
+    "summonCost": 4500,
+    "variantCost": 6750,
+    "dropChance": 4.09,
+    "location": "Sprite Chests, Cheat Codes"
   },
   {
     "id": "s3-peeky-peely",
@@ -281,13 +634,33 @@
     "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
     "findNotes": "Chapter 7 Season 3 archive.",
     "variants": [
-      { "id": "normal", "label": "Normal" },
-      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
-      { "id": "gummy", "label": "Gummy" },
-      { "id": "galaxy", "label": "Galaxy" },
-      { "id": "quack", "label": "Quack" },
-      { "id": "cube", "label": "Cube" }
-    ]
+      {
+        "id": "normal",
+        "label": "Base"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "gummy",
+        "label": "Gummy"
+      },
+      {
+        "id": "galaxy",
+        "label": "Galaxy"
+      },
+      {
+        "id": "holofoil",
+        "label": "Holo"
+      }
+    ],
+    "available": true,
+    "summonCost": 4500,
+    "variantCost": 6750,
+    "dropChance": 4.09,
+    "location": "Sprite Chests, Cheat Codes"
   },
   {
     "id": "s3-zero-point",
@@ -297,27 +670,45 @@
     "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
     "findNotes": "Chapter 7 Season 3 archive.",
     "variants": [
-      { "id": "normal", "label": "Normal" },
-      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
-      { "id": "galaxy", "label": "Galaxy" },
-      { "id": "gem", "label": "Gem" },
-      { "id": "holofoil", "label": "Holofoil" },
-      { "id": "cube", "label": "Cube" }
-    ]
-  },
-  {
-    "id": "s3-storm-scout",
-    "name": "Storm Scout",
-    "seasonId": "c7-s3",
-    "rarity": "legendary",
-    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
-    "findNotes": "Chapter 7 Season 3 archive. Some variants were delayed or unreleased.",
-    "variants": [
-      { "id": "normal", "label": "Normal" },
-      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
-      { "id": "gummy", "label": "Gummy" },
-      { "id": "galaxy", "label": "Galaxy" }
-    ]
+      {
+        "id": "normal",
+        "label": "Base"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "cube",
+        "label": "Cube"
+      },
+      {
+        "id": "quack",
+        "label": "Quack"
+      },
+      {
+        "id": "gummy",
+        "label": "Gummy"
+      },
+      {
+        "id": "galaxy",
+        "label": "Galaxy"
+      },
+      {
+        "id": "gem",
+        "label": "Gem"
+      },
+      {
+        "id": "holofoil",
+        "label": "Holo"
+      }
+    ],
+    "available": true,
+    "summonCost": 6750,
+    "variantCost": 10000,
+    "dropChance": 0.00034,
+    "location": "Sprite Chests (very rare)"
   },
   {
     "id": "s3-fishy",
@@ -327,12 +718,33 @@
     "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
     "findNotes": "Chapter 7 Season 3 archive.",
     "variants": [
-      { "id": "normal", "label": "Normal" },
-      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
-      { "id": "gummy", "label": "Gummy" },
-      { "id": "quack", "label": "Quack" },
-      { "id": "holofoil", "label": "Holofoil" }
-    ]
+      {
+        "id": "normal",
+        "label": "Base"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "gummy",
+        "label": "Gummy"
+      },
+      {
+        "id": "galaxy",
+        "label": "Galaxy"
+      },
+      {
+        "id": "cube",
+        "label": "Cube"
+      }
+    ],
+    "available": true,
+    "summonCost": 100,
+    "variantCost": 2700,
+    "dropChance": 13.79,
+    "location": "Sprite Chests, World spawns"
   },
   {
     "id": "s3-demon",
@@ -342,12 +754,33 @@
     "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
     "findNotes": "Chapter 7 Season 3 archive.",
     "variants": [
-      { "id": "normal", "label": "Normal" },
-      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
-      { "id": "gummy", "label": "Gummy" },
-      { "id": "galaxy", "label": "Galaxy" },
-      { "id": "gem", "label": "Gem" }
-    ]
+      {
+        "id": "normal",
+        "label": "Base"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "gummy",
+        "label": "Gummy"
+      },
+      {
+        "id": "galaxy",
+        "label": "Galaxy"
+      },
+      {
+        "id": "gem",
+        "label": "Gem"
+      }
+    ],
+    "available": true,
+    "summonCost": 2700,
+    "variantCost": 4000,
+    "dropChance": 7.54,
+    "location": "Sprite Chests, Cheat Codes"
   },
   {
     "id": "s3-king",
@@ -357,44 +790,83 @@
     "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
     "findNotes": "Chapter 7 Season 3 archive.",
     "variants": [
-      { "id": "normal", "label": "Normal" },
-      { "id": "gold", "label": "Gold", "bonus": "3× elimination XP" },
-      { "id": "galaxy", "label": "Galaxy" },
-      { "id": "holofoil", "label": "Holofoil" },
-      { "id": "gem", "label": "Gem" }
-    ]
+      {
+        "id": "normal",
+        "label": "Base"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "gummy",
+        "label": "Gummy"
+      },
+      {
+        "id": "galaxy",
+        "label": "Galaxy"
+      },
+      {
+        "id": "holofoil",
+        "label": "Holo"
+      }
+    ],
+    "available": true,
+    "summonCost": 2700,
+    "variantCost": 4000,
+    "dropChance": 7.5,
+    "location": "Sprite Chests, Cheat Codes"
   },
   {
     "id": "xray",
     "name": "X-Ray",
     "seasonId": "c7-s4",
-    "rarity": "rare",
-    "ability": "Periodically marks nearby enemies. Its detection radius increases with each level.",
+    "rarity": "legendary",
+    "ability": "Periodically marks nearby enemies. Frequency and radius increases with each level.",
     "findNotes": "Added in v42.10 update on September 3. Found in chests across the map.",
     "levelNotes": "Detection radius increases with each level.",
     "new": true,
     "launchedAt": "3-sept-2026",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 100 },
-      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 400
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "dustCost": 800,
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "dustCost": 900,
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": true
   },
   {
     "id": "mega-man",
     "name": "Mega Man",
     "seasonId": "c7-s4",
     "rarity": "rare",
-    "ability": "Reduces friction while sliding or swimming, allowing you to slide farther with each level.",
+    "ability": "Reduces friction while sliding, allowing you to slide farther with each level.",
     "findNotes": "Added in v42.10 update on September 3. Found in chests.",
     "levelNotes": "Slide distance improves with each level.",
     "new": true,
     "launchedAt": "3-sept-2026",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 100 },
-      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 100
+      }
+    ],
+    "available": true
   },
   {
     "id": "overshield",
@@ -407,201 +879,726 @@
     "new": true,
     "launchedAt": "3-sept-2026",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 100 },
-      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 100
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "dustCost": 300,
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "dustCost": 400,
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": true
   },
   {
     "id": "onigiri",
     "name": "Onigiri",
     "seasonId": "c7-s4",
     "rarity": "rare",
-    "ability": "Activates Overdrive after you eat or drink a consumable. Overdrive lasts longer with each level.",
+    "ability": "Grants Overdrive after using a Consumable item, lasting longer per level.",
     "findNotes": "Added in v42.10 update on September 3. Found in chests.",
     "levelNotes": "Overdrive duration increases with each level.",
     "new": true,
     "launchedAt": "3-sept-2026",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 100 },
-      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 100
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "dustCost": 300,
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "dustCost": 400,
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": true
+  },
+  {
+    "id": "storm-scout",
+    "name": "Storm Scout",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Grants the Overdrive effect after taking a certain amount of storm damage. At max level, it reveals future Storm Circles.",
+    "findNotes": "Added in v42.10 update on September 3. Found in chests across the map.",
+    "levelNotes": "Overdrive duration and circle reveal improve with each level.",
+    "new": true,
+    "launchedAt": "3-sept-2026",
+    "variants": [
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 100
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "dustCost": 300,
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "dustCost": 400,
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": true
   },
   {
     "id": "loot-hacker-xray",
     "name": "Loot Hacker X-Ray",
     "seasonId": "c7-s4",
     "rarity": "epic",
-    "ability": "Loot Hacker variant of X-Ray Sprite — enhanced enemy detection.",
+    "ability": "Loot Hacker variant of X-Ray Sprite.",
     "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
     "levelNotes": "Detection radius increases with each level.",
+    "unverified": true,
     "new": true,
     "launchedAt": "3-sept-2026",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 200 },
-      { "id": "gold", "label": "Gold", "dustCost": 500, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 600, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "loot-hacker",
+        "label": "Loot Hacker"
+      }
+    ],
+    "available": false
   },
   {
     "id": "loot-hacker-tails",
     "name": "Loot Hacker Tails",
     "seasonId": "c7-s4",
     "rarity": "epic",
-    "ability": "Loot Hacker variant of Tails Sprite — enhanced hover ability.",
+    "ability": "Loot Hacker variant of Tails Sprite.",
     "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
     "levelNotes": "Hover speed grows with each level.",
+    "unverified": true,
     "new": true,
     "launchedAt": "3-sept-2026",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 200 },
-      { "id": "gold", "label": "Gold", "dustCost": 500, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 600, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "loot-hacker",
+        "label": "Loot Hacker"
+      }
+    ],
+    "available": false
   },
   {
     "id": "loot-hacker-sonic",
     "name": "Loot Hacker Sonic",
     "seasonId": "c7-s4",
     "rarity": "epic",
-    "ability": "Loot Hacker variant of Sonic Sprite — enhanced sprint speed.",
+    "ability": "Loot Hacker variant of Sonic Sprite.",
     "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
     "levelNotes": "Sprint speed improves with each level.",
+    "unverified": true,
     "new": true,
     "launchedAt": "3-sept-2026",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 200 },
-      { "id": "gold", "label": "Gold", "dustCost": 500, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 600, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "loot-hacker",
+        "label": "Loot Hacker"
+      }
+    ],
+    "available": false
   },
   {
     "id": "loot-hacker-shadow",
     "name": "Loot Hacker Shadow",
     "seasonId": "c7-s4",
     "rarity": "epic",
-    "ability": "Loot Hacker variant of Shadow Sprite — enhanced auto-reload.",
+    "ability": "Loot Hacker variant of Shadow Sprite.",
     "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
     "levelNotes": "Reload speed improves with each level.",
+    "unverified": true,
     "new": true,
     "launchedAt": "3-sept-2026",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 200 },
-      { "id": "gold", "label": "Gold", "dustCost": 500, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 600, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "loot-hacker",
+        "label": "Loot Hacker"
+      }
+    ],
+    "available": false
   },
   {
     "id": "loot-hacker-8bit",
     "name": "Loot Hacker 8-Bit",
     "seasonId": "c7-s4",
     "rarity": "rare",
-    "ability": "Loot Hacker variant of 8-Bit Sprite — enhanced shotgun score multiplier.",
+    "ability": "Loot Hacker variant of 8-Bit Sprite.",
     "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
     "levelNotes": "Score multiplier increases with each level.",
+    "unverified": true,
     "new": true,
     "launchedAt": "3-sept-2026",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 100 },
-      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "loot-hacker",
+        "label": "Loot Hacker"
+      }
+    ],
+    "available": false
   },
   {
     "id": "loot-hacker-bushranger",
     "name": "Loot Hacker Bushranger",
     "seasonId": "c7-s4",
     "rarity": "rare",
-    "ability": "Loot Hacker variant of Bush Sprite — enhanced bush disguise.",
+    "ability": "Loot Hacker variant of Bush Sprite.",
     "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
     "levelNotes": "Bush durability improves with each level.",
+    "unverified": true,
     "new": true,
     "launchedAt": "3-sept-2026",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 100 },
-      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "loot-hacker",
+        "label": "Loot Hacker"
+      }
+    ],
+    "available": false
   },
   {
     "id": "loot-hacker-adventure",
     "name": "Loot Hacker Adventure",
     "seasonId": "c7-s4",
     "rarity": "rare",
-    "ability": "Loot Hacker variant of Adventure Sprite — enhanced item upgrades.",
+    "ability": "Loot Hacker variant of Adventure Sprite.",
     "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
     "levelNotes": "Upgrade quality improves with each level.",
+    "unverified": true,
     "new": true,
     "launchedAt": "3-sept-2026",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 100 },
-      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "loot-hacker",
+        "label": "Loot Hacker"
+      }
+    ],
+    "available": false
   },
   {
     "id": "loot-hacker-jonesy",
     "name": "Loot Hacker Jonesy",
     "seasonId": "c7-s4",
     "rarity": "rare",
-    "ability": "Loot Hacker variant of Jonesy Sprite — enhanced health recovery.",
+    "ability": "Loot Hacker variant of Jonesy Sprite.",
     "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
     "levelNotes": "Recovery amount improves with each level.",
+    "unverified": true,
     "new": true,
     "launchedAt": "3-sept-2026",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 100 },
-      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "loot-hacker",
+        "label": "Loot Hacker"
+      }
+    ],
+    "available": false
   },
   {
     "id": "loot-hacker-overshield",
     "name": "Loot Hacker Overshield",
     "seasonId": "c7-s4",
     "rarity": "rare",
-    "ability": "Loot Hacker variant of Overshield Sprite — enhanced shield amount.",
+    "ability": "Loot Hacker variant of Overshield Sprite.",
     "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
     "levelNotes": "Shield amount improves with each level.",
+    "unverified": true,
     "new": true,
     "launchedAt": "3-sept-2026",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 100 },
-      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "loot-hacker",
+        "label": "Loot Hacker"
+      }
+    ],
+    "available": false
   },
   {
     "id": "loot-hacker-onigiri",
     "name": "Loot Hacker Onigiri",
     "seasonId": "c7-s4",
     "rarity": "rare",
-    "ability": "Loot Hacker variant of Onigiri Sprite — enhanced Overdrive duration.",
+    "ability": "Loot Hacker variant of Onigiri Sprite.",
     "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
     "levelNotes": "Overdrive duration improves with each level.",
+    "unverified": true,
     "new": true,
     "launchedAt": "3-sept-2026",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 100 },
-      { "id": "gold", "label": "Gold", "dustCost": 300, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 400, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "loot-hacker",
+        "label": "Loot Hacker"
+      }
+    ],
+    "available": false
   },
   {
     "id": "loot-hacker-storm-scout",
     "name": "Loot Hacker Storm Scout",
     "seasonId": "c7-s4",
     "rarity": "legendary",
-    "ability": "Loot Hacker variant of Storm Scout Sprite — enhanced storm prediction.",
+    "ability": "Loot Hacker variant of Storm Scout Sprite.",
     "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
     "levelNotes": "Prediction accuracy improves with each level.",
+    "unverified": true,
     "new": true,
     "launchedAt": "3-sept-2026",
     "variants": [
-      { "id": "normal", "label": "Normal", "dustCost": 400 },
-      { "id": "gold", "label": "Gold", "dustCost": 800, "bonus": "3× elimination XP" },
-      { "id": "cheat-master", "label": "Cheat Master", "dustCost": 900, "bonus": "Button Mash" }
-    ]
+      {
+        "id": "loot-hacker",
+        "label": "Loot Hacker"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "loot-hacker-crown",
+    "name": "Loot Hacker Crown",
+    "seasonId": "c7-s4",
+    "rarity": "epic",
+    "ability": "Loot Hacker variant of Crown Sprite.",
+    "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+    "levelNotes": "Win progress bonus improves with each level.",
+    "unverified": true,
+    "new": true,
+    "launchedAt": "3-sept-2026",
+    "variants": [
+      {
+        "id": "loot-hacker",
+        "label": "Loot Hacker"
+      }
+    ],
+    "available": true
+  },
+  {
+    "id": "loot-hacker-klombo",
+    "name": "Loot Hacker Klombo",
+    "seasonId": "c7-s4",
+    "rarity": "epic",
+    "ability": "Loot Hacker variant of Klombo Sprite.",
+    "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+    "levelNotes": "Item quality and consumption speed improve with each level.",
+    "unverified": true,
+    "new": true,
+    "launchedAt": "3-sept-2026",
+    "variants": [
+      {
+        "id": "loot-hacker",
+        "label": "Loot Hacker"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "loot-hacker-jackrabbit",
+    "name": "Loot Hacker Jackrabbit",
+    "seasonId": "c7-s4",
+    "rarity": "epic",
+    "ability": "Loot Hacker variant of Jackrabbit Sprite.",
+    "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+    "levelNotes": "Jump height and cooldown improve with each level.",
+    "unverified": true,
+    "new": true,
+    "launchedAt": "3-sept-2026",
+    "variants": [
+      {
+        "id": "loot-hacker",
+        "label": "Loot Hacker"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "loot-hacker-killswitch",
+    "name": "Loot Hacker Killswitch",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Loot Hacker variant of Killswitch Sprite.",
+    "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+    "levelNotes": "Accuracy bonus improves with each level.",
+    "unverified": true,
+    "new": true,
+    "launchedAt": "3-sept-2026",
+    "variants": [
+      {
+        "id": "loot-hacker",
+        "label": "Loot Hacker"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "s3-john-wick",
+    "name": "John Wick",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      {
+        "id": "normal",
+        "label": "Base"
+      }
+    ],
+    "available": true,
+    "summonCost": 6750,
+    "variantCost": 10000,
+    "dropChance": 2.97,
+    "location": "Sprite Chests, Cheat Codes"
+  },
+  {
+    "id": "s3-duck",
+    "name": "Duck",
+    "seasonId": "c7-s3",
+    "rarity": "rare",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      {
+        "id": "normal",
+        "label": "Base"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "gummy",
+        "label": "Gummy"
+      },
+      {
+        "id": "galaxy",
+        "label": "Galaxy"
+      },
+      {
+        "id": "gem",
+        "label": "Gem"
+      }
+    ],
+    "available": true,
+    "summonCost": 2700,
+    "variantCost": 4000,
+    "dropChance": 5.22,
+    "location": "Sprite Chests, Cheat Codes"
+  },
+  {
+    "id": "s3-dream",
+    "name": "Dream",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      {
+        "id": "normal",
+        "label": "Base"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "gummy",
+        "label": "Gummy"
+      },
+      {
+        "id": "galaxy",
+        "label": "Galaxy"
+      },
+      {
+        "id": "cube",
+        "label": "Cube"
+      }
+    ],
+    "available": true,
+    "summonCost": 4500,
+    "variantCost": 6750,
+    "dropChance": 4.09,
+    "location": "Sprite Chests, Cheat Codes"
+  },
+  {
+    "id": "s3-punk",
+    "name": "Punk",
+    "seasonId": "c7-s3",
+    "rarity": "rare",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      {
+        "id": "normal",
+        "label": "Base"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "gummy",
+        "label": "Gummy"
+      },
+      {
+        "id": "galaxy",
+        "label": "Galaxy"
+      },
+      {
+        "id": "cube",
+        "label": "Cube"
+      }
+    ],
+    "available": true,
+    "summonCost": 4500,
+    "variantCost": 6750,
+    "dropChance": 4.11,
+    "location": "Sprite Chests, Cheat Codes"
+  },
+  {
+    "id": "s3-vini-jr",
+    "name": "Vini Jr.",
+    "seasonId": "c7-s3",
+    "rarity": "rare",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      {
+        "id": "normal",
+        "label": "Base"
+      }
+    ],
+    "available": true,
+    "summonCost": 6750,
+    "variantCost": 10000,
+    "dropChance": 0,
+    "location": "Special event only"
+  },
+  {
+    "id": "s3-burnt-peanut",
+    "name": "Burnt Peanut",
+    "seasonId": "c7-s3",
+    "rarity": "rare",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      {
+        "id": "normal",
+        "label": "Base"
+      }
+    ],
+    "available": true,
+    "summonCost": 6750,
+    "variantCost": null,
+    "dropChance": 2.97,
+    "location": "Sprite Chests, Cheat Codes"
+  },
+  {
+    "id": "s3-striker",
+    "name": "Striker",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      {
+        "id": "normal",
+        "label": "Base"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "gummy",
+        "label": "Gummy"
+      },
+      {
+        "id": "galaxy",
+        "label": "Galaxy"
+      },
+      {
+        "id": "holofoil",
+        "label": "Holo"
+      }
+    ],
+    "available": true,
+    "summonCost": 2700,
+    "variantCost": 4000,
+    "dropChance": 7.5,
+    "location": "Sprite Chests, Cheat Codes"
+  },
+  {
+    "id": "s3-boss",
+    "name": "Boss",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      {
+        "id": "normal",
+        "label": "Base"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "gummy",
+        "label": "Gummy"
+      },
+      {
+        "id": "galaxy",
+        "label": "Galaxy"
+      },
+      {
+        "id": "cube",
+        "label": "Cube"
+      }
+    ],
+    "available": true,
+    "summonCost": 4500,
+    "variantCost": 6750,
+    "dropChance": 4.09,
+    "location": "Sprite Chests, Cheat Codes"
+  },
+  {
+    "id": "s3-grim",
+    "name": "Grim",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      {
+        "id": "normal",
+        "label": "Base"
+      },
+      {
+        "id": "cube",
+        "label": "Cube"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "gummy",
+        "label": "Gummy"
+      },
+      {
+        "id": "galaxy",
+        "label": "Galaxy"
+      },
+      {
+        "id": "holofoil",
+        "label": "Holo"
+      },
+      {
+        "id": "gem",
+        "label": "Gem"
+      }
+    ],
+    "available": true,
+    "summonCost": 6750,
+    "variantCost": 10000,
+    "dropChance": 2.97,
+    "location": "Sprite Chests, Cheat Codes"
+  },
+  {
+    "id": "s3-seven",
+    "name": "Seven",
+    "seasonId": "c7-s3",
+    "rarity": "mythic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      {
+        "id": "normal",
+        "label": "Base"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "gummy",
+        "label": "Gummy"
+      },
+      {
+        "id": "galaxy",
+        "label": "Galaxy"
+      },
+      {
+        "id": "holofoil",
+        "label": "Holo"
+      }
+    ],
+    "available": true,
+    "summonCost": 4500,
+    "variantCost": 6750,
+    "dropChance": 4.09,
+    "location": "Sprite Chests, Cheat Codes"
+  },
+  {
+    "id": "s3-ironmouse",
+    "name": "Ironmouse",
+    "seasonId": "c7-s3",
+    "rarity": "rare",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      {
+        "id": "normal",
+        "label": "Base"
+      }
+    ],
+    "available": true,
+    "summonCost": 6750,
+    "variantCost": 10000,
+    "dropChance": 2.97,
+    "location": "Sprite Chests, Cheat Codes"
+  },
+  {
+    "id": "s3-pollo",
+    "name": "Pollo",
+    "seasonId": "c7-s3",
+    "rarity": "rare",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "variants": [
+      {
+        "id": "normal",
+        "label": "Base"
+      }
+    ],
+    "available": true,
+    "summonCost": 6750,
+    "variantCost": 10000,
+    "dropChance": 2.97,
+    "location": "Sprite Chests, Cheat Codes"
   }
 ]

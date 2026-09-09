@@ -1,13 +1,12 @@
 ---
 import '../styles/global.css';
-import { DEFAULT_KEYWORDS, HOME_DESCRIPTION, HOME_TITLE, SITE_NAME } from '../lib/seo';
+import { HOME_DESCRIPTION, HOME_TITLE, SITE_NAME } from '../lib/seo';
 import { LOCALES, localeFromPath, localeMeta, localizedPath, stripLocale } from '../lib/i18n';
 
 interface Props {
   title?: string;
   description?: string;
   canonicalPath?: string;
-  keywords?: string;
   ogType?: string;
   noIndex?: boolean;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
@@ -17,7 +16,6 @@ const {
   title = HOME_TITLE,
   description = HOME_DESCRIPTION,
   canonicalPath = Astro.url.pathname,
-  keywords = DEFAULT_KEYWORDS,
   ogType = 'website',
   noIndex = false,
   jsonLd,
@@ -101,7 +99,6 @@ const schemaList = Array.isArray(schema) ? schema : [schema];
 
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
     <meta name="author" content={SITE_NAME} />
     <meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
     <meta name="googlebot" content={noIndex ? 'noindex, nofollow' : 'index, follow'} />

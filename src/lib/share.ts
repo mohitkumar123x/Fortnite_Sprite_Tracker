@@ -61,6 +61,28 @@ export function importJson(raw: string): { seasonId: string; progress: SeasonPro
   }
 }
 
+export function importJsonWithValidation(
+  raw: string,
+  validKeys: Set<string>,
+): { seasonId: string; progress: SeasonProgress } | null {
+  try {
+    const data = JSON.parse(raw) as {
+      seasonId?: string;
+      owned?: string[];
+      mastered?: string[];
+    };
+    if (!data.seasonId || !Array.isArray(data.owned)) return null;
+    const owned = data.owned.filter((k) => validKeys.has(k));
+    const mastered = (data.mastered ?? []).filter((k) => validKeys.has(k) && owned.includes(k));
+    return {
+      seasonId: data.seasonId,
+      progress: normalizeProgress({ owned, mastered }),
+    };
+  } catch {
+    return null;
+  }
+}
+
 export function missingDiscordText(
   seasonLabel: string,
   missing: { spriteName: string; variantLabel: string }[],

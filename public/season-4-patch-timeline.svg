@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 160" role="img" aria-label="Fortnite Chapter 7 Season 4 patch timeline: launch August 24, Storm Scout added August 29, Loot Hacker system and four new sprites added September 3 in update v42.10">
+  <title>Fortnite Chapter 7 Season 4 Patch Timeline</title>
+  <rect width="720" height="160" rx="8" fill="#0f172a"/>
+  <!-- Timeline line -->
+  <line x1="60" y1="80" x2="660" y2="80" stroke="#334155" stroke-width="3" stroke-linecap="round"/>
+  <!-- Dot 1: Season 4 Launch -->
+  <circle cx="120" cy="80" r="10" fill="#22d3ee"/>
+  <rect x="75" y="100" width="90" height="28" rx="4" fill="#1e293b" stroke="#334155"/>
+  <text x="120" y="119" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Aug 24</text>
+  <text x="120" y="58" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11">Season 4 Launch</text>
+  <text x="120" y="44" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="13" font-weight="700">C7 S4 Begins</text>
+  <!-- Dot 2: Storm Scout -->
+  <circle cx="340" cy="80" r="10" fill="#a78bfa"/>
+  <rect x="290" y="100" width="100" height="28" rx="4" fill="#1e293b" stroke="#334155"/>
+  <text x="340" y="119" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Aug 29</text>
+  <text x="340" y="58" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11">Storm Scout Added</text>
+  <text x="340" y="44" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Storm Scout</text>
+  <!-- Dot 3: v42.10 -->
+  <circle cx="560" cy="80" r="10" fill="#f59e0b"/>
+  <rect x="500" y="100" width="120" height="28" rx="4" fill="#1e293b" stroke="#334155"/>
+  <text x="560" y="119" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Sept 3</text>
+  <text x="560" y="58" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11">Loot Hacker + 4 Sprites</text>
+  <text x="560" y="44" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="13" font-weight="700">v42.10</text>
+  <!-- Connector arrows -->
+  <path d="M130 80 L330 80" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <path d="M350 80 L550 80" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 3"/>
+</svg>

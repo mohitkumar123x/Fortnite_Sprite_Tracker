@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 180" role="img" aria-label="Hunt Mode flow: extract a sprite, mark it Owned, enable Hunt Mode to filter the board to missing variants sorted by rarity">
+  <title>Hunt Mode Flow Diagram</title>
+  <rect width="700" height="180" rx="8" fill="#0f172a"/>
+  <!-- Step boxes -->
+  <rect x="20" y="55" width="110" height="50" rx="6" fill="#1e293b" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="75" y="75" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10" font-weight="600">STEP 1</text>
+  <text x="75" y="92" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="11">Extract Sprite</text>
+
+  <rect x="160" y="55" width="110" height="50" rx="6" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="215" y="75" text-anchor="middle" fill="#a78bfa" font-family="system-ui,sans-serif" font-size="10" font-weight="600">STEP 2</text>
+  <text x="215" y="92" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="11">Mark Owned</text>
+
+  <rect x="300" y="55" width="130" height="50" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="365" y="75" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="10" font-weight="600">STEP 3</text>
+  <text x="365" y="92" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="11">Enable Hunt Mode</text>
+
+  <rect x="460" y="55" width="110" height="50" rx="6" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
+  <text x="515" y="75" text-anchor="middle" fill="#34d399" font-family="system-ui,sans-serif" font-size="10" font-weight="600">STEP 4</text>
+  <text x="515" y="92" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="11">Filter: Missing</text>
+
+  <rect x="600" y="55" width="80" height="50" rx="6" fill="#1e293b" stroke="#fb923c" stroke-width="1.5"/>
+  <text x="640" y="75" text-anchor="middle" fill="#fb923c" font-family="system-ui,sans-serif" font-size="10" font-weight="600">STEP 5</text>
+  <text x="640" y="92" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="11">Sorted</text>
+
+  <!-- Arrows -->
+  <path d="M130 80 L158 80" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M270 80 L298 80" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M430 80 L458 80" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M570 80 L598 80" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Description -->
+  <text x="350" y="145" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11">Board shows only missing variants, grouped by rarity (Mythic first)</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+  </defs>
+</svg>

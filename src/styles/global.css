@@ -342,6 +342,53 @@
 }
 
 /* Print styles */
+/* List view overrides */
+[data-view="list"] .sprite-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+}
+
+[data-view="list"] .sprite-cell > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+
+[data-view="list"] .sprite-cell > div:first-child > div {
+  flex: 1;
+  min-width: 0;
+}
+
+[data-view="list"] .sprite-cell p.mt-3,
+[data-view="list"] .sprite-cell p.mt-1\.5 {
+  display: none;
+}
+
+[data-view="list"] .sprite-cell .own-btn,
+[data-view="list"] .sprite-cell [data-own] ~ div {
+  width: auto;
+  min-width: 7rem;
+  flex-shrink: 0;
+}
+
+[data-view="list"] .sprite-cell .own-btn {
+  margin-top: 0;
+  height: 2rem;
+  font-size: 0.75rem;
+}
+
+[data-view="list"] .sprite-cell > div:last-child:not(.own-btn):not([data-own]) {
+  margin-top: 0;
+  width: auto;
+  min-width: 7rem;
+  height: 2rem;
+  font-size: 0.75rem;
+}
+
 @media print {
   header,
   footer,

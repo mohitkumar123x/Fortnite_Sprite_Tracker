@@ -1,0 +1,639 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { getBlogPost } from '../../data/blogPosts';
+import { getBlogPostContent, type ContentBlock } from '../../data/blogContent';
+import { allSprites } from '../../lib/catalog';
+import { CHEAT_CODES } from '../../data/cheats';
+import { breadcrumbJsonLd, SITE_NAME, SITE_URL } from '../../lib/seo';
+import { localeFromPath, localizedPath, localeMeta, t } from '../../lib/i18n';
+import { spriteArtSrc } from '../../lib/spriteArt';
+
+export function getStaticPaths() {
+  const slugs = ['v42-10-update', 'how-to-track-sprites', 'hunt-mode-guide', 'compare-lockers', 'cheat-codes-guide', 'season-archives'];
+  return slugs.map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
+const dateLocale = localeMeta[locale].dateLocale;
+const post = getBlogPost(slug!, locale);
+const content = getBlogPostContent(slug!, locale);
+if (!post) return Astro.redirect(lp('/blog'));
+
+const jsonLd = [
+  breadcrumbJsonLd([
+    { name: t(locale, 'blogPageTitle'), path: '/blog' },
+    { name: post.title, path: `/blog/${post.slug}` },
+  ]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    url: `${SITE_URL}/blog/${post.slug}`,
+    datePublished: post.datePublished,
+    dateModified: post.dateModified,
+    author: { '@type': 'Organization', name: SITE_NAME },
+    description: post.metaDescription,
+    isPartOf: {
+      '@type': 'Blog',
+      name: `${SITE_NAME} Blog`,
+      url: `${SITE_URL}/blog`,
+    },
+  },
+];
+
+const v42Sprites = allSprites.filter((s) => s.new && s.seasonId === 'c7-s4' && !s.id.startsWith('loot-hacker-'));
+const lootHackers = allSprites.filter((s) => s.new && s.seasonId === 'c7-s4' && s.id.startsWith('loot-hacker-'));
+const spriteCheats = CHEAT_CODES.filter((c) => c.category === 'sprite');
+
+function spriteHref(id: string) { return lp(`/sprites/${id}`); }
+---
+
+<Layout
+  title={`${post.title} — ${SITE_NAME}`}
+  description={post.metaDescription}
+  canonicalPath={lp(`/blog/${post.slug}`)}
+  jsonLd={jsonLd}
+>
+  <Header slot="header" />
+  <div class="mx-auto max-w-[800px] px-4 pt-8 md:px-6 md:pt-12">
+    <Breadcrumb locale={locale} items={[
+      { label: t(locale, 'blogPageTitle'), href: lp('/blog') },
+      { label: post.title },
+    ]} />
+  </div>
+
+  <section class="border-b border-hairline bg-canvas">
+    <div class="mx-auto max-w-[800px] px-4 py-16 md:px-6 md:py-24">
+      <p class="text-caption-mono text-mute">{t(locale, 'blogEyebrow')}</p>
+      <h1 class="mt-3 text-display-lg text-ink">{post.title}</h1>
+      <p class="mt-4 text-lg text-body">{post.excerpt}</p>
+      <p class="mt-2 text-sm text-mute">
+        {t(locale, 'blogPublished')} <time datetime={post.datePublished}>{new Date(post.datePublished + 'T12:00:00Z').toLocaleDateString(dateLocale, { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</time>
+        {post.dateModified !== post.datePublished && (
+          <> · {t(locale, 'blogUpdated')} <time datetime={post.dateModified}>{new Date(post.dateModified + 'T12:00:00Z').toLocaleDateString(dateLocale, { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</time></>
+        )}
+      </p>
+    </div>
+  </section>
+
+  <article class="bg-canvas">
+    <div class="mx-auto max-w-[800px] px-4 py-10 md:px-6 md:py-16">
+      <div class="prose text-base leading-7 text-body">
+
+        {content && (
+          <>
+            <p set:html={content.intro} />
+            {content.sections.map((section) => (
+              <>
+                <h2 set:html={section.heading} />
+                {section.blocks.map((block) => {
+                  if (block.type === 'p') return <p set:html={block.text} />;
+                  if (block.type === 'h2') return <h2 set:html={block.text} />;
+                  if (block.type === 'badge') return <span class="inline-flex items-center rounded-full bg-ink px-1.5 py-0.5 text-[9px] font-semibold text-on-primary">{block.text}</span>;
+                  if (block.type === 'img') {
+                    const isSprite = block.src.startsWith('/sprites/');
+                    const src = isSprite ? spriteArtSrc(block.src.replace('/sprites/', '')) : block.src;
+                    return (
+                      <img
+                        src={src}
+                        alt={block.alt}
+                        width={block.width}
+                        height={block.height}
+                        class:list={[
+                          'my-8 rounded-md border border-hairline',
+                          isSprite ? 'size-16 object-cover my-6' : 'w-full',
+                        ]}
+                        loading="lazy"
+                      />
+                    );
+                  }
+                  if (block.type === 'table') {
+                    return (
+                      <div class="my-8 overflow-x-auto">
+                        <table class="w-full border-collapse text-sm">
+                          <caption class="mb-3 text-left text-caption-mono text-mute" set:html={block.caption} />
+                          <thead>
+                            <tr class="border-b border-hairline text-left">
+                              {block.headers.map((th) => (
+                                <th scope="col" class="py-2 pr-4 font-semibold text-ink">{th.text}</th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {block.rows.map((row) => (
+                              <tr class="border-b border-hairline/50">
+                                {row.map((td) => (
+                                  <td class="py-2.5 pr-4">
+                                    {td.href ? <a href={lp(td.href)} class="font-medium text-ink hover:underline" set:html={td.text} /> : <Fragment set:html={td.text} />}
+                                  </td>
+                                ))}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    );
+                  }
+                  return null;
+                })}
+              </>
+            ))}
+          </>
+        )}
+
+        {slug === 'v42-10-update' && !content && (
+          <>
+            <p>
+              Chapter 7 Season 4 received its first major content drop on September 3, 2026. The v42.10 update
+              added five new base companions and introduced the Loot Hacker variant system — a new category of
+              collectible sprites found in high and mountainous areas.
+            </p>
+
+            <img
+              src="/season-4-patch-timeline.svg"
+              alt="Fortnite Chapter 7 Season 4 patch timeline: launch August 24, Storm Scout added August 29, Loot Hacker system and four new sprites added September 3 in update v42.10"
+              width="720"
+              height="160"
+              class="my-8 w-full rounded-md border border-hairline"
+              loading="lazy"
+            />
+
+            <p>
+              The patch also tweaked existing sprites: detection radius on X-Ray grows faster per level, and
+              several Loot Hacker variants are marked as unreleased pending future activation. Here is every new
+              sprite, its rarity, ability, and whether it is live in-game right now.
+            </p>
+
+            <div class="my-8 overflow-x-auto">
+              <table class="w-full border-collapse text-sm">
+                <caption class="mb-3 text-left text-caption-mono text-mute">What's New in v42.10</caption>
+                <thead>
+                  <tr class="border-b border-hairline text-left">
+                    <th scope="col" class="py-2 pr-4 font-semibold text-ink">Sprite Name</th>
+                    <th scope="col" class="py-2 pr-4 font-semibold text-ink">Type</th>
+                    <th scope="col" class="py-2 pr-4 font-semibold text-ink">Rarity</th>
+                    <th scope="col" class="py-2 pr-4 font-semibold text-ink">Ability</th>
+                    <th scope="col" class="py-2 font-semibold text-ink">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {v42Sprites.map((s) => (
+                    <tr class="border-b border-hairline/50">
+                      <td class="py-2.5 pr-4">
+                        <a href={spriteHref(s.id)} class="font-medium text-ink hover:underline">{s.name}</a>
+                      </td>
+                      <td class="py-2.5 pr-4 text-mute">New Base</td>
+                      <td class="py-2.5 pr-4 capitalize">{s.rarity}</td>
+                      <td class="py-2.5 pr-4 text-body">{s.ability}</td>
+                      <td class="py-2.5">
+                        {s.available !== false ? (
+                          <span class="inline-flex items-center rounded-full bg-success-soft px-2 py-0.5 text-xs font-semibold text-success">Available</span>
+                        ) : (
+                          <span class="inline-flex items-center rounded-full bg-error-soft px-2 py-0.5 text-xs font-semibold text-error">Unreleased</span>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                  {lootHackers.map((s) => (
+                    <tr class="border-b border-hairline/50">
+                      <td class="py-2.5 pr-4">
+                        <a href={spriteHref(s.id)} class="font-medium text-ink hover:underline">{s.name}</a>
+                      </td>
+                      <td class="py-2.5 pr-4 text-mute">Loot Hacker</td>
+                      <td class="py-2.5 pr-4 capitalize">{s.rarity}</td>
+                      <td class="py-2.5 pr-4 text-body">{s.ability}</td>
+                      <td class="py-2.5">
+                        {s.available !== false ? (
+                          <span class="inline-flex items-center rounded-full bg-success-soft px-2 py-0.5 text-xs font-semibold text-success">Available</span>
+                        ) : (
+                          <span class="inline-flex items-center rounded-full bg-error-soft px-2 py-0.5 text-xs font-semibold text-error">Unreleased</span>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <h2>New base sprites</h2>
+            <p>
+              Five base sprites joined the live loot pool. <a href={spriteHref('xray')}>X-Ray</a> is the
+              standout legendary — it periodically marks nearby enemies on your screen, and the detection radius
+              increases each time you level it up. <a href={spriteHref('mega-man')}>Mega Man</a> is a rare
+              companion that reduces sliding friction so you can slide farther across the map.{' '}
+              <a href={spriteHref('overshield')}>Overshield</a> grants a shield buffer on top of your regular
+              HP, with the amount growing at each level.{' '}
+              <a href={spriteHref('onigiri')}>Onigiri</a> triggers an Overdrive speed burst after you use a
+              consumable item. And <a href={spriteHref('storm-scout')}>Storm Scout</a> activates Overdrive
+              after you take storm damage, with a max-level bonus that reveals future Storm Circle positions.
+            </p>
+
+            <img
+              src={spriteArtSrc('xray')}
+              alt="X-Ray Sprite icon, Legendary, Normal variant — Fortnite Chapter 7 Season 4"
+              width="128"
+              height="128"
+              class="my-6 size-16 rounded-md border border-hairline object-cover"
+              loading="lazy"
+            />
+
+            <h2>The Loot Hacker system</h2>
+            <p>
+              Loot Hacker variants are separate sprites — not alternate skins of existing ones. Each Loot
+              Hacker spawns in high-elevation areas and has a single variant tier. Most are currently marked
+              as unreleased in the game data, meaning Epic has added them to the files but has not yet enabled
+              them in live matches. <a href={spriteHref('loot-hacker-crown')}>Loot Hacker Crown</a> is the
+              exception: it is available now and tracks a modified version of the Crown sprite's win-progression
+              ability.
+            </p>
+            <p>
+              Loot Hacker sprites share the same roster slot as their base counterpart — for example,{' '}
+              <a href={spriteHref('loot-hacker-xray')}>Loot Hacker X-Ray</a> and{' '}
+              <a href={spriteHref('xray')}>X-Ray</a> are both tied to the X-Ray companion, but they occupy
+              separate cells on the tracker. This means you can own both and track them independently.
+            </p>
+
+            <h2>How to track v42.10 sprites</h2>
+            <p>
+              Open the tracker on the home page. The new sprites appear in the "New Sprites" sidebar and are
+              marked with a <span class="inline-flex items-center rounded-full bg-ink px-1.5 py-0.5 text-[9px] font-semibold text-on-primary">NEW</span> badge
+              in the main grid. Mark each one as Owned once you extract it, then star Mastered when you hit the
+              in-game mastery level. Use Hunt Mode to see only the v42.10 sprites you are still missing.
+            </p>
+          </>
+        )}
+
+        {slug === 'how-to-track-sprites' && !content && (
+          <>
+            <p>
+              Every companion you extract in Chapter 7 Season 4 stays in your locker permanently, but keeping
+              track of which ones you own — and which you have mastered — gets complicated fast once Gold,
+              Cheat Master, and Loot Hacker variants enter the picture. This guide walks through the full
+              workflow: marking sprites, backing up your progress, and sharing a read-only snapshot with friends.
+            </p>
+
+            <img
+              src="/sprite-variant-hierarchy.svg"
+              alt="Fortnite Sprite variant hierarchy: each base Sprite has Normal, Gold, Cheat Master, and Loot Hacker versions with increasing dust cost"
+              width="620"
+              height="220"
+              class="my-8 w-full rounded-md border border-hairline"
+              loading="lazy"
+            />
+
+            <h2>Marking sprites as Owned</h2>
+            <p>
+              Scroll to the tracker grid on the home page. Each cell represents one sprite-variant pair — for
+              example, "Bush Normal" and "Bush Gold" are separate cells. When you extract a sprite in a match
+              and the extraction animation completes, find its cell and tap the "Mark Owned" button. The cell
+              shifts to a highlighted state so you can see at a glance which companions are already in your
+              locker.
+            </p>
+            <p>
+              If you extract a variant you have not seen before — say, a Gold Shadow from a chest — mark only
+              that specific variant. The Normal variant stays unmarked until you extract it separately. This
+              one-cell-per-variant approach means your tracker reflects exactly what is in your locker, not
+              what you think you might have.
+            </p>
+
+            <h2>Marking sprites as Mastered</h2>
+            <p>
+              Mastery is a separate mark from ownership. A sprite becomes mastered when you take it to level 5
+              through regular play, then complete the extraction requirement. On the tracker, star the Mastered
+              button only after both conditions are met. The two-status system exists because extracting a Gold
+              Crown is not the same as mastering it — mastery means you have fully leveled the companion and
+              unlocked its bonus.
+            </p>
+
+            <h2>Backing up your collection</h2>
+            <p>
+              All progress lives in your browser's localStorage. If you clear your browser data, switch
+              computers, or want to move to a different device, export your collection as a JSON file. Open the
+              share panel below the tracker, click "Export JSON," and save the file somewhere safe. To restore
+              on a new device, open the same share panel and click "Import JSON" — your Owned and Mastered marks
+              will be restored instantly.
+            </p>
+
+            <h2>Sharing with friends</h2>
+            <p>
+              The share panel also generates a read-only URL. Copy it and send it to a friend — they will see
+              your Owned and Mastered marks in their browser without being able to edit them. This is useful for
+              coordinating who has which sprites before a squad session, or for showing off a near-complete
+              collection. The URL encodes only your checklist bits, not your Epic account or any personal data.
+            </p>
+          </>
+        )}
+
+        {slug === 'hunt-mode-guide' && !content && (
+          <>
+            <p>
+              Hunt Mode is a board filter that hides every sprite you already own and shows only the missing
+              ones, sorted by rarity. It turns a 42-sprite grid into a focused checklist of exactly what you
+              still need to extract. Here is how to enable it and use it effectively.
+            </p>
+
+            <img
+              src="/hunt-mode-flow-diagram.svg"
+              alt="Hunt Mode flow: extract a sprite, mark it Owned, enable Hunt Mode to filter the board to missing variants sorted by rarity"
+              width="700"
+              height="180"
+              class="my-8 w-full rounded-md border border-hairline"
+              loading="lazy"
+            />
+
+            <h2>Enabling Hunt Mode</h2>
+            <p>
+              On the home page tracker, locate the filter bar above the sprite grid. Tap the "Hunt Mode"
+              toggle. The grid instantly updates to hide every cell where you have already marked Owned. What
+              remains is a shorter list of missing sprites, grouped by rarity tier — Mythic companions appear
+              first, then Legendary, Epic, and Rare.
+            </p>
+            <p>
+              Hunt Mode works in combination with other filters. If you toggle both Hunt Mode and the "Season 4
+              Only" filter, the board shows only Season 4 sprites you have not yet extracted. Adding the "Gold"
+              variant filter narrows it further to Gold variants you are missing. Each filter stacks, so you can
+              build a highly specific extraction plan.
+            </p>
+
+            <h2>Using rarity sorting</h2>
+            <p>
+              Within the Hunt Mode results, sprites are sorted by rarity tier. This means the rarest missing
+              companions appear at the top of the grid. If you are opening chests in a match and want to know
+              which extraction has the highest priority, glance at the tracker — the first sprite in Hunt Mode
+              results is the one you should grab if you find it.
+            </p>
+            <p>
+              Mythic sprites like Crown and Klombo are the hardest to find in chests. If Hunt Mode shows one of
+              these at the top of your list, you know that match's chest loot is particularly valuable for your
+              collection. Conversely, if only Rare sprites remain, you can focus on other gameplay goals knowing
+              the common companions are easy to pick up later.
+            </p>
+
+            <h2>Combining Hunt Mode with the Missing filter</h2>
+            <p>
+              The "Missing" filter works similarly to Hunt Mode but without the rarity sort. Use Hunt Mode when
+              you want priority ordering; use the plain Missing filter when you just want a quick count of how
+              many sprites remain. Both can be toggled independently, and turning both on simultaneously is
+              redundant — Hunt Mode already implies "show only missing."
+            </p>
+          </>
+        )}
+
+        {slug === 'compare-lockers' && !content && (
+          <>
+            <p>
+              The Compare tool lets you see two sprite collections side by side using share codes. This is
+              useful for coordinating with a squad member, checking what a friend has collected, or figuring out
+              which sprites you both need to hunt together. No login is required — the comparison runs entirely
+              in your browser.
+            </p>
+
+            <h2>Generating your share code</h2>
+            <p>
+              Open the tracker on the home page and scroll to the share panel. Click "Copy Share Link" to get a
+              URL that encodes your Owned and Mastered marks. Send this link to anyone you want to compare with.
+              They can open it to see your collection as a read-only view, or they can paste it into the Compare
+              page to run a side-by-side analysis.
+            </p>
+
+            <div class="my-8 overflow-x-auto">
+              <table class="w-full border-collapse text-sm">
+                <caption class="mb-3 text-left text-caption-mono text-mute">Example locker comparison output</caption>
+                <thead>
+                  <tr class="border-b border-hairline text-left">
+                    <th scope="col" class="py-2 pr-4 font-semibold text-ink">Sprite</th>
+                    <th scope="col" class="py-2 pr-4 font-semibold text-ink">You Own</th>
+                    <th scope="col" class="py-2 pr-4 font-semibold text-ink">Friend Owns</th>
+                    <th scope="col" class="py-2 font-semibold text-ink">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-hairline/50">
+                    <td class="py-2.5 pr-4 font-medium text-ink">Crown — Normal</td>
+                    <td class="py-2.5 pr-4">Yes</td>
+                    <td class="py-2.5 pr-4">Yes</td>
+                    <td class="py-2.5"><span class="text-success">Both</span></td>
+                  </tr>
+                  <tr class="border-b border-hairline/50">
+                    <td class="py-2.5 pr-4 font-medium text-ink">X-Ray — Gold</td>
+                    <td class="py-2.5 pr-4">Yes</td>
+                    <td class="py-2.5 pr-4">No</td>
+                    <td class="py-2.5"><span class="text-link">Only You</span></td>
+                  </tr>
+                  <tr class="border-b border-hairline/50">
+                    <td class="py-2.5 pr-4 font-medium text-ink">Shadow — Cheat Master</td>
+                    <td class="py-2.5 pr-4">No</td>
+                    <td class="py-2.5 pr-4">Yes</td>
+                    <td class="py-2.5"><span class="text-mute">Only Friend</span></td>
+                  </tr>
+                  <tr class="border-b border-hairline/50">
+                    <td class="py-2.5 pr-4 font-medium text-ink">Klombo — Gold</td>
+                    <td class="py-2.5 pr-4">No</td>
+                    <td class="py-2.5 pr-4">No</td>
+                    <td class="py-2.5"><span class="text-error">Neither</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2>Running a comparison</h2>
+            <p>
+              Navigate to the Compare page and paste both share codes into the input fields. The tool
+              decodes each URL, reads the Owned and Mastered bits, and generates a table showing every
+              sprite-variant pair. Rows are color-coded: green means both players own it, blue means only
+              you have it, gray means only your friend has it, and red means neither player has extracted
+              that variant yet.
+            </p>
+            <p>
+              The comparison is computed entirely in your browser. No data is sent to a server, and the share
+              codes contain only checklist information — not your Epic username, email, or any account
+              credentials. This is the same privacy model the tracker uses for individual progress storage.
+            </p>
+
+            <h2>Using the results</h2>
+            <p>
+              The "Neither" rows are the most actionable. They tell you and your friend which sprites you
+              both need to extract, which can guide your next squad session. The "Only Friend" rows show
+              sprites your friend has that you do not — useful for knowing which chests to prioritize when
+              playing together. And the "Both" rows confirm that neither of you needs to revisit those
+              companions.
+            </p>
+          </>
+        )}
+
+        {slug === 'cheat-codes-guide' && !content && (
+          <>
+            <p>
+              Cheat codes in Chapter 7 Season 4 unlock Cheat Master sprite variants, bonus Sprite Dust, extra
+              XP, and a handful of utility items. Each code requires a specific button combo entered at the
+              cheat terminal in-game, and most cost Sprite Dust to activate. Here is every verified code, what
+              it gives you, and how much it costs.
+            </p>
+
+            <div class="my-8 overflow-x-auto">
+              <table class="w-full border-collapse text-sm">
+                <caption class="mb-3 text-left text-caption-mono text-mute">All verified cheat codes — Chapter 7 Season 4</caption>
+                <thead>
+                  <tr class="border-b border-hairline text-left">
+                    <th scope="col" class="py-2 pr-4 font-semibold text-ink">Code</th>
+                    <th scope="col" class="py-2 pr-4 font-semibold text-ink">Unlocks</th>
+                    <th scope="col" class="py-2 pr-4 font-semibold text-ink">Category</th>
+                    <th scope="col" class="py-2 font-semibold text-ink">Dust Cost</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {spriteCheats.map((c) => (
+                    <tr class="border-b border-hairline/50">
+                      <td class="py-2.5 pr-4 font-mono text-xs text-ink">{c.code}</td>
+                      <td class="py-2.5 pr-4 text-body">{c.title}</td>
+                      <td class="py-2.5 pr-4 capitalize text-mute">{c.category}</td>
+                      <td class="py-2.5">{c.dustCost ? `${c.dustCost.toLocaleString()}` : '—'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <img
+              src={spriteArtSrc('bush', 'cheat-master')}
+              alt="Bush Sprite icon, Rare, Cheat Master variant — Fortnite Chapter 7 Season 4"
+              width="128"
+              height="128"
+              class="my-6 size-16 rounded-md border border-hairline object-cover"
+              loading="lazy"
+            />
+
+            <h2>How to enter a cheat code</h2>
+            <p>
+              Find a cheat terminal in-game — they are located at specific POIs and marked on the map. Approach
+              the terminal and interact with it. A keypad UI appears. Type the code exactly as shown (capitalization
+              matters), then confirm. If the code is valid and you have enough Sprite Dust, the unlock animation
+              plays and the item or variant is added to your account immediately.
+            </p>
+            <p>
+              The button combo shown next to each code in the table above is an alternative input method for
+              controller players. Instead of typing the text code, you can enter the directional and face-button
+              sequence at the terminal. Both methods achieve the same result — pick whichever is faster for your
+              setup.
+            </p>
+
+            <h2>Dust and XP codes</h2>
+            <p>
+              Beyond sprite variants, several codes grant Sprite Dust directly. Codes like Magilume, Chispambo,
+              and Abgestaubt each give 2,000 Dust, which is enough to unlock a Normal variant on any Rare sprite.
+              The OverrideXP code grants 40,000 XP toward your seasonal progression. These are one-time-use per
+              account, so enter them once and do not worry about duplicates.
+            </p>
+
+            <h2>Item and cosmetic codes</h2>
+            <p>
+              A handful of codes unlock consumable items: 02Override gives a Llama Supply Drop and a Portable
+              Extractor, TakeYourHeart grants Extraction Accelerators, and PerfectOrder provides Spicy Tacos.
+              The cosmetic codes BeMoreAlien and ReachYourImpossible unlock Loading Screens. None of these
+              affect your sprite collection directly, but the extraction accelerators are useful for leveling
+              companions faster.
+            </p>
+
+            <p>
+              For the full interactive cheat code page with claimed-code tracking, visit the{' '}
+              <a href={lp('/cheat-codes')}>Cheat Codes page</a>.
+            </p>
+          </>
+        )}
+
+        {slug === 'season-archives' && !content && (
+          <>
+            <p>
+              When a new Fortnite season begins, the previous season's sprite roster moves to the archive.
+              This means those companions no longer drop from chests in live matches, but every sprite you
+              extracted during that season stays in your collection. The tracker preserves all of them so your
+              historical progress is never lost.
+            </p>
+
+            <div class="my-8 overflow-x-auto">
+              <table class="w-full border-collapse text-sm">
+                <caption class="mb-3 text-left text-caption-mono text-mute">Past season archives</caption>
+                <thead>
+                  <tr class="border-b border-hairline text-left">
+                    <th scope="col" class="py-2 pr-4 font-semibold text-ink">Season</th>
+                    <th scope="col" class="py-2 pr-4 font-semibold text-ink">Roster Highlights</th>
+                    <th scope="col" class="py-2 font-semibold text-ink">Archive Link</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-hairline/50">
+                    <td class="py-2.5 pr-4 font-medium text-ink">Chapter 7 — Season 3</td>
+                    <td class="py-2.5 pr-4 text-body">
+                      Batman, Zero Point, King, Seven, John Wick, Ghost, Peeky Peely, Llama, plus elemental sprites (Air, Earth, Fire, Water) with Gummy, Galaxy, Holofoil, Cube, and Quack variants
+                    </td>
+                    <td class="py-2.5">
+                      <a href={lp('/seasons/c7-s3')} class="text-link hover:underline">View archive →</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <img
+              src={spriteArtSrc('s3-batman')}
+              alt="Batman Sprite icon, Legendary, Base variant — Fortnite Chapter 7 Season 3 archive"
+              width="128"
+              height="128"
+              class="my-6 size-16 rounded-md border border-hairline object-cover"
+              loading="lazy"
+            />
+
+            <h2>What happens to archived sprites</h2>
+            <p>
+              Archived sprites keep all their data: name, rarity, ability, variants, and the marks you gave
+              them. If you marked Batman as Owned and Mastered during Season 3, those marks persist on the
+              tracker indefinitely. The only change is that the sprite no longer appears in the live Season 4
+              grid — you need to switch to the Season 3 archive view to see it.
+            </p>
+            <p>
+              The archive view is accessible from the Seasons page. Select Chapter 7 Season 3, and the tracker
+              repopulates with that season's full roster. You can still mark and unmark sprites in the archive,
+              so if you forgot to log a Season 3 extraction, you can go back and update it.
+            </p>
+
+            <h2>Variant differences between seasons</h2>
+            <p>
+              Season 3 sprites used a different variant system than Season 4. Instead of Normal, Gold, and
+              Cheat Master, Season 3 companions had Base, Gold, Gummy, Galaxy, Gem, Holofoil, Cube, and Quack
+              variants — each with a different visual treatment. Some sprites had as many as eight variants
+              (like Zero Point), while others like John Wick had only a single Base variant.
+            </p>
+            <p>
+              The tracker handles both systems. Season 3 cells show the original variant names, and Season 4
+              cells show the new tier names. This means your collection history stays accurate regardless of
+              which season's naming convention a sprite uses.
+            </p>
+
+            <p>
+              Browse the full Season 3 archive on the{' '}
+              <a href={lp('/seasons')}>Seasons page</a>, or jump directly to{' '}
+              <a href={spriteHref('s3-batman')}>Batman's sprite page</a> to see all six variants and their
+              unlock requirements.
+            </p>
+          </>
+        )}
+
+      </div>
+    </div>
+  </article>
+
+  <section class="border-t border-hairline bg-canvas-soft">
+    <div class="mx-auto max-w-[800px] px-4 py-8 md:px-6">
+      <p class="text-sm text-body">
+        <a href={lp('/blog')} class="font-medium text-ink hover:underline">{t(locale, 'blogBackToPosts')}</a>
+      </p>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

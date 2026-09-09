@@ -23,14 +23,29 @@ export function buildCatalog(sprites: Sprite[]): CatalogEntry[] {
       variantLabel: variant.label,
       dustCost: variant.dustCost,
       bonus: variant.bonus,
+      available: sprite.available !== false,
+      summonCost: sprite.summonCost,
+      variantCost: sprite.variantCost,
+      dropChance: sprite.dropChance,
+      location: sprite.location,
     })),
   );
+}
+
+export function availableCatalog(catalog: CatalogEntry[]): CatalogEntry[] {
+  return catalog.filter((e) => e.available);
 }
 
 export function normalizeProgress(raw: SeasonProgress | undefined): SeasonProgress {
   if (!raw) return emptyProgress();
   const owned = Array.from(new Set(raw.owned ?? []));
   const mastered = Array.from(new Set(raw.mastered ?? [])).filter((key) => owned.includes(key));
+  return { owned, mastered };
+}
+
+export function migrateProgress(progress: SeasonProgress, availableKeys: Set<string>): SeasonProgress {
+  const owned = progress.owned.filter((k) => availableKeys.has(k));
+  const mastered = progress.mastered.filter((k) => availableKeys.has(k) && owned.includes(k));
   return { owned, mastered };
 }
 
@@ -61,7 +76,7 @@ export function toggleMastered(progress: SeasonProgress, key: string): SeasonPro
 export function huntList(catalog: CatalogEntry[], progress: SeasonProgress): CatalogEntry[] {
   const owned = new Set(progress.owned);
   return catalog
-    .filter((entry) => !owned.has(entry.key))
+    .filter((entry) => entry.available && !owned.has(entry.key))
     .sort((a, b) => RARITY_ORDER[b.rarity] - RARITY_ORDER[a.rarity] || a.spriteName.localeCompare(b.spriteName));
 }
 

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <style>
+    .el { transform-box: fill-box; transform-origin: center; }
+    .bob { animation: bob 2.8s ease-in-out infinite; }
+    .twitch { animation: twitch 2.6s ease-in-out infinite; }
+    .twitch-d { animation: twitch 2.6s ease-in-out infinite; animation-delay: .18s; }
+    .blink { animation: blink 3.8s steps(1, end) infinite; }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @keyframes twitch { 0%,86%,100% { transform: rotate(0); } 90% { transform: rotate(-8deg); } 94% { transform: rotate(6deg); } }
+    @keyframes blink { 0%,92%,100% { transform: scaleY(1); } 94%,96% { transform: scaleY(.12); } }
+    @media (prefers-reduced-motion: reduce) { .el { animation: none !important; } }
+  </style>
+  <rect width="128" height="128" rx="28" fill="#1a2a1a"/>
+  <ellipse class="el twitch" cx="46" cy="36" rx="10" ry="28" fill="#9CCC65"/>
+  <ellipse class="el twitch-d" cx="82" cy="36" rx="10" ry="28" fill="#9CCC65"/>
+  <g class="el bob">
+    <circle cx="64" cy="74" r="26" fill="#C5E1A5"/>
+    <circle class="el blink" cx="56" cy="72" r="4" fill="#1A1A1A"/>
+    <circle class="el blink" cx="72" cy="72" r="4" fill="#1A1A1A"/>
+    <ellipse cx="64" cy="86" rx="6" ry="4" fill="#8BC34A"/>
+    <text x="64" y="112" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold" opacity="0">LH</text>
+  </g>
+</svg>

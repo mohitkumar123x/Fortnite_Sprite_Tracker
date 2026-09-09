@@ -1,6 +1,8 @@
 export function spriteArtSrc(id: string, variantId?: string): string {
-  const suffix = variantId && variantId !== 'normal' ? `-${variantId}` : '';
-  return `/sprites/${id}${suffix}.svg?v=4`;
+  if (variantId && variantId !== 'normal' && !id.startsWith(`${variantId}-`)) {
+    return `/sprites/${id}-${variantId}.svg?v=4`;
+  }
+  return `/sprites/${id}.svg?v=4`;
 }
 
 const glowById: Record<string, string> = {
@@ -68,7 +70,12 @@ const glowById: Record<string, string> = {
   'loot-hacker-jonesy': '#8bb4d9',
   'loot-hacker-overshield': '#66bb6a',
   'loot-hacker-onigiri': '#f5f5dc',
+  'storm-scout': '#FFD54F',
   'loot-hacker-storm-scout': '#ffd54f',
+  'loot-hacker-crown': '#F5C542',
+  'loot-hacker-klombo': '#9CCC65',
+  'loot-hacker-jackrabbit': '#D7CCC8',
+  'loot-hacker-killswitch': '#E24B4B',
 };
 
 export function spriteGlow(id: string): string {

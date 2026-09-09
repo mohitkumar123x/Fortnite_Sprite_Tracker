@@ -16,8 +16,13 @@ export type Sprite = {
   findNotes: string;
   levelNotes?: string;
   variants: SpriteVariant[];
+  available?: boolean;
   new?: boolean;
   launchedAt?: string;
+  summonCost?: number;
+  variantCost?: number;
+  dropChance?: number;
+  location?: string;
 };
 
 export type Season = {
@@ -50,6 +55,11 @@ export type CatalogEntry = {
   variantLabel: string;
   dustCost?: number;
   bonus?: string;
+  available: boolean;
+  summonCost?: number;
+  variantCost?: number;
+  dropChance?: number;
+  location?: string;
 };
 
 export function variantKey(spriteId: string, variantId: string): string {
