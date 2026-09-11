@@ -978,7 +978,7 @@
         "label": "Loot Hacker"
       }
     ],
-    "available": false
+    "available": true
   },
   {
     "id": "loot-hacker-tails",
@@ -997,7 +997,7 @@
         "label": "Loot Hacker"
       }
     ],
-    "available": false
+    "available": true
   },
   {
     "id": "loot-hacker-sonic",
@@ -1016,7 +1016,7 @@
         "label": "Loot Hacker"
       }
     ],
-    "available": false
+    "available": true
   },
   {
     "id": "loot-hacker-shadow",
@@ -1035,7 +1035,7 @@
         "label": "Loot Hacker"
       }
     ],
-    "available": false
+    "available": true
   },
   {
     "id": "loot-hacker-8bit",
@@ -1054,7 +1054,7 @@
         "label": "Loot Hacker"
       }
     ],
-    "available": false
+    "available": true
   },
   {
     "id": "loot-hacker-bushranger",
@@ -1073,7 +1073,7 @@
         "label": "Loot Hacker"
       }
     ],
-    "available": false
+    "available": true
   },
   {
     "id": "loot-hacker-adventure",
@@ -1092,7 +1092,7 @@
         "label": "Loot Hacker"
       }
     ],
-    "available": false
+    "available": true
   },
   {
     "id": "loot-hacker-jonesy",
@@ -1111,7 +1111,7 @@
         "label": "Loot Hacker"
       }
     ],
-    "available": false
+    "available": true
   },
   {
     "id": "loot-hacker-overshield",
@@ -1130,7 +1130,7 @@
         "label": "Loot Hacker"
       }
     ],
-    "available": false
+    "available": true
   },
   {
     "id": "loot-hacker-onigiri",
@@ -1149,7 +1149,7 @@
         "label": "Loot Hacker"
       }
     ],
-    "available": false
+    "available": true
   },
   {
     "id": "loot-hacker-storm-scout",
@@ -1168,7 +1168,7 @@
         "label": "Loot Hacker"
       }
     ],
-    "available": false
+    "available": true
   },
   {
     "id": "loot-hacker-crown",
@@ -1206,7 +1206,7 @@
         "label": "Loot Hacker"
       }
     ],
-    "available": false
+    "available": true
   },
   {
     "id": "loot-hacker-jackrabbit",
@@ -1225,7 +1225,7 @@
         "label": "Loot Hacker"
       }
     ],
-    "available": false
+    "available": true
   },
   {
     "id": "loot-hacker-killswitch",
@@ -1244,7 +1244,7 @@
         "label": "Loot Hacker"
       }
     ],
-    "available": false
+    "available": true
   },
   {
     "id": "s3-john-wick",

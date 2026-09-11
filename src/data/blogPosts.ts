@@ -10,6 +10,7 @@ export type BlogPost = {
 };
 
 const slugs = [
+  'september-10-loot-hacker-release',
   'v42-10-update',
   'how-to-track-sprites',
   'hunt-mode-guide',
@@ -21,6 +22,7 @@ const slugs = [
 type Slug = (typeof slugs)[number];
 
 const dates: Record<Slug, { datePublished: string; dateModified: string }> = {
+  'september-10-loot-hacker-release': { datePublished: '2026-09-10', dateModified: '2026-09-10' },
   'v42-10-update': { datePublished: '2026-09-04', dateModified: '2026-09-08' },
   'how-to-track-sprites': { datePublished: '2026-08-25', dateModified: '2026-09-03' },
   'hunt-mode-guide': { datePublished: '2026-08-25', dateModified: '2026-09-02' },
@@ -30,6 +32,7 @@ const dates: Record<Slug, { datePublished: string; dateModified: string }> = {
 };
 
 const titleKeys: Record<Slug, string> = {
+  'september-10-loot-hacker-release': 'blogPost_sept10_title',
   'v42-10-update': 'blogPost_v42_10_title',
   'how-to-track-sprites': 'blogPost_howToTrack_title',
   'hunt-mode-guide': 'blogPost_huntMode_title',
@@ -39,6 +42,7 @@ const titleKeys: Record<Slug, string> = {
 };
 
 const metaKeys: Record<Slug, string> = {
+  'september-10-loot-hacker-release': 'blogPost_sept10_meta',
   'v42-10-update': 'blogPost_v42_10_meta',
   'how-to-track-sprites': 'blogPost_howToTrack_meta',
   'hunt-mode-guide': 'blogPost_huntMode_meta',
@@ -48,6 +52,7 @@ const metaKeys: Record<Slug, string> = {
 };
 
 const excerptKeys: Record<Slug, string> = {
+  'september-10-loot-hacker-release': 'blogPost_sept10_excerpt',
   'v42-10-update': 'blogPost_v42_10_excerpt',
   'how-to-track-sprites': 'blogPost_howToTrack_excerpt',
   'hunt-mode-guide': 'blogPost_huntMode_excerpt',

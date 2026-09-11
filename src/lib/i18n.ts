@@ -227,6 +227,11 @@ const ui = {
       'Full breakdown of the v42.10 patch: five new base sprites, the Loot Hacker system, rarities, abilities, and availability status.',
     blogPost_v42_10_excerpt:
       'The v42.10 update added five new base sprites and introduced the Loot Hacker variant system. Here is every sprite, its rarity, and whether it is available today.',
+    blogPost_sept10_title: 'September 10 Update: All 14 Loot Hacker Sprites Now Available',
+    blogPost_sept10_meta:
+      'Epic Games unlocked all 14 Loot Hacker Sprites on September 10. Complete list with powers, rarities, release times, and how to track them.',
+    blogPost_sept10_excerpt:
+      'All 14 Loot Hacker Sprites are now live in Fortnite. See every variant, its unique power, rarity, and the exact release times across all regions.',
     blogPost_howToTrack_title: 'How to Track Your Fortnite Sprite Collection',
     blogPost_howToTrack_meta:
       'Step-by-step guide to marking Owned and Mastered sprites, exporting JSON backups, and sharing your collection with friends.',
@@ -514,6 +519,11 @@ const ui = {
       'Desglose completo del parche v42.10: cinco nuevos sprites base, el sistema Loot Hacker, rarezas, habilidades y estado de disponibilidad.',
     blogPost_v42_10_excerpt:
       'La actualización v42.10 agregó cinco nuevos sprites base e introdujo el sistema de variantes Loot Hacker. Aquí está cada sprite, su rareza y si está disponible hoy.',
+    blogPost_sept10_title: 'Actualización del 10 de septiembre: los 14 sprites Loot Hacker ya están disponibles',
+    blogPost_sept10_meta:
+      'Epic Games desbloqueó los 14 sprites Loot Hacker el 10 de septiembre. Lista completa con poderes, rarezas, horarios de lanzamiento y cómo rastrearlos.',
+    blogPost_sept10_excerpt:
+      'Los 14 sprites Loot Hacker ya están activos en Fortnite. Ve cada variante, su poder único, rareza y los horarios exactos de lanzamiento en todas las regiones.',
     blogPost_howToTrack_title: 'Cómo rastrear tu colección de sprites de Fortnite',
     blogPost_howToTrack_meta:
       'Guía paso a paso para marcar sprites Obtenidos y Dominados, exportar respaldos JSON y compartir tu colección con amigos.',
@@ -801,6 +811,11 @@ const ui = {
       'Análise completa do patch v42.10: cinco novos sprites base, o sistema Loot Hacker, raridades, habilidades e status de disponibilidade.',
     blogPost_v42_10_excerpt:
       'A atualização v42.10 adicionou cinco novos sprites base e introduziu o sistema de variantes Loot Hacker. Aqui está cada sprite, sua raridade e se está disponível hoje.',
+    blogPost_sept10_title: 'Atualização de 10 de setembro: os 14 sprites Loot Hacker já estão disponíveis',
+    blogPost_sept10_meta:
+      'A Epic Games desbloqueou os 14 sprites Loot Hacker em 10 de setembro. Lista completa com poderes, raridades, horários de lançamento e como rastreá-los.',
+    blogPost_sept10_excerpt:
+      'Os 14 sprites Loot Hacker já estão ativos no Fortnite. Veja cada variante, seu poder único, raridade e os horários exatos de lançamento em todas as regiões.',
     blogPost_howToTrack_title: 'Como rastrear sua coleção de sprites do Fortnite',
     blogPost_howToTrack_meta:
       'Guia passo a passo para marcar sprites Obtidos e Dominados, exportar backups JSON e compartilhar sua coleção com amigos.',
@@ -1088,6 +1103,11 @@ const ui = {
       'Analyse complète du patch v42.10 : cinq nouveaux sprites de base, le système Loot Hacker, les raretés, les capacités et le statut de disponibilité.',
     blogPost_v42_10_excerpt:
       'La mise à jour v42.10 a ajouté cinq nouveaux sprites de base et introduit le système de variantes Loot Hacker. Voici chaque sprite, sa rareté et s\'il est disponible aujourd\'hui.',
+    blogPost_sept10_title: 'Mise à jour du 10 septembre : les 14 sprites Loot Hacker maintenant disponibles',
+    blogPost_sept10_meta:
+      'Epic Games a débloqué les 14 sprites Loot Hacker le 10 septembre. Liste complète avec les pouvoirs, les raretés, les horaires de sortie et comment les suivre.',
+    blogPost_sept10_excerpt:
+      'Les 14 sprites Loot Hacker sont maintenant actifs dans Fortnite. Découvrez chaque variante, son pouvoir unique, sa rareté et les horaires exacts de sortie dans toutes les régions.',
     blogPost_howToTrack_title: 'Comment suivre votre collection de sprites Fortnite',
     blogPost_howToTrack_meta:
       'Guide étape par étape pour marquer les sprites Possédés et Maîtrisés, exporter des sauvegardes JSON et partager votre collection avec des amis.',
