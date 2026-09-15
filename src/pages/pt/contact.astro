@@ -1,4 +1,128 @@
 ---
-import Page from '../contact.astro';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import LegalDoc from '../../components/LegalDoc.astro';
+import { breadcrumbJsonLd, CONTACT_EMAIL, SITE_NAME, SITE_URL } from '../../lib/seo';
+import { localeFromPath, localizedPath, t } from '../../lib/i18n';
+
+const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
+
+const jsonLd = [
+  breadcrumbJsonLd([{ name: 'Contato', path: '/contact' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: `Contato ${SITE_NAME}`,
+    url: `${SITE_URL}/pt/contact`,
+    mainEntity: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL,
+      email: CONTACT_EMAIL,
+    },
+  },
+];
 ---
-<Page />
+
+<Layout
+  title="Contato — Fortnite Sprite Tracker"
+  description="Contato do Fortnite Sprite Tracker: envie um e-mail para hello@fortnitespritetracking.com para perguntas sobre o site, privacidade ou dados. Projeto de fãs não oficial — não é suporte da Epic Games."
+  canonicalPath={lp('/contact')}
+  jsonLd={jsonLd}
+>
+  <Header slot="header" />
+  <div class="mx-auto max-w-[800px] px-4 pt-4 md:px-6">
+    <Breadcrumb locale={locale} items={[{ label: t(locale, 'bcContact') }]} />
+  </div>
+  <LegalDoc
+    eyebrow="Contato"
+    heading="Entre em contato."
+    intro="Para o site, privacidade ou uma página quebrada, escreva para nós. Para contas da Fortnite, compras ou erros do jogo, use o suporte oficial da Epic em vez disso."
+    updated="2026-08-25"
+  >
+    <h2>E-mail</h2>
+    <p>
+      <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+    </p>
+    <p>
+      Leremos o e-mail quando possível. Não há tempo de resposta garantido. Não envie senhas da Epic, códigos de login
+      ou capturas de pagamento.
+    </p>
+
+    <h2>Envie uma mensagem</h2>
+    <p>
+      Este formulário abre seu aplicativo de e-mail com um rascunho. Nada é publicado em nossos servidores.
+    </p>
+
+    <form
+      class="mt-6 space-y-4 rounded-lg border border-hairline bg-canvas-soft p-5 shadow-card"
+      data-contact-form
+    >
+      <label class="block">
+        <span class="text-sm font-medium text-ink">Nome</span>
+        <input
+          type="text"
+          name="name"
+          autocomplete="name"
+          class="mt-2 w-full rounded-sm border border-hairline bg-canvas px-3 py-2 text-sm text-ink outline-none focus:border-hairline-strong"
+        />
+      </label>
+      <label class="block">
+        <span class="text-sm font-medium text-ink">Seu e-mail</span>
+        <input
+          type="email"
+          name="email"
+          required
+          autocomplete="email"
+          class="mt-2 w-full rounded-sm border border-hairline bg-canvas px-3 py-2 text-sm text-ink outline-none focus:border-hairline-strong"
+        />
+      </label>
+      <label class="block">
+        <span class="text-sm font-medium text-ink">Mensagem</span>
+        <textarea
+          name="message"
+          required
+          rows="6"
+          class="mt-2 w-full rounded-sm border border-hairline bg-canvas px-3 py-2 text-sm text-ink outline-none focus:border-hairline-strong"
+        ></textarea>
+      </label>
+      <button
+        type="submit"
+        class="inline-flex h-11 items-center rounded-pill bg-ink px-5 text-sm font-medium text-on-primary"
+      >
+        Abrir rascunho de e-mail
+      </button>
+      <p class="text-sm text-mute" data-contact-status aria-live="polite"></p>
+    </form>
+
+    <h2>Outras páginas</h2>
+    <ul>
+      <li><a href={lp('/about')}>Sobre nós</a></li>
+      <li><a href={lp('/privacy')}>Política de privacidade</a></li>
+      <li><a href={lp('/terms')}>Termos e condições</a></li>
+      <li><a href={lp('/faq')}>FAQ</a></li>
+    </ul>
+  </LegalDoc>
+  <Footer slot="footer" />
+</Layout>
+
+<script define:vars={{ to: CONTACT_EMAIL }}>
+  const form = document.querySelector('[data-contact-form]');
+  const status = document.querySelector('[data-contact-status]');
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!(form instanceof HTMLFormElement)) return;
+    const data = new FormData(form);
+    const name = String(data.get('name') ?? '').trim();
+    const email = String(data.get('email') ?? '').trim();
+    const message = String(data.get('message') ?? '').trim();
+    const subject = encodeURIComponent(`Fortnite Sprite Tracker — ${name || 'mensagem do site'}`);
+    const body = encodeURIComponent(`De: ${name || '(não informado)'}\nE-mail: ${email}\n\n${message}`);
+    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    if (status) status.textContent = 'Seu aplicativo de e-mail deve abrir com um rascunho. Se não acontecer, escreva para nós diretamente.';
+  });
+</script>

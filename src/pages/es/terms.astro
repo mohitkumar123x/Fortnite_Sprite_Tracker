@@ -1,4 +1,105 @@
 ---
-import Page from '../terms.astro';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import LegalDoc from '../../components/LegalDoc.astro';
+import { breadcrumbJsonLd, CONTACT_EMAIL, SITE_NAME, SITE_URL } from '../../lib/seo';
+import { localeFromPath, localizedPath, t } from '../../lib/i18n';
+
+const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
+
+const jsonLd = [
+  breadcrumbJsonLd([{ name: 'Términos y condiciones', path: '/terms' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: `Términos y condiciones · ${SITE_NAME}`,
+    url: `${SITE_URL}/es/terms`,
+  },
+];
 ---
-<Page />
+
+<Layout
+  title="Términos y condiciones — Fortnite Sprite Tracker"
+  description="Términos y condiciones para usar Fortnite Sprite Tracker: sitio de fans no oficial, sin afiliación con Epic, progreso local, uso aceptable y limitación de responsabilidad."
+  canonicalPath={lp('/terms')}
+  jsonLd={jsonLd}
+>
+  <Header slot="header" />
+  <div class="mx-auto max-w-[800px] px-4 pt-4 md:px-6">
+    <Breadcrumb locale={locale} items={[{ label: t(locale, 'bcTerms') }]} />
+  </div>
+  <LegalDoc
+    eyebrow="Legal"
+    heading="Términos y condiciones."
+    intro="Estos términos rigen el uso de fortnitespritetracking.com. Al usar el sitio, aceptas estos términos. Si no estás de acuerdo, no uses el tracker."
+    updated="2026-08-25"
+  >
+    <h2>Proyecto de fans no oficial</h2>
+    <p>
+      Fortnite Sprite Tracker es un sitio web de fans independiente. No está afiliado, respaldado ni patrocinado por Epic
+      Games, Inc. Fortnite y otras marcas de Epic son propiedad de Epic. No proporcionamos Fortnite, V-Bucks, cosméticos
+      ni servicios de cuenta.
+    </p>
+
+    <h2>El servicio</h2>
+    <p>
+      Proporcionamos una lista de verificación y referencia gratuita de Sprites en el navegador. Las características pueden
+      cambiar, fallar o retirarse sin previo aviso. Los datos del roster, las rarezas y las notas de "dónde encontrar" pueden
+      estar incompletos o desactualizados en relación con el juego en vivo.
+    </p>
+    <p>
+      El progreso se almacena localmente en tu navegador a menos que lo exportes. No somos responsables de datos de la lista
+      de verificación perdidos después de que borres el almacenamiento, cambies de dispositivo o uses un enlace para compartir
+      incorrectamente.
+    </p>
+
+    <h2>Uso aceptable</h2>
+    <ul>
+      <li>No uses el sitio para hacer phishing, cosechar credenciales de Epic o distribuir malware.</li>
+      <li>No intentes interrumpir el hosting, hacer scraping de una manera que dañe el servicio o suplantar al sitio.</li>
+      <li>No presentes esta herramienta como un producto oficial de Epic.</li>
+      <li>Los enlaces para compartir solo deben codificar tu propia lista (o la de un amigo, con su permiso).</li>
+    </ul>
+
+    <h2>Propiedad intelectual</h2>
+    <p>
+      El diseño del sitio, el contenido y el código original se proporcionan para el uso personal y no comercial de este sitio
+      web. Los nombres de juegos, conceptos de sprites y arte relacionado permanecen con sus propietarios. No puedes copiar el
+      sitio completo ni envolverlo como un tracker "oficial" de pago.
+    </p>
+
+    <h2>Sin garantía</h2>
+    <p>
+      El sitio se proporciona "tal cual". No garantizamos disponibilidad continua, datos sin errores ni aptitud para un propósito
+      particular — incluyendo juego competitivo, intercambios o reclamos de completitud.
+    </p>
+
+    <h2>Limitación de responsabilidad</h2>
+    <p>
+      En la máxima medida permitida por la ley, no somos responsables por daños indirectos, incidentales o consecuentes, ni por
+      progreso perdido, ganancias perdidas o disputas derivadas de códigos de compartir que publiques. Tu único remedio por
+      insatisfacción es dejar de usar el sitio.
+    </p>
+
+    <h2>Privacidad</h2>
+    <p>
+      Cómo funcionan el almacenamiento local, los enlaces para compartir y los registros de hosting se describe en la
+      <a href={lp('/privacy')}>Política de privacidad</a>.
+    </p>
+
+    <h2>Cambios</h2>
+    <p>
+      Podemos actualizar estos términos. El uso continuado después de un cambio publicado significa que aceptas los nuevos
+      términos. La fecha en la parte superior indica la última revisión.
+    </p>
+
+    <h2>Contacto</h2>
+    <p>
+      Preguntas: <a href={lp('/contact')}>Contacto</a> o <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+    </p>
+  </LegalDoc>
+  <Footer slot="footer" />
+</Layout>

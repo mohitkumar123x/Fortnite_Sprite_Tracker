@@ -308,6 +308,11 @@ const ui = {
     bcContact: 'Contact',
     bcPrivacy: 'Privacy',
     bcTerms: 'Terms',
+    bcDisclaimer: 'Disclaimer',
+    disclaimer: 'Disclaimer',
+    pageDisclaimerTitle: 'Disclaimer — Fortnite Sprite Tracker',
+    pageDisclaimerDesc:
+      'Disclaimer for Fortnite Sprite Tracker: unofficial fan site, no Epic affiliation, fan-made content, and third-party links.',
   },
   es: {
     navTracker: 'Tracker',
@@ -600,6 +605,11 @@ const ui = {
     bcContact: 'Contacto',
     bcPrivacy: 'Privacidad',
     bcTerms: 'Términos',
+    bcDisclaimer: 'Aviso legal',
+    disclaimer: 'Aviso legal',
+    pageDisclaimerTitle: 'Aviso legal — Fortnite Sprite Tracker',
+    pageDisclaimerDesc:
+      'Aviso legal del Fortnite Sprite Tracker: sitio de fans no oficial, sin afiliación a Epic, contenido de fans y enlaces de terceros.',
   },
   pt: {
     navTracker: 'Tracker',
@@ -892,6 +902,11 @@ const ui = {
     bcContact: 'Contato',
     bcPrivacy: 'Privacidade',
     bcTerms: 'Termos',
+    bcDisclaimer: 'Aviso legal',
+    disclaimer: 'Aviso legal',
+    pageDisclaimerTitle: 'Aviso legal — Fortnite Sprite Tracker',
+    pageDisclaimerDesc:
+      'Aviso legal do Fortnite Sprite Tracker: site de fãs não oficial, sem afiliação com a Epic, conteúdo de fãs e links de terceiros.',
   },
   fr: {
     navTracker: 'Tracker',
@@ -1184,6 +1199,11 @@ const ui = {
     bcContact: 'Contact',
     bcPrivacy: 'Confidentialité',
     bcTerms: 'Conditions',
+    bcDisclaimer: 'Avertissement',
+    disclaimer: 'Avertissement',
+    pageDisclaimerTitle: 'Avertissement — Fortnite Sprite Tracker',
+    pageDisclaimerDesc:
+      'Avertissement du Fortnite Sprite Tracker : site de fans non officiel, non affilié à Epic, contenu de fans et liens tiers.',
   },
 } as const;
 

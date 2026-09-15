@@ -1,4 +1,128 @@
 ---
-import Page from '../contact.astro';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import LegalDoc from '../../components/LegalDoc.astro';
+import { breadcrumbJsonLd, CONTACT_EMAIL, SITE_NAME, SITE_URL } from '../../lib/seo';
+import { localeFromPath, localizedPath, t } from '../../lib/i18n';
+
+const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
+
+const jsonLd = [
+  breadcrumbJsonLd([{ name: 'Contact', path: '/contact' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: `Contact ${SITE_NAME}`,
+    url: `${SITE_URL}/fr/contact`,
+    mainEntity: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL,
+      email: CONTACT_EMAIL,
+    },
+  },
+];
 ---
-<Page />
+
+<Layout
+  title="Contact — Fortnite Sprite Tracker"
+  description="Contact de Fortnite Sprite Tracker : envoyez un e-mail à hello@fortnitespritetracking.com pour les questions sur le site, la confidentialité ou les données. Projet de fans non officiel — pas le support Epic Games."
+  canonicalPath={lp('/contact')}
+  jsonLd={jsonLd}
+>
+  <Header slot="header" />
+  <div class="mx-auto max-w-[800px] px-4 pt-4 md:px-6">
+    <Breadcrumb locale={locale} items={[{ label: t(locale, 'bcContact') }]} />
+  </div>
+  <LegalDoc
+    eyebrow="Contact"
+    heading="Contactez-nous."
+    intro="Pour le site Web, la confidentialité ou une page cassée, écrivez-nous. Pour les comptes Fortnite, les achats ou les bugs du jeu, utilisez le support officiel d'Epic à la place."
+    updated="2026-08-25"
+  >
+    <h2>E-mail</h2>
+    <p>
+      <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+    </p>
+    <p>
+      Nous lisons le courrier quand nous le pouvons. Il n'y a pas de délai de réponse garanti. N'envoyez pas de mots de passe
+      Epic, de codes de connexion ou de captures d'écran de paiement.
+    </p>
+
+    <h2>Envoyez un message</h2>
+    <p>
+      Ce formulaire ouvre votre application de messagerie avec un brouillon. Rien n'est publié sur nos serveurs.
+    </p>
+
+    <form
+      class="mt-6 space-y-4 rounded-lg border border-hairline bg-canvas-soft p-5 shadow-card"
+      data-contact-form
+    >
+      <label class="block">
+        <span class="text-sm font-medium text-ink">Nom</span>
+        <input
+          type="text"
+          name="name"
+          autocomplete="name"
+          class="mt-2 w-full rounded-sm border border-hairline bg-canvas px-3 py-2 text-sm text-ink outline-none focus:border-hairline-strong"
+        />
+      </label>
+      <label class="block">
+        <span class="text-sm font-medium text-ink">Votre e-mail</span>
+        <input
+          type="email"
+          name="email"
+          required
+          autocomplete="email"
+          class="mt-2 w-full rounded-sm border border-hairline bg-canvas px-3 py-2 text-sm text-ink outline-none focus:border-hairline-strong"
+        />
+      </label>
+      <label class="block">
+        <span class="text-sm font-medium text-ink">Message</span>
+        <textarea
+          name="message"
+          required
+          rows="6"
+          class="mt-2 w-full rounded-sm border border-hairline bg-canvas px-3 py-2 text-sm text-ink outline-none focus:border-hairline-strong"
+        ></textarea>
+      </label>
+      <button
+        type="submit"
+        class="inline-flex h-11 items-center rounded-pill bg-ink px-5 text-sm font-medium text-on-primary"
+      >
+        Ouvrir le brouillon d'e-mail
+      </button>
+      <p class="text-sm text-mute" data-contact-status aria-live="polite"></p>
+    </form>
+
+    <h2>Autres pages</h2>
+    <ul>
+      <li><a href={lp('/about')}>À propos</a></li>
+      <li><a href={lp('/privacy')}>Politique de confidentialité</a></li>
+      <li><a href={lp('/terms')}>Conditions d'utilisation</a></li>
+      <li><a href={lp('/faq')}>FAQ</a></li>
+    </ul>
+  </LegalDoc>
+  <Footer slot="footer" />
+</Layout>
+
+<script define:vars={{ to: CONTACT_EMAIL }}>
+  const form = document.querySelector('[data-contact-form]');
+  const status = document.querySelector('[data-contact-status]');
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!(form instanceof HTMLFormElement)) return;
+    const data = new FormData(form);
+    const name = String(data.get('name') ?? '').trim();
+    const email = String(data.get('email') ?? '').trim();
+    const message = String(data.get('message') ?? '').trim();
+    const subject = encodeURIComponent(`Fortnite Sprite Tracker — ${name || 'message du site'}`);
+    const body = encodeURIComponent(`De : ${name || '(non fourni)'}\nE-mail : ${email}\n\n${message}`);
+    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    if (status) status.textContent = 'Votre application de messagerie devrait ouvrir un brouillon. Si rien ne se passe, écrivez-nous directement.';
+  });
+</script>

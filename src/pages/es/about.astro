@@ -1,4 +1,79 @@
 ---
-import Page from '../about.astro';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import LegalDoc from '../../components/LegalDoc.astro';
+import { breadcrumbJsonLd, SITE_NAME, SITE_URL } from '../../lib/seo';
+import { localeFromPath, localizedPath, t } from '../../lib/i18n';
+
+const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
+
+const jsonLd = [
+  breadcrumbJsonLd([{ name: 'Acerca de', path: '/about' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: `Acerca de ${SITE_NAME}`,
+    url: `${SITE_URL}/es/about`,
+    description:
+      'Fortnite Sprite Tracker es una lista de verificación no oficial y gratuita para Sprites Obtenidos y Dominados. El progreso se queda en tu dispositivo.',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+  },
+];
 ---
-<Page />
+
+<Layout
+  title="Acerca de Fortnite Sprite Tracker — Lista y herramienta de colección no oficial"
+  description="Acerca de Fortnite Sprite Tracker: una lista de verificación gratuita y no oficial para Sprites Obtenidos y Dominados, Modo Caza, enlaces para compartir y archivos de temporada incluido Batman. Sin cuenta."
+  canonicalPath={lp('/about')}
+  jsonLd={jsonLd}
+>
+  <Header slot="header" />
+  <div class="mx-auto max-w-[800px] px-4 pt-4 md:px-6">
+    <Breadcrumb locale={locale} items={[{ label: t(locale, 'bcAbout') }]} />
+  </div>
+  <LegalDoc
+    eyebrow="Acerca de"
+    heading="Una lista de verificación que se queda en tu dispositivo."
+    intro="Fortnite Sprite Tracker es un sitio de fans no oficial. Creamos una lista de verificación gratuita en línea para que puedas marcar Sprites Obtenidos y Dominados sin crear una cuenta ni dar tu inicio de sesión de Epic."
+    updated="2026-08-25"
+  >
+    <h2>Qué hacemos</h2>
+    <p>
+      El sitio es un <a href={lp('/')}>Fortnite Sprite Tracker</a> para compañeros de Battle Royale: tableros de la temporada actual,
+      archivos de temporadas pasadas, una <a href={lp('/sprites')}>referencia de sprites</a>, <a href={lp('/compare')}>comparación de códigos</a>
+      y un <a href={lp('/faq')}>FAQ</a>. El Modo Caza destaca lo que aún necesitas. Exportar JSON y enlaces para compartir son
+      respaldos que copias tú mismo.
+    </p>
+    <p>
+      No somos un mercado, no somos una mesa de intercambio y no reemplazamos el locker del juego. Los nombres de sprites,
+      habilidades y notas de temporada son una referencia de fans y pueden estar rezagados con respecto al parche en vivo.
+    </p>
+
+    <h2>Cómo está construido</h2>
+    <p>
+      El progreso y la preferencia de tema viven en tu navegador (localStorage). No hay perfil en la nube en esta versión.
+      Si borras los datos del sitio, cambias de navegador o usas modo privado, la lista se verá vacía hasta que importes un
+      respaldo JSON o abras un enlace que hayas guardado.
+    </p>
+
+    <h2>Quiénes no somos</h2>
+    <p>
+      Fortnite Sprite Tracker no está afiliado, respaldado ni patrocinado por Epic Games, Inc. Fortnite y las marcas
+      relacionadas pertenecen a Epic. Este es un proyecto de fans operado de forma independiente en fortnitespritetracking.com.
+    </p>
+
+    <h2>Contacto</h2>
+    <p>
+      Preguntas sobre el sitio, privacidad o un problema de datos van a <a href={lp('/contact')}>Contacto</a>. Los errores del juego
+      y la recuperación de cuentas corresponden al soporte oficial de Epic, no a nosotros.
+    </p>
+  </LegalDoc>
+  <Footer slot="footer" />
+</Layout>

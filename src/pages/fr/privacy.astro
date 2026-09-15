@@ -1,4 +1,122 @@
 ---
-import Page from '../privacy.astro';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import LegalDoc from '../../components/LegalDoc.astro';
+import { breadcrumbJsonLd, CONTACT_EMAIL, SITE_NAME, SITE_URL } from '../../lib/seo';
+import { localeFromPath, localizedPath, t } from '../../lib/i18n';
+
+const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
+
+const jsonLd = [
+  breadcrumbJsonLd([{ name: 'Politique de confidentialité', path: '/privacy' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: `Politique de confidentialité · ${SITE_NAME}`,
+    url: `${SITE_URL}/fr/privacy`,
+  },
+];
 ---
-<Page />
+
+<Layout
+  title="Politique de confidentialité — Fortnite Sprite Tracker"
+  description="Politique de confidentialité de Fortnite Sprite Tracker : la progression reste dans votre navigateur, aucun compte, pas de connexion Epic. Comment fonctionnent le localStorage, les liens de partage et les journaux d'hébergement."
+  canonicalPath={lp('/privacy')}
+  jsonLd={jsonLd}
+>
+  <Header slot="header" />
+  <div class="mx-auto max-w-[800px] px-4 pt-4 md:px-6">
+    <Breadcrumb locale={locale} items={[{ label: t(locale, 'bcPrivacy') }]} />
+  </div>
+  <LegalDoc
+    eyebrow="Confidentialité"
+    heading="Politique de confidentialité."
+    intro="Cette politique décrit comment fortnitespritetracking.com gère les informations. Le tracker est d'abord local : la progression de la liste est stockée sur votre appareil, pas dans un compte sur nos serveurs."
+    updated="2026-08-26"
+  >
+    <h2>Qui sommes-nous</h2>
+    <p>
+      Fortnite Sprite Tracker ("nous", "le site") est un site de fans non officiel sur fortnitespritetracking.com. Pour les questions
+      de confidentialité, utilisez <a href={lp('/contact')}>Contact</a> ou envoyez un e-mail à <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+    </p>
+
+    <h2>Ce que nous ne collectons pas</h2>
+    <ul>
+      <li>Nous ne nécessitons pas de compte, d'e-mail ou de connexion Epic Games pour utiliser la liste de vérification.</li>
+      <li>Nous ne demandons pas de mots de passe, de codes 2FA ou de données de paiement V-Bucks.</li>
+      <li>Nous ne synchronisons pas votre locker dans le cloud dans cette version du site.</li>
+    </ul>
+
+    <h2>Informations stockées sur votre appareil</h2>
+    <p>
+      Le site utilise le localStorage de votre navigateur (et le stockage similaire) pour se souvenir de :
+    </p>
+    <ul>
+      <li>L'état Possédé / Maîtrisé des saisons que vous suivez</li>
+      <li>La préférence de thème (clair ou sombre), si vous l'avez définie</li>
+    </ul>
+    <p>
+      Ces données restent dans ce profil de navigateur jusqu'à ce que vous effaciez les données du site, désinstalliez le
+      navigateur ou les écrasiez avec Importer JSON. Nous ne pouvons pas lire votre localStorage de notre côté.
+    </p>
+
+    <h2>Liens de partage et fichiers exportés</h2>
+    <p>
+      Les codes de partage et l'export JSON contiennent des éléments de la liste de vérification que vous choisissez de copier.
+      Si vous collez un lien dans Discord, un wiki ou un e-mail, toute personne avec le lien peut voir cette progression encodée.
+      Traitez les URLs de partage comme une capture d'écran de votre tableau.
+    </p>
+
+    <h2>Informations traitées lorsque vous visitez</h2>
+    <p>
+      Comme la plupart des sites web, notre hôte ou réseau de diffusion de contenu peut enregistrer des journaux techniques
+      (par exemple, adresse IP, type de navigateur, URL demandée et heure) pour faire fonctionner le site, arrêter les abus et
+      déboguer les pannes. Nous ne vendons pas ces journaux. La rétention suit les paramètres par défaut de l'hôte, sauf si nous
+      configurons une fenêtre plus courte.
+    </p>
+    <p>
+      Nous utilisons Google Analytics (Google tag G-2VQN0PC7BF) pour comprendre comment les gens utilisent le site — par exemple,
+      les vues de page et le trafic général. Google peut traiter votre adresse IP et définir des cookies ou des identifiants
+      similaires sur votre appareil. Voir la <a href="https://policies.google.com/privacy">politique de confidentialité de Google</a>
+      et l'<a href="https://tools.google.com/dlpage/gaoptout">option de désactivation de Google Analytics</a>.
+    </p>
+
+    <h2>Cookies</h2>
+    <p>
+      La liste de vérification stocke la progression et le thème dans le localStorage, pas dans un cookie publicitaire. Google
+      Analytics peut définir ses propres cookies lorsque vous visitez. Vous pouvez les bloquer dans votre navigateur ou avec le
+      module de désactivation de Google.
+    </p>
+
+    <h2>Formulaire de contact et e-mail</h2>
+    <p>
+      Si vous nous envoyez un e-mail ou utilisez la page de contact, nous recevons ce que vous envoyez (nom, adresse, message).
+      Nous l'utilisons uniquement pour répondre et conserver un enregistrement de la demande. N'incluez pas de mots de passe Epic
+      ni de codes de récupération de compte.
+    </p>
+
+    <h2>Enfants</h2>
+    <p>
+      Le site est un outil pour le grand public. Nous ne collectons pas sciemment d'informations personnelles d'enfants. Si vous
+      pensez qu'un enfant a soumis des données personnelles par e-mail, contactez-nous et nous supprimerons ce message lorsque
+      nous pourrons l'identifier.
+    </p>
+
+    <h2>Vos choix</h2>
+    <ul>
+      <li>Effacez les données de ce site dans votre navigateur pour supprimer la progression et le thème local.</li>
+      <li>Utilisez Exporter JSON avant de changer d'appareil si vous voulez conserver une sauvegarde.</li>
+      <li>Arrêtez d'utiliser les liens de partage si vous ne voulez pas que d'autres chargent votre liste encodée.</li>
+    </ul>
+
+    <h2>Modifications</h2>
+    <p>
+      Nous pouvons mettre à jour cette politique lorsque le produit change. La date en haut indique la dernière révision. Les
+      modifications importantes seront reflétées sur cette page.
+    </p>
+  </LegalDoc>
+  <Footer slot="footer" />
+</Layout>

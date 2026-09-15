@@ -26,11 +26,6 @@ const formatted = new Date(`${updated}T12:00:00Z`).toLocaleDateString(localeMeta
     <p class="mt-2 text-sm text-mute">
       {t(locale, 'lastUpdated')} <time datetime={updated}>{formatted}</time>
     </p>
-    {
-      locale !== 'en' && (
-        <p class="mt-2 text-sm text-mute">{t(locale, 'legalEnglishNote')}</p>
-      )
-    }
     <div class="legal-doc mt-10 text-base leading-7 text-body">
       <slot />
     </div>

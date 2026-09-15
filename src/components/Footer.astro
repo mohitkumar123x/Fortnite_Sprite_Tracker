@@ -40,6 +40,7 @@ const lp = (href: string) => localizedPath(locale, href);
         <li><a href={lp('/about')} class="text-body no-underline hover:text-ink">{t(locale, 'aboutUs')}</a></li>
         <li><a href={lp('/privacy')} class="text-body no-underline hover:text-ink">{t(locale, 'privacyPolicy')}</a></li>
         <li><a href={lp('/terms')} class="text-body no-underline hover:text-ink">{t(locale, 'terms')}</a></li>
+        <li><a href={lp('/disclaimer')} class="text-body no-underline hover:text-ink">{t(locale, 'disclaimer')}</a></li>
         <li><a href={lp('/contact')} class="text-body no-underline hover:text-ink">{t(locale, 'contactUs')}</a></li>
       </ul>
       <p class="mt-4 text-sm text-body">
@@ -53,6 +54,7 @@ const lp = (href: string) => localizedPath(locale, href);
       <p class="flex flex-wrap gap-x-4 gap-y-1">
         <a href={lp('/privacy')} class="text-mute no-underline hover:text-ink">{t(locale, 'privacy')}</a>
         <a href={lp('/terms')} class="text-mute no-underline hover:text-ink">{t(locale, 'terms')}</a>
+        <a href={lp('/disclaimer')} class="text-mute no-underline hover:text-ink">{t(locale, 'disclaimer')}</a>
         <a href={lp('/contact')} class="text-mute no-underline hover:text-ink">{t(locale, 'contact')}</a>
       </p>
     </div>

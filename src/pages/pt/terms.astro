@@ -1,4 +1,105 @@
 ---
-import Page from '../terms.astro';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import LegalDoc from '../../components/LegalDoc.astro';
+import { breadcrumbJsonLd, CONTACT_EMAIL, SITE_NAME, SITE_URL } from '../../lib/seo';
+import { localeFromPath, localizedPath, t } from '../../lib/i18n';
+
+const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
+
+const jsonLd = [
+  breadcrumbJsonLd([{ name: 'Termos e condições', path: '/terms' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: `Termos e condições · ${SITE_NAME}`,
+    url: `${SITE_URL}/pt/terms`,
+  },
+];
 ---
-<Page />
+
+<Layout
+  title="Termos e condições — Fortnite Sprite Tracker"
+  description="Termos e condições para usar o Fortnite Sprite Tracker: site de fãs não oficial, sem afiliação com a Epic, progresso local, uso aceitável e limitação de responsabilidade."
+  canonicalPath={lp('/terms')}
+  jsonLd={jsonLd}
+>
+  <Header slot="header" />
+  <div class="mx-auto max-w-[800px] px-4 pt-4 md:px-6">
+    <Breadcrumb locale={locale} items={[{ label: t(locale, 'bcTerms') }]} />
+  </div>
+  <LegalDoc
+    eyebrow="Legal"
+    heading="Termos e condições."
+    intro="Estes termos regem o uso de fortnitespritetracking.com. Ao usar o site, você concorda com eles. Se não concorda, não use o tracker."
+    updated="2026-08-25"
+  >
+    <h2>Projeto de fãs não oficial</h2>
+    <p>
+      O Fortnite Sprite Tracker é um site de fãs independente. Não é afiliado, endossado ou patrocinado pela Epic
+      Games, Inc. Fortnite e outras marcas da Epic são propriedade da Epic. Não fornecemos Fortnite, V-Bucks, cosméticos
+      ou serviços de conta.
+    </p>
+
+    <h2>O serviço</h2>
+    <p>
+      Fornecemos uma lista de verificação e referência gratuita de Sprites no navegador. Os recursos podem mudar, falhar
+      ou ser descontinuados sem aviso prévio. Os dados do elenco, raridades e notas de "onde encontrar" podem estar
+      incompletos ou desatualizados em relação ao jogo ao vivo.
+    </p>
+    <p>
+      O progresso é armazenado localmente no seu navegador, a menos que você exporte. Não somos responsáveis por dados
+      da lista de verificação perdidos após você limpar o armazenamento, trocar de navegador ou usar um link para compartilhar
+      incorretamente.
+    </p>
+
+    <h2>Uso aceitável</h2>
+    <ul>
+      <li>Não use o site para phishing, coletar credenciais da Epic ou distribuir malware.</li>
+      <li>Não tente interromper a hospedagem, fazer scraping de forma prejudicial ao serviço ou se passar pelo site.</li>
+      <li>Não apresente esta ferramenta como um produto oficial da Epic.</li>
+      <li>Links para compartilhar devem codificar apenas sua própria lista (ou a de um amigo, com permissão).</li>
+    </ul>
+
+    <h2>Propriedade intelectual</h2>
+    <p>
+      O layout do site, o conteúdo e o código original são fornecidos para uso pessoal e não comercial deste site.
+      Nomes de jogos, conceitos de sprites e arte relacionada permanecem com seus proprietários. Você não pode copiar
+      o site inteiro ou empacotá-lo como um tracker "oficial" pago.
+    </p>
+
+    <h2>Sem garantia</h2>
+    <p>
+      O site é fornecido "como está". Não garantimos disponibilidade ininterrupta, dados livres de erros ou adequação para
+      um fim particular — incluindo jogo competitivo, trocas ou alegações de completude.
+    </p>
+
+    <h2>Limitação de responsabilidade</h2>
+    <p>
+      Na máxima extensão permitida por lei, não somos responsáveis por danos indiretos, incidentais ou consequenciais, nem
+      por progresso perdido, lucros perdidos ou disputas decorrentes de códigos de compartilhar que você publique. Seu único
+      remédio por insatisfação é parar de usar o site.
+    </p>
+
+    <h2>Privacidade</h2>
+    <p>
+      Como funcionam o armazenamento local, os links para compartilhar e os logs de hospedagem está descrito na
+      <a href={lp('/privacy')}>Política de privacidade</a>.
+    </p>
+
+    <h2>Alterações</h2>
+    <p>
+      Podemos atualizar estes termos. O uso contínuo após uma alteração publicada significa que você aceita os novos termos.
+      A data no topo indica a última revisão.
+    </p>
+
+    <h2>Contato</h2>
+    <p>
+      Perguntas: <a href={lp('/contact')}>Contato</a> ou <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+    </p>
+  </LegalDoc>
+  <Footer slot="footer" />
+</Layout>

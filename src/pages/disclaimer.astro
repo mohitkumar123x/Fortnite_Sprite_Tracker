@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import LegalDoc from '../components/LegalDoc.astro';
+import { breadcrumbJsonLd, SITE_NAME, SITE_URL } from '../lib/seo';
+import { localeFromPath, localizedPath, t } from '../lib/i18n';
+
+const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
+
+const jsonLd = [
+  breadcrumbJsonLd([{ name: 'Disclaimer', path: '/disclaimer' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: `Disclaimer · ${SITE_NAME}`,
+    url: `${SITE_URL}/disclaimer`,
+  },
+];
+---
+
+<Layout
+  title="Disclaimer — Fortnite Sprite Tracker"
+  description="Disclaimer for Fortnite Sprite Tracker: unofficial fan site, no Epic affiliation, fan-made content, and third-party links."
+  canonicalPath={lp('/disclaimer')}
+  jsonLd={jsonLd}
+>
+  <Header slot="header" />
+  <div class="mx-auto max-w-[800px] px-4 pt-4 md:px-6">
+    <Breadcrumb locale={locale} items={[{ label: t(locale, 'bcDisclaimer') }]} />
+  </div>
+  <LegalDoc
+    eyebrow="Disclaimer"
+    heading="Disclaimer."
+    intro="This page explains important limitations about Fortnite Sprite Tracker. Please read it before relying on the information provided by this site."
+    updated="2026-09-13"
+  >
+    <h2>Not affiliated with Epic Games</h2>
+    <p>
+      Fortnite Sprite Tracker is an independent, unofficial fan project. It is not affiliated with, endorsed by, or
+      sponsored by Epic Games, Inc. All game names, logos, and related marks are the property of their respective owners.
+      This site does not sell, provide, or distribute V-Bucks, cosmetics, or any in-game items.
+    </p>
+
+    <h2>Fan-made content</h2>
+    <p>
+      All content on this site — including sprite icons, diagrams, guides, and tracker features — is created by fans for
+      informational and entertainment purposes only. While we strive for accuracy, the information may not always reflect
+      the latest game updates or official Epic Games data. Always verify details against the live game.
+    </p>
+
+    <h2>No warranty</h2>
+    <p>
+      The information on this site is provided "as is" without warranties of any kind. We do not guarantee the accuracy,
+      completeness, or timeliness of any content, including sprite data, rarity classifications, availability status, or
+      cost calculations. Use the information at your own risk.
+    </p>
+
+    <h2>Game data and availability</h2>
+    <ul>
+      <li>Sprite rosters, rarities, and abilities may change without notice through game updates.</li>
+      <li>Availability status (released / unreleased) reflects community knowledge and may lag behind official releases.</li>
+      <li>Dust costs, drop chances, and summon prices are based on community testing and may differ from in-game values.</li>
+      <li>Seasonal content (rosters, challenges, rewards) is subject to Epic Games' schedule and may vary by region.</li>
+    </ul>
+
+    <h2>Third-party links</h2>
+    <p>
+      This site may contain links to external websites, including Epic Games properties, community wikis, and social media
+      platforms. We are not responsible for the content, privacy practices, or availability of third-party sites. Accessing
+      external links is at your own discretion.
+    </p>
+
+    <h2>Tracker functionality</h2>
+    <p>
+      The checklist and comparison tools store data locally in your browser. We do not guarantee that your progress will
+      persist across devices, browser updates, or clearing of local storage. Always use Export JSON to create backups of
+      your checklist data.
+    </p>
+
+    <h2>Limitation of liability</h2>
+    <p>
+      To the fullest extent permitted by law, Fortnite Sprite Tracker and its creators shall not be held liable for any
+      damages, losses, or consequences arising from the use of this site, including but not limited to inaccurate game
+      data, lost tracker progress, or decisions made based on the information provided.
+    </p>
+
+    <h2>Changes</h2>
+    <p>
+      We may update this disclaimer at any time without prior notice. Continued use of the site after changes are posted
+      constitutes acceptance of the updated disclaimer. The date at the top indicates the last revision.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      If you have questions about this disclaimer, please <a href={lp('/contact')}>contact us</a>.
+    </p>
+  </LegalDoc>
+  <Footer slot="footer" />
+</Layout>

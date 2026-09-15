@@ -1,4 +1,118 @@
 ---
-import Page from '../privacy.astro';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import LegalDoc from '../../components/LegalDoc.astro';
+import { breadcrumbJsonLd, CONTACT_EMAIL, SITE_NAME, SITE_URL } from '../../lib/seo';
+import { localeFromPath, localizedPath, t } from '../../lib/i18n';
+
+const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
+
+const jsonLd = [
+  breadcrumbJsonLd([{ name: 'Política de privacidade', path: '/privacy' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: `Política de privacidade · ${SITE_NAME}`,
+    url: `${SITE_URL}/pt/privacy`,
+  },
+];
 ---
-<Page />
+
+<Layout
+  title="Política de privacidade — Fortnite Sprite Tracker"
+  description="Política de privacidade do Fortnite Sprite Tracker: o progresso fica no seu navegador, sem conta, sem login da Epic. Como funcionam localStorage, links para compartilhar e logs de hospedagem."
+  canonicalPath={lp('/privacy')}
+  jsonLd={jsonLd}
+>
+  <Header slot="header" />
+  <div class="mx-auto max-w-[800px] px-4 pt-4 md:px-6">
+    <Breadcrumb locale={locale} items={[{ label: t(locale, 'bcPrivacy') }]} />
+  </div>
+  <LegalDoc
+    eyebrow="Privacidade"
+    heading="Política de privacidade."
+    intro="Esta política descreve como o fortnitespritetracking.com lida com informações. O tracker é local primeiro: o progresso da lista é armazenado no seu dispositivo, não em uma conta em nossos servidores."
+    updated="2026-08-26"
+  >
+    <h2>Quem somos</h2>
+    <p>
+      Fortnite Sprite Tracker ("nós", "o site") é um site de fãs não oficial em fortnitespritetracking.com. Para perguntas
+      sobre privacidade, use <a href={lp('/contact')}>Contato</a> ou envie um e-mail para <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+    </p>
+
+    <h2>O que não coletamos</h2>
+    <ul>
+      <li>Não exigimos conta, e-mail ou login da Epic Games para usar a lista de verificação.</li>
+      <li>Não solicitamos senhas, códigos de 2FA ou dados de pagamento de V-Bucks.</li>
+      <li>Não sincronizamos seu locker na nuvem nesta versão do site.</li>
+    </ul>
+
+    <h2>Informações armazenadas no seu dispositivo</h2>
+    <p>
+      O site usa o localStorage do navegador (e armazenamento similar) para lembrar:
+    </p>
+    <ul>
+      <li>O estado de Obtido / Dominado das temporadas que você acompanha</li>
+      <li>A preferência de tema (claro ou escuro), se você configurou</li>
+    </ul>
+    <p>
+      Esses dados permanecem naquele perfil do navegador até que você limpe os dados do site, desinstale o navegador ou os
+      sobrescreva com Importar JSON. Não podemos ler seu localStorage do nosso lado.
+    </p>
+
+    <h2>Links para compartilhar e arquivos exportados</h2>
+    <p>
+      Os códigos para compartilhar e Exportar JSON contêm pedaços da lista de verificação que você escolhe copiar. Se você colar
+      um link no Discord, uma wiki ou um e-mail, qualquer pessoa com o link pode ver esse progresso codificado. Trate URLs de
+      compartilhar como uma captura de tela do seu quadro.
+    </p>
+
+    <h2>Informações processadas quando você visita</h2>
+    <p>
+      Como a maioria dos sites, nosso host ou rede de entrega de conteúdo pode registrar logs técnicos (por exemplo, endereço IP,
+      tipo de navegador, URL solicitada e hora) para operar o site, interromper abusos e corrigir falhas. Não vendemos esses logs.
+      A retenção segue os padrões do host, a menos que configuremos uma janela mais curta.
+    </p>
+    <p>
+      Usamos o Google Analytics (Google tag G-2VQN0PC7BF) para entender como as pessoas usam o site — por exemplo, visualizações
+      de página e tráfego geral. O Google pode processar seu endereço IP e definir cookies ou identificadores semelhantes no seu
+      dispositivo. Consulte a <a href="https://policies.google.com/privacy">política de privacidade do Google</a> e a
+      <a href="https://tools.google.com/dlpage/gaoptout">opção de exclusão do Google Analytics</a>.
+    </p>
+
+    <h2>Cookies</h2>
+    <p>
+      A lista de verificação armazena o progresso e o tema no localStorage, não em cookies publicitários. O Google Analytics pode
+      definir seus próprios cookies quando você visita. Você pode bloqueá-los no navegador ou com o complemento de exclusão do Google.
+    </p>
+
+    <h2>Formulário de contato e e-mail</h2>
+    <p>
+      Se você nos enviar um e-mail ou usar a página de contato, recebemos o que você enviar (nome, endereço, mensagem). Usamos
+      apenas para responder e manter um registro da solicitação. Não inclua senhas da Epic ou códigos de recuperação de conta.
+    </p>
+
+    <h2>Crianças</h2>
+    <p>
+      O site é uma ferramenta para público geral. Não coletamos intencionalmente informações pessoais de crianças. Se você acredita
+      que uma criança enviou dados pessoais por e-mail, entre em contato e excluiremos essa mensagem quando pudermos identificá-la.
+    </p>
+
+    <h2>Suas opções</h2>
+    <ul>
+      <li>Limpe os dados deste site no navegador para apagar o progresso e o tema local.</li>
+      <li>Use Exportar JSON antes de trocar de dispositivo se quiser manter um backup.</li>
+      <li>Pare de usar links para compartilhar se não quiser que outros carreguem sua lista codificada.</li>
+    </ul>
+
+    <h2>Alterações</h2>
+    <p>
+      Podemos atualizar esta política quando o produto mudar. A data no topo indica a última revisão. Alterações significativas
+      serão refletidas nesta página.
+    </p>
+  </LegalDoc>
+  <Footer slot="footer" />
+</Layout>
