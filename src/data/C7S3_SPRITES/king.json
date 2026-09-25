@@ -1,0 +1,48 @@
+[
+  {
+    "id": "s3-king",
+    "mainspritename": "King",
+    "varient": "normal",
+    "seasonId": "c7-s3",
+    "rarity": "mythic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-king",
+    "mainspritename": "King",
+    "varient": "gold",
+    "seasonId": "c7-s3",
+    "rarity": "mythic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "bonus": "3× elimination XP"
+  },
+  {
+    "id": "s3-king",
+    "mainspritename": "King",
+    "varient": "gummy",
+    "seasonId": "c7-s3",
+    "rarity": "mythic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-king",
+    "mainspritename": "King",
+    "varient": "galaxy",
+    "seasonId": "c7-s3",
+    "rarity": "mythic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-king",
+    "mainspritename": "King",
+    "varient": "holofoil",
+    "seasonId": "c7-s3",
+    "rarity": "mythic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  }
+]

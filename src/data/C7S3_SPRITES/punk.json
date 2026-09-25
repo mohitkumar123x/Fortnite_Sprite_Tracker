@@ -1,0 +1,48 @@
+[
+  {
+    "id": "s3-punk",
+    "mainspritename": "Punk",
+    "varient": "normal",
+    "seasonId": "c7-s3",
+    "rarity": "rare",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-punk",
+    "mainspritename": "Punk",
+    "varient": "gold",
+    "seasonId": "c7-s3",
+    "rarity": "rare",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "bonus": "3× elimination XP"
+  },
+  {
+    "id": "s3-punk",
+    "mainspritename": "Punk",
+    "varient": "gummy",
+    "seasonId": "c7-s3",
+    "rarity": "rare",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-punk",
+    "mainspritename": "Punk",
+    "varient": "galaxy",
+    "seasonId": "c7-s3",
+    "rarity": "rare",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-punk",
+    "mainspritename": "Punk",
+    "varient": "cube",
+    "seasonId": "c7-s3",
+    "rarity": "rare",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  }
+]

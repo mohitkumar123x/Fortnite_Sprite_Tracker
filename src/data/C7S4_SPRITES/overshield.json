@@ -1,0 +1,287 @@
+[
+  {
+    "id": "s4-overshield-normal",
+    "spriteId": "s4-overshield",
+    "mainSpriteName": "Overshield",
+    "variant": "normal",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "rare",
+
+    "ability": {
+      "name": "Grants Overshield, with the amount increasing as the Sprite levels up.",
+      "type": "Standard",
+      "description": "Grants Overshield, with the amount increasing as the Sprite levels up."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Overshield amount increases with each level.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 100,
+      "findNotes": "Added in v42.10 update on September 3. Found in chests.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Normal",
+      "effect": "Standard Sprite ability"
+    },
+
+    "release": {
+      "patch": "v42.10",
+      "addedAt": "3-sept-2026",
+      "status": "new",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["normal", "overshield", "c7-s4"],
+      "searchKeywords": ["Overshield Sprite", "Overshield Fortnite", "Overshield Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-overshield-gold",
+    "spriteId": "s4-overshield",
+    "mainSpriteName": "Overshield",
+    "variant": "gold",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "rare",
+
+    "ability": {
+      "name": "Grants Overshield, with the amount increasing as the Sprite levels up.",
+      "type": "Enhanced",
+      "description": "Grants Overshield, with the amount increasing as the Sprite levels up."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Overshield amount increases with each level.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 300,
+      "findNotes": "Added in v42.10 update on September 3. Found in chests.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Gold",
+      "effect": "Gold variant — 3x elimination XP bonus"
+    },
+
+    "release": {
+      "patch": "v42.10",
+      "addedAt": "3-sept-2026",
+      "status": "new",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["gold", "overshield", "c7-s4"],
+      "searchKeywords": ["Overshield Sprite", "Overshield Fortnite", "Overshield Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-overshield-cheat-master",
+    "spriteId": "s4-overshield",
+    "mainSpriteName": "Overshield",
+    "variant": "cheat-master",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "rare",
+
+    "ability": {
+      "name": "Grants Overshield, with the amount increasing as the Sprite levels up.",
+      "type": "Cheat",
+      "description": "Grants Overshield, with the amount increasing as the Sprite levels up."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Overshield amount increases with each level.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 400,
+      "findNotes": "Added in v42.10 update on September 3. Found in chests.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Cheat Master",
+      "effect": "Cheat Master — Button Mash cheat ability"
+    },
+
+    "release": {
+      "patch": "v42.10",
+      "addedAt": "3-sept-2026",
+      "status": "new",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["cheat-master", "overshield", "c7-s4"],
+      "searchKeywords": ["Overshield Sprite", "Overshield Fortnite", "Overshield Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-overshield-loot-hacker",
+    "spriteId": "s4-overshield",
+    "mainSpriteName": "Overshield",
+    "variant": "loot-hacker",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "rare",
+
+    "ability": {
+      "name": "Loot Hacker variant of Overshield Sprite.",
+      "type": "Tactical",
+      "description": "Loot Hacker variant of Overshield Sprite."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Shield amount improves with each level.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 0,
+      "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Loot Hacker",
+      "effect": "Loot Hacker — High-elevation loot run variant"
+    },
+
+    "release": {
+      "patch": "v42.10",
+      "addedAt": "3-sept-2026",
+      "status": "new",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["loot-hacker", "overshield", "c7-s4"],
+      "searchKeywords": ["Overshield Sprite", "Overshield Fortnite", "Overshield Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-overshield-bounty-hunter",
+    "spriteId": "s4-overshield",
+    "mainSpriteName": "Overshield",
+    "variant": "bounty-hunter",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "rare",
+
+    "ability": {
+      "name": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+      "type": "Combat",
+      "description": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Only levels through eliminations.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 0,
+      "findNotes": "Added in v42.20 update on September 17.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Bounty Hunter",
+      "effect": "Bounty Hunter — Elimination-based sprite finder"
+    },
+
+    "release": {
+      "patch": "v42.20",
+      "addedAt": "17-sept-2026",
+      "status": "upcoming",
+      "available": false
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["bounty-hunter", "overshield", "c7-s4"],
+      "searchKeywords": ["Overshield Sprite", "Overshield Fortnite", "Overshield Chapter 7 Season 4"]
+    }
+  }
+]

@@ -1,21 +1,138 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="55%" r="55%">
+      <stop offset="0%" stop-color="#E65100" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#21140A" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#120B05"/>
+    </radialGradient>
+
+    <!-- Lab Coat Gradient -->
+    <linearGradient id="coatGrad" x1="20%" y1="10%" x2="80%" y2="90%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#EEEEEE"/>
+      <stop offset="100%" stop-color="#D6D6D6"/>
+    </linearGradient>
+
+    <!-- Coat Shadow -->
+    <linearGradient id="coatShadow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B0BEC5" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Head Gradient -->
+    <linearGradient id="skinGrad" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#FFDFC4"/>
+      <stop offset="100%" stop-color="#F0C2A0"/>
+    </linearGradient>
+  </defs>
+
   <style>
-    .el { transform-box: fill-box; transform-origin: center; }
-    .pulse { animation: pulse 2.4s ease-in-out infinite; }
-    .scan { animation: scan 3s ease-in-out infinite; }
-    .glow { animation: glow 2s ease-in-out infinite; }
-    @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: .85; } }
-    @keyframes scan { 0%,100% { transform: translateY(0); opacity: .6; } 50% { transform: translateY(8px); opacity: 1; } }
-    @keyframes glow { 0%,100% { opacity: .14; } 50% { opacity: .32; } }
-    @media (prefers-reduced-motion: reduce) { .el { animation: none !important; } }
+    .el{transform-box:fill-box;transform-origin:center}
+    .bob{animation:bob 2.8s ease-in-out infinite}
+    .blink{animation:blink 3.8s steps(1,end) infinite}
+    .glow{animation:glow 3s ease-in-out infinite}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+    @keyframes blink{0%,92%,100%{transform:scaleY(1)}95%,98%{transform:scaleY(.1)}}
+    @keyframes glow{0%,100%{opacity:.2}50%{opacity:.4}}
+    @media(prefers-reduced-motion:reduce){.el{animation:none!important}}
   </style>
-  <rect width="128" height="128" rx="28" fill="#1a3a4a"/>
-  <circle class="el glow" cx="64" cy="64" r="44" fill="#00e5ff" opacity=".2"/>
-  <g class="el pulse">
-    <circle cx="64" cy="64" r="32" fill="none" stroke="#00e5ff" stroke-width="3" opacity=".8"/>
-    <circle cx="64" cy="64" r="20" fill="none" stroke="#00e5ff" stroke-width="2" opacity=".6"/>
-    <circle cx="64" cy="64" r="8" fill="#00e5ff"/>
-    <line class="el scan" x1="64" y1="20" x2="64" y2="108" stroke="#00e5ff" stroke-width="2" opacity=".5"/>
-    <line class="el scan" x1="20" y1="64" x2="108" y2="64" stroke="#00e5ff" stroke-width="2" opacity=".5"/>
+
+  <!-- Background card background with dark warm gradient -->
+  <rect width="128" height="128" rx="20" fill="url(#bgGlow)"/>
+  <!-- Ambient orange glow behind X-Ray -->
+  <ellipse class="glow" cx="64" cy="68" rx="46" ry="42" fill="#FF6D00"/>
+
+  <g class="el bob">
+    <!-- Drop Shadow under character -->
+    <ellipse cx="64" cy="118" rx="28" ry="6" fill="#000000" opacity="0.45"/>
+
+    <!-- ===================== LEGS / FEET ===================== -->
+    <rect x="47" y="108" width="13" height="9" rx="4" fill="#37474F"/>
+    <rect x="67" y="108" width="13" height="9" rx="4" fill="#263238"/>
+    <rect x="44" y="113" width="17" height="4" rx="2" fill="#212121"/>
+    <rect x="66" y="113" width="17" height="4" rx="2" fill="#151515"/>
+
+    <!-- ===================== CHUBBY BLOB BODY (White Lab Coat) ===================== -->
+    <!-- Main torso shape: squat rounded egg -->
+    <path d="M 34 76 C 32 50, 96 50, 94 76 C 96 106, 32 106, 34 76 Z" fill="url(#coatGrad)"/>
+    <!-- Left shadow for 3D depth -->
+    <path d="M 34 76 C 32 50, 60 50, 50 104 C 36 102, 32 90, 34 76 Z" fill="url(#coatShadow)"/>
+    <!-- Right highlight edge -->
+    <path d="M 80 56 C 90 65, 94 80, 90 98 C 94 92, 94 72, 80 56 Z" fill="#FFFFFF" opacity="0.8"/>
+
+    <!-- ===================== RED SHIRT UNDERNEATH ===================== -->
+    <path d="M 56 64 L 64 82 L 72 64 Z" fill="#D32F2F"/>
+    <path d="M 60 64 L 64 80 L 68 64 Z" fill="#B71C1C"/>
+
+    <!-- Lab Coat Lapels / Collar -->
+    <!-- Left lapel -->
+    <path d="M 44 58 L 56 64 L 52 86 L 40 76 Z" fill="#E0E0E0"/>
+    <path d="M 44 58 L 56 64 L 50 82 Z" fill="#FFFFFF"/>
+    <!-- Right lapel -->
+    <path d="M 84 58 L 72 64 L 76 86 L 88 76 Z" fill="#D5D5D5"/>
+    <path d="M 84 58 L 72 64 L 78 82 Z" fill="#F5F5F5"/>
+    <!-- Center coat line -->
+    <line x1="64" y1="82" x2="64" y2="108" stroke="#B0BEC5" stroke-width="1.5" stroke-dasharray="4 2"/>
+
+    <!-- ===================== STUBBY ARMS ===================== -->
+    <!-- Left arm -->
+    <ellipse cx="28" cy="80" rx="9" ry="6" transform="rotate(-25 28 80)" fill="#E0E0E0"/>
+    <ellipse cx="27" cy="80" rx="7" ry="4" transform="rotate(-25 27 80)" fill="#FFFFFF"/>
+    <!-- Right arm -->
+    <ellipse cx="100" cy="80" rx="9" ry="6" transform="rotate(25 100 80)" fill="#D5D5D5"/>
+    <ellipse cx="101" cy="80" rx="7" ry="4" transform="rotate(25 101 80)" fill="#F5F5F5"/>
+
+    <!-- ===================== HEAD / FACE ===================== -->
+    <!-- Smooth rounded upper head -->
+    <ellipse cx="64" cy="48" rx="25" ry="20" fill="url(#skinGrad)"/>
+    <!-- Soft blush on cheeks -->
+    <ellipse cx="40" cy="54" rx="4" ry="2.5" fill="#FF8A80" opacity="0.5"/>
+    <ellipse cx="88" cy="54" rx="4" ry="2.5" fill="#FF8A80" opacity="0.5"/>
+
+    <!-- ===================== WHITE BEARD / CHIN TUFT ===================== -->
+    <path d="M 52 64 Q 64 74 76 64 Q 72 76 64 76 Q 56 76 52 64 Z" fill="#FFFFFF"/>
+    <ellipse cx="64" cy="72" rx="10" ry="4" fill="#F5F5F5"/>
+
+    <!-- ===================== SMILE ===================== -->
+    <path d="M 58 60 Q 64 64 70 60" stroke="#4E342E" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <!-- ===================== BIG RED GLASSES (ICONIC FEATURE) ===================== -->
+    <!-- Temple bars connecting to sides -->
+    <line x1="28" y1="46" x2="38" y2="46" stroke="#C62828" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="100" y1="46" x2="90" y2="46" stroke="#C62828" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Glasses Bridge -->
+    <rect x="57" y="44" width="14" height="4" rx="2" fill="#D32F2F"/>
+    <rect x="58" y="45" width="12" height="2" rx="1" fill="#FF5252"/>
+
+    <!-- LEFT GLASSES FRAME -->
+    <circle cx="44" cy="46" r="15" fill="#D32F2F"/>
+    <circle cx="44" cy="46" r="12" fill="#1A1A1A"/>
+    <!-- Left frame highlight ring -->
+    <path d="M 33 42 A 13.5 13.5 0 0 1 54 37" stroke="#FF5252" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- RIGHT GLASSES FRAME -->
+    <circle cx="84" cy="46" r="15" fill="#D32F2F"/>
+    <circle cx="84" cy="46" r="12" fill="#1A1A1A"/>
+    <!-- Right frame highlight ring -->
+    <path d="M 73 42 A 13.5 13.5 0 0 1 94 37" stroke="#FF5252" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- ===================== EYES (EXPRESSIVE CHIBI EYES INSIDE GLASSES) ===================== -->
+    <g class="el blink">
+      <!-- Left Eye Pupil & Highlights -->
+      <circle cx="44" cy="46" r="9" fill="#121212"/>
+      <circle cx="41" cy="43" r="3.5" fill="#FFFFFF"/>
+      <circle cx="47" cy="49" r="1.5" fill="#FFFFFF" opacity="0.8"/>
+
+      <!-- Right Eye Pupil & Highlights -->
+      <circle cx="84" cy="46" r="9" fill="#121212"/>
+      <circle cx="81" cy="43" r="3.5" fill="#FFFFFF"/>
+      <circle cx="87" cy="49" r="1.5" fill="#FFFFFF" opacity="0.8"/>
+    </g>
+
+    <!-- Glass Lens Glare / Reflection (overlay arc) -->
+    <path d="M 34 40 Q 42 36 50 42" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4"/>
+    <path d="M 74 40 Q 82 36 90 42" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4"/>
+
   </g>
 </svg>

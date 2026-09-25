@@ -1,0 +1,75 @@
+[
+  {
+    "id": "s3-zero-point",
+    "mainspritename": "Zero Point",
+    "varient": "normal",
+    "seasonId": "c7-s3",
+    "rarity": "mythic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-zero-point",
+    "mainspritename": "Zero Point",
+    "varient": "gold",
+    "seasonId": "c7-s3",
+    "rarity": "mythic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "bonus": "3× elimination XP"
+  },
+  {
+    "id": "s3-zero-point",
+    "mainspritename": "Zero Point",
+    "varient": "cube",
+    "seasonId": "c7-s3",
+    "rarity": "mythic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-zero-point",
+    "mainspritename": "Zero Point",
+    "varient": "quack",
+    "seasonId": "c7-s3",
+    "rarity": "mythic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-zero-point",
+    "mainspritename": "Zero Point",
+    "varient": "gummy",
+    "seasonId": "c7-s3",
+    "rarity": "mythic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-zero-point",
+    "mainspritename": "Zero Point",
+    "varient": "galaxy",
+    "seasonId": "c7-s3",
+    "rarity": "mythic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-zero-point",
+    "mainspritename": "Zero Point",
+    "varient": "gem",
+    "seasonId": "c7-s3",
+    "rarity": "mythic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-zero-point",
+    "mainspritename": "Zero Point",
+    "varient": "holofoil",
+    "seasonId": "c7-s3",
+    "rarity": "mythic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  }
+]

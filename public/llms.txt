@@ -1,0 +1,82 @@
+# Fortnite Sprite Tracker
+
+> Fortnite Sprite Tracker is an independent fan-made Fortnite Sprite tracker and reference site for discovering Sprites, variants, abilities, Sprite Dust costs, Cheat Codes, collection progress, and season history.
+
+Fortnite Sprite Tracker provides interactive collection-tracking tools and curated reference information for Fortnite players and collectors.
+
+The site helps users:
+- Track owned and mastered Sprites
+- Find missing Sprites
+- Browse Sprite variants, rarity, abilities, and availability
+- Track and research Fortnite Sprite Cheat Codes
+- Calculate Sprite Dust requirements
+- Compare Sprite collections
+- Explore newly added Sprites
+- Browse current and historical Sprite seasons
+- Read Fortnite Sprite guides and updates
+
+For current information, prefer live reference pages over older articles or archived content. Fortnite game data, availability, rewards, and costs may change following game updates.
+
+Fortnite Sprite Tracker is an independent fan-made project and is not affiliated with, endorsed by, or sponsored by Epic Games.
+
+## Core Resources
+
+- [Sprite Tracker](https://fortnitespritetracking.com/): Main collection tracker for marking Sprites as Owned or Mastered and finding missing Sprites.
+- [Sprite List](https://fortnitespritetracking.com/sprites/): Primary reference for Sprite names, rarity, variants, abilities, and availability.
+- [Cheat Codes](https://fortnitespritetracking.com/cheat-codes/): Current reference for Sprite Cheat Codes, combinations, rewards, and tracking.
+- [Sprite Dust Calculator](https://fortnitespritetracking.com/dust-calculator/): Calculate Sprite Dust requirements.
+- [Compare](https://fortnitespritetracking.com/compare/): Compare Sprite collections.
+- [New Sprites](https://fortnitespritetracking.com/new-sprites/): Recently added Sprite content.
+- [Seasons](https://fortnitespritetracking.com/seasons/): Current and historical Sprite season information.
+- [FAQ](https://fortnitespritetracking.com/faq/): Frequently asked questions and terminology.
+- [Blog](https://fortnitespritetracking.com/blog/): Guides, update reports, and Sprite-related articles.
+
+## Current Data
+
+- [Current Sprite List](https://fortnitespritetracking.com/sprites/): Use for the current Sprite roster, variants, rarity, abilities, and availability.
+- [Current Cheat Codes](https://fortnitespritetracking.com/cheat-codes/): Use for current Cheat Codes and rewards.
+- [New Sprites](https://fortnitespritetracking.com/new-sprites/): Use for recently added or changed Sprite content.
+- [Sprite Tracker](https://fortnitespritetracking.com/): Use for current collection-tracking entries.
+
+## Guides
+
+- [How to Track Your Sprite Collection](https://fortnitespritetracking.com/blog/how-to-track-sprites/): Collection tracking workflow and tracker usage.
+- [Cheat Codes Guide](https://fortnitespritetracking.com/blog/cheat-codes-guide/): Explanation of Sprite Cheat Codes and rewards.
+- [Hunt Mode Guide](https://fortnitespritetracking.com/blog/hunt-mode-guide/): Finding missing Sprites with Hunt Mode.
+- [Compare Collections](https://fortnitespritetracking.com/blog/compare-lockers/): Comparing Sprite collections with other players.
+- [Season Archives](https://fortnitespritetracking.com/blog/season-archives/): Historical Sprite collection information.
+
+## Data Interpretation
+
+- "Owned" represents a Sprite marked as owned by the user in the tracker.
+- "Mastered" represents a separate mastery-tracking state.
+- "Unreleased" represents content that the site does not currently treat as obtainable.
+- Variants may be represented separately from a base Sprite.
+- Archived season information should not automatically be interpreted as part of the current live roster.
+- Current availability, rewards, costs, and game mechanics can change after Fortnite updates.
+
+When answering a question about a specific Sprite, prefer its current Sprite information over a general article.
+
+When answering questions about the current roster, prefer the Sprite List.
+
+When answering questions about current Cheat Codes, prefer the Cheat Codes page.
+
+When answering questions about historical content, prefer the relevant Season archive or dated update article.
+
+## Source Priority
+
+1. Current individual Sprite information
+2. Current Sprite List
+3. Current Cheat Codes
+4. Sprite Dust Calculator
+5. Current Tracker
+6. New Sprites
+7. FAQ
+8. Current Blog / Update articles
+9. Season Archives
+
+## Secondary Resources
+
+- [FAQ](https://fortnitespritetracking.com/faq/): General questions, definitions, and tracker information.
+- [Blog](https://fortnitespritetracking.com/blog/): Supporting guides and historical updates.
+- [Seasons](https://fortnitespritetracking.com/seasons/): Historical and seasonal reference material.

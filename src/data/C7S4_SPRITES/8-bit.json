@@ -1,0 +1,287 @@
+[
+  {
+    "id": "s4-8-bit-normal",
+    "spriteId": "s4-8-bit",
+    "mainSpriteName": "8-Bit",
+    "variant": "normal",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "rare",
+
+    "ability": {
+      "name": "Puts an 8-Bit Shotgun in your first chest and grants a score multiplier for it.",
+      "type": "Standard",
+      "description": "Puts an 8-Bit Shotgun in your first chest and grants a score multiplier for it."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 100,
+      "findNotes": "Season 4 chest drops. Extract before leaving the match.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Normal",
+      "effect": "Standard Sprite ability"
+    },
+
+    "release": {
+      "patch": "v42.0",
+      "addedAt": "",
+      "status": "released",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["normal", "8-bit", "c7-s4"],
+      "searchKeywords": ["8-Bit Sprite", "8-Bit Fortnite", "8-Bit Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-8-bit-gold",
+    "spriteId": "s4-8-bit",
+    "mainSpriteName": "8-Bit",
+    "variant": "gold",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "rare",
+
+    "ability": {
+      "name": "Puts an 8-Bit Shotgun in your first chest and grants a score multiplier for it.",
+      "type": "Enhanced",
+      "description": "Puts an 8-Bit Shotgun in your first chest and grants a score multiplier for it."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 300,
+      "findNotes": "Season 4 chest drops. Extract before leaving the match.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Gold",
+      "effect": "Gold variant — 3x elimination XP bonus"
+    },
+
+    "release": {
+      "patch": "v42.0",
+      "addedAt": "",
+      "status": "released",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["gold", "8-bit", "c7-s4"],
+      "searchKeywords": ["8-Bit Sprite", "8-Bit Fortnite", "8-Bit Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-8-bit-cheat-master",
+    "spriteId": "s4-8-bit",
+    "mainSpriteName": "8-Bit",
+    "variant": "cheat-master",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "rare",
+
+    "ability": {
+      "name": "Puts an 8-Bit Shotgun in your first chest and grants a score multiplier for it.",
+      "type": "Cheat",
+      "description": "Puts an 8-Bit Shotgun in your first chest and grants a score multiplier for it."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 400,
+      "findNotes": "Season 4 chest drops. Extract before leaving the match.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Cheat Master",
+      "effect": "Cheat Master — Button Mash cheat ability"
+    },
+
+    "release": {
+      "patch": "v42.0",
+      "addedAt": "",
+      "status": "released",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["cheat-master", "8-bit", "c7-s4"],
+      "searchKeywords": ["8-Bit Sprite", "8-Bit Fortnite", "8-Bit Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-8-bit-loot-hacker",
+    "spriteId": "s4-8-bit",
+    "mainSpriteName": "8-Bit",
+    "variant": "loot-hacker",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "rare",
+
+    "ability": {
+      "name": "Loot Hacker variant of 8-Bit Sprite.",
+      "type": "Tactical",
+      "description": "Loot Hacker variant of 8-Bit Sprite."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Score multiplier increases with each level.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 0,
+      "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Loot Hacker",
+      "effect": "Loot Hacker — High-elevation loot run variant"
+    },
+
+    "release": {
+      "patch": "v42.10",
+      "addedAt": "3-sept-2026",
+      "status": "new",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["loot-hacker", "8-bit", "c7-s4"],
+      "searchKeywords": ["8-Bit Sprite", "8-Bit Fortnite", "8-Bit Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-8-bit-bounty-hunter",
+    "spriteId": "s4-8-bit",
+    "mainSpriteName": "8-Bit",
+    "variant": "bounty-hunter",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "rare",
+
+    "ability": {
+      "name": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+      "type": "Combat",
+      "description": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Only levels through eliminations.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 0,
+      "findNotes": "Added in v42.20 update on September 17.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Bounty Hunter",
+      "effect": "Bounty Hunter — Elimination-based sprite finder"
+    },
+
+    "release": {
+      "patch": "v42.20",
+      "addedAt": "17-sept-2026",
+      "status": "upcoming",
+      "available": false
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["bounty-hunter", "8-bit", "c7-s4"],
+      "searchKeywords": ["8-Bit Sprite", "8-Bit Fortnite", "8-Bit Chapter 7 Season 4"]
+    }
+  }
+]

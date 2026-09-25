@@ -1165,8 +1165,261 @@ const sept10Release: Record<Locale, PostContent> = {
   },
 };
 
+const v42_20: Record<Locale, PostContent> = {
+  en: {
+    intro: `Fortnite's September 17 update (v42.20) added a staggering 42 new sprites to the game's files. While only 13 are currently available to unlock, the update brings five entirely new sprite characters — Crash Bandicoot, Blinky, Pond, Morgana, and Birthday — alongside 20 new Bounty Hunter variants.`,
+    sections: [
+      {
+        heading: 'New sprite characters',
+        blocks: [
+          p('The v42.20 update introduces five new base sprites, each with unique abilities tied to gameplay mechanics. Three are available immediately, while Morgana and Birthday are expected to release in the coming weeks.'),
+          table('New Base Sprites', ['Sprite', 'Rarity', 'Ability', 'Status'], [
+            ['Crash Bandicoot', 'Legendary', 'Whirlwind attack when jumping in air — damages and knocks back enemies', 'Available'],
+            ['Blinky', 'Legendary', 'Temporary cloak when taking damage — Pac-Man collab', 'Available'],
+            ['Pond', 'Legendary', 'Super Jump after landing — charges regenerate over time', 'Available'],
+            ['Morgana', 'Mythic', 'Increases healing item effectiveness — Persona 5 collab', 'Coming next week'],
+            ['Birthday', 'Mythic', 'Chests spawn cake; eliminations spawn cake at max level', 'September 26'],
+          ]),
+          p('Crash Bandicoot is found near high and mountainous areas. Its whirlwind attack triggers when you jump in the air, dealing damage and knocking back nearby enemies. The damage scales up and cooldown shortens with each level.'),
+          p('Blinky (the red ghost from Pac-Man) appears at nighttime in the world. When you take damage, it grants a temporary cloak. The cloak duration increases at each level, making it a defensive powerhouse in late-game fights.'),
+          p('Pond was one of the winners of the Chapter 7 Season 3 community creations challenge. Jump shortly after landing to trigger a Super Jump if charges are available. Charges regenerate over time, and the jump strength increases with each level.'),
+        ],
+      },
+      {
+        heading: 'Variant system',
+        blocks: [
+          p('Each new sprite comes with Gold, Loot Hacker, and Cheat Master variants, following the same system established in v42.10. Gold variants grant 3× elimination XP, Loot Hacker variants spawn in high-elevation areas, and Cheat Master variants offer the Button Mash bonus.'),
+        ],
+      },
+      {
+        heading: 'Bounty Hunter variants',
+        blocks: [
+          p('The biggest addition is the new Bounty Hunter variant tier — 20 new Bounty Hunter sprites that give players a chance to find Sprites after eliminating opponents. These can only be leveled up through eliminations.'),
+          p('To unlock a Bounty Hunter variant, you must first master the corresponding Loot Hacker variant by winning a match with it. The Bounty Hunter Crown Sprite, for example, requires mastering the Loot Hacker Crown first.'),
+          table('Bounty Hunter Sprites', ['Sprite', 'Base Rarity', 'Status'], [
+            ['Bounty Hunter X-Ray', 'Legendary', 'Available'],
+            ['Bounty Hunter Onigiri', 'Rare', 'Available'],
+            ['Bounty Hunter Pond', 'Legendary', 'Available'],
+            ['Bounty Hunter Overshield', 'Rare', 'Available'],
+            ['Bounty Hunter Storm Scout', 'Rare', 'Available'],
+            ['Bounty Hunter Klombo', 'Mythic', 'Available'],
+            ['Bounty Hunter Shadow', 'Epic', 'Available'],
+            ['Bounty Hunter Tails', 'Epic', 'Available'],
+            ['Bounty Hunter Sonic', 'Epic', 'Available'],
+            ['Bounty Hunter Jonesy', 'Rare', 'Available'],
+            ['Bounty Hunter Killswitch', 'Epic', 'Available'],
+            ['Bounty Hunter Adventure', 'Rare', 'Available'],
+            ['Bounty Hunter Crash Bandicoot', 'Legendary', 'Available'],
+            ['Bounty Hunter Bush', 'Rare', 'Available'],
+            ['Bounty Hunter Blinky', 'Legendary', 'Available'],
+            ['Bounty Hunter Jackrabbit', 'Legendary', 'Available'],
+            ['Bounty Hunter Crown', 'Mythic', 'Available'],
+            ['Bounty Hunter 8-Bit', 'Rare', 'Available'],
+            ['Bounty Hunter Morgana', 'Mythic', 'Coming next week'],
+            ['Bounty Hunter Birthday', 'Mythic', 'Coming next week'],
+          ]),
+        ],
+      },
+      {
+        heading: 'How to track v42.20 sprites',
+        blocks: [
+          p('All 42 new sprites have been added to the tracker. Sprites marked as "Coming next week" or with future dates are flagged as unreleased. Use Hunt Mode to see only the v42.20 sprites you are still missing.'),
+        ],
+      },
+    ],
+  },
+  es: {
+    intro: `La actualización del 17 de septiembre de Fortnite (v42.20) agregó una asombrosa cantidad de 42 nuevos sprites a los archivos del juego. Aunque solo 13 están disponibles para desbloquear, la actualización trae cinco personajes sprites completamente nuevos: Crash Bandicoot, Blinky, Pond, Morgana y Birthday, junto con 20 nuevas variantes Bounty Hunter.`,
+    sections: [
+      {
+        heading: 'Nuevos personajes sprites',
+        blocks: [
+          p('La actualización v42.20 introduce cinco nuevos sprites base, cada uno con habilidades únicas vinculadas a mecánicas del juego. Tres están disponibles inmediatamente, mientras que Morgana y Birthday se esperan que se lancen en las próximas semanas.'),
+          table('Nuevos Sprites Base', ['Sprite', 'Rareza', 'Habilidad', 'Estado'], [
+            ['Crash Bandicoot', 'Legendario', 'Ataque torbellino al saltar en el aire — daña y empuja enemigos', 'Disponible'],
+            ['Blinky', 'Legendario', 'Capa temporal al recibir daño — collab de Pac-Man', 'Disponible'],
+            ['Pond', 'Legendario', 'Super salto después de aterrizar — cargas se regeneran con el tiempo', 'Disponible'],
+            ['Morgana', 'Mítico', 'Aumenta la efectividad de objetos de curación — collab de Persona 5', 'Próxima semana'],
+            ['Birthday', 'Mítico', 'Los cofres generan pastel; eliminaciones generan pastel al nivel máximo', '26 de septiembre'],
+          ]),
+          p('Crash Bandicoot se encuentra en áreas altas y montañosas. Su ataque torbellino se activa cuando saltas en el aire, infligiendo daño y empujando enemigos cercanos. El daño aumenta y el enfriamiento se reduce con cada nivel.'),
+          p('Blinky (el fantasma rojo de Pac-Man) aparece durante la noche en el mundo. Cuando recibes daño, otorga una capa temporal. La duración de la capa aumenta con cada nivel, convirtiéndolo en una fuerza defensiva en peleas tardías.'),
+          p('Pond fue uno de los ganadores del desafío de creaciones de la comunidad de la Temporada 4 del Capítulo 7. Salta poco después de aterrizar para activar un Super Salto si hay cargas disponibles. Las cargas se regeneran con el tiempo y la fuerza del salto aumenta con cada nivel.'),
+        ],
+      },
+      {
+        heading: 'Sistema de variantes',
+        blocks: [
+          p('Cada nuevo sprite viene con variantes Gold, Loot Hacker y Cheat Master, siguiendo el mismo sistema establecido en v42.10. Las variantes Gold otorgan 3× de XP por eliminación, las variantes Loot Hacker aparecen en áreas de alta elevación, y las variantes Cheat Master ofrecen el bono Button Mash.'),
+        ],
+      },
+      {
+        heading: 'Variantes Bounty Hunter',
+        blocks: [
+          p('La adición más grande es la nueva capa de variantes Bounty Hunter — 20 nuevos sprites Bounty Hunter que dan a los jugadores la posibilidad de encontrar Sprites después de eliminar oponentes. Estos solo se pueden subir de nivel mediante eliminaciones.'),
+          p('Para desbloquear una variante Bounty Hunter, primero debes dominar la variante Loot Hacker correspondiente ganando una partida con ella. El sprite Bounty Hunter Crown, por ejemplo, requiere dominar el Loot Hacker Crown primero.'),
+          table('Sprites Bounty Hunter', ['Sprite', 'Rareza Base', 'Estado'], [
+            ['Bounty Hunter X-Ray', 'Legendario', 'Disponible'],
+            ['Bounty Hunter Onigiri', 'Raro', 'Disponible'],
+            ['Bounty Hunter Pond', 'Legendario', 'Disponible'],
+            ['Bounty Hunter Overshield', 'Raro', 'Disponible'],
+            ['Bounty Hunter Storm Scout', 'Raro', 'Disponible'],
+            ['Bounty Hunter Klombo', 'Mítico', 'Disponible'],
+            ['Bounty Hunter Shadow', 'Épico', 'Disponible'],
+            ['Bounty Hunter Tails', 'Épico', 'Disponible'],
+            ['Bounty Hunter Sonic', 'Épico', 'Disponible'],
+            ['Bounty Hunter Jonesy', 'Raro', 'Disponible'],
+            ['Bounty Hunter Killswitch', 'Épico', 'Disponible'],
+            ['Bounty Hunter Adventure', 'Raro', 'Disponible'],
+            ['Bounty Hunter Crash Bandicoot', 'Legendario', 'Disponible'],
+            ['Bounty Hunter Bush', 'Raro', 'Disponible'],
+            ['Bounty Hunter Blinky', 'Legendario', 'Disponible'],
+            ['Bounty Hunter Jackrabbit', 'Legendario', 'Disponible'],
+            ['Bounty Hunter Crown', 'Mítico', 'Disponible'],
+            ['Bounty Hunter 8-Bit', 'Raro', 'Disponible'],
+            ['Bounty Hunter Morgana', 'Mítico', 'Próxima semana'],
+            ['Bounty Hunter Birthday', 'Mítico', 'Próxima semana'],
+          ]),
+        ],
+      },
+      {
+        heading: 'Cómo rastrear sprites v42.20',
+        blocks: [
+          p('Los 42 nuevos sprites se han agregado al tracker. Los sprites marcados como "Próxima semana" o con fechas futuras están marcados como no disponibles. Usa el Modo Caza para ver solo los sprites v42.20 que aún te faltan.'),
+        ],
+      },
+    ],
+  },
+  pt: {
+    intro: `A atualização do Fortnite em 17 de setembro (v42.20) adicionou uma impressionante quantidade de 42 novos sprites aos arquivos do jogo. Embora apenas 13 estejam disponíveis para desbloqueio, a atualização traz cinco personagens sprites completamente novos — Crash Bandicoot, Blinky, Pond, Morgana e Birthday — ao lado de 20 novas variantes Bounty Hunter.`,
+    sections: [
+      {
+        heading: 'Novos personagens sprites',
+        blocks: [
+          p('A atualização v42.20 introduz cinco novos sprites base, cada um com habilidades únicas vinculadas a mecânicas do jogo. Três estão disponíveis imediatamente, enquanto Morgana e Birthday são esperados para lançamento nas próximas semanas.'),
+          table('Novos Sprites Base', ['Sprite', 'Raridade', 'Habilidade', 'Status'], [
+            ['Crash Bandicoot', 'Lendário', 'Ataque redemoinho ao pular no ar — dano e empurra inimigos', 'Disponível'],
+            ['Blinky', 'Lendário', 'Capa temporária ao receber dano — collab de Pac-Man', 'Disponível'],
+            ['Pond', 'Lendário', 'Super pulo após pousar — cargas se regeneram com o tempo', 'Disponível'],
+            ['Morgana', 'Mítico', 'Aumenta a eficácia de itens de cura — collab de Persona 5', 'Próxima semana'],
+            ['Birthday', 'Mítico', 'Baús geram bolo; eliminações geram bolo no nível máximo', '26 de setembro'],
+          ]),
+          p('Crash Bandicoot é encontrado em áreas altas e montanhosas. Seu ataque redemoinho é ativado quando você pula no ar, causando dano e empurrando inimigos próximos. O dano escala e o tempo de recarga diminui com cada nível.'),
+          p('Blinky (o fantasma vermelho do Pac-Man) aparece durante a noite no mundo. Quando você recebe dano, concede uma capa temporária. A duração da capa aumenta a cada nível, tornando-o uma força defensiva em lutas tardias.'),
+          p('Pond foi um dos vencedores do desafio de criações da comunidade da Temporada 4 do Capítulo 7. Pule pouco após pousar para ativar um Super Pulo se houver cargas disponíveis. As cargas se regeneram com o tempo e a força do pulo aumenta com cada nível.'),
+        ],
+      },
+      {
+        heading: 'Sistema de variantes',
+        blocks: [
+          p('Cada novo sprite vem com variantes Gold, Loot Hacker e Cheat Master, seguindo o mesmo sistema estabelecido na v42.10. As variantes Gold concedem 3× de XP por eliminação, as variantes Loot Hacker surgem em áreas de alta elevação e as variantes Cheat Master oferecem o bônus Button Mash.'),
+        ],
+      },
+      {
+        heading: 'Variantes Bounty Hunter',
+        blocks: [
+          p('A maior adição é a nova camada de variantes Bounty Hunter — 20 novos sprites Bounty Hunter que dão aos jogadores a chance de encontrar Sprites após eliminar oponentes. Estes só podem ser subidos de nível por meio de eliminações.'),
+          p('Para desbloquear uma variante Bounty Hunter, você deve primeiro dominar a variante Loot Hacker correspondente vencendo uma partida com ela. O sprite Bounty Hunter Crown, por exemplo, requer dominar o Loot Hacker Crown primeiro.'),
+          table('Sprites Bounty Hunter', ['Sprite', 'Raridade Base', 'Status'], [
+            ['Bounty Hunter X-Ray', 'Lendário', 'Disponível'],
+            ['Bounty Hunter Onigiri', 'Raro', 'Disponível'],
+            ['Bounty Hunter Pond', 'Lendário', 'Disponível'],
+            ['Bounty Hunter Overshield', 'Raro', 'Disponível'],
+            ['Bounty Hunter Storm Scout', 'Raro', 'Disponível'],
+            ['Bounty Hunter Klombo', 'Mítico', 'Disponível'],
+            ['Bounty Hunter Shadow', 'Épico', 'Disponível'],
+            ['Bounty Hunter Tails', 'Épico', 'Disponível'],
+            ['Bounty Hunter Sonic', 'Épico', 'Disponível'],
+            ['Bounty Hunter Jonesy', 'Raro', 'Disponível'],
+            ['Bounty Hunter Killswitch', 'Épico', 'Disponível'],
+            ['Bounty Hunter Adventure', 'Raro', 'Disponível'],
+            ['Bounty Hunter Crash Bandicoot', 'Lendário', 'Disponível'],
+            ['Bounty Hunter Bush', 'Raro', 'Disponível'],
+            ['Bounty Hunter Blinky', 'Lendário', 'Disponível'],
+            ['Bounty Hunter Jackrabbit', 'Lendário', 'Disponível'],
+            ['Bounty Hunter Crown', 'Mítico', 'Disponível'],
+            ['Bounty Hunter 8-Bit', 'Raro', 'Disponível'],
+            ['Bounty Hunter Morgana', 'Mítico', 'Próxima semana'],
+            ['Bounty Hunter Birthday', 'Mítico', 'Próxima semana'],
+          ]),
+        ],
+      },
+      {
+        heading: 'Como rastrear sprites v42.20',
+        blocks: [
+          p('Os 42 novos sprites foram adicionados ao tracker. Sprites marcados como "Próxima semana" ou com datas futuras estão sinalizados como indisponíveis. Use o Modo Caça para ver apenas os sprites v42.20 que você ainda não coleccionou.'),
+        ],
+      },
+    ],
+  },
+  fr: {
+    intro: `La mise à jour du 17 septembre de Fortnite (v42.20) a ajouté un nombre impressionnant de 42 nouveaux sprites aux fichiers du jeu. Bien que seulement 13 soient actuellement disponibles à déverrouillage, la mise à jour apporte cinq personnages sprites entièrement nouveaux — Crash Bandicoot, Blinky, Pond, Morgana et Birthday — aux côtés de 20 nouvelles variantes Bounty Hunter.`,
+    sections: [
+      {
+        heading: 'Nouveaux personnages sprites',
+        blocks: [
+          p('La mise à jour v42.20 introduit cinq nouveaux sprites de base, chacun avec des capacités uniques liées aux mécaniques de jeu. Trois sont disponibles immédiatement, tandis que Morgana et Birthday devraient sortir dans les semaines à venir.'),
+          table('Nouveaux Sprites de Base', ['Sprite', 'Rareté', 'Capacité', 'Statut'], [
+            ['Crash Bandicoot', 'Légendaire', 'Ataque tourbillon en sautant dans les airs — inflige des dégâts et repousse les ennemis', 'Disponible'],
+            ['Blinky', 'Légendaire', 'Voile temporaire en prenant des dégâts — collab Pac-Man', 'Disponible'],
+            ['Pond', 'Légendaire', 'Super saut après l\'atterrissage — les charges se régénèrent avec le temps', 'Disponible'],
+            ['Morgana', 'Mythique', 'Augmente l\'efficacité des objets de soin — collab Persona 5', 'Semaine prochaine'],
+            ['Birthday', 'Mythic', 'Les coffres génèrent un gâteau ; les éliminations génèrent un gâteau au niveau maximum', '26 septembre'],
+          ]),
+          p('Crash Bandicoot se trouve dans les zones élevées et montagneuses. Son attaque tourbillon se déclenche lorsque vous sautez dans les airs, infligeant des dégâts et repoussant les ennemis à proximité. Les dégâts augmentent et le temps de recharge diminue à chaque niveau.'),
+          p('Blinky (le fantôme rouge de Pac-Man) apparaît la nuit dans le monde. Lorsque vous prenez des dégâts, il accorde un voile temporaire. La durée du voile augmente à chaque niveau, ce qui en fait une force défensive redoutable en fin de partie.'),
+          p('Pond était l\'un des gagnants du défi de créations communautaires de la Saison 4 Chapitre 7. Sautez peu après l\'atterrissage pour déclencher un Super Saut si des charges sont disponibles. Les charges se régénèrent avec le temps, et la force du saut augmente à chaque niveau.'),
+        ],
+      },
+      {
+        heading: 'Système de variantes',
+        blocks: [
+          p('Chaque nouveau sprite est livré avec des variantes Gold, Loot Hacker et Cheat Master, suivant le même système établi en v42.10. Les variantes Gold accordent 3× d\'XP par élimination, les variantes Loot Hacker apparaissent dans les zones de haute altitude, et les variantes Cheat Master offrent le bonus Button Mash.'),
+        ],
+      },
+      {
+        heading: 'Variantes Bounty Hunter',
+        blocks: [
+          p('La plus grande addition est la nouvelle couche de variantes Bounty Hunter — 20 nouveaux sprites Bounty Hunter qui donnent aux joueurs la chance de trouver des Sprites après avoir éliminé des adversaires. Ceux-ci ne peuvent être montés en niveau que par des éliminations.'),
+          p('Pour déverrouiller une variante Bounty Hunter, vous devez d\'abord maîtriser la variante Loot Hacker correspondante en gagnant un match avec elle. Le sprite Bounty Hunter Crown, par exemple, nécessite de maîtriser le Loot Hacker Crown d\'abord.'),
+          table('Sprites Bounty Hunter', ['Sprite', 'Rareté de Base', 'Statut'], [
+            ['Bounty Hunter X-Ray', 'Légendaire', 'Disponible'],
+            ['Bounty Hunter Onigiri', 'Rare', 'Disponible'],
+            ['Bounty Hunter Pond', 'Légendaire', 'Disponible'],
+            ['Bounty Hunter Overshield', 'Rare', 'Disponible'],
+            ['Bounty Hunter Storm Scout', 'Rare', 'Disponible'],
+            ['Bounty Hunter Klombo', 'Mythique', 'Disponible'],
+            ['Bounty Hunter Shadow', 'Épique', 'Disponible'],
+            ['Bounty Hunter Tails', 'Épique', 'Disponible'],
+            ['Bounty Hunter Sonic', 'Épique', 'Disponible'],
+            ['Bounty Hunter Jonesy', 'Rare', 'Disponible'],
+            ['Bounty Hunter Killswitch', 'Épique', 'Disponible'],
+            ['Bounty Hunter Adventure', 'Rare', 'Disponible'],
+            ['Bounty Hunter Crash Bandicoot', 'Légendaire', 'Disponible'],
+            ['Bounty Hunter Bush', 'Rare', 'Disponible'],
+            ['Bounty Hunter Blinky', 'Légendaire', 'Disponible'],
+            ['Bounty Hunter Jackrabbit', 'Légendaire', 'Disponible'],
+            ['Bounty Hunter Crown', 'Mythique', 'Disponible'],
+            ['Bounty Hunter 8-Bit', 'Rare', 'Disponible'],
+            ['Bounty Hunter Morgana', 'Mythique', 'Semaine prochaine'],
+            ['Bounty Hunter Birthday', 'Mythique', 'Semaine prochaine'],
+          ]),
+        ],
+      },
+      {
+        heading: 'Comment suivre les sprites v42.20',
+        blocks: [
+          p('Les 42 nouveaux sprites ont été ajoutés au tracker. Les sprites marqués « Semaine prochaine » ou avec des dates futures sont signalés comme non disponibles. Utilisez le Mode Chasse pour ne voir que les sprites v42.20 qu\'il vous manque encore.'),
+        ],
+      },
+    ],
+  },
+};
+
 const contentMap: Record<string, Record<Locale, PostContent>> = {
   'september-10-loot-hacker-release': sept10Release,
+  'v42-10-update': v42_10,
+  'v42-20-update': v42_20,
   'how-to-track-sprites': howToTrack,
   'hunt-mode-guide': huntMode,
   'compare-lockers': compareLockers,

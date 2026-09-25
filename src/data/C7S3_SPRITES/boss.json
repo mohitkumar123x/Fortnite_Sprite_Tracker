@@ -1,0 +1,48 @@
+[
+  {
+    "id": "s3-boss",
+    "mainspritename": "Boss",
+    "varient": "normal",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-boss",
+    "mainspritename": "Boss",
+    "varient": "gold",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "bonus": "3× elimination XP"
+  },
+  {
+    "id": "s3-boss",
+    "mainspritename": "Boss",
+    "varient": "gummy",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-boss",
+    "mainspritename": "Boss",
+    "varient": "galaxy",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-boss",
+    "mainspritename": "Boss",
+    "varient": "cube",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  }
+]

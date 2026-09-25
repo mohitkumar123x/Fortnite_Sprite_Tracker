@@ -1,24 +1,125 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <defs>
+    <!-- Cyber Background Gradient -->
+    <radialGradient id="cyberBg" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#D500F9" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#1A0933" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#080314"/>
+    </radialGradient>
+
+    <!-- Cyber Blue-Indigo Body Gradient -->
+    <linearGradient id="cyberBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="35%" stop-color="#2979FF"/>
+      <stop offset="70%" stop-color="#3D5AFE"/>
+      <stop offset="100%" stop-color="#651FFF"/>
+    </linearGradient>
+
+    <!-- Cyber HUD Grid Pattern -->
+    <pattern id="cyberGrid" width="12" height="12" patternUnits="userSpaceOnUse">
+      <path d="M 12 0 H 0 V 12" stroke="#00E5FF" stroke-width="0.5" opacity="0.35"/>
+    </pattern>
+
+    <!-- Eye Glow Filter -->
+    <filter id="cyberEyeGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
   <style>
-    .el { transform-box: fill-box; transform-origin: center; }
-    .bob { animation: bob 2.8s ease-in-out infinite; }
-    .sway { animation: sway 3.2s ease-in-out infinite; }
-    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
-    @keyframes sway { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
-    @media (prefers-reduced-motion: reduce) { .el { animation: none !important; } }
+    .el{transform-box:fill-box;transform-origin:center}
+    .bob{animation:bob 2.8s ease-in-out infinite}
+    .pulse-eye{animation:eyePulse 2.4s ease-in-out infinite alternate}
+    .pulse{animation:pulse 2s ease-in-out infinite}
+    .glow{animation:glow 3s ease-in-out infinite}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+    @keyframes eyePulse{0%{opacity:.85;transform:scale(.98)}100%{opacity:1;transform:scale(1.03)}}
+    @keyframes pulse{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:.8;transform:scale(1.03)}}
+    @keyframes glow{0%,100%{opacity:.25}50%{opacity:.55}}
+    @media(prefers-reduced-motion:reduce){.el{animation:none!important}}
   </style>
-  <rect width="128" height="128" rx="28" fill="#2a2a1a"/>
+
+  <!-- Card background -->
+  <rect width="128" height="128" rx="20" fill="url(#cyberBg)"/>
+
+  <!-- Tech Corner HUD Brackets -->
+  <path d="M 8 20 V 8 H 20 M 108 8 H 120 V 20 M 120 108 V 120 H 108 M 20 120 H 8 V 108" stroke="#D500F9" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+  <!-- Cyber Grid Background Overlay -->
+  <rect width="128" height="128" rx="20" fill="url(#cyberGrid)" opacity="0.6"/>
+
+  <!-- Ambient magenta-cyan glow behind Storm Scout -->
+  <ellipse class="glow" cx="64" cy="68" rx="46" ry="42" fill="#D500F9"/>
+
   <g class="el bob">
-    <circle cx="64" cy="56" r="28" fill="#ffd54f"/>
-    <circle cx="56" cy="52" r="6" fill="#fff"/>
-    <circle cx="72" cy="52" r="6" fill="#fff"/>
-    <circle cx="56" cy="52" r="3" fill="#1a1a1a"/>
-    <circle cx="72" cy="52" r="3" fill="#1a1a1a"/>
-    <path d="M56 66 Q64 74 72 66" stroke="#1a1a1a" stroke-width="2" fill="none"/>
-    <g class="el sway">
-      <polygon points="64,28 72,44 56,44" fill="#ffd54f"/>
-      <line x1="64" y1="20" x2="64" y2="28" stroke="#ffd54f" stroke-width="3"/>
+    <!-- Drop Shadow under character -->
+    <ellipse cx="64" cy="118" rx="28" ry="6" fill="#000000" opacity="0.6"/>
+
+    <!-- ===================== LEGS / STEPPED BASE ===================== -->
+    <rect x="42" y="104" width="14" height="12" rx="3" fill="#1A0933"/>
+    <rect x="44" y="112" width="10" height="4" rx="2" fill="#00E5FF" opacity="0.8"/>
+    <rect x="72" y="104" width="14" height="12" rx="3" fill="#0D041A"/>
+    <rect x="74" y="112" width="10" height="4" rx="2" fill="#D500F9" opacity="0.8"/>
+
+    <!-- ===================== CURVED SEGMENTED CYBER HORNS ===================== -->
+    <!-- Left Horn -->
+    <path d="M 38 42 C 30 38, 22 40, 18 46 C 16 50, 22 56, 32 50 Z" fill="#2979FF" stroke="#00E5FF" stroke-width="1.2"/>
+    <path d="M 28 42 C 20 36, 16 38, 14 44 C 18 48, 24 46, 26 44 Z" fill="#00E5FF"/>
+    <path d="M 24 38 C 16 32, 12 34, 10 40 C 14 44, 20 42, 22 40 Z" fill="#80DEEA"/>
+    <path d="M 18 34 C 12 28, 10 26, 14 24 C 18 24, 18 30, 20 34 Z" fill="#E0F7FA"/>
+    <path d="M 30 42 Q 22 46 26 50" stroke="#D500F9" stroke-width="1.5" fill="none"/>
+    <path d="M 24 38 Q 16 42 20 46" stroke="#D500F9" stroke-width="1.5" fill="none"/>
+
+    <!-- Right Horn -->
+    <path d="M 90 42 C 98 38, 106 40, 110 46 C 112 50, 106 56, 96 50 Z" fill="#2979FF" stroke="#00E5FF" stroke-width="1.2"/>
+    <path d="M 100 42 C 108 36, 112 38, 114 44 C 110 48, 104 46, 102 44 Z" fill="#00E5FF"/>
+    <path d="M 104 38 C 112 32, 116 34, 118 40 C 114 44, 108 42, 106 40 Z" fill="#80DEEA"/>
+    <path d="M 110 34 C 116 28, 118 26, 114 24 C 110 24, 110 30, 108 34 Z" fill="#E0F7FA"/>
+    <path d="M 98 42 Q 106 46 102 50" stroke="#D500F9" stroke-width="1.5" fill="none"/>
+    <path d="M 104 38 Q 112 42 108 46" stroke="#D500F9" stroke-width="1.5" fill="none"/>
+
+    <!-- ===================== SIDE FINS ===================== -->
+    <path d="M 32 68 L 22 72 L 32 76 Z" fill="#00E5FF"/>
+    <path d="M 33 80 L 24 84 L 34 88 Z" fill="#2979FF"/>
+    <path d="M 35 92 L 26 95 L 36 98 Z" fill="#651FFF"/>
+    <path d="M 96 68 L 106 72 L 96 76 Z" fill="#00E5FF"/>
+    <path d="M 95 80 L 104 84 L 94 88 Z" fill="#2979FF"/>
+    <path d="M 93 92 L 102 95 L 92 98 Z" fill="#651FFF"/>
+
+    <!-- ===================== BLOCKY CUBIC BODY ===================== -->
+    <path d="M 36 40 C 34 30, 92 30, 92 40 L 96 102 C 96 108, 32 108, 32 102 Z" fill="url(#cyberBodyGrad)"/>
+    <path d="M 36 40 C 34 30, 92 30, 92 40 L 96 102 C 96 108, 32 108, 32 102 Z" fill="url(#cyberGrid)"/>
+
+    <!-- Wireframe Outline -->
+    <path d="M 36 40 C 34 30, 92 30, 92 40 L 96 102 C 96 108, 32 108, 32 102 Z" stroke="#00E5FF" stroke-width="1.2" fill="none" opacity="0.8"/>
+
+    <!-- Cyber Circuit Traces on Front -->
+    <g stroke="#D500F9" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.75">
+      <path d="M 44 58 Q 40 70 42 82 Q 46 90 44 100"/>
+      <path d="M 84 58 Q 88 70 86 82 Q 82 90 84 100"/>
+      <path d="M 50 86 H 78"/>
     </g>
-    <text x="64" y="92" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold" opacity="0">LH</text>
+
+    <!-- ===================== GLOWING PINK/WHITE TRIANGULAR EYES ===================== -->
+    <g class="pulse-eye" filter="url(#cyberEyeGlow)">
+      <!-- Left Eye -->
+      <polygon points="40,54 58,60 42,66" fill="#FF4081"/>
+      <polygon points="43,56 55,60 44,64" fill="#FFFFFF"/>
+
+      <!-- Right Eye -->
+      <polygon points="88,54 70,60 86,66" fill="#FF4081"/>
+      <polygon points="85,56 73,60 84,64" fill="#FFFFFF"/>
+    </g>
+
+    <!-- MOUTH -->
+    <path d="M 61 67 L 64 64 L 67 67" stroke="#FF4081" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+    <!-- Pulsing HUD target reticle -->
+    <circle class="pulse" cx="64" cy="74" r="16" stroke="#00E5FF" stroke-width="1" stroke-dasharray="4 4" fill="none" opacity="0.5"/>
+
   </g>
 </svg>

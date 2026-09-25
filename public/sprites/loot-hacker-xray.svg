@@ -1,22 +1,154 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <defs>
+    <!-- Cyber Background Gradient -->
+    <radialGradient id="cyberBg" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#D500F9" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#1A0933" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#080314"/>
+    </radialGradient>
+
+    <!-- Cyan Cyber Coat Gradient -->
+    <linearGradient id="cyberCoat" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#E0F7FA"/>
+      <stop offset="40%" stop-color="#80DEEA"/>
+      <stop offset="80%" stop-color="#4DD0E1"/>
+      <stop offset="100%" stop-color="#00ACC1"/>
+    </linearGradient>
+
+    <!-- Magenta Shirt Gradient -->
+    <linearGradient id="magentaShirt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF4081"/>
+      <stop offset="100%" stop-color="#D500F9"/>
+    </linearGradient>
+
+    <!-- Cyber HUD Grid Pattern -->
+    <pattern id="cyberGrid" width="12" height="12" patternUnits="userSpaceOnUse">
+      <path d="M 12 0 H 0 V 12" stroke="#00E5FF" stroke-width="0.5" opacity="0.35"/>
+    </pattern>
+
+    <!-- Ice-Blue Head Skin Gradient -->
+    <linearGradient id="cyberSkin" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#E0F7FA"/>
+      <stop offset="100%" stop-color="#B2EBF2"/>
+    </linearGradient>
+  </defs>
+
   <style>
-    .el { transform-box: fill-box; transform-origin: center; }
-    .pulse { animation: pulse 2.4s ease-in-out infinite; }
-    .scan { animation: scan 3s ease-in-out infinite; }
-    .glow { animation: glow 2s ease-in-out infinite; }
-    @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: .85; } }
-    @keyframes scan { 0%,100% { transform: translateY(0); opacity: .6; } 50% { transform: translateY(8px); opacity: 1; } }
-    @keyframes glow { 0%,100% { opacity: .14; } 50% { opacity: .32; } }
-    @media (prefers-reduced-motion: reduce) { .el { animation: none !important; } }
+    .el{transform-box:fill-box;transform-origin:center}
+    .bob{animation:bob 2.8s ease-in-out infinite}
+    .blink{animation:blink 3.8s steps(1,end) infinite}
+    .pulse{animation:pulse 2s ease-in-out infinite}
+    .hud-spin{animation:spin 12s linear infinite}
+    .glow{animation:glow 3s ease-in-out infinite}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+    @keyframes blink{0%,92%,100%{transform:scaleY(1)}95%,98%{transform:scaleY(.1)}}
+    @keyframes pulse{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:.8;transform:scale(1.03)}}
+    @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+    @keyframes glow{0%,100%{opacity:.25}50%{opacity:.55}}
+    @media(prefers-reduced-motion:reduce){.el{animation:none!important}}
   </style>
-  <rect width="128" height="128" rx="28" fill="#1a3a4a"/>
-  <circle class="el glow" cx="64" cy="64" r="44" fill="#00e5ff" opacity=".3"/>
-  <g class="el pulse">
-    <circle cx="64" cy="64" r="32" fill="none" stroke="#00e5ff" stroke-width="3" opacity=".9"/>
-    <circle cx="64" cy="64" r="20" fill="none" stroke="#00e5ff" stroke-width="2" opacity=".7"/>
-    <circle cx="64" cy="64" r="8" fill="#00e5ff"/>
-    <line class="el scan" x1="64" y1="20" x2="64" y2="108" stroke="#00e5ff" stroke-width="2" opacity=".6"/>
-    <line class="el scan" x1="20" y1="64" x2="108" y2="64" stroke="#00e5ff" stroke-width="2" opacity=".6"/>
-    <text x="64" y="68" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">LH</text>
+
+  <!-- Background card background with cyber purple/cyan gradient -->
+  <rect width="128" height="128" rx="20" fill="url(#cyberBg)"/>
+
+  <!-- Tech Corner HUD Brackets -->
+  <path d="M 8 20 V 8 H 20 M 108 8 H 120 V 20 M 120 108 V 120 H 108 M 20 120 H 8 V 108" stroke="#D500F9" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+  <!-- Cyber Background Grid Overlay -->
+  <rect width="128" height="128" rx="20" fill="url(#cyberGrid)" opacity="0.6"/>
+
+  <!-- Rotating HUD Ring behind character -->
+  <circle class="hud-spin" cx="64" cy="68" r="44" stroke="#00E5FF" stroke-width="1" stroke-dasharray="8 6 2 6" fill="none" opacity="0.3"/>
+
+  <!-- Ambient magenta-cyan glow behind X-Ray -->
+  <ellipse class="glow" cx="64" cy="68" rx="46" ry="42" fill="#D500F9"/>
+
+  <g class="el bob">
+    <!-- Drop Shadow under character -->
+    <ellipse cx="64" cy="118" rx="28" ry="6" fill="#000000" opacity="0.6"/>
+
+    <!-- ===================== LEGS / FEET ===================== -->
+    <rect x="47" y="108" width="13" height="9" rx="4" fill="#1A0933"/>
+    <rect x="67" y="108" width="13" height="9" rx="4" fill="#0D041A"/>
+    <rect x="44" y="113" width="17" height="4" rx="2" fill="#00E5FF" opacity="0.8"/>
+    <rect x="66" y="113" width="17" height="4" rx="2" fill="#D500F9" opacity="0.8"/>
+
+    <!-- ===================== CHUBBY BLOB BODY (Light Blue Cyber Lab Coat) ===================== -->
+    <path d="M 34 76 C 32 50, 96 50, 94 76 C 96 106, 32 106, 34 76 Z" fill="url(#cyberCoat)"/>
+
+    <!-- Cyber Circuit Grid Overlay on Coat (matching reference) -->
+    <path d="M 34 76 C 32 50, 96 50, 94 76 C 96 106, 32 106, 34 76 Z" fill="url(#cyberGrid)"/>
+
+    <!-- Coat Highlight & Shadow -->
+    <path d="M 34 76 C 32 50, 60 50, 50 104 C 36 102, 32 90, 34 76 Z" fill="#00ACC1" opacity="0.45"/>
+    <path d="M 80 56 C 90 65, 94 80, 90 98 C 94 92, 94 72, 80 56 Z" fill="#FFFFFF" opacity="0.9"/>
+
+    <!-- ===================== GLOWING MAGENTA UNDER-SHIRT ===================== -->
+    <path d="M 56 64 L 64 82 L 72 64 Z" fill="url(#magentaShirt)"/>
+    <path d="M 60 64 L 64 80 L 68 64 Z" fill="#AA00FF"/>
+
+    <!-- Coat Lapels -->
+    <path d="M 44 58 L 56 64 L 52 86 L 40 76 Z" fill="#80DEEA"/>
+    <path d="M 44 58 L 56 64 L 50 82 Z" fill="#E0F7FA"/>
+    <path d="M 84 58 L 72 64 L 76 86 L 88 76 Z" fill="#4DD0E1"/>
+    <path d="M 84 58 L 72 64 L 78 82 Z" fill="#80DEEA"/>
+    <line x1="64" y1="82" x2="64" y2="108" stroke="#D500F9" stroke-width="1.5" stroke-dasharray="3 2"/>
+
+    <!-- ===================== STUBBY ARMS ===================== -->
+    <ellipse cx="28" cy="80" rx="9" ry="6" transform="rotate(-25 28 80)" fill="#80DEEA"/>
+    <ellipse cx="27" cy="80" rx="7" ry="4" transform="rotate(-25 27 80)" fill="#E0F7FA"/>
+    <ellipse cx="100" cy="80" rx="9" ry="6" transform="rotate(25 100 80)" fill="#4DD0E1"/>
+    <ellipse cx="101" cy="80" rx="7" ry="4" transform="rotate(25 101 80)" fill="#80DEEA"/>
+
+    <!-- ===================== HEAD / FACE ===================== -->
+    <ellipse cx="64" cy="48" rx="25" ry="20" fill="url(#cyberSkin)"/>
+
+    <!-- ===================== CYAN-WHITE BEARD ===================== -->
+    <path d="M 52 64 Q 64 74 76 64 Q 72 76 64 76 Q 56 76 52 64 Z" fill="#FFFFFF"/>
+    <ellipse cx="64" cy="72" rx="10" ry="4" fill="#E0F7FA"/>
+
+    <!-- ===================== SMILE ===================== -->
+    <path d="M 58 60 Q 64 64 70 60" stroke="#4A148C" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <!-- ===================== PURPLE/MAGENTA GLASSES (MATCHES REFERENCE) ===================== -->
+    <!-- Temple bars -->
+    <line x1="28" y1="46" x2="38" y2="46" stroke="#AA00FF" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="100" y1="46" x2="90" y2="46" stroke="#AA00FF" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Bridge -->
+    <rect x="57" y="44" width="14" height="4" rx="2" fill="#D500F9"/>
+    <rect x="58" y="45" width="12" height="2" rx="1" fill="#FF4081"/>
+
+    <!-- LEFT GLASSES FRAME -->
+    <circle cx="44" cy="46" r="15" fill="#D500F9"/>
+    <circle cx="44" cy="46" r="12" fill="#0D041A"/>
+    <!-- Frame highlight ring -->
+    <path d="M 33 42 A 13.5 13.5 0 0 1 54 37" stroke="#FF80AB" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- RIGHT GLASSES FRAME -->
+    <circle cx="84" cy="46" r="15" fill="#D500F9"/>
+    <circle cx="84" cy="46" r="12" fill="#0D041A"/>
+    <!-- Frame highlight ring -->
+    <path d="M 73 42 A 13.5 13.5 0 0 1 94 37" stroke="#FF80AB" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- ===================== EYES (NEON CYAN & WHITE HIGHLIGHTS) ===================== -->
+    <g class="el blink">
+      <!-- Left Eye -->
+      <circle cx="44" cy="46" r="9" fill="#12002B"/>
+      <circle cx="41" cy="43" r="3.5" fill="#00E5FF"/>
+      <circle cx="47" cy="49" r="1.5" fill="#FFFFFF"/>
+
+      <!-- Right Eye -->
+      <circle cx="84" cy="46" r="9" fill="#12002B"/>
+      <circle cx="81" cy="43" r="3.5" fill="#00E5FF"/>
+      <circle cx="87" cy="49" r="1.5" fill="#FFFFFF"/>
+    </g>
+
+    <!-- Glass Lens Glare -->
+    <path d="M 34 40 Q 42 36 50 42" stroke="#E0F7FA" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <path d="M 74 40 Q 82 36 90 42" stroke="#E0F7FA" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+    <!-- Pulsing HUD target reticle line -->
+    <circle class="pulse" cx="64" cy="74" r="16" stroke="#00E5FF" stroke-width="1" stroke-dasharray="4 4" fill="none" opacity="0.5"/>
+
   </g>
 </svg>

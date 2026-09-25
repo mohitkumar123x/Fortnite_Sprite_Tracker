@@ -1,0 +1,66 @@
+[
+  {
+    "id": "s3-fire",
+    "mainspritename": "Fire",
+    "varient": "normal",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-fire",
+    "mainspritename": "Fire",
+    "varient": "gold",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "bonus": "3× elimination XP"
+  },
+  {
+    "id": "s3-fire",
+    "mainspritename": "Fire",
+    "varient": "gummy",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-fire",
+    "mainspritename": "Fire",
+    "varient": "galaxy",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-fire",
+    "mainspritename": "Fire",
+    "varient": "quack",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-fire",
+    "mainspritename": "Fire",
+    "varient": "cube",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-fire",
+    "mainspritename": "Fire",
+    "varient": "holofoil",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  }
+]

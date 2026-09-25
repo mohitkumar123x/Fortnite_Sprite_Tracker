@@ -1,22 +1,154 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <defs>
+    <!-- Matrix Background Gradient -->
+    <radialGradient id="matrixBg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#00E676" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#052411" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#021007"/>
+    </radialGradient>
+
+    <!-- Matrix Green Coat Gradient -->
+    <linearGradient id="matrixCoat" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#1B5E20"/>
+      <stop offset="50%" stop-color="#0B381E"/>
+      <stop offset="100%" stop-color="#00240E"/>
+    </linearGradient>
+
+    <!-- Glowing Green Circuit Pattern -->
+    <pattern id="matrixPattern" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M 0 8 H 16 M 8 0 V 16" stroke="#00E676" stroke-width="0.75" opacity="0.3"/>
+      <circle cx="8" cy="8" r="1" fill="#69F0AE" opacity="0.6"/>
+    </pattern>
+
+    <!-- Digital Matrix Skin Gradient -->
+    <linearGradient id="matrixSkin" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#A5D6A7"/>
+      <stop offset="100%" stop-color="#66BB6A"/>
+    </linearGradient>
+  </defs>
+
   <style>
-    .el { transform-box: fill-box; transform-origin: center; }
-    .pulse { animation: pulse 2.4s ease-in-out infinite; }
-    .scan { animation: scan 3s ease-in-out infinite; }
-    .glow { animation: glow 2s ease-in-out infinite; }
-    @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: .85; } }
-    @keyframes scan { 0%,100% { transform: translateY(0); opacity: .6; } 50% { transform: translateY(8px); opacity: 1; } }
-    @keyframes glow { 0%,100% { opacity: .14; } 50% { opacity: .32; } }
-    @media (prefers-reduced-motion: reduce) { .el { animation: none !important; } }
+    .el{transform-box:fill-box;transform-origin:center}
+    .bob{animation:bob 2.8s ease-in-out infinite}
+    .blink{animation:blink 3.8s steps(1,end) infinite}
+    .matrix-rain{animation:rain 4s linear infinite}
+    .scanline{animation:scan 3s ease-in-out infinite}
+    .glow{animation:glow 2.5s ease-in-out infinite}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+    @keyframes blink{0%,92%,100%{transform:scaleY(1)}95%,98%{transform:scaleY(.1)}}
+    @keyframes rain{0%{transform:translateY(-20px)}100%{transform:translateY(20px)}}
+    @keyframes scan{0%,100%{opacity:.2;transform:translateY(0)}50%{opacity:.6;transform:translateY(40px)}}
+    @keyframes glow{0%,100%{opacity:.3}50%{opacity:.6}}
+    @media(prefers-reduced-motion:reduce){.el{animation:none!important}}
   </style>
-  <rect width="128" height="128" rx="28" fill="#4a1a1a"/>
-  <circle class="el glow" cx="64" cy="64" r="44" fill="#ff5252" opacity=".3"/>
-  <g class="el pulse">
-    <circle cx="64" cy="64" r="32" fill="none" stroke="#ff5252" stroke-width="3" opacity=".9"/>
-    <circle cx="64" cy="64" r="20" fill="none" stroke="#ff5252" stroke-width="2" opacity=".7"/>
-    <circle cx="64" cy="64" r="8" fill="#ff5252"/>
-    <line class="el scan" x1="64" y1="20" x2="64" y2="108" stroke="#ff5252" stroke-width="2" opacity=".6"/>
-    <line class="el scan" x1="20" y1="64" x2="108" y2="64" stroke="#ff5252" stroke-width="2" opacity=".6"/>
-    <text x="64" y="68" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">CM</text>
+
+  <!-- Background card background with dark green matrix gradient -->
+  <rect width="128" height="128" rx="20" fill="url(#matrixBg)"/>
+
+  <!-- Matrix Binary Code Rain (Background Text Stream matching reference) -->
+  <g opacity="0.35" fill="#00E676" font-family="monospace" font-size="7" class="matrix-rain">
+    <text x="10" y="15">01010101</text>
+    <text x="32" y="35">11001010</text>
+    <text x="80" y="20">10101100</text>
+    <text x="102" y="40">00110101</text>
+    <text x="14" y="65">10010011</text>
+    <text x="96" y="80">01101101</text>
+    <text x="24" y="105">01011010</text>
+    <text x="84" y="115">10110010</text>
+  </g>
+
+  <!-- Ambient green glow behind X-Ray -->
+  <ellipse class="glow" cx="64" cy="68" rx="46" ry="42" fill="#00E676"/>
+
+  <g class="el bob">
+    <!-- Drop Shadow under character -->
+    <ellipse cx="64" cy="118" rx="28" ry="6" fill="#000000" opacity="0.6"/>
+
+    <!-- ===================== LEGS / FEET ===================== -->
+    <rect x="47" y="108" width="13" height="9" rx="4" fill="#052B14"/>
+    <rect x="67" y="108" width="13" height="9" rx="4" fill="#031F0E"/>
+    <rect x="44" y="113" width="17" height="4" rx="2" fill="#00E676" opacity="0.7"/>
+    <rect x="66" y="113" width="17" height="4" rx="2" fill="#00E676" opacity="0.7"/>
+
+    <!-- ===================== CHUBBY BLOB BODY (Matrix Camo Coat) ===================== -->
+    <path d="M 34 76 C 32 50, 96 50, 94 76 C 96 106, 32 106, 34 76 Z" fill="url(#matrixCoat)"/>
+    <path d="M 34 76 C 32 50, 96 50, 94 76 C 96 106, 32 106, 34 76 Z" fill="url(#matrixPattern)"/>
+
+    <!-- Digital Camouflage Patches (matching reference) -->
+    <rect x="40" y="70" width="10" height="8" rx="2" fill="#00E676" opacity="0.4"/>
+    <rect x="76" y="78" width="12" height="7" rx="2" fill="#69F0AE" opacity="0.4"/>
+    <rect x="52" y="88" width="14" height="9" rx="2" fill="#00C853" opacity="0.5"/>
+
+    <!-- Coat Highlight & Shadow -->
+    <path d="M 34 76 C 32 50, 60 50, 50 104 C 36 102, 32 90, 34 76 Z" fill="#00240E" opacity="0.6"/>
+    <path d="M 80 56 C 90 65, 94 80, 90 98 C 94 92, 94 72, 80 56 Z" fill="#B9F6CA" opacity="0.5"/>
+
+    <!-- ===================== DARK GREEN CODE SHIRT ===================== -->
+    <path d="M 56 64 L 64 82 L 72 64 Z" fill="#004D40"/>
+    <path d="M 60 64 L 64 80 L 68 64 Z" fill="#00251A"/>
+
+    <!-- Coat Lapels -->
+    <path d="M 44 58 L 56 64 L 52 86 L 40 76 Z" fill="#1B5E20"/>
+    <path d="M 44 58 L 56 64 L 50 82 Z" fill="#2E7D32"/>
+    <path d="M 84 58 L 72 64 L 76 86 L 88 76 Z" fill="#003816"/>
+    <path d="M 84 58 L 72 64 L 78 82 Z" fill="#1B5E20"/>
+    <line x1="64" y1="82" x2="64" y2="108" stroke="#00E676" stroke-width="1.5" stroke-dasharray="3 2"/>
+
+    <!-- ===================== STUBBY ARMS ===================== -->
+    <ellipse cx="28" cy="80" rx="9" ry="6" transform="rotate(-25 28 80)" fill="#1B5E20"/>
+    <ellipse cx="27" cy="80" rx="7" ry="4" transform="rotate(-25 27 80)" fill="#2E7D32"/>
+    <ellipse cx="100" cy="80" rx="9" ry="6" transform="rotate(25 100 80)" fill="#003816"/>
+    <ellipse cx="101" cy="80" rx="7" ry="4" transform="rotate(25 101 80)" fill="#1B5E20"/>
+
+    <!-- ===================== HEAD / FACE ===================== -->
+    <ellipse cx="64" cy="48" rx="25" ry="20" fill="url(#matrixSkin)"/>
+
+    <!-- ===================== MATRIX GREEN BEARD ===================== -->
+    <path d="M 52 64 Q 64 74 76 64 Q 72 76 64 76 Q 56 76 52 64 Z" fill="#C8E6C9"/>
+    <ellipse cx="64" cy="72" rx="10" ry="4" fill="#A5D6A7"/>
+
+    <!-- ===================== SMILE ===================== -->
+    <path d="M 58 60 Q 64 64 70 60" stroke="#1B5E20" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <!-- ===================== RED CIRCULAR GLASSES (MATCHES REFERENCE) ===================== -->
+    <!-- Temple bars -->
+    <line x1="28" y1="46" x2="38" y2="46" stroke="#D50000" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="100" y1="46" x2="90" y2="46" stroke="#D50000" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Bridge -->
+    <rect x="57" y="44" width="14" height="4" rx="2" fill="#FF3D00"/>
+    <rect x="58" y="45" width="12" height="2" rx="1" fill="#FF6E40"/>
+
+    <!-- LEFT GLASSES FRAME -->
+    <circle cx="44" cy="46" r="15" fill="#D50000"/>
+    <circle cx="44" cy="46" r="12" fill="#001F0E"/>
+    <!-- Left frame highlight ring -->
+    <path d="M 33 42 A 13.5 13.5 0 0 1 54 37" stroke="#FF6E40" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- RIGHT GLASSES FRAME -->
+    <circle cx="84" cy="46" r="15" fill="#D50000"/>
+    <circle cx="84" cy="46" r="12" fill="#001F0E"/>
+    <!-- Right frame highlight ring -->
+    <path d="M 73 42 A 13.5 13.5 0 0 1 94 37" stroke="#FF6E40" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- ===================== EYES (GLOWING GREEN MATRIX EYES) ===================== -->
+    <g class="el blink">
+      <!-- Left Eye -->
+      <circle cx="44" cy="46" r="9" fill="#00240E"/>
+      <circle cx="41" cy="43" r="3.5" fill="#00E676"/>
+      <circle cx="47" cy="49" r="1.5" fill="#FFFFFF"/>
+
+      <!-- Right Eye -->
+      <circle cx="84" cy="46" r="9" fill="#00240E"/>
+      <circle cx="81" cy="43" r="3.5" fill="#00E676"/>
+      <circle cx="87" cy="49" r="1.5" fill="#FFFFFF"/>
+    </g>
+
+    <!-- Glass Lens Glare -->
+    <path d="M 34 40 Q 42 36 50 42" stroke="#69F0AE" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <path d="M 74 40 Q 82 36 90 42" stroke="#69F0AE" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+    <!-- Scanline effect -->
+    <line class="scanline" x1="30" y1="50" x2="98" y2="50" stroke="#00E676" stroke-width="1.5" opacity="0.5"/>
+
   </g>
 </svg>

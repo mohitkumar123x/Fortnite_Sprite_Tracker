@@ -1,0 +1,48 @@
+[
+  {
+    "id": "s3-ghost",
+    "mainspritename": "Ghost",
+    "varient": "normal",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-ghost",
+    "mainspritename": "Ghost",
+    "varient": "gold",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "bonus": "3× elimination XP"
+  },
+  {
+    "id": "s3-ghost",
+    "mainspritename": "Ghost",
+    "varient": "gummy",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-ghost",
+    "mainspritename": "Ghost",
+    "varient": "galaxy",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-ghost",
+    "mainspritename": "Ghost",
+    "varient": "holofoil",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  }
+]

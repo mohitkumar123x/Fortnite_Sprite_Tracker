@@ -209,6 +209,12 @@ const ui = {
     claimed: 'Used',
     searchCheatsPlaceholder: 'Search cheat codes or rewards…',
     codeCopiedToast: 'Copied "{code}" to clipboard!',
+    combo: 'Combo',
+    filterStatus: 'Filter status',
+    howToOpenAdmin: 'Open Admin Panel',
+    howToEnterCode: 'Enter Cheat Code',
+    howToEnterCodeText: 'Copy and enter one of the cheat codes.',
+    howToMarkUsed: 'Mark as Used',
     confirmResetCheats: 'Reset all marked cheat codes?',
     allCheatsResetToast: 'All cheat codes reset.',
     backToTracker: 'Back to tracker',
@@ -232,6 +238,11 @@ const ui = {
       'Epic Games unlocked all 14 Loot Hacker Sprites on September 10. Complete list with powers, rarities, release times, and how to track them.',
     blogPost_sept10_excerpt:
       'All 14 Loot Hacker Sprites are now live in Fortnite. See every variant, its unique power, rarity, and the exact release times across all regions.',
+    blogPost_v42_20_title: 'Fortnite v42.20 Update: 42 New Sprites Including Crash Bandicoot, Blinky, and More',
+    blogPost_v42_20_meta:
+      'Complete breakdown of the v42.20 patch: 42 new sprites including Crash Bandicoot, Blinky, Pond, Morgana, and Birthday. Plus 20 Bounty Hunter variants and Kingdom Hearts collab.',
+    blogPost_v42_20_excerpt:
+      'The September 17 update added 42 new sprites to the files — 13 available now with Crash Bandicoot, Blinky, and Pond leading the charge. Here is every sprite, ability, and unlock requirement.',
     blogPost_howToTrack_title: 'How to Track Your Fortnite Sprite Collection',
     blogPost_howToTrack_meta:
       'Step-by-step guide to marking Owned and Mastered sprites, exporting JSON backups, and sharing your collection with friends.',
@@ -294,6 +305,8 @@ const ui = {
     heroSprites: 'New Sprites',
     spritesSectionEyebrow: 'v42.10 Update',
     spritesSectionTitle: 'New Sprites',
+    spritesSectionV4220Eyebrow: 'v42.20 Update',
+    spritesSectionV4220Title: 'New Sprites',
     newTag: 'New',
     printSprites: 'Print sprite list',
     bcHome: 'Home',
@@ -506,6 +519,12 @@ const ui = {
     claimed: 'Usado',
     searchCheatsPlaceholder: 'Buscar códigos o recompensas…',
     codeCopiedToast: '¡Código "{code}" copiado al portapapeles!',
+    combo: 'Combo',
+    filterStatus: 'Estado del filtro',
+    howToOpenAdmin: 'Abrir el panel de administración',
+    howToEnterCode: 'Introducir código de truco',
+    howToEnterCodeText: 'Copia e introduce uno de los códigos de truco.',
+    howToMarkUsed: 'Marcar como usado',
     confirmResetCheats: '¿Restablecer todos los códigos marcados?',
     allCheatsResetToast: 'Todos los códigos han sido restablecidos.',
     backToTracker: 'Volver al tracker',
@@ -529,6 +548,11 @@ const ui = {
       'Epic Games desbloqueó los 14 sprites Loot Hacker el 10 de septiembre. Lista completa con poderes, rarezas, horarios de lanzamiento y cómo rastrearlos.',
     blogPost_sept10_excerpt:
       'Los 14 sprites Loot Hacker ya están activos en Fortnite. Ve cada variante, su poder único, rareza y los horarios exactos de lanzamiento en todas las regiones.',
+    blogPost_v42_20_title: 'Actualización v42.20 de Fortnite: 42 Nuevos Sprites Incluyendo Crash Bandicoot, Blinky y Más',
+    blogPost_v42_20_meta:
+      'Desglose completo del parche v42.20: 42 nuevos sprites incluyendo Crash Bandicoot, Blinky, Pond, Morgana y Birthday. Más 20 variantes Bounty Hunter y colaboración Kingdom Hearts.',
+    blogPost_v42_20_excerpt:
+      'La actualización del 17 de septiembre agregó 42 nuevos sprites — 13 disponibles ahora con Crash Bandicoot, Blinky y Pond liderando el ataque. Aquí está cada sprite, habilidad y requisito de desbloqueo.',
     blogPost_howToTrack_title: 'Cómo rastrear tu colección de sprites de Fortnite',
     blogPost_howToTrack_meta:
       'Guía paso a paso para marcar sprites Obtenidos y Dominados, exportar respaldos JSON y compartir tu colección con amigos.',
@@ -591,6 +615,8 @@ const ui = {
     heroSprites: 'Nuevos Sprites',
     spritesSectionEyebrow: 'Actualización v42.10',
     spritesSectionTitle: 'Nuevos Sprites',
+    spritesSectionV4220Eyebrow: 'Actualización v42.20',
+    spritesSectionV4220Title: 'Nuevos Sprites',
     newTag: 'Nuevo',
     printSprites: 'Imprimir lista de sprites',
     bcHome: 'Inicio',
@@ -803,6 +829,12 @@ const ui = {
     claimed: 'Usado',
     searchCheatsPlaceholder: 'Buscar códigos ou recompensas…',
     codeCopiedToast: 'Código "{code}" copiado para a área de transferência!',
+    combo: 'Combo',
+    filterStatus: 'Status do filtro',
+    howToOpenAdmin: 'Abrir o painel de administração',
+    howToEnterCode: 'Inserir código de trapaça',
+    howToEnterCodeText: 'Copie e insira um dos códigos de trapaça.',
+    howToMarkUsed: 'Marcar como usado',
     confirmResetCheats: 'Redefinir todos os códigos marcados?',
     allCheatsResetToast: 'Todos os códigos foram redefinidos.',
     backToTracker: 'Voltar ao tracker',
@@ -826,6 +858,11 @@ const ui = {
       'A Epic Games desbloqueou os 14 sprites Loot Hacker em 10 de setembro. Lista completa com poderes, raridades, horários de lançamento e como rastreá-los.',
     blogPost_sept10_excerpt:
       'Os 14 sprites Loot Hacker já estão ativos no Fortnite. Veja cada variante, seu poder único, raridade e os horários exatos de lançamento em todas as regiões.',
+    blogPost_v42_20_title: 'Atualização v42.20 do Fortnite: 42 Novos Sprites Incluindo Crash Bandicoot, Blinky e Mais',
+    blogPost_v42_20_meta:
+      'Análise completa do patch v42.20: 42 novos sprites incluindo Crash Bandicoot, Blinky, Pond, Morgana e Birthday. Mais 20 variantes Bounty Hunter e colaboração Kingdom Hearts.',
+    blogPost_v42_20_excerpt:
+      'A atualização de 17 de setembro adicionou 42 novos sprites — 13 disponíveis agora com Crash Bandicoot, Blinky e Pond liderando o ataque. Aqui está cada sprite, habilidade e requisito de desbloqueio.',
     blogPost_howToTrack_title: 'Como rastrear sua coleção de sprites do Fortnite',
     blogPost_howToTrack_meta:
       'Guia passo a passo para marcar sprites Obtidos e Dominados, exportar backups JSON e compartilhar sua coleção com amigos.',
@@ -888,6 +925,8 @@ const ui = {
     heroSprites: 'Novos Sprites',
     spritesSectionEyebrow: 'Atualização v42.10',
     spritesSectionTitle: 'Novos Sprites',
+    spritesSectionV4220Eyebrow: 'Atualização v42.20',
+    spritesSectionV4220Title: 'Novos Sprites',
     newTag: 'Novo',
     printSprites: 'Imprimir lista de sprites',
     bcHome: 'Início',
@@ -1100,6 +1139,12 @@ const ui = {
     claimed: 'Utilisé',
     searchCheatsPlaceholder: 'Rechercher des codes ou récompenses…',
     codeCopiedToast: 'Code "{code}" copié dans le presse-papiers !',
+    combo: 'Combo',
+    filterStatus: 'État du filtre',
+    howToOpenAdmin: 'Ouvrir le panneau d’administration',
+    howToEnterCode: 'Saisir le code de triche',
+    howToEnterCodeText: 'Copiez et saisissez l’un des codes de triche.',
+    howToMarkUsed: 'Marquer comme utilisé',
     confirmResetCheats: 'Réinitialiser tous les codes marqués ?',
     allCheatsResetToast: 'Tous les codes de triche ont été réinitialisés.',
     backToTracker: 'Retour au tracker',
@@ -1123,6 +1168,11 @@ const ui = {
       'Epic Games a débloqué les 14 sprites Loot Hacker le 10 septembre. Liste complète avec les pouvoirs, les raretés, les horaires de sortie et comment les suivre.',
     blogPost_sept10_excerpt:
       'Les 14 sprites Loot Hacker sont maintenant actifs dans Fortnite. Découvrez chaque variante, son pouvoir unique, sa rareté et les horaires exacts de sortie dans toutes les régions.',
+    blogPost_v42_20_title: 'Mise à jour v42.20 de Fortnite : 42 Nouveaux Sprites Dont Crash Bandicoot, Blinky et Plus',
+    blogPost_v42_20_meta:
+      'Analyse complète du patch v42.20 : 42 nouveaux sprites dont Crash Bandicoot, Blinky, Pond, Morgana et Birthday. Plus 20 variantes Bounty Hunter et collaboration Kingdom Hearts.',
+    blogPost_v42_20_excerpt:
+      'La mise à jour du 17 septembre a ajouté 42 nouveaux sprites — 13 disponibles maintenant avec Crash Bandicoot, Blinky et Pond en tête. Voici chaque sprite, ability et condition de déverrouillage.',
     blogPost_howToTrack_title: 'Comment suivre votre collection de sprites Fortnite',
     blogPost_howToTrack_meta:
       'Guide étape par étape pour marquer les sprites Possédés et Maîtrisés, exporter des sauvegardes JSON et partager votre collection avec des amis.',
@@ -1185,6 +1235,8 @@ const ui = {
     heroSprites: 'Nouveaux Sprites',
     spritesSectionEyebrow: 'Mise à jour v42.10',
     spritesSectionTitle: 'Nouveaux Sprites',
+    spritesSectionV4220Eyebrow: 'Mise à jour v42.20',
+    spritesSectionV4220Title: 'Nouveaux Sprites',
     newTag: 'Nouveau',
     printSprites: 'Imprimer la liste des sprites',
     bcHome: 'Accueil',

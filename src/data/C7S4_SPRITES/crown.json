@@ -1,0 +1,287 @@
+[
+  {
+    "id": "s4-crown-normal",
+    "spriteId": "s4-crown",
+    "mainSpriteName": "Crown",
+    "variant": "normal",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "mythic",
+
+    "ability": {
+      "name": "Grants extra Crown Wins after winning a Victory Royale. It can only be leveled up by winning matches and new variants are also unlocked by mastering it.",
+      "type": "Standard",
+      "description": "Grants extra Crown Wins after winning a Victory Royale. It can only be leveled up by winning matches and new variants are also unlocked by mastering it."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Only levels from match wins (boosted by Crown Wins).",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 600,
+      "findNotes": "Mythic Season 4 sprite. Rare chest finds; extract carefully.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Normal",
+      "effect": "Standard Sprite ability"
+    },
+
+    "release": {
+      "patch": "v42.0",
+      "addedAt": "",
+      "status": "released",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["normal", "crown", "c7-s4"],
+      "searchKeywords": ["Crown Sprite", "Crown Fortnite", "Crown Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-crown-gold",
+    "spriteId": "s4-crown",
+    "mainSpriteName": "Crown",
+    "variant": "gold",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "mythic",
+
+    "ability": {
+      "name": "Grants extra Crown Wins after winning a Victory Royale. It can only be leveled up by winning matches and new variants are also unlocked by mastering it.",
+      "type": "Enhanced",
+      "description": "Grants extra Crown Wins after winning a Victory Royale. It can only be leveled up by winning matches and new variants are also unlocked by mastering it."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Only levels from match wins (boosted by Crown Wins).",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 1200,
+      "findNotes": "Mythic Season 4 sprite. Rare chest finds; extract carefully.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Gold",
+      "effect": "Gold variant — 3x elimination XP bonus"
+    },
+
+    "release": {
+      "patch": "v42.0",
+      "addedAt": "",
+      "status": "released",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["gold", "crown", "c7-s4"],
+      "searchKeywords": ["Crown Sprite", "Crown Fortnite", "Crown Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-crown-cheat-master",
+    "spriteId": "s4-crown",
+    "mainSpriteName": "Crown",
+    "variant": "cheat-master",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "mythic",
+
+    "ability": {
+      "name": "Grants extra Crown Wins after winning a Victory Royale. It can only be leveled up by winning matches and new variants are also unlocked by mastering it.",
+      "type": "Cheat",
+      "description": "Grants extra Crown Wins after winning a Victory Royale. It can only be leveled up by winning matches and new variants are also unlocked by mastering it."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Only levels from match wins (boosted by Crown Wins).",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 1400,
+      "findNotes": "Mythic Season 4 sprite. Rare chest finds; extract carefully.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Cheat Master",
+      "effect": "Cheat Master — Button Mash cheat ability"
+    },
+
+    "release": {
+      "patch": "v42.0",
+      "addedAt": "",
+      "status": "released",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["cheat-master", "crown", "c7-s4"],
+      "searchKeywords": ["Crown Sprite", "Crown Fortnite", "Crown Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-crown-loot-hacker",
+    "spriteId": "s4-crown",
+    "mainSpriteName": "Crown",
+    "variant": "loot-hacker",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "epic",
+
+    "ability": {
+      "name": "Loot Hacker variant of Crown Sprite.",
+      "type": "Tactical",
+      "description": "Loot Hacker variant of Crown Sprite."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Win progress bonus improves with each level.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 0,
+      "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Loot Hacker",
+      "effect": "Loot Hacker — High-elevation loot run variant"
+    },
+
+    "release": {
+      "patch": "v42.10",
+      "addedAt": "3-sept-2026",
+      "status": "new",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["loot-hacker", "crown", "c7-s4"],
+      "searchKeywords": ["Crown Sprite", "Crown Fortnite", "Crown Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-crown-bounty-hunter",
+    "spriteId": "s4-crown",
+    "mainSpriteName": "Crown",
+    "variant": "bounty-hunter",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "mythic",
+
+    "ability": {
+      "name": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+      "type": "Combat",
+      "description": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Only levels through eliminations.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 0,
+      "findNotes": "Added in v42.20 update on September 17.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Bounty Hunter",
+      "effect": "Bounty Hunter — Elimination-based sprite finder"
+    },
+
+    "release": {
+      "patch": "v42.20",
+      "addedAt": "17-sept-2026",
+      "status": "new",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["bounty-hunter", "crown", "c7-s4"],
+      "searchKeywords": ["Crown Sprite", "Crown Fortnite", "Crown Chapter 7 Season 4"]
+    }
+  }
+]

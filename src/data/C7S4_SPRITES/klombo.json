@@ -1,0 +1,287 @@
+[
+  {
+    "id": "s4-klombo-normal",
+    "spriteId": "s4-klombo",
+    "mainSpriteName": "Klombo",
+    "variant": "normal",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "mythic",
+
+    "ability": {
+      "name": "Drops random items at each level. It can only be leveled up by using consumables that grant Health or Shield.",
+      "type": "Standard",
+      "description": "Drops random items at each level. It can only be leveled up by using consumables that grant Health or Shield."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Levels only by consuming items — not by eliminations or wins.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 600,
+      "findNotes": "Mythic Season 4. Find, extract, then feed items to level.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Normal",
+      "effect": "Standard Sprite ability"
+    },
+
+    "release": {
+      "patch": "v42.0",
+      "addedAt": "",
+      "status": "released",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["normal", "klombo", "c7-s4"],
+      "searchKeywords": ["Klombo Sprite", "Klombo Fortnite", "Klombo Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-klombo-gold",
+    "spriteId": "s4-klombo",
+    "mainSpriteName": "Klombo",
+    "variant": "gold",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "mythic",
+
+    "ability": {
+      "name": "Drops random items at each level. It can only be leveled up by using consumables that grant Health or Shield.",
+      "type": "Enhanced",
+      "description": "Drops random items at each level. It can only be leveled up by using consumables that grant Health or Shield."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Levels only by consuming items — not by eliminations or wins.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 1200,
+      "findNotes": "Mythic Season 4. Find, extract, then feed items to level.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Gold",
+      "effect": "Gold variant — 3x elimination XP bonus"
+    },
+
+    "release": {
+      "patch": "v42.0",
+      "addedAt": "",
+      "status": "released",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["gold", "klombo", "c7-s4"],
+      "searchKeywords": ["Klombo Sprite", "Klombo Fortnite", "Klombo Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-klombo-cheat-master",
+    "spriteId": "s4-klombo",
+    "mainSpriteName": "Klombo",
+    "variant": "cheat-master",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "mythic",
+
+    "ability": {
+      "name": "Drops random items at each level. It can only be leveled up by using consumables that grant Health or Shield.",
+      "type": "Cheat",
+      "description": "Drops random items at each level. It can only be leveled up by using consumables that grant Health or Shield."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Levels only by consuming items — not by eliminations or wins.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 1400,
+      "findNotes": "Mythic Season 4. Find, extract, then feed items to level.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Cheat Master",
+      "effect": "Cheat Master — Button Mash cheat ability"
+    },
+
+    "release": {
+      "patch": "v42.0",
+      "addedAt": "",
+      "status": "released",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["cheat-master", "klombo", "c7-s4"],
+      "searchKeywords": ["Klombo Sprite", "Klombo Fortnite", "Klombo Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-klombo-loot-hacker",
+    "spriteId": "s4-klombo",
+    "mainSpriteName": "Klombo",
+    "variant": "loot-hacker",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "epic",
+
+    "ability": {
+      "name": "Loot Hacker variant of Klombo Sprite.",
+      "type": "Tactical",
+      "description": "Loot Hacker variant of Klombo Sprite."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Item quality and consumption speed improve with each level.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 0,
+      "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Loot Hacker",
+      "effect": "Loot Hacker — High-elevation loot run variant"
+    },
+
+    "release": {
+      "patch": "v42.10",
+      "addedAt": "3-sept-2026",
+      "status": "new",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["loot-hacker", "klombo", "c7-s4"],
+      "searchKeywords": ["Klombo Sprite", "Klombo Fortnite", "Klombo Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-klombo-bounty-hunter",
+    "spriteId": "s4-klombo",
+    "mainSpriteName": "Klombo",
+    "variant": "bounty-hunter",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "mythic",
+
+    "ability": {
+      "name": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+      "type": "Combat",
+      "description": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Only levels through eliminations.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 0,
+      "findNotes": "Added in v42.20 update on September 17.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Bounty Hunter",
+      "effect": "Bounty Hunter — Elimination-based sprite finder"
+    },
+
+    "release": {
+      "patch": "v42.20",
+      "addedAt": "17-sept-2026",
+      "status": "upcoming",
+      "available": false
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["bounty-hunter", "klombo", "c7-s4"],
+      "searchKeywords": ["Klombo Sprite", "Klombo Fortnite", "Klombo Chapter 7 Season 4"]
+    }
+  }
+]

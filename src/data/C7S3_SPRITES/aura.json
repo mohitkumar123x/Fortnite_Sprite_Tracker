@@ -1,0 +1,48 @@
+[
+  {
+    "id": "s3-aura",
+    "mainspritename": "Aura",
+    "varient": "normal",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-aura",
+    "mainspritename": "Aura",
+    "varient": "gold",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "bonus": "3× elimination XP"
+  },
+  {
+    "id": "s3-aura",
+    "mainspritename": "Aura",
+    "varient": "gummy",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-aura",
+    "mainspritename": "Aura",
+    "varient": "galaxy",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-aura",
+    "mainspritename": "Aura",
+    "varient": "gem",
+    "seasonId": "c7-s3",
+    "rarity": "epic",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  }
+]

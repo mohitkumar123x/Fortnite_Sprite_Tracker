@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <defs>
+    <!-- Galaxy Background Gradient -->
+    <radialGradient id="galaxyBg" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#E040FB" stop-opacity="0.35"/>
+      <stop offset="45%" stop-color="#2D064A" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0E021B"/>
+    </radialGradient>
+
+    <!-- Cosmic Body Gradient (Cyan Top to Galaxy Purple Bottom) -->
+    <linearGradient id="cosmicBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="30%" stop-color="#7C4DFF"/>
+      <stop offset="70%" stop-color="#AA00FF"/>
+      <stop offset="100%" stop-color="#4A148C"/>
+    </linearGradient>
+
+    <!-- Swirling Nebula Texture Gradient -->
+    <radialGradient id="nebulaSwirl" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FF4081" stop-opacity="0.65"/>
+      <stop offset="50%" stop-color="#E040FB" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#7B1FA2" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Eye Glow Filter -->
+    <filter id="cosmicEyeGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .el{transform-box:fill-box;transform-origin:center}
+    .bob{animation:bob 2.8s ease-in-out infinite}
+    .pulse-eye{animation:eyePulse 2.4s ease-in-out infinite alternate}
+    .galaxy-spin{animation:spin 16s linear infinite}
+    .twinkle{animation:twinkle 2s ease-in-out infinite alternate}
+    .glow{animation:glow 3s ease-in-out infinite}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+    @keyframes eyePulse{0%{opacity:.85;transform:scale(.98)}100%{opacity:1;transform:scale(1.03)}}
+    @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+    @keyframes twinkle{0%{opacity:.2;transform:scale(.8)}100%{opacity:.9;transform:scale(1.2)}}
+    @keyframes glow{0%,100%{opacity:.3}50%{opacity:.65}}
+    @media(prefers-reduced-motion:reduce){.el{animation:none!important}}
+  </style>
+
+  <!-- Card background -->
+  <rect width="128" height="128" rx="20" fill="url(#galaxyBg)"/>
+
+  <!-- Swirling Nebula Galaxy Ring -->
+  <path class="galaxy-spin" d="M 64 20 A 48 48 0 1 1 63.9 20" stroke="url(#nebulaSwirl)" stroke-width="18" fill="none" opacity="0.6" stroke-linecap="round"/>
+
+  <!-- Twinkling Stars -->
+  <g fill="#FFFFFF">
+    <circle class="twinkle" cx="18" cy="22" r="1.5"/>
+    <circle class="twinkle" cx="108" cy="28" r="1"/>
+    <circle class="twinkle" cx="24" cy="98" r="1"/>
+    <circle class="twinkle" cx="102" cy="94" r="1.5"/>
+    <circle class="twinkle" cx="88" cy="18" r="1.2"/>
+  </g>
+
+  <!-- Ambient purple-magenta glow behind Storm Scout -->
+  <ellipse class="glow" cx="64" cy="68" rx="46" ry="42" fill="#E040FB"/>
+
+  <g class="el bob">
+    <!-- Drop Shadow under character -->
+    <ellipse cx="64" cy="118" rx="28" ry="6" fill="#000000" opacity="0.6"/>
+
+    <!-- ===================== LEGS / STEPPED BASE ===================== -->
+    <rect x="42" y="104" width="14" height="12" rx="3" fill="#260446"/>
+    <rect x="44" y="112" width="10" height="4" rx="2" fill="#E040FB" opacity="0.8"/>
+    <rect x="72" y="104" width="14" height="12" rx="3" fill="#17012E"/>
+    <rect x="74" y="112" width="10" height="4" rx="2" fill="#FF4081" opacity="0.8"/>
+
+    <!-- ===================== CURVED SEGMENTED COSMIC HORNS ===================== -->
+    <!-- Left Horn -->
+    <path d="M 38 42 C 30 38, 22 40, 18 46 C 16 50, 22 56, 32 50 Z" fill="#AA00FF" stroke="#E040FB" stroke-width="1.2"/>
+    <path d="M 28 42 C 20 36, 16 38, 14 44 C 18 48, 24 46, 26 44 Z" fill="#E040FB"/>
+    <path d="M 24 38 C 16 32, 12 34, 10 40 C 14 44, 20 42, 22 40 Z" fill="#00E5FF"/>
+    <path d="M 18 34 C 12 28, 10 26, 14 24 C 18 24, 18 30, 20 34 Z" fill="#E0F7FA"/>
+    <path d="M 30 42 Q 22 46 26 50" stroke="#FF4081" stroke-width="1.5" fill="none"/>
+    <path d="M 24 38 Q 16 42 20 46" stroke="#FF4081" stroke-width="1.5" fill="none"/>
+
+    <!-- Right Horn -->
+    <path d="M 90 42 C 98 38, 106 40, 110 46 C 112 50, 106 56, 96 50 Z" fill="#AA00FF" stroke="#E040FB" stroke-width="1.2"/>
+    <path d="M 100 42 C 108 36, 112 38, 114 44 C 110 48, 104 46, 102 44 Z" fill="#E040FB"/>
+    <path d="M 104 38 C 112 32, 116 34, 118 40 C 114 44, 108 42, 106 40 Z" fill="#00E5FF"/>
+    <path d="M 110 34 C 116 28, 118 26, 114 24 C 110 24, 110 30, 108 34 Z" fill="#E0F7FA"/>
+    <path d="M 98 42 Q 106 46 102 50" stroke="#FF4081" stroke-width="1.5" fill="none"/>
+    <path d="M 104 38 Q 112 42 108 46" stroke="#FF4081" stroke-width="1.5" fill="none"/>
+
+    <!-- ===================== SIDE FINS ===================== -->
+    <path d="M 32 68 L 22 72 L 32 76 Z" fill="#7C4DFF"/>
+    <path d="M 33 80 L 24 84 L 34 88 Z" fill="#AA00FF"/>
+    <path d="M 35 92 L 26 95 L 36 98 Z" fill="#4A148C"/>
+    <path d="M 96 68 L 106 72 L 96 76 Z" fill="#7C4DFF"/>
+    <path d="M 95 80 L 104 84 L 94 88 Z" fill="#AA00FF"/>
+    <path d="M 93 92 L 102 95 L 92 98 Z" fill="#4A148C"/>
+
+    <!-- ===================== BLOCKY CUBIC BODY ===================== -->
+    <path d="M 36 40 C 34 30, 92 30, 92 40 L 96 102 C 96 108, 32 108, 32 102 Z" fill="url(#cosmicBodyGrad)"/>
+    <path d="M 36 40 C 34 30, 92 30, 92 40 L 96 102 C 96 108, 32 108, 32 102 Z" fill="url(#nebulaSwirl)"/>
+
+    <!-- Stardust sparkles on body -->
+    <circle cx="48" cy="72" r="1" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="78" cy="82" r="1.2" fill="#FF80AB" opacity="0.9"/>
+    <circle cx="60" cy="94" r="1" fill="#EA80FC" opacity="0.8"/>
+
+    <!-- Energy Filaments -->
+    <g stroke="#E040FB" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.75">
+      <path d="M 44 58 Q 40 70 42 82 Q 46 90 44 100"/>
+      <path d="M 42 74 Q 48 82 46 94"/>
+      <path d="M 84 58 Q 88 70 86 82 Q 82 90 84 100"/>
+      <path d="M 86 74 Q 80 82 82 94"/>
+    </g>
+
+    <!-- PINK EYES -->
+    <g class="pulse-eye" filter="url(#cosmicEyeGlow)">
+      <polygon points="40,54 58,60 42,66" fill="#FF4081"/>
+      <polygon points="43,56 55,60 44,64" fill="#FFFFFF"/>
+      <polygon points="88,54 70,60 86,66" fill="#FF4081"/>
+      <polygon points="85,56 73,60 84,64" fill="#FFFFFF"/>
+    </g>
+
+    <!-- MOUTH -->
+    <path d="M 61 67 L 64 64 L 67 67" stroke="#FF4081" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+  </g>
+</svg>

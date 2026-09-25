@@ -1,0 +1,66 @@
+[
+  {
+    "id": "s3-grim",
+    "mainspritename": "Grim",
+    "varient": "normal",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-grim",
+    "mainspritename": "Grim",
+    "varient": "cube",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-grim",
+    "mainspritename": "Grim",
+    "varient": "gold",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "bonus": "3× elimination XP"
+  },
+  {
+    "id": "s3-grim",
+    "mainspritename": "Grim",
+    "varient": "gummy",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-grim",
+    "mainspritename": "Grim",
+    "varient": "galaxy",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-grim",
+    "mainspritename": "Grim",
+    "varient": "holofoil",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-grim",
+    "mainspritename": "Grim",
+    "varient": "gem",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  }
+]

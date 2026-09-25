@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <defs>
+    <!-- Galaxy Swirl Backdrop -->
+    <radialGradient id="bountyJackBg" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#E040FB" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#7C4DFF"/>
+      <stop offset="75%" stop-color="#311B92"/>
+      <stop offset="100%" stop-color="#12005e"/>
+    </radialGradient>
+
+    <!-- Cosmic Swirl Body Gradient -->
+    <linearGradient id="cosmicBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF4081"/>
+      <stop offset="35%" stop-color="#E040FB"/>
+      <stop offset="70%" stop-color="#7C4DFF"/>
+      <stop offset="100%" stop-color="#00E5FF"/>
+    </linearGradient>
+
+    <!-- Lime Face Gradient -->
+    <linearGradient id="bountyLimeFace" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#EEFF41"/>
+      <stop offset="60%" stop-color="#C6FF00"/>
+      <stop offset="100%" stop-color="#76FF03"/>
+    </linearGradient>
+
+    <!-- Cosmic Ear Gradient -->
+    <linearGradient id="cosmicEar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF4081"/>
+      <stop offset="50%" stop-color="#D500F9"/>
+      <stop offset="100%" stop-color="#651FFF"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .el{transform-box:fill-box;transform-origin:center}
+    .bob{animation:bob 2.8s ease-in-out infinite}
+    .blink{animation:blink 3.8s steps(1,end) infinite}
+    .ear-twitch{animation:twitch 3.2s ease-in-out infinite alternate}
+    .vortex-spin{animation:spin 20s linear infinite}
+    .star-twinkle{animation:twinkle 1.8s ease-in-out infinite alternate}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+    @keyframes blink{0%,92%,100%{transform:scaleY(1)}95%,98%{transform:scaleY(.1)}}
+    @keyframes twitch{0%,90%,100%{transform:rotate(0deg)}94%{transform:rotate(-4deg)}97%{transform:rotate(3deg)}}
+    @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+    @keyframes twinkle{0%{opacity:.3;transform:scale(.7)}100%{opacity:1;transform:scale(1.3)}}
+    @media(prefers-reduced-motion:reduce){.el{animation:none!important}}
+  </style>
+
+  <!-- Card Background -->
+  <rect width="128" height="128" rx="20" fill="url(#bountyJackBg)"/>
+
+  <!-- Rotating Cosmic Galaxy Swirl Lines -->
+  <g class="vortex-spin el" opacity="0.4" stroke="#FF80AB" stroke-width="1.2" fill="none">
+    <path d="M 64 64 C 84 44, 114 64, 114 84 C 114 114, 64 124, 34 104 C 4 84, 14 34, 44 14 C 74 -6, 124 24, 124 64"/>
+    <path d="M 64 64 C 44 84, 14 64, 14 44 C 14 14, 64 4, 94 24 C 124 44, 114 94, 84 114 M 64 64 C 74 54, 94 64, 84 84"/>
+  </g>
+
+  <!-- Twinkling Stardust -->
+  <g>
+    <circle class="star-twinkle" cx="20" cy="25" r="1.5" fill="#FFFFFF"/>
+    <circle class="star-twinkle" style="animation-delay:0.5s" cx="108" cy="30" r="2" fill="#FF80AB"/>
+    <circle class="star-twinkle" style="animation-delay:0.9s" cx="15" cy="95" r="1.8" fill="#80D8FF"/>
+    <circle class="star-twinkle" style="animation-delay:1.3s" cx="112" cy="100" r="1.5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Ambient Cosmic Purple Glow -->
+  <ellipse cx="64" cy="68" rx="46" ry="42" fill="#E040FB" opacity="0.3"/>
+
+  <g class="el bob">
+    <!-- Drop Shadow -->
+    <ellipse cx="64" cy="118" rx="26" ry="6" fill="#000000" opacity="0.6"/>
+
+    <!-- LEGS -->
+    <rect x="42" y="104" width="13" height="10" rx="3" fill="#4A148C"/>
+    <rect x="73" y="104" width="13" height="10" rx="3" fill="#311B92"/>
+
+    <!-- COSMIC CHUNKY BODY -->
+    <path d="M 34 38 C 32 24, 94 24, 94 38 L 94 96 C 94 104, 34 104, 34 96 Z" fill="url(#cosmicBody)"/>
+
+    <!-- Swirling Nebula Texture Overlay -->
+    <path d="M 38 40 C 48 30, 80 50, 90 70 C 80 90, 48 95, 38 75 Z" fill="#80D8FF" opacity="0.25"/>
+
+    <!-- PALE LIME BELLY PATCH -->
+    <ellipse cx="64" cy="74" rx="18" ry="20" fill="url(#bountyLimeFace)" opacity="0.85"/>
+
+    <!-- STUBBY ARMS -->
+    <path d="M 34 68 L 24 72 L 34 76 Z" fill="#FF4081"/>
+    <path d="M 94 68 L 104 72 L 94 76 Z" fill="#E040FB"/>
+
+    <!-- ===================== COSMIC RABBIT EARS ===================== -->
+    <g class="el ear-twitch">
+      <!-- Left Ear -->
+      <path d="M 44 26 C 38 6, 42 -4, 48 4 C 54 12, 52 24, 54 26 Z" fill="#D500F9"/>
+      <path d="M 44 24 C 40 8, 44 2, 48 8 C 51 14, 50 22, 51 24 Z" fill="url(#cosmicEar)"/>
+
+      <!-- Right Ear -->
+      <path d="M 74 26 C 76 24, 74 12, 80 4 C 86 -4, 90 6, 84 26 Z" fill="#651FFF"/>
+      <path d="M 77 24 C 78 22, 77 14, 80 8 C 84 2, 88 8, 84 24 Z" fill="url(#cosmicEar)"/>
+
+      <!-- Hair Tuft -->
+      <ellipse cx="64" cy="22" rx="7" ry="5" fill="#FF4081"/>
+    </g>
+
+    <!-- ===================== MAGENTA / PURPLE HEADBAND ===================== -->
+    <rect x="31" y="24" width="66" height="8" rx="2" fill="#C51162"/>
+    <rect x="31" y="24" width="66" height="3" rx="1" fill="#FF80AB" opacity="0.8"/>
+
+    <!-- ===================== LIME GREEN BUNNY FACE ===================== -->
+    <path d="M 36 32 C 34 22, 92 22, 92 32 C 92 58, 36 58, 36 32 Z" fill="url(#bountyLimeFace)"/>
+
+    <!-- NOSE -->
+    <ellipse cx="64" cy="46" rx="3.5" ry="2.5" fill="#33691E"/>
+
+    <!-- BUCK TEETH -->
+    <rect x="60" y="52" width="3.5" height="5" rx="1" fill="#FFFFFF" stroke="#76FF03" stroke-width="0.5"/>
+    <rect x="64.5" y="52" width="3.5" height="5" rx="1" fill="#FFFFFF" stroke="#76FF03" stroke-width="0.5"/>
+
+    <!-- SMILE LINE -->
+    <path d="M 54 48 Q 64 54 74 48" stroke="#33691E" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+
+    <!-- ===================== CONNECTED EXPRESSIVE EYES ===================== -->
+    <path d="M 44 28 C 40 40, 56 44, 62 42 C 68 40, 84 40, 82 28 C 80 22, 66 22, 63 26 C 60 22, 46 22, 44 28 Z" fill="#FFFFFF"/>
+
+    <!-- CYAN PUPILS -->
+    <g class="el blink">
+      <!-- Left Pupil -->
+      <ellipse cx="52" cy="34" rx="4" ry="6" fill="#00E5FF"/>
+      <ellipse cx="52" cy="34" rx="2.5" ry="4" fill="#00838F"/>
+      <circle cx="50" cy="31" r="1.5" fill="#FFFFFF"/>
+
+      <!-- Right Pupil -->
+      <ellipse cx="72" cy="34" rx="4" ry="6" fill="#00E5FF"/>
+      <ellipse cx="72" cy="34" rx="2.5" ry="4" fill="#00838F"/>
+      <circle cx="70" cy="31" r="1.5" fill="#FFFFFF"/>
+    </g>
+
+    <!-- Brow -->
+    <path d="M 44 24 Q 52 20 60 25 Q 68 20 78 24" stroke="#33691E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

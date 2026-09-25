@@ -1,0 +1,287 @@
+[
+  {
+    "id": "s4-storm-scout-normal",
+    "spriteId": "s4-storm-scout",
+    "mainSpriteName": "Storm Scout",
+    "variant": "normal",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "rare",
+
+    "ability": {
+      "name": "Grants the Overdrive effect after taking a certain amount of storm damage. At max level, it reveals future Storm Circles.",
+      "type": "Standard",
+      "description": "Grants the Overdrive effect after taking a certain amount of storm damage. At max level, it reveals future Storm Circles."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Overdrive duration and circle reveal improve with each level.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 100,
+      "findNotes": "Added in v42.10 update on September 3. Found in chests across the map.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Normal",
+      "effect": "Standard Sprite ability"
+    },
+
+    "release": {
+      "patch": "v42.10",
+      "addedAt": "3-sept-2026",
+      "status": "new",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["normal", "storm-scout", "c7-s4"],
+      "searchKeywords": ["Storm Scout Sprite", "Storm Scout Fortnite", "Storm Scout Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-storm-scout-gold",
+    "spriteId": "s4-storm-scout",
+    "mainSpriteName": "Storm Scout",
+    "variant": "gold",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "rare",
+
+    "ability": {
+      "name": "Grants the Overdrive effect after taking a certain amount of storm damage. At max level, it reveals future Storm Circles.",
+      "type": "Enhanced",
+      "description": "Grants the Overdrive effect after taking a certain amount of storm damage. At max level, it reveals future Storm Circles."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Overdrive duration and circle reveal improve with each level.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 300,
+      "findNotes": "Added in v42.10 update on September 3. Found in chests across the map.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Gold",
+      "effect": "Gold variant — 3x elimination XP bonus"
+    },
+
+    "release": {
+      "patch": "v42.10",
+      "addedAt": "3-sept-2026",
+      "status": "new",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["gold", "storm-scout", "c7-s4"],
+      "searchKeywords": ["Storm Scout Sprite", "Storm Scout Fortnite", "Storm Scout Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-storm-scout-cheat-master",
+    "spriteId": "s4-storm-scout",
+    "mainSpriteName": "Storm Scout",
+    "variant": "cheat-master",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "rare",
+
+    "ability": {
+      "name": "Grants the Overdrive effect after taking a certain amount of storm damage. At max level, it reveals future Storm Circles.",
+      "type": "Cheat",
+      "description": "Grants the Overdrive effect after taking a certain amount of storm damage. At max level, it reveals future Storm Circles."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Overdrive duration and circle reveal improve with each level.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 400,
+      "findNotes": "Added in v42.10 update on September 3. Found in chests across the map.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Cheat Master",
+      "effect": "Cheat Master — Button Mash cheat ability"
+    },
+
+    "release": {
+      "patch": "v42.10",
+      "addedAt": "3-sept-2026",
+      "status": "new",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["cheat-master", "storm-scout", "c7-s4"],
+      "searchKeywords": ["Storm Scout Sprite", "Storm Scout Fortnite", "Storm Scout Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-storm-scout-loot-hacker",
+    "spriteId": "s4-storm-scout",
+    "mainSpriteName": "Storm Scout",
+    "variant": "loot-hacker",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "legendary",
+
+    "ability": {
+      "name": "Loot Hacker variant of Storm Scout Sprite.",
+      "type": "Tactical",
+      "description": "Loot Hacker variant of Storm Scout Sprite."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Prediction accuracy improves with each level.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 0,
+      "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Loot Hacker",
+      "effect": "Loot Hacker — High-elevation loot run variant"
+    },
+
+    "release": {
+      "patch": "v42.10",
+      "addedAt": "3-sept-2026",
+      "status": "new",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["loot-hacker", "storm-scout", "c7-s4"],
+      "searchKeywords": ["Storm Scout Sprite", "Storm Scout Fortnite", "Storm Scout Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-storm-scout-bounty-hunter",
+    "spriteId": "s4-storm-scout",
+    "mainSpriteName": "Storm Scout",
+    "variant": "bounty-hunter",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "rare",
+
+    "ability": {
+      "name": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+      "type": "Combat",
+      "description": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Only levels through eliminations.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 0,
+      "findNotes": "Added in v42.20 update on September 17.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Bounty Hunter",
+      "effect": "Bounty Hunter — Elimination-based sprite finder"
+    },
+
+    "release": {
+      "patch": "v42.20",
+      "addedAt": "17-sept-2026",
+      "status": "upcoming",
+      "available": false
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["bounty-hunter", "storm-scout", "c7-s4"],
+      "searchKeywords": ["Storm Scout Sprite", "Storm Scout Fortnite", "Storm Scout Chapter 7 Season 4"]
+    }
+  }
+]

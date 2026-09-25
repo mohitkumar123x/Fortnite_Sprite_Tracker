@@ -1,0 +1,287 @@
+[
+  {
+    "id": "s4-tails-normal",
+    "spriteId": "s4-tails",
+    "mainSpriteName": "Tails",
+    "variant": "normal",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "epic",
+
+    "ability": {
+      "name": "Double jump to hover in mid-air. Hover speed grows with each level.",
+      "type": "Standard",
+      "description": "Double jump to hover in mid-air. Hover speed grows with each level."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 200,
+      "findNotes": "Sonic collab — find in chests, extract before the end of the match.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Normal",
+      "effect": "Standard Sprite ability"
+    },
+
+    "release": {
+      "patch": "v42.0",
+      "addedAt": "",
+      "status": "released",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["normal", "tails", "c7-s4"],
+      "searchKeywords": ["Tails Sprite", "Tails Fortnite", "Tails Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-tails-gold",
+    "spriteId": "s4-tails",
+    "mainSpriteName": "Tails",
+    "variant": "gold",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "epic",
+
+    "ability": {
+      "name": "Double jump to hover in mid-air. Hover speed grows with each level.",
+      "type": "Enhanced",
+      "description": "Double jump to hover in mid-air. Hover speed grows with each level."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 500,
+      "findNotes": "Sonic collab — find in chests, extract before the end of the match.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Gold",
+      "effect": "Gold variant — 3x elimination XP bonus"
+    },
+
+    "release": {
+      "patch": "v42.0",
+      "addedAt": "",
+      "status": "released",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["gold", "tails", "c7-s4"],
+      "searchKeywords": ["Tails Sprite", "Tails Fortnite", "Tails Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-tails-cheat-master",
+    "spriteId": "s4-tails",
+    "mainSpriteName": "Tails",
+    "variant": "cheat-master",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "epic",
+
+    "ability": {
+      "name": "Double jump to hover in mid-air. Hover speed grows with each level.",
+      "type": "Cheat",
+      "description": "Double jump to hover in mid-air. Hover speed grows with each level."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 600,
+      "findNotes": "Sonic collab — find in chests, extract before the end of the match.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Cheat Master",
+      "effect": "Cheat Master — Button Mash cheat ability"
+    },
+
+    "release": {
+      "patch": "v42.0",
+      "addedAt": "",
+      "status": "released",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["cheat-master", "tails", "c7-s4"],
+      "searchKeywords": ["Tails Sprite", "Tails Fortnite", "Tails Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-tails-loot-hacker",
+    "spriteId": "s4-tails",
+    "mainSpriteName": "Tails",
+    "variant": "loot-hacker",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "epic",
+
+    "ability": {
+      "name": "Loot Hacker variant of Tails Sprite.",
+      "type": "Tactical",
+      "description": "Loot Hacker variant of Tails Sprite."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Hover speed grows with each level.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 0,
+      "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Loot Hacker",
+      "effect": "Loot Hacker — High-elevation loot run variant"
+    },
+
+    "release": {
+      "patch": "v42.10",
+      "addedAt": "3-sept-2026",
+      "status": "new",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["loot-hacker", "tails", "c7-s4"],
+      "searchKeywords": ["Tails Sprite", "Tails Fortnite", "Tails Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-tails-bounty-hunter",
+    "spriteId": "s4-tails",
+    "mainSpriteName": "Tails",
+    "variant": "bounty-hunter",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "epic",
+
+    "ability": {
+      "name": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+      "type": "Combat",
+      "description": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Only levels through eliminations.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 0,
+      "findNotes": "Added in v42.20 update on September 17.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Bounty Hunter",
+      "effect": "Bounty Hunter — Elimination-based sprite finder"
+    },
+
+    "release": {
+      "patch": "v42.20",
+      "addedAt": "17-sept-2026",
+      "status": "upcoming",
+      "available": false
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["bounty-hunter", "tails", "c7-s4"],
+      "searchKeywords": ["Tails Sprite", "Tails Fortnite", "Tails Chapter 7 Season 4"]
+    }
+  }
+]

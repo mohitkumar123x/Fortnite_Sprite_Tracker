@@ -1,5 +1,77 @@
 [
   {
+    "_comment": "==================================================================="
+  },
+  {
+    "_comment": "SPRITES DATABASE — Fortnite Sprite Tracker"
+  },
+  {
+    "_comment": "==================================================================="
+  },
+  {
+    "_comment": "STRUCTURE: Each sprite has id, name, seasonId, rarity, ability, findNotes, levelNotes, variants[], available, new, launchedAt."
+  },
+  {
+    "_comment": "VARIANT IDS: normal | gold | cheat-master | loot-hacker | reaper | bounty-hunter | gummy | galaxy | holofoil | gem | cube | quack"
+  },
+  {
+    "_comment": "AVAILABLE: true = currently obtainable in live matches. false = unreleased or data-mined, not yet in-game."
+  },
+  {
+    "_comment": "NEW: true = added in a recent patch, shown in \"New Sprites\" card on the tracker home."
+  },
+  {
+    "_comment": "LAUNCHED_AT: patch date when the sprite went live (e.g. \"3-sept-2026\" = v42.10, \"17-sept-2026\" = v42.20)."
+  },
+  {
+    "_comment": "SEASON IDS: c7-s4 = Chapter 7 Season 4 (Override), c7-s3 = Chapter 7 Season 3 (Archive)."
+  },
+  {
+    "_comment": "==================================================================="
+  },
+  {
+    "_comment": "--- C7-S4: CHAPTER 7 SEASON 4 — OVERRIDE (Current) ---"
+  },
+  {
+    "_comment": "--- Base sprites: bush, adventure, 8-bit, jonesy, killswitch, sonic, tails, shadow, jackrabbit, crown, klombo, xray, mega-man, overshield, onigiri, storm-scout ---"
+  },
+  {
+    "_comment": "--- Each base sprite has: normal, gold, cheat-master variants (3 variants per base) ---"
+  },
+  {
+    "_comment": "--- Loot Hacker variants: separate sprite entries with id prefix \"loot-hacker-\" ---"
+  },
+  {
+    "_comment": "--- Gold variants (v42.20): separate entries with id prefix \"gold-\" for crash-bandicoot, blinky, pond, morgana, birthday ---"
+  },
+  {
+    "_comment": "--- Cheat Master variants (v42.20): separate entries with id prefix \"cheat-master-\" ---"
+  },
+  {
+    "_comment": "--- Bounty Hunter variants (v42.20): separate entries with id prefix \"bounty-hunter-\" (unreleased, available: false) ---"
+  },
+  {
+    "_comment": "--- Bounty Hunter Crown is the only available bounty-hunter sprite (reaper variant) ---"
+  },
+  {
+    "_comment": "--- Unreleased v42.20 sprites (available: false): morgana, birthday, phase-dash, head-shot, all bounty-hunter-* except crown ---"
+  },
+  {
+    "_comment": "==================================================================="
+  },
+  {
+    "_comment": "--- C7-S3: CHAPTER 7 SEASON 3 — ARCHIVE (Past) ---"
+  },
+  {
+    "_comment": "--- Archived sprites: s3-batman, s3-air, s3-aura, s3-earth, s3-fire, s3-water, s3-ghost, s3-llama, s3-peeky-peely, s3-zero-point, s3-fishy, s3-demon, s3-king, s3-john-wick, s3-duck, s3-dream, s3-punk, s3-vini-jr, s3-burnt-peanut, s3-striker, s3-boss, s3-grim, s3-seven, s3-ironmouse, s3-pollo ---"
+  },
+  {
+    "_comment": "--- Each archive sprite has: normal, gold, gummy, galaxy, holofoil/gem/cube/quack variants ---"
+  },
+  {
+    "_comment": "==================================================================="
+  },
+  {
     "id": "bush",
     "name": "Bush",
     "seasonId": "c7-s4",
@@ -17,16 +89,17 @@
         "id": "gold",
         "label": "Gold",
         "dustCost": 300,
-        "bonus": "3× elimination XP"
+        "bonus": "Gold variant — 3x elimination XP bonus"
       },
       {
         "id": "cheat-master",
         "label": "Cheat Master",
         "dustCost": 400,
-        "bonus": "Button Mash"
+        "bonus": "Cheat Master — Button Mash cheat ability"
       }
     ],
-    "available": true
+    "available": true,
+    "new": false
   },
   {
     "id": "adventure",
@@ -45,16 +118,17 @@
         "id": "gold",
         "label": "Gold",
         "dustCost": 300,
-        "bonus": "3× elimination XP"
+        "bonus": "Gold variant — 3x elimination XP bonus"
       },
       {
         "id": "cheat-master",
         "label": "Cheat Master",
         "dustCost": 400,
-        "bonus": "Button Mash"
+        "bonus": "Cheat Master — Button Mash cheat ability"
       }
     ],
-    "available": true
+    "available": true,
+    "new": false
   },
   {
     "id": "8-bit",
@@ -73,16 +147,17 @@
         "id": "gold",
         "label": "Gold",
         "dustCost": 300,
-        "bonus": "3× elimination XP"
+        "bonus": "Gold variant — 3x elimination XP bonus"
       },
       {
         "id": "cheat-master",
         "label": "Cheat Master",
         "dustCost": 400,
-        "bonus": "Button Mash"
+        "bonus": "Cheat Master — Button Mash cheat ability"
       }
     ],
-    "available": true
+    "available": true,
+    "new": false
   },
   {
     "id": "jonesy",
@@ -101,16 +176,17 @@
         "id": "gold",
         "label": "Gold",
         "dustCost": 300,
-        "bonus": "3× elimination XP"
+        "bonus": "Gold variant — 3x elimination XP bonus"
       },
       {
         "id": "cheat-master",
         "label": "Cheat Master",
         "dustCost": 400,
-        "bonus": "Button Mash"
+        "bonus": "Cheat Master — Button Mash cheat ability"
       }
     ],
-    "available": true
+    "available": true,
+    "new": false
   },
   {
     "id": "killswitch",
@@ -129,16 +205,17 @@
         "id": "gold",
         "label": "Gold",
         "dustCost": 500,
-        "bonus": "3× elimination XP"
+        "bonus": "Gold variant — 3x elimination XP bonus"
       },
       {
         "id": "cheat-master",
         "label": "Cheat Master",
         "dustCost": 600,
-        "bonus": "Button Mash"
+        "bonus": "Cheat Master — Button Mash cheat ability"
       }
     ],
-    "available": true
+    "available": true,
+    "new": false
   },
   {
     "id": "sonic",
@@ -157,16 +234,17 @@
         "id": "gold",
         "label": "Gold",
         "dustCost": 500,
-        "bonus": "3× elimination XP"
+        "bonus": "Gold variant — 3x elimination XP bonus"
       },
       {
         "id": "cheat-master",
         "label": "Cheat Master",
         "dustCost": 600,
-        "bonus": "Button Mash"
+        "bonus": "Cheat Master — Button Mash cheat ability"
       }
     ],
-    "available": true
+    "available": true,
+    "new": false
   },
   {
     "id": "tails",
@@ -185,16 +263,17 @@
         "id": "gold",
         "label": "Gold",
         "dustCost": 500,
-        "bonus": "3× elimination XP"
+        "bonus": "Gold variant — 3x elimination XP bonus"
       },
       {
         "id": "cheat-master",
         "label": "Cheat Master",
         "dustCost": 600,
-        "bonus": "Button Mash"
+        "bonus": "Cheat Master — Button Mash cheat ability"
       }
     ],
-    "available": true
+    "available": true,
+    "new": false
   },
   {
     "id": "shadow",
@@ -213,16 +292,17 @@
         "id": "gold",
         "label": "Gold",
         "dustCost": 500,
-        "bonus": "3× elimination XP"
+        "bonus": "Gold variant — 3x elimination XP bonus"
       },
       {
         "id": "cheat-master",
         "label": "Cheat Master",
         "dustCost": 600,
-        "bonus": "Button Mash"
+        "bonus": "Cheat Master — Button Mash cheat ability"
       }
     ],
-    "available": true
+    "available": true,
+    "new": false
   },
   {
     "id": "jackrabbit",
@@ -241,16 +321,17 @@
         "id": "gold",
         "label": "Gold",
         "dustCost": 800,
-        "bonus": "3× elimination XP"
+        "bonus": "Gold variant — 3x elimination XP bonus"
       },
       {
         "id": "cheat-master",
         "label": "Cheat Master",
         "dustCost": 900,
-        "bonus": "Button Mash"
+        "bonus": "Cheat Master — Button Mash cheat ability"
       }
     ],
-    "available": true
+    "available": true,
+    "new": false
   },
   {
     "id": "crown",
@@ -270,16 +351,17 @@
         "id": "gold",
         "label": "Gold",
         "dustCost": 1200,
-        "bonus": "3× elimination XP"
+        "bonus": "Gold variant — 3x elimination XP bonus"
       },
       {
         "id": "cheat-master",
         "label": "Cheat Master",
         "dustCost": 1400,
-        "bonus": "Button Mash"
+        "bonus": "Cheat Master — Button Mash cheat ability"
       }
     ],
-    "available": true
+    "available": true,
+    "new": false
   },
   {
     "id": "klombo",
@@ -299,16 +381,17 @@
         "id": "gold",
         "label": "Gold",
         "dustCost": 1200,
-        "bonus": "3× elimination XP"
+        "bonus": "Gold variant — 3x elimination XP bonus"
       },
       {
         "id": "cheat-master",
         "label": "Cheat Master",
         "dustCost": 1400,
-        "bonus": "Button Mash"
+        "bonus": "Cheat Master — Button Mash cheat ability"
       }
     ],
-    "available": true
+    "available": true,
+    "new": false
   },
   {
     "id": "s3-batman",
@@ -838,13 +921,13 @@
         "id": "gold",
         "label": "Gold",
         "dustCost": 800,
-        "bonus": "3× elimination XP"
+        "bonus": "Gold variant — 3x elimination XP bonus"
       },
       {
         "id": "cheat-master",
         "label": "Cheat Master",
         "dustCost": 900,
-        "bonus": "Button Mash"
+        "bonus": "Cheat Master — Button Mash cheat ability"
       }
     ],
     "available": true
@@ -888,13 +971,13 @@
         "id": "gold",
         "label": "Gold",
         "dustCost": 300,
-        "bonus": "3× elimination XP"
+        "bonus": "Gold variant — 3x elimination XP bonus"
       },
       {
         "id": "cheat-master",
         "label": "Cheat Master",
         "dustCost": 400,
-        "bonus": "Button Mash"
+        "bonus": "Cheat Master — Button Mash cheat ability"
       }
     ],
     "available": true
@@ -919,13 +1002,13 @@
         "id": "gold",
         "label": "Gold",
         "dustCost": 300,
-        "bonus": "3× elimination XP"
+        "bonus": "Gold variant — 3x elimination XP bonus"
       },
       {
         "id": "cheat-master",
         "label": "Cheat Master",
         "dustCost": 400,
-        "bonus": "Button Mash"
+        "bonus": "Cheat Master — Button Mash cheat ability"
       }
     ],
     "available": true
@@ -950,13 +1033,13 @@
         "id": "gold",
         "label": "Gold",
         "dustCost": 300,
-        "bonus": "3× elimination XP"
+        "bonus": "Gold variant — 3x elimination XP bonus"
       },
       {
         "id": "cheat-master",
         "label": "Cheat Master",
         "dustCost": 400,
-        "bonus": "Button Mash"
+        "bonus": "Cheat Master — Button Mash cheat ability"
       }
     ],
     "available": true
@@ -975,7 +1058,8 @@
     "variants": [
       {
         "id": "loot-hacker",
-        "label": "Loot Hacker"
+        "label": "Loot Hacker",
+        "bonus": "Loot Hacker — High-elevation loot run variant"
       }
     ],
     "available": true
@@ -994,7 +1078,8 @@
     "variants": [
       {
         "id": "loot-hacker",
-        "label": "Loot Hacker"
+        "label": "Loot Hacker",
+        "bonus": "Loot Hacker — High-elevation loot run variant"
       }
     ],
     "available": true
@@ -1013,7 +1098,8 @@
     "variants": [
       {
         "id": "loot-hacker",
-        "label": "Loot Hacker"
+        "label": "Loot Hacker",
+        "bonus": "Loot Hacker — High-elevation loot run variant"
       }
     ],
     "available": true
@@ -1032,7 +1118,8 @@
     "variants": [
       {
         "id": "loot-hacker",
-        "label": "Loot Hacker"
+        "label": "Loot Hacker",
+        "bonus": "Loot Hacker — High-elevation loot run variant"
       }
     ],
     "available": true
@@ -1051,7 +1138,8 @@
     "variants": [
       {
         "id": "loot-hacker",
-        "label": "Loot Hacker"
+        "label": "Loot Hacker",
+        "bonus": "Loot Hacker — High-elevation loot run variant"
       }
     ],
     "available": true
@@ -1070,7 +1158,8 @@
     "variants": [
       {
         "id": "loot-hacker",
-        "label": "Loot Hacker"
+        "label": "Loot Hacker",
+        "bonus": "Loot Hacker — High-elevation loot run variant"
       }
     ],
     "available": true
@@ -1089,7 +1178,8 @@
     "variants": [
       {
         "id": "loot-hacker",
-        "label": "Loot Hacker"
+        "label": "Loot Hacker",
+        "bonus": "Loot Hacker — High-elevation loot run variant"
       }
     ],
     "available": true
@@ -1108,7 +1198,8 @@
     "variants": [
       {
         "id": "loot-hacker",
-        "label": "Loot Hacker"
+        "label": "Loot Hacker",
+        "bonus": "Loot Hacker — High-elevation loot run variant"
       }
     ],
     "available": true
@@ -1127,7 +1218,8 @@
     "variants": [
       {
         "id": "loot-hacker",
-        "label": "Loot Hacker"
+        "label": "Loot Hacker",
+        "bonus": "Loot Hacker — High-elevation loot run variant"
       }
     ],
     "available": true
@@ -1146,7 +1238,8 @@
     "variants": [
       {
         "id": "loot-hacker",
-        "label": "Loot Hacker"
+        "label": "Loot Hacker",
+        "bonus": "Loot Hacker — High-elevation loot run variant"
       }
     ],
     "available": true
@@ -1165,7 +1258,8 @@
     "variants": [
       {
         "id": "loot-hacker",
-        "label": "Loot Hacker"
+        "label": "Loot Hacker",
+        "bonus": "Loot Hacker — High-elevation loot run variant"
       }
     ],
     "available": true
@@ -1184,7 +1278,8 @@
     "variants": [
       {
         "id": "loot-hacker",
-        "label": "Loot Hacker"
+        "label": "Loot Hacker",
+        "bonus": "Loot Hacker — High-elevation loot run variant"
       }
     ],
     "available": true
@@ -1203,7 +1298,8 @@
     "variants": [
       {
         "id": "loot-hacker",
-        "label": "Loot Hacker"
+        "label": "Loot Hacker",
+        "bonus": "Loot Hacker — High-elevation loot run variant"
       }
     ],
     "available": true
@@ -1222,7 +1318,8 @@
     "variants": [
       {
         "id": "loot-hacker",
-        "label": "Loot Hacker"
+        "label": "Loot Hacker",
+        "bonus": "Loot Hacker — High-elevation loot run variant"
       }
     ],
     "available": true
@@ -1241,7 +1338,8 @@
     "variants": [
       {
         "id": "loot-hacker",
-        "label": "Loot Hacker"
+        "label": "Loot Hacker",
+        "bonus": "Loot Hacker — High-elevation loot run variant"
       }
     ],
     "available": true
@@ -1600,5 +1698,852 @@
     "variantCost": 10000,
     "dropChance": 2.97,
     "location": "Sprite Chests, Cheat Codes"
+  },
+  {
+    "id": "crash-bandicoot",
+    "name": "Crash Bandicoot",
+    "seasonId": "c7-s4",
+    "rarity": "legendary",
+    "ability": "Active – Jump in Air: Triggers a whirlwind attack that damages and knocks back nearby enemies. Damage increases and the cooldown decreases with each level up.",
+    "findNotes": "Added in v42.20 update on September 17. Spotted near high and mountainous areas.",
+    "levelNotes": "Damage increases and the cooldown decreases with each level up.",
+    "new": true,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 400
+      }
+    ],
+    "available": true
+  },
+  {
+    "id": "blinky",
+    "name": "Blinky",
+    "seasonId": "c7-s4",
+    "rarity": "legendary",
+    "ability": "Found in the world at nighttime. Grants a temporary cloak when you take damage. Cloak duration increases with each level up.",
+    "findNotes": "Added in v42.20 update on September 17. Pac-Man collab sprite — found at nighttime.",
+    "levelNotes": "Cloak duration increases with each level up.",
+    "new": true,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 400
+      }
+    ],
+    "available": true
+  },
+  {
+    "id": "pond",
+    "name": "Pond",
+    "seasonId": "c7-s4",
+    "rarity": "legendary",
+    "ability": "Active – Jump Shortly After Landing: Triggers a Super Jump if charges are available. Charges regenerate over time. Super Jump strength increases and the cooldown decreases with each level up.",
+    "findNotes": "Added in v42.20 update on September 17. Community creation challenge winner.",
+    "levelNotes": "Super Jump strength increases and the cooldown decreases with each level up.",
+    "new": true,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 400
+      }
+    ],
+    "available": true
+  },
+  {
+    "id": "morgana",
+    "name": "Morgana",
+    "seasonId": "c7-s4",
+    "rarity": "mythic",
+    "ability": "Increases the effectiveness of healing items. Healing effectiveness increases with each level up.",
+    "findNotes": "Added in v42.20 update on September 17 (available next week). Persona 5 collab sprite.",
+    "levelNotes": "Healing effectiveness increases with each level up.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 600
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "dustCost": 1200,
+        "bonus": "Gold variant — 3x elimination XP bonus"
+      },
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "dustCost": 1400,
+        "bonus": "Cheat Master — Button Mash cheat ability"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "birthday",
+    "name": "Birthday",
+    "seasonId": "c7-s4",
+    "rarity": "mythic",
+    "ability": "Spotted near high and mountainous areas. Opening chests has a chance to spawn a piece of cake, while eliminations can spawn cake at maximum level. The chance of spawning cake increases with each level up.",
+    "findNotes": "Added in v42.20 update on September 17 (available September 26). Fortnite 9th birthday event sprite.",
+    "levelNotes": "The chance of spawning cake increases with each level up.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 600
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "dustCost": 1200,
+        "bonus": "Gold variant — 3x elimination XP bonus"
+      },
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "dustCost": 1400,
+        "bonus": "Cheat Master — Button Mash cheat ability"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "gold-crash-bandicoot",
+    "name": "Gold Crash Bandicoot",
+    "seasonId": "c7-s4",
+    "rarity": "legendary",
+    "ability": "Gold variant of Crash Bandicoot Sprite.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Gold variant — Crash Bandicoot level bonuses apply.",
+    "new": true,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      }
+    ],
+    "available": true
+  },
+  {
+    "id": "gold-blinky",
+    "name": "Gold Blinky",
+    "seasonId": "c7-s4",
+    "rarity": "legendary",
+    "ability": "Gold variant of Blinky Sprite.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Gold variant — Blinky level bonuses apply.",
+    "new": true,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      }
+    ],
+    "available": true
+  },
+  {
+    "id": "gold-pond",
+    "name": "Gold Pond",
+    "seasonId": "c7-s4",
+    "rarity": "legendary",
+    "ability": "Gold variant of Pond Sprite.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Gold variant — Pond level bonuses apply.",
+    "new": true,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      }
+    ],
+    "available": true
+  },
+  {
+    "id": "gold-morgana",
+    "name": "Gold Morgana",
+    "seasonId": "c7-s4",
+    "rarity": "mythic",
+    "ability": "Gold variant of Morgana Sprite.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Gold variant — Morgana level bonuses apply.",
+    "new": true,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "gold-birthday",
+    "name": "Gold Birthday",
+    "seasonId": "c7-s4",
+    "rarity": "mythic",
+    "ability": "Gold variant of Birthday Sprite.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Gold variant — Birthday level bonuses apply.",
+    "new": true,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "gold",
+        "label": "Gold",
+        "bonus": "3× elimination XP"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "loot-hacker-crash-bandicoot",
+    "name": "Loot Hacker Crash Bandicoot",
+    "seasonId": "c7-s4",
+    "rarity": "legendary",
+    "ability": "Loot Hacker variant of Crash Bandicoot Sprite.",
+    "findNotes": "Added in v42.20 update on September 17. Found in high and mountainous areas.",
+    "levelNotes": "Loot Hacker variant — Crash Bandicoot level bonuses apply.",
+    "new": true,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "loot-hacker",
+        "label": "Loot Hacker",
+        "bonus": "Loot Hacker — High-elevation loot run variant"
+      }
+    ],
+    "available": true
+  },
+  {
+    "id": "loot-hacker-blinky",
+    "name": "Loot Hacker Blinky",
+    "seasonId": "c7-s4",
+    "rarity": "legendary",
+    "ability": "Loot Hacker variant of Blinky Sprite.",
+    "findNotes": "Added in v42.20 update on September 17. Found in high and mountainous areas.",
+    "levelNotes": "Loot Hacker variant — Blinky level bonuses apply.",
+    "new": true,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "loot-hacker",
+        "label": "Loot Hacker",
+        "bonus": "Loot Hacker — High-elevation loot run variant"
+      }
+    ],
+    "available": true
+  },
+  {
+    "id": "loot-hacker-pond",
+    "name": "Loot Hacker Pond",
+    "seasonId": "c7-s4",
+    "rarity": "legendary",
+    "ability": "Loot Hacker variant of Pond Sprite.",
+    "findNotes": "Added in v42.20 update on September 17. Found in high and mountainous areas.",
+    "levelNotes": "Loot Hacker variant — Pond level bonuses apply.",
+    "new": true,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "loot-hacker",
+        "label": "Loot Hacker",
+        "bonus": "Loot Hacker — High-elevation loot run variant"
+      }
+    ],
+    "available": true
+  },
+  {
+    "id": "loot-hacker-morgana",
+    "name": "Loot Hacker Morgana",
+    "seasonId": "c7-s4",
+    "rarity": "mythic",
+    "ability": "Loot Hacker variant of Morgana Sprite.",
+    "findNotes": "Added in v42.20 update on September 17. Found in high and mountainous areas.",
+    "levelNotes": "Loot Hacker variant — Morgana level bonuses apply.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "loot-hacker",
+        "label": "Loot Hacker",
+        "bonus": "Loot Hacker — High-elevation loot run variant"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "loot-hacker-birthday",
+    "name": "Loot Hacker Birthday",
+    "seasonId": "c7-s4",
+    "rarity": "mythic",
+    "ability": "Loot Hacker variant of Birthday Sprite.",
+    "findNotes": "Added in v42.20 update on September 17. Found in high and mountainous areas.",
+    "levelNotes": "Loot Hacker variant — Birthday level bonuses apply.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "loot-hacker",
+        "label": "Loot Hacker",
+        "bonus": "Loot Hacker — High-elevation loot run variant"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "cheat-master-crash-bandicoot",
+    "name": "Cheat Master Crash Bandicoot",
+    "seasonId": "c7-s4",
+    "rarity": "legendary",
+    "ability": "Cheat Master variant of Crash Bandicoot Sprite.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Cheat Master variant — Crash Bandicoot level bonuses apply.",
+    "new": true,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": true
+  },
+  {
+    "id": "cheat-master-blinky",
+    "name": "Cheat Master Blinky",
+    "seasonId": "c7-s4",
+    "rarity": "legendary",
+    "ability": "Cheat Master variant of Blinky Sprite.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Cheat Master variant — Blinky level bonuses apply.",
+    "new": true,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": true
+  },
+  {
+    "id": "cheat-master-pond",
+    "name": "Cheat Master Pond",
+    "seasonId": "c7-s4",
+    "rarity": "legendary",
+    "ability": "Cheat Master variant of Pond Sprite.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Cheat Master variant — Pond level bonuses apply.",
+    "new": true,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": true
+  },
+  {
+    "id": "cheat-master-morgana",
+    "name": "Cheat Master Morgana",
+    "seasonId": "c7-s4",
+    "rarity": "mythic",
+    "ability": "Cheat Master variant of Morgana Sprite.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Cheat Master variant — Morgana level bonuses apply.",
+    "new": true,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "cheat-master-birthday",
+    "name": "Cheat Master Birthday",
+    "seasonId": "c7-s4",
+    "rarity": "mythic",
+    "ability": "Cheat Master variant of Birthday Sprite.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Cheat Master variant — Birthday level bonuses apply.",
+    "new": true,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "bounty-hunter-xray",
+    "name": "Bounty Hunter X-Ray",
+    "seasonId": "c7-s4",
+    "rarity": "legendary",
+    "ability": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Only levels through eliminations.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "bounty-hunter",
+        "label": "Bounty Hunter",
+        "bonus": "Bounty Hunter — Elimination-based sprite finder"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "bounty-hunter-onigiri",
+    "name": "Bounty Hunter Onigiri",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Only levels through eliminations.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "bounty-hunter",
+        "label": "Bounty Hunter",
+        "bonus": "Bounty Hunter — Elimination-based sprite finder"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "bounty-hunter-pond",
+    "name": "Bounty Hunter Pond",
+    "seasonId": "c7-s4",
+    "rarity": "legendary",
+    "ability": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Only levels through eliminations.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "bounty-hunter",
+        "label": "Bounty Hunter",
+        "bonus": "Bounty Hunter — Elimination-based sprite finder"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "bounty-hunter-overshield",
+    "name": "Bounty Hunter Overshield",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Only levels through eliminations.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "bounty-hunter",
+        "label": "Bounty Hunter",
+        "bonus": "Bounty Hunter — Elimination-based sprite finder"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "bounty-hunter-storm-scout",
+    "name": "Bounty Hunter Storm Scout",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Only levels through eliminations.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "bounty-hunter",
+        "label": "Bounty Hunter",
+        "bonus": "Bounty Hunter — Elimination-based sprite finder"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "bounty-hunter-klombo",
+    "name": "Bounty Hunter Klombo",
+    "seasonId": "c7-s4",
+    "rarity": "mythic",
+    "ability": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Only levels through eliminations.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "bounty-hunter",
+        "label": "Bounty Hunter",
+        "bonus": "Bounty Hunter — Elimination-based sprite finder"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "bounty-hunter-shadow",
+    "name": "Bounty Hunter Shadow",
+    "seasonId": "c7-s4",
+    "rarity": "epic",
+    "ability": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Only levels through eliminations.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "bounty-hunter",
+        "label": "Bounty Hunter",
+        "bonus": "Bounty Hunter — Elimination-based sprite finder"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "bounty-hunter-tails",
+    "name": "Bounty Hunter Tails",
+    "seasonId": "c7-s4",
+    "rarity": "epic",
+    "ability": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Only levels through eliminations.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "bounty-hunter",
+        "label": "Bounty Hunter",
+        "bonus": "Bounty Hunter — Elimination-based sprite finder"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "bounty-hunter-sonic",
+    "name": "Bounty Hunter Sonic",
+    "seasonId": "c7-s4",
+    "rarity": "epic",
+    "ability": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Only levels through eliminations.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "bounty-hunter",
+        "label": "Bounty Hunter",
+        "bonus": "Bounty Hunter — Elimination-based sprite finder"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "bounty-hunter-jonesy",
+    "name": "Bounty Hunter Jonesy",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Only levels through eliminations.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "bounty-hunter",
+        "label": "Bounty Hunter",
+        "bonus": "Bounty Hunter — Elimination-based sprite finder"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "bounty-hunter-killswitch",
+    "name": "Bounty Hunter Killswitch",
+    "seasonId": "c7-s4",
+    "rarity": "epic",
+    "ability": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Only levels through eliminations.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "bounty-hunter",
+        "label": "Bounty Hunter",
+        "bonus": "Bounty Hunter — Elimination-based sprite finder"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "bounty-hunter-adventure",
+    "name": "Bounty Hunter Adventure",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Only levels through eliminations.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "bounty-hunter",
+        "label": "Bounty Hunter",
+        "bonus": "Bounty Hunter — Elimination-based sprite finder"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "bounty-hunter-crash-bandicoot",
+    "name": "Bounty Hunter Crash Bandicoot",
+    "seasonId": "c7-s4",
+    "rarity": "legendary",
+    "ability": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Only levels through eliminations.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "bounty-hunter",
+        "label": "Bounty Hunter",
+        "bonus": "Bounty Hunter — Elimination-based sprite finder"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "bounty-hunter-bush",
+    "name": "Bounty Hunter Bush",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Only levels through eliminations.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "bounty-hunter",
+        "label": "Bounty Hunter",
+        "bonus": "Bounty Hunter — Elimination-based sprite finder"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "bounty-hunter-blinky",
+    "name": "Bounty Hunter Blinky",
+    "seasonId": "c7-s4",
+    "rarity": "legendary",
+    "ability": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Only levels through eliminations.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "bounty-hunter",
+        "label": "Bounty Hunter",
+        "bonus": "Bounty Hunter — Elimination-based sprite finder"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "bounty-hunter-jackrabbit",
+    "name": "Bounty Hunter Jackrabbit",
+    "seasonId": "c7-s4",
+    "rarity": "legendary",
+    "ability": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Only levels through eliminations.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "bounty-hunter",
+        "label": "Bounty Hunter",
+        "bonus": "Bounty Hunter — Elimination-based sprite finder"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "bounty-hunter-crown",
+    "name": "Bounty Hunter Crown",
+    "seasonId": "c7-s4",
+    "rarity": "mythic",
+    "ability": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Only levels through eliminations.",
+    "new": true,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "reaper",
+        "label": "Reaper",
+        "dustCost": 500,
+        "bonus": "Soul Harvest"
+      }
+    ],
+    "available": true
+  },
+  {
+    "id": "bounty-hunter-8bit",
+    "name": "Bounty Hunter 8-Bit",
+    "seasonId": "c7-s4",
+    "rarity": "rare",
+    "ability": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Only levels through eliminations.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "bounty-hunter",
+        "label": "Bounty Hunter",
+        "bonus": "Bounty Hunter — Elimination-based sprite finder"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "bounty-hunter-morgana",
+    "name": "Bounty Hunter Morgana",
+    "seasonId": "c7-s4",
+    "rarity": "mythic",
+    "ability": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Only levels through eliminations.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "bounty-hunter",
+        "label": "Bounty Hunter",
+        "bonus": "Bounty Hunter — Elimination-based sprite finder"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "bounty-hunter-birthday",
+    "name": "Bounty Hunter Birthday",
+    "seasonId": "c7-s4",
+    "rarity": "mythic",
+    "ability": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+    "findNotes": "Added in v42.20 update on September 17.",
+    "levelNotes": "Only levels through eliminations.",
+    "new": false,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "bounty-hunter",
+        "label": "Bounty Hunter",
+        "bonus": "Bounty Hunter — Elimination-based sprite finder"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "phase-dash",
+    "name": "Phase Dash",
+    "seasonId": "c7-s4",
+    "rarity": "epic",
+    "ability": "Phase through structures and objects when dashing. Dash distance increases with each level up.",
+    "findNotes": "Added in v42.20 update on September 17. Found in chests.",
+    "levelNotes": "Dash distance and cooldown improve with each level.",
+    "new": true,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 200
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "dustCost": 500,
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "dustCost": 600,
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": false
+  },
+  {
+    "id": "head-shot",
+    "name": "Head Shot",
+    "seasonId": "c7-s4",
+    "rarity": "epic",
+    "ability": "Increased headshot damage with each level up. Critical hit multiplier grows as the Sprite levels.",
+    "findNotes": "Added in v42.20 update on September 17. Found in chests.",
+    "levelNotes": "Headshot damage multiplier increases with each level.",
+    "new": true,
+    "launchedAt": "17-sept-2026",
+    "variants": [
+      {
+        "id": "normal",
+        "label": "Normal",
+        "dustCost": 200
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "dustCost": 500,
+        "bonus": "3× elimination XP"
+      },
+      {
+        "id": "cheat-master",
+        "label": "Cheat Master",
+        "dustCost": 600,
+        "bonus": "Button Mash"
+      }
+    ],
+    "available": false
   }
 ]

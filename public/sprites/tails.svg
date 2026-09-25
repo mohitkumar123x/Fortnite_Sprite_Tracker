@@ -1,53 +1,143 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <defs>
+    <!-- Background Gradient (Dark Violet/Purple matching reference) -->
+    <radialGradient id="tailsBg" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#4A148C" stop-opacity="0.5"/>
+      <stop offset="60%" stop-color="#1A0933" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0B031A"/>
+    </radialGradient>
+
+    <!-- Tails Orange Body Gradient -->
+    <linearGradient id="tailsOrange" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#FFA726"/>
+      <stop offset="40%" stop-color="#FB8C00"/>
+      <stop offset="80%" stop-color="#F57C00"/>
+      <stop offset="100%" stop-color="#E65100"/>
+    </linearGradient>
+
+    <!-- White Chest/Cheek Gradient -->
+    <linearGradient id="whiteFur" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#FFF3E0"/>
+      <stop offset="100%" stop-color="#FFE0B2"/>
+    </linearGradient>
+
+    <!-- Goggles Lens Gradient -->
+    <linearGradient id="lensGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#80DEEA"/>
+      <stop offset="100%" stop-color="#00ACC1"/>
+    </linearGradient>
+  </defs>
+
   <style>
-    .el { transform-box: fill-box; transform-origin: center; }
-    .bob { animation: bob 2.8s ease-in-out infinite; }
-    .sway { animation: sway 3.2s ease-in-out infinite; }
-    .sway-slow { animation: sway 4.4s ease-in-out infinite; }
-    .pulse { animation: pulse 2.4s ease-in-out infinite; }
-    .spin { animation: spin 12s linear infinite; }
-    .spin-rev { animation: spin 16s linear infinite reverse; }
-    .dash { animation: dash 1.6s ease-in-out infinite; }
-    .wag { animation: wag 1.1s ease-in-out infinite; }
-    .wag-opp { animation: wag 1.1s ease-in-out infinite reverse; }
-    .twitch { animation: twitch 2.6s ease-in-out infinite; }
-    .twitch-d { animation: twitch 2.6s ease-in-out infinite; animation-delay: .18s; }
-    .flicker { animation: flicker 1.4s ease-in-out infinite; }
-    .wave { animation: wave 2.2s ease-in-out infinite; }
-    .floaty { animation: floaty 3.6s ease-in-out infinite; }
-    .blink { animation: blink 3.8s steps(1, end) infinite; }
-    .spark { animation: spark 2s ease-in-out infinite; }
-    .flash { animation: flash 2.8s ease-in-out infinite; }
-    .swim { animation: swim 2.4s ease-in-out infinite; }
-    .drip { animation: drip 2.6s ease-in-out infinite; }
-    .halo { opacity: .14; animation: halo 2.8s ease-in-out infinite; pointer-events: none; }
-    @keyframes halo { 0%,100% { opacity: .14; } 50% { opacity: .32; } }
-    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
-    @keyframes sway { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
-    @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: .85; } }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    @keyframes dash { 0%,100% { transform: translateX(-3px); } 50% { transform: translateX(4px); } }
-    @keyframes wag { 0%,100% { transform: rotate(-10deg); } 50% { transform: rotate(10deg); } }
-    @keyframes twitch { 0%,86%,100% { transform: rotate(0); } 90% { transform: rotate(-8deg); } 94% { transform: rotate(6deg); } }
-    @keyframes flicker { 0%,100% { transform: scaleY(1) translateY(0); } 40% { transform: scaleY(1.08) translateY(-2px); } 70% { transform: scaleY(.96) translateY(1px); } }
-    @keyframes wave { 0%,100% { transform: translateX(0); } 50% { transform: translateX(4px); } }
-    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-    @keyframes blink { 0%,92%,100% { transform: scaleY(1); } 94%,96% { transform: scaleY(.12); } }
-    @keyframes spark { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.25); opacity: .7; } }
-    @keyframes flash { 0%,72%,100% { opacity: 1; } 78% { opacity: .35; } 84% { opacity: 1; } }
-    @keyframes swim { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-3px) rotate(2deg); } }
-    @keyframes drip { 0%,100% { transform: translateY(0) scaleY(1); } 50% { transform: translateY(4px) scaleY(1.04); } }
-    @media (prefers-reduced-motion: reduce) {
-      .el, .halo { animation: none !important; }
-    }
-</style>
-  <rect width="128" height="128" rx="28" fill="#E07A2F"/>
-  <ellipse class="halo" cx="64" cy="42" rx="42" ry="28" fill="#ffffff"/>
-  <g transform="rotate(-28 46 72)"><ellipse class="el wag" cx="46" cy="72" rx="16" ry="32" fill="#FFD54A"/></g>
-     <g transform="rotate(28 82 72)"><ellipse class="el wag-opp" cx="82" cy="72" rx="16" ry="32" fill="#FFD54A"/></g>
-     <g class="el bob">
-       <circle cx="64" cy="52" r="20" fill="#F4F0EA"/>
-       <circle class="el blink" cx="58" cy="50" r="3" fill="#1A1A1A"/>
-       <circle class="el blink" cx="70" cy="50" r="3" fill="#1A1A1A"/>
-     </g>
+    .el{transform-box:fill-box;transform-origin:center}
+    .bob{animation:bob 2.8s ease-in-out infinite}
+    .blink{animation:blink 3.8s steps(1,end) infinite}
+    .tail-wag{animation:wag 1.8s ease-in-out infinite alternate}
+    .glow{animation:glow 3s ease-in-out infinite}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+    @keyframes blink{0%,92%,100%{transform:scaleY(1)}95%,98%{transform:scaleY(.1)}}
+    @keyframes wag{0%{transform:rotate(-8deg)}100%{transform:rotate(12deg)}}
+    @keyframes glow{0%,100%{opacity:.25}50%{opacity:.5}}
+    @media(prefers-reduced-motion:reduce){.el{animation:none!important}}
+  </style>
+
+  <!-- Card background -->
+  <rect width="128" height="128" rx="20" fill="url(#tailsBg)"/>
+
+  <!-- Ambient amber glow behind Tails -->
+  <ellipse class="glow" cx="64" cy="68" rx="46" ry="42" fill="#FB8C00"/>
+
+  <g class="el bob">
+    <!-- Drop Shadow under character -->
+    <ellipse cx="64" cy="118" rx="26" ry="6" fill="#000000" opacity="0.5"/>
+
+    <!-- ===================== ANIMATED TWIN TAILS (Behind Right Side) ===================== -->
+    <g class="el tail-wag" style="transform-origin: 85px 80px;">
+      <!-- Tail 1 -->
+      <path d="M 86 70 C 104 60, 122 75, 114 92 C 104 100, 88 92, 84 82 Z" fill="url(#tailsOrange)"/>
+      <path d="M 104 74 C 118 78, 114 92, 104 92 Z" fill="url(#whiteFur)"/>
+
+      <!-- Tail 2 -->
+      <path d="M 82 80 C 100 75, 118 88, 108 104 C 96 110, 82 100, 80 90 Z" fill="#E65100"/>
+      <path d="M 98 88 C 112 92, 108 104, 98 104 Z" fill="#FFF3E0"/>
+    </g>
+
+    <!-- ===================== CHUNKY BLOCKY BODY (Orange Fox) ===================== -->
+    <path d="M 32 36 C 30 20, 86 20, 88 36 L 90 94 C 90 106, 30 106, 30 94 Z" fill="url(#tailsOrange)"/>
+    <!-- Body Left Highlight -->
+    <path d="M 32 36 C 30 20, 56 22, 46 96 C 34 94, 30 84, 32 36 Z" fill="#FFE0B2" opacity="0.45"/>
+    <!-- Body Right Shading -->
+    <path d="M 72 26 C 84 32, 88 50, 88 94 C 76 96, 74 60, 72 26 Z" fill="#E65100" opacity="0.4"/>
+
+    <!-- ===================== POINTED FOX EARS ===================== -->
+    <!-- Left Ear -->
+    <path d="M 34 30 L 26 8 L 48 22 Z" fill="#FB8C00"/>
+    <path d="M 36 26 L 30 14 L 44 21 Z" fill="url(#whiteFur)"/>
+    <!-- Right Ear -->
+    <path d="M 72 22 L 90 8 L 84 30 Z" fill="#F57C00"/>
+    <path d="M 75 21 L 86 14 L 81 26 Z" fill="#FFF3E0"/>
+
+    <!-- ===================== FLUFFY HAIR TUFTS ON TOP ===================== -->
+    <path d="M 44 22 C 42 10, 54 10, 52 24 C 50 12, 64 12, 60 26 C 58 14, 70 16, 66 26 Z" fill="#FFA726"/>
+    <path d="M 46 22 C 45 14, 53 14, 51 24 C 50 16, 61 16, 58 26 Z" fill="#FFE0B2" opacity="0.6"/>
+
+    <!-- ===================== AVIATOR GOGGLES ON FOREHEAD ===================== -->
+    <!-- Strap -->
+    <rect x="28" y="24" width="62" height="4" fill="#263238"/>
+    <!-- Left Lens Frame -->
+    <rect x="36" y="18" width="18" height="14" rx="3" fill="#37474F" stroke="#263238" stroke-width="1.5"/>
+    <rect x="38" y="20" width="14" height="10" rx="2" fill="url(#lensGrad)"/>
+    <!-- Right Lens Frame -->
+    <rect x="62" y="18" width="18" height="14" rx="3" fill="#37474F" stroke="#263238" stroke-width="1.5"/>
+    <rect x="64" y="20" width="14" height="10" rx="2" fill="url(#lensGrad)"/>
+
+    <!-- ===================== FLUFFY WHITE CHEST PATCH ===================== -->
+    <ellipse cx="46" cy="74" rx="16" ry="15" fill="url(#whiteFur)"/>
+
+    <!-- ===================== FLUFFY WHITE CHEEK TUFTS ===================== -->
+    <!-- Left Cheek Spikes (3 Tufts matching reference) -->
+    <path d="M 32 44 L 16 46 L 30 52 L 18 56 L 32 60 L 22 64 L 34 66 Z" fill="url(#whiteFur)"/>
+    <!-- Right Cheek Spikes -->
+    <path d="M 76 44 L 90 46 L 78 52 L 88 56 L 76 60 L 84 64 L 74 66 Z" fill="url(#whiteFur)"/>
+
+    <!-- ===================== NOSE ===================== -->
+    <ellipse cx="46" cy="50" rx="3" ry="2" fill="#111111"/>
+
+    <!-- ===================== SMILE ===================== -->
+    <path d="M 42 56 Q 46 60 50 56" stroke="#4E2A00" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <!-- ===================== CONNECTED WHITE TAILS EYES ===================== -->
+    <path d="M 36 30 C 32 44, 52 50, 60 46 C 66 43, 76 42, 74 30 C 72 22, 58 22, 54 28 C 50 22, 38 22, 36 30 Z" fill="#FFFFFF"/>
+
+    <!-- ===================== CYAN / LIGHT BLUE PUPILS ===================== -->
+    <g class="el blink">
+      <!-- Left Pupil -->
+      <ellipse cx="46" cy="38" rx="4.5" ry="7" fill="#00BCD4"/>
+      <ellipse cx="46" cy="38" rx="2.5" ry="5" fill="#00838F"/>
+      <circle cx="44" cy="35" r="1.5" fill="#FFFFFF"/>
+
+      <!-- Right Pupil -->
+      <ellipse cx="64" cy="38" rx="4.5" ry="7" fill="#00BCD4"/>
+      <ellipse cx="64" cy="38" rx="2.5" ry="5" fill="#00838F"/>
+      <circle cx="62" cy="35" r="1.5" fill="#FFFFFF"/>
+    </g>
+
+    <!-- Brow outline -->
+    <path d="M 34 26 Q 46 22 56 28 Q 66 22 76 26" stroke="#E65100" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- STUBBY ARMS -->
+    <ellipse cx="26" cy="72" rx="7" ry="5" transform="rotate(-20 26 72)" fill="url(#whiteFur)"/>
+    <rect x="80" y="70" width="8" height="6" rx="3" fill="#FFFFFF"/>
+
+    <!-- SHOES / LEGS -->
+    <rect x="36" y="94" width="12" height="12" rx="3" fill="#FB8C00"/>
+    <rect x="32" y="102" width="18" height="12" rx="4" fill="#D32F2F"/>
+    <rect x="32" y="102" width="18" height="4" rx="2" fill="#FFFFFF"/>
+
+    <rect x="58" y="94" width="12" height="12" rx="3" fill="#F57C00"/>
+    <rect x="56" y="102" width="18" height="12" rx="4" fill="#C62828"/>
+    <rect x="56" y="102" width="18" height="4" rx="2" fill="#FFFFFF"/>
+
+  </g>
 </svg>

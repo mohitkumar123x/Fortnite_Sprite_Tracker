@@ -1,21 +1,142 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <defs>
+    <!-- Gold Background Gradient -->
+    <radialGradient id="goldBg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#8D6E63" stop-opacity="0.4"/>
+      <stop offset="40%" stop-color="#3E2723" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#1A0C03"/>
+    </radialGradient>
+
+    <!-- Metallic Gold Coat Gradient -->
+    <linearGradient id="goldCoat" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#FFF59D"/>
+      <stop offset="35%" stop-color="#FBC02D"/>
+      <stop offset="70%" stop-color="#F57F17"/>
+      <stop offset="100%" stop-color="#E65100"/>
+    </linearGradient>
+
+    <!-- Gold Shimmer Overlay -->
+    <linearGradient id="goldShimmerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFFDE7" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Gold Head Skin Gradient -->
+    <linearGradient id="goldSkin" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="100%" stop-color="#FFCA28"/>
+    </linearGradient>
+  </defs>
+
   <style>
-    .el { transform-box: fill-box; transform-origin: center; }
-    .pulse { animation: pulse 2.4s ease-in-out infinite; }
-    .scan { animation: scan 3s ease-in-out infinite; }
-    .glow { animation: glow 2s ease-in-out infinite; }
-    @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: .85; } }
-    @keyframes scan { 0%,100% { transform: translateY(0); opacity: .6; } 50% { transform: translateY(8px); opacity: 1; } }
-    @keyframes glow { 0%,100% { opacity: .14; } 50% { opacity: .32; } }
-    @media (prefers-reduced-motion: reduce) { .el { animation: none !important; } }
+    .el{transform-box:fill-box;transform-origin:center}
+    .bob{animation:bob 2.8s ease-in-out infinite}
+    .blink{animation:blink 3.8s steps(1,end) infinite}
+    .shimmer{animation:shimmer 2.5s ease-in-out infinite}
+    .glow{animation:glow 3s ease-in-out infinite}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+    @keyframes blink{0%,92%,100%{transform:scaleY(1)}95%,98%{transform:scaleY(.1)}}
+    @keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+    @keyframes glow{0%,100%{opacity:.3}50%{opacity:.6}}
+    @media(prefers-reduced-motion:reduce){.el{animation:none!important}}
   </style>
-  <rect width="128" height="128" rx="28" fill="#3a3a1a"/>
-  <circle class="el glow" cx="64" cy="64" r="44" fill="#ffd54f" opacity=".3"/>
-  <g class="el pulse">
-    <circle cx="64" cy="64" r="32" fill="none" stroke="#ffd54f" stroke-width="3" opacity=".9"/>
-    <circle cx="64" cy="64" r="20" fill="none" stroke="#ffd54f" stroke-width="2" opacity=".7"/>
-    <circle cx="64" cy="64" r="8" fill="#ffd54f"/>
-    <line class="el scan" x1="64" y1="20" x2="64" y2="108" stroke="#ffd54f" stroke-width="2" opacity=".6"/>
-    <line class="el scan" x1="20" y1="64" x2="108" y2="64" stroke="#ffd54f" stroke-width="2" opacity=".6"/>
+
+  <!-- Background card background with dark gold gradient -->
+  <rect width="128" height="128" rx="20" fill="url(#goldBg)"/>
+  <!-- Ambient golden glow behind X-Ray -->
+  <ellipse class="glow" cx="64" cy="68" rx="48" ry="44" fill="#FFD54F"/>
+
+  <g class="el bob">
+    <!-- Drop Shadow under character -->
+    <ellipse cx="64" cy="118" rx="28" ry="6" fill="#000000" opacity="0.5"/>
+
+    <!-- ===================== LEGS / FEET ===================== -->
+    <rect x="47" y="108" width="13" height="9" rx="4" fill="#5D4037"/>
+    <rect x="67" y="108" width="13" height="9" rx="4" fill="#4E342E"/>
+    <rect x="44" y="113" width="17" height="4" rx="2" fill="#3E2723"/>
+    <rect x="66" y="113" width="17" height="4" rx="2" fill="#2C1B18"/>
+
+    <!-- ===================== CHUBBY BLOB BODY (Gold Lab Coat) ===================== -->
+    <!-- Main torso shape -->
+    <path d="M 34 76 C 32 50, 96 50, 94 76 C 96 106, 32 106, 34 76 Z" fill="url(#goldCoat)"/>
+    <!-- Left metallic shadow -->
+    <path d="M 34 76 C 32 50, 60 50, 50 104 C 36 102, 32 90, 34 76 Z" fill="#E65100" opacity="0.45"/>
+    <!-- Right highlight edge -->
+    <path d="M 80 56 C 90 65, 94 80, 90 98 C 94 92, 94 72, 80 56 Z" fill="#FFF9C4" opacity="0.8"/>
+
+    <!-- ===================== DARK AMBER SHIRT ===================== -->
+    <path d="M 56 64 L 64 82 L 72 64 Z" fill="#BF360C"/>
+    <path d="M 60 64 L 64 80 L 68 64 Z" fill="#8D6E63"/>
+
+    <!-- Gold Coat Lapels -->
+    <!-- Left lapel -->
+    <path d="M 44 58 L 56 64 L 52 86 L 40 76 Z" fill="#F57F17"/>
+    <path d="M 44 58 L 56 64 L 50 82 Z" fill="#FBC02D"/>
+    <!-- Right lapel -->
+    <path d="M 84 58 L 72 64 L 76 86 L 88 76 Z" fill="#E65100"/>
+    <path d="M 84 58 L 72 64 L 78 82 Z" fill="#F57F17"/>
+    <!-- Center coat line -->
+    <line x1="64" y1="82" x2="64" y2="108" stroke="#BF360C" stroke-width="1.5" stroke-dasharray="4 2"/>
+
+    <!-- ===================== STUBBY ARMS ===================== -->
+    <!-- Left arm -->
+    <ellipse cx="28" cy="80" rx="9" ry="6" transform="rotate(-25 28 80)" fill="#F57F17"/>
+    <ellipse cx="27" cy="80" rx="7" ry="4" transform="rotate(-25 27 80)" fill="#FBC02D"/>
+    <!-- Right arm -->
+    <ellipse cx="100" cy="80" rx="9" ry="6" transform="rotate(25 100 80)" fill="#E65100"/>
+    <ellipse cx="101" cy="80" rx="7" ry="4" transform="rotate(25 101 80)" fill="#F57F17"/>
+
+    <!-- ===================== HEAD / FACE ===================== -->
+    <!-- Gold head skin -->
+    <ellipse cx="64" cy="48" rx="25" ry="20" fill="url(#goldSkin)"/>
+
+    <!-- ===================== PALE GOLD BEARD ===================== -->
+    <path d="M 52 64 Q 64 74 76 64 Q 72 76 64 76 Q 56 76 52 64 Z" fill="#FFFDE7"/>
+    <ellipse cx="64" cy="72" rx="10" ry="4" fill="#FFF59D"/>
+
+    <!-- ===================== SMILE ===================== -->
+    <path d="M 58 60 Q 64 64 70 60" stroke="#3E2723" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <!-- ===================== GOLD/AMBER GLASSES ===================== -->
+    <!-- Temple bars -->
+    <line x1="28" y1="46" x2="38" y2="46" stroke="#BF360C" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="100" y1="46" x2="90" y2="46" stroke="#BF360C" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Bridge -->
+    <rect x="57" y="44" width="14" height="4" rx="2" fill="#E65100"/>
+    <rect x="58" y="45" width="12" height="2" rx="1" fill="#FFB300"/>
+
+    <!-- LEFT GLASSES FRAME -->
+    <circle cx="44" cy="46" r="15" fill="#E65100"/>
+    <circle cx="44" cy="46" r="12" fill="#1A0C03"/>
+    <!-- Highlight -->
+    <path d="M 33 42 A 13.5 13.5 0 0 1 54 37" stroke="#FFD54F" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- RIGHT GLASSES FRAME -->
+    <circle cx="84" cy="46" r="15" fill="#E65100"/>
+    <circle cx="84" cy="46" r="12" fill="#1A0C03"/>
+    <!-- Highlight -->
+    <path d="M 73 42 A 13.5 13.5 0 0 1 94 37" stroke="#FFD54F" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- ===================== EYES ===================== -->
+    <g class="el blink">
+      <!-- Left Eye -->
+      <circle cx="44" cy="46" r="9" fill="#0D0601"/>
+      <circle cx="41" cy="43" r="3.5" fill="#FFFDE7"/>
+      <circle cx="47" cy="49" r="1.5" fill="#FFECB3"/>
+
+      <!-- Right Eye -->
+      <circle cx="84" cy="46" r="9" fill="#0D0601"/>
+      <circle cx="81" cy="43" r="3.5" fill="#FFFDE7"/>
+      <circle cx="87" cy="49" r="1.5" fill="#FFECB3"/>
+    </g>
+
+    <!-- Glass Lens Glare -->
+    <path d="M 34 40 Q 42 36 50 42" stroke="#FFF9C4" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <path d="M 74 40 Q 82 36 90 42" stroke="#FFF9C4" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+    <!-- Metallic Gold Shimmer Sweep -->
+    <rect class="shimmer" x="30" y="45" width="20" height="65" fill="url(#goldShimmerGrad)" transform="rotate(-30 40 75)" opacity="0.7"/>
+
   </g>
 </svg>

@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <defs>
+    <!-- Galaxy Background Gradient -->
+    <radialGradient id="galaxyBg" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#E040FB" stop-opacity="0.35"/>
+      <stop offset="45%" stop-color="#2D064A" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0E021B"/>
+    </radialGradient>
+
+    <!-- Cosmic Body Gradient -->
+    <linearGradient id="cosmicBodyGrad" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#E040FB"/>
+      <stop offset="35%" stop-color="#AA00FF"/>
+      <stop offset="70%" stop-color="#7B1FA2"/>
+      <stop offset="100%" stop-color="#4A148C"/>
+    </linearGradient>
+
+    <!-- Nebula Cloud Texture Gradient -->
+    <radialGradient id="nebulaSwirl" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FF4081" stop-opacity="0.65"/>
+      <stop offset="50%" stop-color="#E040FB" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#7B1FA2" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <style>
+    .el{transform-box:fill-box;transform-origin:center}
+    .bob{animation:bob 2.8s ease-in-out infinite}
+    .blink{animation:blink 3.8s steps(1,end) infinite}
+    .galaxy-spin{animation:spin 16s linear infinite}
+    .twinkle{animation:twinkle 2s ease-in-out infinite alternate}
+    .glow{animation:glow 3s ease-in-out infinite}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+    @keyframes blink{0%,92%,100%{transform:scaleY(1)}95%,98%{transform:scaleY(.1)}}
+    @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+    @keyframes twinkle{0%{opacity:.2;transform:scale(.8)}100%{opacity:.9;transform:scale(1.2)}}
+    @keyframes glow{0%,100%{opacity:.3}50%{opacity:.65}}
+    @media(prefers-reduced-motion:reduce){.el{animation:none!important}}
+  </style>
+
+  <!-- Card background -->
+  <rect width="128" height="128" rx="20" fill="url(#galaxyBg)"/>
+
+  <!-- Swirling Nebula Galaxy Ring -->
+  <path class="galaxy-spin" d="M 64 20 A 48 48 0 1 1 63.9 20" stroke="url(#nebulaSwirl)" stroke-width="18" fill="none" opacity="0.6" stroke-linecap="round"/>
+
+  <!-- Twinkling Stars -->
+  <g fill="#FFFFFF">
+    <circle class="twinkle" cx="18" cy="22" r="1.5"/>
+    <circle class="twinkle" cx="108" cy="28" r="1"/>
+    <circle class="twinkle" cx="24" cy="98" r="1"/>
+    <circle class="twinkle" cx="102" cy="94" r="1.5"/>
+    <circle class="twinkle" cx="88" cy="18" r="1.2"/>
+  </g>
+
+  <!-- Ambient purple-magenta glow -->
+  <ellipse class="glow" cx="64" cy="68" rx="46" ry="42" fill="#E040FB"/>
+
+  <g class="el bob">
+    <!-- Drop Shadow under character -->
+    <ellipse cx="64" cy="118" rx="26" ry="6" fill="#000000" opacity="0.6"/>
+
+    <!-- CAPE -->
+    <path d="M 32 64 C 28 80, 30 100, 36 110 L 92 110 C 98 100, 100 80, 96 64 Z" fill="#260446"/>
+
+    <!-- LEGS -->
+    <rect x="42" y="104" width="13" height="10" rx="3" fill="#4A148C"/>
+    <rect x="73" y="104" width="13" height="10" rx="3" fill="#31005D"/>
+
+    <!-- COSMIC BODY -->
+    <path d="M 34 44 C 32 30, 94 30, 94 44 L 94 96 C 94 104, 34 104, 34 96 Z" fill="url(#cosmicBodyGrad)"/>
+    <path d="M 34 44 C 32 30, 94 30, 94 44 L 94 96 C 94 104, 34 104, 34 96 Z" fill="url(#nebulaSwirl)"/>
+
+    <!-- Stardust sparkles -->
+    <circle cx="48" cy="72" r="1" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="78" cy="82" r="1.2" fill="#FF80AB" opacity="0.9"/>
+
+    <!-- CHEST HARNESS -->
+    <circle cx="64" cy="74" r="10" stroke="#FF4081" stroke-width="2" fill="none" opacity="0.8"/>
+    <line x1="64" y1="64" x2="64" y2="84" stroke="#FF4081" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- COSMIC HOODED COWL -->
+    <path d="M 30 42 C 24 16, 104 16, 98 42 C 102 58, 86 68, 64 68 C 42 68, 26 58, 30 42 Z" fill="#7B1FA2"/>
+    <path d="M 30 42 C 24 16, 104 16, 98 42 C 102 58, 86 68, 64 68 C 42 68, 26 58, 30 42 Z" fill="url(#nebulaSwirl)"/>
+    <path d="M 30 42 C 24 16, 104 16, 98 42" stroke="#E040FB" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+    <!-- FACE -->
+    <path d="M 38 42 C 36 28, 92 28, 90 42 C 90 52, 38 52, 38 42 Z" fill="#FFE082"/>
+
+    <!-- Eyepatch Strap -->
+    <line x1="36" y1="36" x2="90" y2="44" stroke="#260446" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- COSMIC EYEPATCH -->
+    <ellipse cx="48" cy="40" rx="10" ry="8" transform="rotate(-10 48 40)" fill="#260446"/>
+    <ellipse cx="48" cy="40" rx="10" ry="8" transform="rotate(-10 48 40)" stroke="#E040FB" stroke-width="1.5"/>
+
+    <!-- GLOWING CYAN EYE -->
+    <g class="el blink">
+      <ellipse cx="78" cy="42" rx="4.5" ry="6" fill="#00E5FF"/>
+      <ellipse cx="78" cy="42" rx="2.5" ry="4" fill="#00838F"/>
+      <circle cx="76" cy="39" r="1.5" fill="#FFFFFF"/>
+    </g>
+
+    <!-- Brow -->
+    <path d="M 70 36 Q 78 34 84 38" stroke="#260446" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <!-- Mouth -->
+    <path d="M 64 50 L 70 52" stroke="#260446" stroke-width="2" stroke-linecap="round"/>
+
+  </g>
+</svg>

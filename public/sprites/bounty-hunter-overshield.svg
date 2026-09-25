@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <style>
+    .el { transform-box: fill-box; transform-origin: center; }
+    .bob { animation: bob 2.8s ease-in-out infinite; }
+    .pulse { animation: pulse 2.4s ease-in-out infinite; }
+    .scan { animation: scan 3s ease-in-out infinite; }
+    .glow { animation: glow 2s ease-in-out infinite; }
+    .wag { animation: wag 1.1s ease-in-out infinite; }
+    .floaty { animation: floaty 3.6s ease-in-out infinite; }
+    .spark { animation: spark 2s ease-in-out infinite; }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: .85; } }
+    @keyframes scan { 0%,100% { transform: translateY(0); opacity: .6; } 50% { transform: translateY(8px); opacity: 1; } }
+    @keyframes glow { 0%,100% { opacity: .14; } 50% { opacity: .32; } }
+    @keyframes wag { 0%,100% { transform: rotate(-10deg); } 50% { transform: rotate(10deg); } }
+    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+    @keyframes spark { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.25); opacity: .7; } }
+    @media (prefers-reduced-motion: reduce) { .el { animation: none !important; } }</style>
+  <rect width="128" height="128" rx="28" fill="#1B3A1A"/>
+  <ellipse class="el glow" cx="64" cy="42" rx="42" ry="28" fill="#4CAF50" opacity=".2"/>
+  <g class="el wag">
+    <circle cx="64" cy="52" r="24" fill="#66BB6A"/>
+    <circle cx="52" cy="48" r="7" fill="#FFF"/><circle cx="52" cy="48" r="3.5" fill="#1A1A1A"/>
+    <circle cx="76" cy="48" r="7" fill="#FFF"/><circle cx="76" cy="48" r="3.5" fill="#1A1A1A"/>
+    <path d="M44 78 Q64 68 84 78 L80 92 Q64 86 48 92 Z" fill="#66BB6A" opacity=".8"/>
+    <text x="64" y="108" text-anchor="middle" fill="#4CAF50" font-size="12" font-weight="bold">BH</text>
+  </g>
+</svg>

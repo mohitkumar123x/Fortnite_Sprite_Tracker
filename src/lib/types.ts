@@ -8,6 +8,7 @@ export type SpriteVariant = {
 };
 
 export type Sprite = {
+  _comment?: string;
   id: string;
   name: string;
   seasonId: string;

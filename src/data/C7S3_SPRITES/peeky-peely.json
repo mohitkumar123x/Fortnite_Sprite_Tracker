@@ -1,0 +1,48 @@
+[
+  {
+    "id": "s3-peeky-peely",
+    "mainspritename": "Peeky Peely",
+    "varient": "normal",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-peeky-peely",
+    "mainspritename": "Peeky Peely",
+    "varient": "gold",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive.",
+    "bonus": "3× elimination XP"
+  },
+  {
+    "id": "s3-peeky-peely",
+    "mainspritename": "Peeky Peely",
+    "varient": "gummy",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-peeky-peely",
+    "mainspritename": "Peeky Peely",
+    "varient": "galaxy",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  },
+  {
+    "id": "s3-peeky-peely",
+    "mainspritename": "Peeky Peely",
+    "varient": "holofoil",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive."
+  }
+]

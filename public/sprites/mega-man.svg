@@ -1,21 +1,235 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <defs>
+    <!-- Background Card & Halo -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070d1e"/>
+      <stop offset="50%" stop-color="#0e1a38"/>
+      <stop offset="100%" stop-color="#16274d"/>
+    </linearGradient>
+    <radialGradient id="halo-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#00bcd4" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#00bcd4" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Metallic Helmet Colors -->
+    <linearGradient id="helmet-outer" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1940b0"/>
+      <stop offset="40%" stop-color="#0d297a"/>
+      <stop offset="100%" stop-color="#051442"/>
+    </linearGradient>
+
+    <!-- Top Crest & Ear Modules (Teal Metallic) -->
+    <linearGradient id="teal-metallic" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#26c6da"/>
+      <stop offset="40%" stop-color="#00838f"/>
+      <stop offset="100%" stop-color="#004d40"/>
+    </linearGradient>
+
+    <!-- Face Plate Gradient -->
+    <linearGradient id="face-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#b2ebf2"/>
+      <stop offset="30%" stop-color="#4dd0e1"/>
+      <stop offset="85%" stop-color="#00bcd4"/>
+      <stop offset="100%" stop-color="#0097a7"/>
+    </linearGradient>
+
+    <!-- Eyes Gradient -->
+    <linearGradient id="eye-iris" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e0f7fa"/>
+      <stop offset="20%" stop-color="#00e5ff"/>
+      <stop offset="65%" stop-color="#0288d1"/>
+      <stop offset="100%" stop-color="#0a297a"/>
+    </linearGradient>
+
+    <!-- Body & Chest Armor Gradients -->
+    <linearGradient id="chest-upper" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#80deea"/>
+      <stop offset="100%" stop-color="#00bcd4"/>
+    </linearGradient>
+    <linearGradient id="chest-body" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00acc1"/>
+      <stop offset="50%" stop-color="#007788"/>
+      <stop offset="100%" stop-color="#0d297a"/>
+    </linearGradient>
+    <linearGradient id="legs-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0c256b"/>
+      <stop offset="100%" stop-color="#040e2d"/>
+    </linearGradient>
+
+    <!-- Specular Gloss Highlight -->
+    <linearGradient id="gloss-shine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.45"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
   <style>
     .el { transform-box: fill-box; transform-origin: center; }
-    .bob { animation: bob 2.8s ease-in-out infinite; }
-    .pulse { animation: pulse 2.4s ease-in-out infinite; }
-    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
-    @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: .85; } }
-    @media (prefers-reduced-motion: reduce) { .el { animation: none !important; } }
+    
+    /* Character floating hover animation */
+    .char-float { animation: floaty 3.2s ease-in-out infinite; }
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-4px) rotate(0.8deg); }
+    }
+
+    /* Eye blinking */
+    .eyes-group { animation: blink 4.2s steps(1, end) infinite; transform-origin: center 48px; }
+    @keyframes blink {
+      0%, 93%, 100% { transform: scaleY(1); }
+      95%, 97% { transform: scaleY(0.12); }
+    }
+
+    /* Ambient background halo pulse */
+    .halo { animation: haloPulse 3.6s ease-in-out infinite; transform-origin: 64px 64px; }
+    @keyframes haloPulse {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.08); opacity: 1; }
+    }
+
+    /* Neon crest energy flash */
+    .crest-glow { animation: crestPulse 2.8s ease-in-out infinite; }
+    @keyframes crestPulse {
+      0%, 100% { filter: drop-shadow(0 0 1px rgba(0, 229, 255, 0.4)); }
+      50% { filter: drop-shadow(0 0 4px rgba(0, 229, 255, 0.95)); }
+    }
+
+    /* Stepped grid scanner line animation */
+    .grid-step { animation: gridScan 2.4s ease-in-out infinite; }
+    @keyframes gridScan {
+      0%, 100% { stroke: #00bcd4; opacity: 0.6; }
+      50% { stroke: #00ffff; opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .char-float, .eyes-group, .halo, .crest-glow, .grid-step { animation: none !important; }
+    }
   </style>
-  <rect width="128" height="128" rx="28" fill="#1a2a5a"/>
-  <g class="el bob">
-    <circle cx="64" cy="56" r="28" fill="#2196f3"/>
-    <rect x="42" y="80" width="44" height="24" rx="8" fill="#1565c0"/>
-    <circle cx="54" cy="52" r="6" fill="#fff"/>
-    <circle cx="74" cy="52" r="6" fill="#fff"/>
-    <circle cx="54" cy="52" r="3" fill="#1a2a5a"/>
-    <circle cx="74" cy="52" r="3" fill="#1a2a5a"/>
-    <rect x="48" y="62" width="32" height="6" rx="3" fill="#0d47a1"/>
-    <circle class="el pulse" cx="64" cy="40" r="8" fill="#64b5f6"/>
+
+  <!-- Background Card -->
+  <rect width="128" height="128" rx="28" fill="url(#bg-grad)"/>
+  
+  <!-- Radial Halo Glow -->
+  <ellipse class="halo" cx="64" cy="62" rx="46" ry="46" fill="url(#halo-grad)"/>
+
+  <!-- Character Main Group -->
+  <g class="el char-float">
+    
+    <!-- Dark Feet / Stubby Legs -->
+    <g id="legs">
+      <!-- Left Leg -->
+      <path d="M 46 95 L 56 95 L 54 109 L 43 109 Z" fill="url(#legs-grad)" stroke="#00bcd4" stroke-width="0.7"/>
+      <line x1="43" y1="109" x2="54" y2="109" stroke="#00ffff" stroke-width="1.2" stroke-linecap="round"/>
+      
+      <!-- Right Leg -->
+      <path d="M 72 95 L 82 95 L 85 109 L 74 109 Z" fill="url(#legs-grad)" stroke="#00bcd4" stroke-width="0.7"/>
+      <line x1="74" y1="109" x2="85" y2="109" stroke="#00ffff" stroke-width="1.2" stroke-linecap="round"/>
+    </g>
+
+    <!-- Side Arm Wings/Stubs -->
+    <g id="arms">
+      <!-- Left Arm Wing -->
+      <path d="M 36 71 L 28 73 L 34 82 Z" fill="#0d297a" stroke="#00e5ff" stroke-width="0.8"/>
+      <!-- Right Arm Wing -->
+      <path d="M 92 71 L 100 73 L 94 82 Z" fill="#0d297a" stroke="#00e5ff" stroke-width="0.8"/>
+    </g>
+
+    <!-- Body Torso & Armor -->
+    <g id="torso">
+      <!-- Body Main Base -->
+      <path d="M 35 66 C 35 62, 93 62, 93 66 L 91 93 C 91 97, 37 97, 37 93 Z" fill="url(#chest-body)" stroke="#0b1b4f" stroke-width="1"/>
+
+      <!-- Upper Chest Curved Overlay -->
+      <path d="M 37 66 C 48 72, 80 72, 91 66 C 85 79, 43 79, 37 66 Z" fill="url(#chest-upper)"/>
+      <path d="M 39 67 Q 64 74 89 67" stroke="#e0f7fa" stroke-width="0.9" fill="none" opacity="0.8"/>
+
+      <!-- Stepped Holographic/Pixel Grid Base Edges (Left & Right) -->
+      <!-- Left Grid Steps -->
+      <path class="grid-step" d="M 36 83 H 42 V 87 H 38 V 91 H 42 V 95 H 37" fill="none" stroke-width="1"/>
+      <!-- Right Grid Steps -->
+      <path class="grid-step" d="M 92 83 H 86 V 87 H 90 V 91 H 86 V 95 H 91" fill="none" stroke-width="1"/>
+      
+      <!-- Cyan Cyber Line Accents on Body -->
+      <path d="M 43 90 Q 64 94 85 90" stroke="#00e5ff" stroke-width="1" fill="none" opacity="0.9"/>
+    </g>
+
+    <!-- Helmet & Head Assembly -->
+    <g id="head">
+      
+      <!-- Side Ear Modules -->
+      <g id="ear-left">
+        <rect x="23" y="44" width="11" height="18" rx="4" fill="url(#teal-metallic)" stroke="#040c29" stroke-width="1"/>
+        <rect x="25" y="47" width="3" height="12" rx="1.5" fill="#e0f7fa"/>
+        <rect x="29" y="46" width="3" height="14" rx="1" fill="#00bcd4"/>
+      </g>
+      <g id="ear-right">
+        <rect x="94" y="44" width="11" height="18" rx="4" fill="url(#teal-metallic)" stroke="#040c29" stroke-width="1"/>
+        <rect x="100" y="47" width="3" height="12" rx="1.5" fill="#e0f7fa"/>
+        <rect x="96" y="46" width="3" height="14" rx="1" fill="#00bcd4"/>
+      </g>
+
+      <!-- Helmet Outer Dome -->
+      <path d="M 31 46 C 31 23, 97 23, 97 46 C 97 67, 93 69, 87 69 C 78 69, 72 58, 64 58 C 56 58, 50 69, 41 69 C 35 69, 31 67, 31 46 Z" fill="url(#helmet-outer)" stroke="#0b1b4f" stroke-width="1.2"/>
+      
+      <!-- Top Helmet Specular Shine -->
+      <path d="M 37 36 C 42 26, 86 26, 91 36 C 82 29, 46 29, 37 36 Z" fill="url(#gloss-shine)"/>
+
+      <!-- Helmet Center Top Crest (3 Segmented Blocks) -->
+      <g class="crest-glow" id="helmet-crest">
+        <!-- Top Block -->
+        <path d="M 56 16 L 72 16 L 70 24 L 58 24 Z" fill="url(#teal-metallic)" stroke="#004d40" stroke-width="0.8"/>
+        <line x1="57" y1="17" x2="71" y2="17" stroke="#e0f7fa" stroke-width="0.8"/>
+        
+        <!-- Middle Block -->
+        <path d="M 55 24 L 73 24 L 71 33 L 57 33 Z" fill="url(#teal-metallic)" stroke="#004d40" stroke-width="0.8"/>
+        <line x1="56" y1="25" x2="72" y2="25" stroke="#e0f7fa" stroke-width="0.8"/>
+        
+        <!-- Lower Block / Forehead Joint -->
+        <path d="M 57 33 L 71 33 L 69 40 L 59 40 Z" fill="url(#teal-metallic)" stroke="#004d40" stroke-width="0.8"/>
+        <line x1="58" y1="34" x2="70" y2="34" stroke="#e0f7fa" stroke-width="0.8"/>
+      </g>
+
+      <!-- Face Opening Cutout / Face Plate -->
+      <!-- Inner Visor Shadow Rim -->
+      <path d="M 36 44 C 36 34, 92 34, 92 44 C 92 64, 76 66, 64 58 C 52 66, 36 64, 36 44 Z" fill="#061238"/>
+      
+      <!-- Face Skin Plate -->
+      <path d="M 38 45 C 38 36, 90 36, 90 45 C 90 62, 75 64, 64 57 C 53 64, 38 62, 38 45 Z" fill="url(#face-grad)"/>
+
+      <!-- V-Notch Forehead Crest Rim Over Face -->
+      <path d="M 35 44 C 44 38, 54 44, 64 48 C 74 44, 84 38, 93 44 C 91 38, 80 34, 64 34 C 48 34, 37 38, 35 44 Z" fill="url(#helmet-outer)"/>
+      <path d="M 36 44 Q 64 50 92 44" stroke="#00e5ff" stroke-width="0.7" fill="none" opacity="0.6"/>
+
+      <!-- Facial Features -->
+      
+      <!-- Angled Heroic Eyebrows -->
+      <path d="M 45 42 L 57 45" stroke="#0d297a" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M 83 42 L 71 45" stroke="#0d297a" stroke-width="1.8" stroke-linecap="round"/>
+
+      <!-- Animated Eyes -->
+      <g class="eyes-group" id="eyes">
+        <!-- Left Eye Socket & Iris -->
+        <rect x="46" y="44" width="12" height="18" rx="6" fill="#040e2d"/>
+        <rect x="47" y="45" width="10" height="16" rx="5" fill="url(#eye-iris)"/>
+        <!-- Specular Highlight Left Eye -->
+        <ellipse cx="49.5" cy="48.5" rx="2.5" ry="3.5" fill="#ffffff"/>
+        <circle cx="53" cy="55" r="1" fill="#ffffff" opacity="0.8"/>
+        <circle cx="52" cy="51" r="2" fill="#040e2d"/>
+
+        <!-- Right Eye Socket & Iris -->
+        <rect x="70" y="44" width="12" height="18" rx="6" fill="#040e2d"/>
+        <rect x="71" y="45" width="10" height="16" rx="5" fill="url(#eye-iris)"/>
+        <!-- Specular Highlight Right Eye -->
+        <ellipse cx="73.5" cy="48.5" rx="2.5" ry="3.5" fill="#ffffff"/>
+        <circle cx="77" cy="55" r="1" fill="#ffffff" opacity="0.8"/>
+        <circle cx="76" cy="51" r="2" fill="#040e2d"/>
+      </g>
+
+      <!-- Smile Mouth -->
+      <path d="M 58 57 Q 64 61 70 57" stroke="#072047" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+    </g>
+
   </g>
 </svg>

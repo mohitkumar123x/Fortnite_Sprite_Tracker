@@ -1,0 +1,59 @@
+[
+    {
+        "id": "s4-head-shot-normal",
+        "spriteId": "s4-head-shot",
+        "mainSpriteName": "Head Shot",
+        "variant": "normal",
+        "seasonId": "c7-s4",
+        "chapter": 7,
+        "season": 4,
+        "seasonName": "Override",
+        "rarity": null,
+        "ability": {
+            "name": null,
+            "type": "Unknown",
+            "description": "Ability has not yet been confirmed."
+        },
+        "progression": {
+            "maxLevel": null,
+            "levelNotes": "",
+            "levels": []
+        },
+        "acquisition": {
+            "dustCost": null,
+            "findNotes": "Reappeared in the v42.20 game files on September 17, 2026. Not currently confirmed as obtainable.",
+            "locations": [],
+            "methods": []
+        },
+        "variantInfo": {
+            "name": "Normal",
+            "effect": "Standard Sprite ability"
+        },
+        "release": {
+            "patch": "v42.20",
+            "addedAt": "17-sept-2026",
+            "status": "upcoming",
+            "available": false
+        },
+        "collection": {
+            "trackable": true,
+            "owned": false,
+            "mastered": false,
+            "masteryLevel": 0,
+            "maxMasteryLevel": null
+        },
+        "metadata": {
+            "tags": [
+                "normal",
+                "head-shot",
+                "c7-s4"
+            ],
+            "searchKeywords": [
+                "Head Shot Sprite",
+                "Head Shot Fortnite",
+                "Head Shot Sprite Fortnite",
+                "Head Shot Chapter 7 Season 4"
+            ]
+        }
+    }
+]

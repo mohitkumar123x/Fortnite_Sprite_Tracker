@@ -1,0 +1,48 @@
+[
+  {
+    "id": "s3-air",
+    "mainspritename": "Air",
+    "varient": "normal",
+    "seasonId": "c7-s3",
+    "rarity": "rare",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive. No longer dropping in live matches."
+  },
+  {
+    "id": "s3-air",
+    "mainspritename": "Air",
+    "varient": "gold",
+    "seasonId": "c7-s3",
+    "rarity": "rare",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive. No longer dropping in live matches.",
+    "bonus": "3× elimination XP"
+  },
+  {
+    "id": "s3-air",
+    "mainspritename": "Air",
+    "varient": "gummy",
+    "seasonId": "c7-s3",
+    "rarity": "rare",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive. No longer dropping in live matches."
+  },
+  {
+    "id": "s3-air",
+    "mainspritename": "Air",
+    "varient": "galaxy",
+    "seasonId": "c7-s3",
+    "rarity": "rare",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive. No longer dropping in live matches."
+  },
+  {
+    "id": "s3-air",
+    "mainspritename": "Air",
+    "varient": "holofoil",
+    "seasonId": "c7-s3",
+    "rarity": "rare",
+    "ability": "Season 3 companion ability — refer to in-game tooltip for live values.",
+    "findNotes": "Chapter 7 Season 3 archive. No longer dropping in live matches."
+  }
+]

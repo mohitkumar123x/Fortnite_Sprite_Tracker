@@ -1,0 +1,57 @@
+[
+  {
+    "id": "s3-batman",
+    "mainspritename": "Batman",
+    "varient": "normal",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 collab companion — refer to in-game tooltip for live ability values from that season.",
+    "findNotes": "Chapter 7 Season 3 archive (collab). Tracked on the past-season checklist; no longer dropping in live Season 4 matches."
+  },
+  {
+    "id": "s3-batman",
+    "mainspritename": "Batman",
+    "varient": "gold",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 collab companion — refer to in-game tooltip for live ability values from that season.",
+    "findNotes": "Chapter 7 Season 3 archive (collab). Tracked on the past-season checklist; no longer dropping in live Season 4 matches.",
+    "bonus": "3× elimination XP"
+  },
+  {
+    "id": "s3-batman",
+    "mainspritename": "Batman",
+    "varient": "gummy",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 collab companion — refer to in-game tooltip for live ability values from that season.",
+    "findNotes": "Chapter 7 Season 3 archive (collab). Tracked on the past-season checklist; no longer dropping in live Season 4 matches."
+  },
+  {
+    "id": "s3-batman",
+    "mainspritename": "Batman",
+    "varient": "galaxy",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 collab companion — refer to in-game tooltip for live ability values from that season.",
+    "findNotes": "Chapter 7 Season 3 archive (collab). Tracked on the past-season checklist; no longer dropping in live Season 4 matches."
+  },
+  {
+    "id": "s3-batman",
+    "mainspritename": "Batman",
+    "varient": "holofoil",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 collab companion — refer to in-game tooltip for live ability values from that season.",
+    "findNotes": "Chapter 7 Season 3 archive (collab). Tracked on the past-season checklist; no longer dropping in live Season 4 matches."
+  },
+  {
+    "id": "s3-batman",
+    "mainspritename": "Batman",
+    "varient": "cube",
+    "seasonId": "c7-s3",
+    "rarity": "legendary",
+    "ability": "Season 3 collab companion — refer to in-game tooltip for live ability values from that season.",
+    "findNotes": "Chapter 7 Season 3 archive (collab). Tracked on the past-season checklist; no longer dropping in live Season 4 matches."
+  }
+]

@@ -1,0 +1,287 @@
+[
+  {
+    "id": "s4-birthday-normal",
+    "spriteId": "s4-birthday",
+    "mainSpriteName": "Birthday",
+    "variant": "normal",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "mythic",
+
+    "ability": {
+      "name": "Spotted near high and mountainous areas. Opening chests has a chance to spawn a piece of cake, while eliminations can spawn cake at maximum level. The chance of spawning cake increases with each level up.",
+      "type": "Standard",
+      "description": "Spotted near high and mountainous areas. Opening chests has a chance to spawn a piece of cake, while eliminations can spawn cake at maximum level. The chance of spawning cake increases with each level up."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "The chance of spawning cake increases with each level up.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 600,
+      "findNotes": "Added in v42.20 update on September 17 (available September 26). Fortnite 9th birthday event sprite.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Normal",
+      "effect": "Standard Sprite ability"
+    },
+
+    "release": {
+      "patch": "v42.20",
+      "addedAt": "17-sept-2026",
+      "status": "upcoming",
+      "available": false
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["normal", "birthday", "c7-s4"],
+      "searchKeywords": ["Birthday Sprite", "Birthday Fortnite", "Birthday Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-birthday-gold",
+    "spriteId": "s4-birthday",
+    "mainSpriteName": "Birthday",
+    "variant": "gold",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "mythic",
+
+    "ability": {
+      "name": "Spotted near high and mountainous areas. Opening chests has a chance to spawn a piece of cake, while eliminations can spawn cake at maximum level. The chance of spawning cake increases with each level up.",
+      "type": "Enhanced",
+      "description": "Spotted near high and mountainous areas. Opening chests has a chance to spawn a piece of cake, while eliminations can spawn cake at maximum level. The chance of spawning cake increases with each level up."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "The chance of spawning cake increases with each level up.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 1200,
+      "findNotes": "Added in v42.20 update on September 17 (available September 26). Fortnite 9th birthday event sprite.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Gold",
+      "effect": "Gold variant — 3x elimination XP bonus"
+    },
+
+    "release": {
+      "patch": "v42.20",
+      "addedAt": "17-sept-2026",
+      "status": "upcoming",
+      "available": false
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["gold", "birthday", "c7-s4"],
+      "searchKeywords": ["Birthday Sprite", "Birthday Fortnite", "Birthday Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-birthday-cheat-master",
+    "spriteId": "s4-birthday",
+    "mainSpriteName": "Birthday",
+    "variant": "cheat-master",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "mythic",
+
+    "ability": {
+      "name": "Spotted near high and mountainous areas. Opening chests has a chance to spawn a piece of cake, while eliminations can spawn cake at maximum level. The chance of spawning cake increases with each level up.",
+      "type": "Cheat",
+      "description": "Spotted near high and mountainous areas. Opening chests has a chance to spawn a piece of cake, while eliminations can spawn cake at maximum level. The chance of spawning cake increases with each level up."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "The chance of spawning cake increases with each level up.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 1400,
+      "findNotes": "Added in v42.20 update on September 17 (available September 26). Fortnite 9th birthday event sprite.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Cheat Master",
+      "effect": "Cheat Master — Button Mash cheat ability"
+    },
+
+    "release": {
+      "patch": "v42.20",
+      "addedAt": "17-sept-2026",
+      "status": "upcoming",
+      "available": false
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["cheat-master", "birthday", "c7-s4"],
+      "searchKeywords": ["Birthday Sprite", "Birthday Fortnite", "Birthday Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-birthday-loot-hacker",
+    "spriteId": "s4-birthday",
+    "mainSpriteName": "Birthday",
+    "variant": "loot-hacker",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "mythic",
+
+    "ability": {
+      "name": "Loot Hacker variant of Birthday Sprite.",
+      "type": "Tactical",
+      "description": "Loot Hacker variant of Birthday Sprite."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Loot Hacker variant — Birthday level bonuses apply.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 0,
+      "findNotes": "Added in v42.20 update on September 17. Found in high and mountainous areas.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Loot Hacker",
+      "effect": "Loot Hacker — High-elevation loot run variant"
+    },
+
+    "release": {
+      "patch": "v42.20",
+      "addedAt": "17-sept-2026",
+      "status": "upcoming",
+      "available": false
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["loot-hacker", "birthday", "c7-s4"],
+      "searchKeywords": ["Birthday Sprite", "Birthday Fortnite", "Birthday Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-birthday-bounty-hunter",
+    "spriteId": "s4-birthday",
+    "mainSpriteName": "Birthday",
+    "variant": "bounty-hunter",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "mythic",
+
+    "ability": {
+      "name": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+      "type": "Combat",
+      "description": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Only levels through eliminations.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 0,
+      "findNotes": "Added in v42.20 update on September 17.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Bounty Hunter",
+      "effect": "Bounty Hunter — Elimination-based sprite finder"
+    },
+
+    "release": {
+      "patch": "v42.20",
+      "addedAt": "17-sept-2026",
+      "status": "upcoming",
+      "available": false
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["bounty-hunter", "birthday", "c7-s4"],
+      "searchKeywords": ["Birthday Sprite", "Birthday Fortnite", "Birthday Chapter 7 Season 4"]
+    }
+  }
+]

@@ -2,9 +2,13 @@ import seasons from '../data/seasons.json';
 import sprites from '../data/sprites.json';
 import type { Season, Sprite } from './types';
 import { buildCatalog } from './progress';
+import { c7s4Sprites } from './c7s4-data';
 
 export const allSeasons = seasons as Season[];
-export const allSprites = sprites as Sprite[];
+
+// Merge: c7-s3 from sprites.json, c7-s4 from C7S4_SPRITES folder
+const jsonSprites = (sprites as Sprite[]).filter((s) => !s._comment && s.seasonId !== 'c7-s4');
+export const allSprites: Sprite[] = [...jsonSprites, ...c7s4Sprites];
 
 export function getCurrentSeason(): Season {
   return allSeasons.find((s) => s.isCurrent) ?? allSeasons[0];

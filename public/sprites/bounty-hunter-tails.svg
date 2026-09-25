@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <defs>
+    <!-- Galaxy Background Gradient -->
+    <radialGradient id="galaxyBg" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#E040FB" stop-opacity="0.35"/>
+      <stop offset="45%" stop-color="#2D064A" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0E021B"/>
+    </radialGradient>
+
+    <!-- Cosmic Purple Body Gradient -->
+    <linearGradient id="cosmicBody" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#E040FB"/>
+      <stop offset="35%" stop-color="#AA00FF"/>
+      <stop offset="70%" stop-color="#7B1FA2"/>
+      <stop offset="100%" stop-color="#4A148C"/>
+    </linearGradient>
+
+    <!-- Nebula Cloud Texture Gradient -->
+    <radialGradient id="nebulaSwirl" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FF4081" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#E040FB" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#7B1FA2" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- White Fur Gradient -->
+    <linearGradient id="whiteFur" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F3E5F5"/>
+      <stop offset="100%" stop-color="#E1BEE7"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .el{transform-box:fill-box;transform-origin:center}
+    .bob{animation:bob 2.8s ease-in-out infinite}
+    .blink{animation:blink 3.8s steps(1,end) infinite}
+    .galaxy-spin{animation:spin 16s linear infinite}
+    .twinkle{animation:twinkle 2s ease-in-out infinite alternate}
+    .tail-wag{animation:wag 1.8s ease-in-out infinite alternate}
+    .glow{animation:glow 3s ease-in-out infinite}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+    @keyframes blink{0%,92%,100%{transform:scaleY(1)}95%,98%{transform:scaleY(.1)}}
+    @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+    @keyframes twinkle{0%{opacity:.2;transform:scale(.8)}100%{opacity:.9;transform:scale(1.2)}}
+    @keyframes wag{0%{transform:rotate(-8deg)}100%{transform:rotate(12deg)}}
+    @keyframes glow{0%,100%{opacity:.3}50%{opacity:.65}}
+    @media(prefers-reduced-motion:reduce){.el{animation:none!important}}
+  </style>
+
+  <!-- Card background -->
+  <rect width="128" height="128" rx="20" fill="url(#galaxyBg)"/>
+
+  <!-- Swirling Nebula Galaxy Ring -->
+  <path class="galaxy-spin" d="M 64 20 A 48 48 0 1 1 63.9 20" stroke="url(#nebulaSwirl)" stroke-width="18" fill="none" opacity="0.6" stroke-linecap="round"/>
+
+  <!-- Twinkling Stars -->
+  <g fill="#FFFFFF">
+    <circle class="twinkle" cx="18" cy="22" r="1.5"/>
+    <circle class="twinkle" cx="108" cy="28" r="1"/>
+    <circle class="twinkle" cx="24" cy="98" r="1"/>
+    <circle class="twinkle" cx="102" cy="94" r="1.5"/>
+    <circle class="twinkle" cx="88" cy="18" r="1.2"/>
+  </g>
+
+  <!-- Ambient purple-magenta glow behind Tails -->
+  <ellipse class="glow" cx="64" cy="68" rx="46" ry="42" fill="#E040FB"/>
+
+  <g class="el bob">
+    <!-- Drop Shadow under character -->
+    <ellipse cx="64" cy="118" rx="26" ry="6" fill="#000000" opacity="0.6"/>
+
+    <!-- COSMIC TWIN TAILS -->
+    <g class="el tail-wag" style="transform-origin: 85px 80px;">
+      <path d="M 86 70 C 104 60, 122 75, 114 92 C 104 100, 88 92, 84 82 Z" fill="#AA00FF"/>
+      <path d="M 104 74 C 118 78, 114 92, 104 92 Z" fill="url(#whiteFur)"/>
+
+      <path d="M 82 80 C 100 75, 118 88, 108 104 C 96 110, 82 100, 80 90 Z" fill="#7B1FA2"/>
+      <path d="M 98 88 C 112 92, 108 104, 98 104 Z" fill="#FFFFFF"/>
+    </g>
+
+    <!-- COSMIC CHUNKY BODY -->
+    <path d="M 32 36 C 30 20, 86 20, 88 36 L 90 94 C 90 106, 30 106, 30 94 Z" fill="url(#cosmicBody)"/>
+    <path d="M 32 36 C 30 20, 86 20, 88 36 L 90 94 C 90 106, 30 106, 30 94 Z" fill="url(#nebulaSwirl)"/>
+
+    <!-- Stardust sparkles on body -->
+    <circle cx="48" cy="72" r="1" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="78" cy="82" r="1.2" fill="#FF80AB" opacity="0.9"/>
+    <circle cx="60" cy="94" r="1" fill="#EA80FC" opacity="0.8"/>
+
+    <!-- COSMIC EARS -->
+    <path d="M 34 30 L 26 8 L 48 22 Z" fill="#AA00FF"/>
+    <path d="M 36 26 L 30 14 L 44 21 Z" fill="url(#whiteFur)"/>
+    <path d="M 72 22 L 90 8 L 84 30 Z" fill="#7B1FA2"/>
+
+    <!-- COSMIC HAIR TUFTS -->
+    <path d="M 44 22 C 42 10, 54 10, 52 24 C 50 12, 64 12, 60 26 C 58 14, 70 16, 66 26 Z" fill="#AA00FF"/>
+
+    <!-- COSMIC AVIATOR GOGGLES -->
+    <rect x="28" y="24" width="62" height="4" fill="#1C0136"/>
+    <rect x="36" y="18" width="18" height="14" rx="3" fill="#4A148C" stroke="#E040FB" stroke-width="1.5"/>
+    <rect x="38" y="20" width="14" height="10" rx="2" fill="#00E5FF"/>
+    <rect x="62" y="18" width="18" height="14" rx="3" fill="#4A148C" stroke="#E040FB" stroke-width="1.5"/>
+    <rect x="64" y="20" width="14" height="10" rx="2" fill="#00E5FF"/>
+
+    <!-- WHITE CHEST PATCH -->
+    <ellipse cx="46" cy="74" rx="16" ry="15" fill="url(#whiteFur)"/>
+
+    <!-- WHITE CHEEK TUFTS -->
+    <path d="M 32 44 L 16 46 L 30 52 L 18 56 L 32 60 L 22 64 L 34 66 Z" fill="url(#whiteFur)"/>
+    <path d="M 76 44 L 90 46 L 78 52 L 88 56 L 76 60 L 84 64 L 74 66 Z" fill="url(#whiteFur)"/>
+
+    <!-- NOSE -->
+    <ellipse cx="46" cy="50" rx="3" ry="2" fill="#1C0136"/>
+
+    <!-- SMILE -->
+    <path d="M 42 56 Q 46 60 50 56" stroke="#31005D" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <!-- CONNECTED EYES -->
+    <path d="M 36 30 C 32 44, 52 50, 60 46 C 66 43, 76 42, 74 30 C 72 22, 58 22, 54 28 C 50 22, 38 22, 36 30 Z" fill="#FFFFFF"/>
+
+    <!-- CYAN PUPILS -->
+    <g class="el blink">
+      <ellipse cx="46" cy="38" rx="4.5" ry="7" fill="#00BCD4"/>
+      <ellipse cx="46" cy="38" rx="2.5" ry="5" fill="#00838F"/>
+      <circle cx="44" cy="35" r="1.5" fill="#FFFFFF"/>
+
+      <ellipse cx="64" cy="38" rx="4.5" ry="7" fill="#00BCD4"/>
+      <ellipse cx="64" cy="38" rx="2.5" ry="5" fill="#00838F"/>
+      <circle cx="62" cy="35" r="1.5" fill="#FFFFFF"/>
+    </g>
+
+    <!-- SHOES -->
+    <rect x="36" y="94" width="12" height="12" rx="3" fill="#7B1FA2"/>
+    <rect x="32" y="102" width="18" height="12" rx="4" fill="#E040FB"/>
+    <rect x="32" y="102" width="18" height="4" rx="2" fill="#FFFFFF"/>
+
+    <rect x="58" y="94" width="12" height="12" rx="3" fill="#4A148C"/>
+    <rect x="56" y="102" width="18" height="12" rx="4" fill="#AA00FF"/>
+    <rect x="56" y="102" width="18" height="4" rx="2" fill="#FFFFFF"/>
+
+  </g>
+</svg>

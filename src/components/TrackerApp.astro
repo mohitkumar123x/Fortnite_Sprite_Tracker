@@ -48,6 +48,8 @@ const spritesByUnique = catalog.reduce<Record<string, { id: string; name: string
 }, {});
 const uniqueSprites = Object.values(spritesByUnique).sort((a, b) => rarityOrder.indexOf(a.rarity as Rarity) - rarityOrder.indexOf(b.rarity as Rarity));
 const newSprites = uniqueSprites.filter((s) => s.isNew);
+const v4220Sprites = uniqueSprites.filter((s) => s.launchedAt === '17-sept-2026').sort((a, b) => a.name.localeCompare(b.name));
+const v4210Sprites = uniqueSprites.filter((s) => s.launchedAt !== '17-sept-2026' && s.isNew && s.id !== 'storm-scout' && s.id !== 'gold-storm-scout' && s.id !== 'cheat-master-storm-scout').sort((a, b) => a.name.localeCompare(b.name));
 
 const catalogJson = JSON.stringify(catalog);
 const seasonJson = JSON.stringify(season);
@@ -267,6 +269,8 @@ const obtainableJson = JSON.stringify(obtainableTotal);
         (() => {
           const oldSprites = catalog.filter((e) => !newSpriteIds.has(e.spriteId));
           const newCatalog = catalog.filter((e) => newSpriteIds.has(e.spriteId));
+          const v4220Catalog = catalog.filter((e) => allSprites.find((s) => s.id === e.spriteId)?.launchedAt === '17-sept-2026');
+          const v4210Catalog = catalog.filter((e) => newSpriteIds.has(e.spriteId) && allSprites.find((s) => s.id === e.spriteId)?.launchedAt !== '17-sept-2026');
           const divider = newCatalog.length > 0 ? (
             <div class="col-span-full flex items-center gap-3 py-2 scroll-mt-20">
               <div class="h-px flex-1 bg-hairline"></div>
@@ -274,12 +278,12 @@ const obtainableJson = JSON.stringify(obtainableTotal);
               <div class="h-px flex-1 bg-hairline"></div>
             </div>
           ) : null;
-          const newSpritesCard = newCatalog.length > 0 ? (
-            <div id="new-sprites" class="col-span-full rounded-lg border border-hairline bg-canvas p-4 shadow-card sm:p-5">
+          const v4220SpritesCard = v4220Catalog.length > 0 ? (
+            <div id="new-sprites-v4220" class="col-span-full rounded-lg border border-hairline bg-canvas p-4 shadow-card sm:p-5">
               <div class="flex items-end justify-between gap-2">
                 <div>
-                  <p class="text-caption-mono text-mute">{t(locale, 'spritesSectionEyebrow')}</p>
-                  <a href="#new-sprites" class="mt-1 text-display-sm text-ink no-underline hover:underline">{t(locale, 'spritesSectionTitle')}</a>
+                  <p class="text-caption-mono text-mute">{t(locale, 'spritesSectionV4220Eyebrow')}</p>
+                  <a href="#new-sprites-v4220" class="mt-1 text-display-sm text-ink no-underline hover:underline">{t(locale, 'spritesSectionV4220Title')}</a>
                 </div>
                 <a
                   href={lp('/sprites')}
@@ -289,7 +293,51 @@ const obtainableJson = JSON.stringify(obtainableTotal);
                 </a>
               </div>
               <div class="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-                {newSprites.map((sprite) => (
+                {v4220Sprites.map((sprite) => (
+                  <a
+                    href={lp(`/sprites/${sprite.id}`)}
+                    class="group new-sprite-card flex items-center gap-2 rounded-md border border-hairline bg-canvas-soft p-2.5 no-underline transition-colors hover:border-ink hover:bg-canvas-soft-2 sm:gap-3 sm:p-3"
+                  >
+                    <SpriteArt id={sprite.id} name={sprite.name} rarity={sprite.rarity} size="sm" />
+                    <div class="min-w-0">
+                      <p class="truncate text-xs font-medium text-ink sm:text-sm">{sprite.name}</p>
+                      <p class="text-[10px] text-body sm:text-xs">
+                        <span class="capitalize">{localizeRarity(sprite.rarity as Rarity, locale)}</span>
+                        {sprite.launchedAt && (
+                          <>
+                            <span class="mx-0.5 text-mute sm:mx-1">·</span>
+                            <span class="text-mute hidden md:inline">{sprite.launchedAt}</span>
+                          </>
+                        )}
+                        {!sprite.launchedAt && (
+                          <>
+                            <span class="mx-0.5 text-mute sm:mx-1">·</span>
+                            <span class="text-mute">{t(locale, 'newTag')}</span>
+                          </>
+                        )}
+                      </p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ) : null;
+          const v4210SpritesCard = v4210Catalog.length > 0 ? (
+            <div id="new-sprites-v4210" class="col-span-full rounded-lg border border-hairline bg-canvas p-4 shadow-card sm:p-5">
+              <div class="flex items-end justify-between gap-2">
+                <div>
+                  <p class="text-caption-mono text-mute">{t(locale, 'spritesSectionEyebrow')}</p>
+                  <a href="#new-sprites-v4210" class="mt-1 text-display-sm text-ink no-underline hover:underline">{t(locale, 'spritesSectionTitle')}</a>
+                </div>
+                <a
+                  href={lp('/sprites')}
+                  class="hidden text-sm font-medium text-ink no-underline hover:underline sm:inline"
+                >
+                  {t(locale, 'browseSprites')} →
+                </a>
+              </div>
+              <div class="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                {v4210Sprites.map((sprite) => (
                   <a
                     href={lp(`/sprites/${sprite.id}`)}
                     class="group new-sprite-card flex items-center gap-2 rounded-md border border-hairline bg-canvas-soft p-2.5 no-underline transition-colors hover:border-ink hover:bg-canvas-soft-2 sm:gap-3 sm:p-3"
@@ -454,7 +502,7 @@ const obtainableJson = JSON.stringify(obtainableTotal);
                   </div>
                 )}
               </article>
-          )) : [], divider, newSpritesCard, ...newCells];
+          )) : [], divider, v4220SpritesCard, v4210SpritesCard, ...newCells];
         })()
       }
     </div>

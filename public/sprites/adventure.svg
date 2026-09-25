@@ -1,52 +1,117 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <defs>
+    <!-- Background Gradient (Dark Navy Blue) -->
+    <radialGradient id="advBg" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#0277BD" stop-opacity="0.35"/>
+      <stop offset="55%" stop-color="#0B192C" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#020813"/>
+    </radialGradient>
+
+    <!-- Forest Green Hood Gradient -->
+    <linearGradient id="hoodGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#2E7D32"/>
+      <stop offset="50%" stop-color="#1B5E20"/>
+      <stop offset="100%" stop-color="#0D3B13"/>
+    </linearGradient>
+
+    <!-- Mustard Yellow Body Gradient -->
+    <linearGradient id="bodyGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#FFD54F"/>
+      <stop offset="50%" stop-color="#FFA000"/>
+      <stop offset="100%" stop-color="#FF6F00"/>
+    </linearGradient>
+
+    <!-- Face Yellow Skin Gradient -->
+    <linearGradient id="faceGrad" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#FFEE58"/>
+      <stop offset="100%" stop-color="#FBC02D"/>
+    </linearGradient>
+  </defs>
+
   <style>
-    .el { transform-box: fill-box; transform-origin: center; }
-    .bob { animation: bob 2.8s ease-in-out infinite; }
-    .sway { animation: sway 3.2s ease-in-out infinite; }
-    .sway-slow { animation: sway 4.4s ease-in-out infinite; }
-    .pulse { animation: pulse 2.4s ease-in-out infinite; }
-    .spin { animation: spin 12s linear infinite; }
-    .spin-rev { animation: spin 16s linear infinite reverse; }
-    .dash { animation: dash 1.6s ease-in-out infinite; }
-    .wag { animation: wag 1.1s ease-in-out infinite; }
-    .wag-opp { animation: wag 1.1s ease-in-out infinite reverse; }
-    .twitch { animation: twitch 2.6s ease-in-out infinite; }
-    .twitch-d { animation: twitch 2.6s ease-in-out infinite; animation-delay: .18s; }
-    .flicker { animation: flicker 1.4s ease-in-out infinite; }
-    .wave { animation: wave 2.2s ease-in-out infinite; }
-    .floaty { animation: floaty 3.6s ease-in-out infinite; }
-    .blink { animation: blink 3.8s steps(1, end) infinite; }
-    .spark { animation: spark 2s ease-in-out infinite; }
-    .flash { animation: flash 2.8s ease-in-out infinite; }
-    .swim { animation: swim 2.4s ease-in-out infinite; }
-    .drip { animation: drip 2.6s ease-in-out infinite; }
-    .halo { opacity: .14; animation: halo 2.8s ease-in-out infinite; pointer-events: none; }
-    @keyframes halo { 0%,100% { opacity: .14; } 50% { opacity: .32; } }
-    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
-    @keyframes sway { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
-    @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: .85; } }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    @keyframes dash { 0%,100% { transform: translateX(-3px); } 50% { transform: translateX(4px); } }
-    @keyframes wag { 0%,100% { transform: rotate(-10deg); } 50% { transform: rotate(10deg); } }
-    @keyframes twitch { 0%,86%,100% { transform: rotate(0); } 90% { transform: rotate(-8deg); } 94% { transform: rotate(6deg); } }
-    @keyframes flicker { 0%,100% { transform: scaleY(1) translateY(0); } 40% { transform: scaleY(1.08) translateY(-2px); } 70% { transform: scaleY(.96) translateY(1px); } }
-    @keyframes wave { 0%,100% { transform: translateX(0); } 50% { transform: translateX(4px); } }
-    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-    @keyframes blink { 0%,92%,100% { transform: scaleY(1); } 94%,96% { transform: scaleY(.12); } }
-    @keyframes spark { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.25); opacity: .7; } }
-    @keyframes flash { 0%,72%,100% { opacity: 1; } 78% { opacity: .35; } 84% { opacity: 1; } }
-    @keyframes swim { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-3px) rotate(2deg); } }
-    @keyframes drip { 0%,100% { transform: translateY(0) scaleY(1); } 50% { transform: translateY(4px) scaleY(1.04); } }
-    @media (prefers-reduced-motion: reduce) {
-      .el, .halo { animation: none !important; }
-    }
-</style>
-  <rect width="128" height="128" rx="28" fill="#2B5C8A"/>
-  <ellipse class="halo" cx="64" cy="42" rx="42" ry="28" fill="#ffffff"/>
+    .el{transform-box:fill-box;transform-origin:center}
+    .bob{animation:bob 2.8s ease-in-out infinite}
+    .blink{animation:blink 3.8s steps(1,end) infinite}
+    .glow{animation:glow 3s ease-in-out infinite}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+    @keyframes blink{0%,92%,100%{transform:scaleY(1)}95%,98%{transform:scaleY(.1)}}
+    @keyframes glow{0%,100%{opacity:.25}50%{opacity:.5}}
+    @media(prefers-reduced-motion:reduce){.el{animation:none!important}}
+  </style>
+
+  <!-- Card background -->
+  <rect width="128" height="128" rx="20" fill="url(#advBg)"/>
+
+  <!-- Ambient glow behind Adventure -->
+  <ellipse class="glow" cx="64" cy="68" rx="46" ry="42" fill="#2E7D32"/>
+
   <g class="el bob">
-       <path d="M22 96 L64 36 L106 96 Z" fill="#E8D5B0"/>
-       <path d="M46 96 L64 52 L82 96 Z" fill="#C4A574"/>
-       <rect x="60" y="28" width="8" height="22" rx="2" fill="#F4F0EA"/>
-       <path class="el sway" d="M68 30 L92 38 L68 46 Z" fill="#E24B4B"/>
-     </g>
+    <!-- Drop Shadow under character -->
+    <ellipse cx="64" cy="118" rx="26" ry="6" fill="#000000" opacity="0.5"/>
+
+    <!-- CAPE / CLOAK BACKING -->
+    <path d="M 32 64 C 28 80, 30 100, 36 110 L 92 110 C 98 100, 100 80, 96 64 Z" fill="#0D3B13"/>
+
+    <!-- ===================== LEGS / FEET ===================== -->
+    <rect x="42" y="104" width="13" height="10" rx="3" fill="#4E342E"/>
+    <rect x="73" y="104" width="13" height="10" rx="3" fill="#3E2723"/>
+
+    <!-- ===================== CHUNKY MUSTARD YELLOW BODY ===================== -->
+    <path d="M 34 44 C 32 30, 94 30, 94 44 L 94 96 C 94 104, 34 104, 34 96 Z" fill="url(#bodyGrad)"/>
+    <!-- Body Left Highlight -->
+    <path d="M 34 44 C 32 30, 56 32, 46 98 C 36 98, 34 90, 34 44 Z" fill="#FFF59D" opacity="0.4"/>
+    <!-- Body Right Shading -->
+    <path d="M 76 34 C 86 38, 92 50, 94 96 C 84 98, 80 64, 76 34 Z" fill="#E65100" opacity="0.35"/>
+
+    <!-- ===================== CHEST HARNESS & BELT ===================== -->
+    <!-- Chest Symbol (Red Circle Rune matching reference) -->
+    <circle cx="64" cy="74" r="10" stroke="#D32F2F" stroke-width="2" fill="none" opacity="0.8"/>
+    <line x1="64" y1="64" x2="64" y2="84" stroke="#D32F2F" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Leather Belt with Buckle -->
+    <rect x="33" y="86" width="62" height="7" fill="#4E342E"/>
+    <rect x="58" y="84" width="12" height="11" rx="2" fill="#8D6E63" stroke="#3E2723" stroke-width="1"/>
+    <rect x="61" y="87" width="6" height="5" fill="#FFD54F"/>
+
+    <!-- ===================== STUBBY ARMS / SIDE FINS ===================== -->
+    <path d="M 34 68 L 24 72 L 34 76 Z" fill="#FFA000"/>
+    <path d="M 94 68 L 104 72 L 94 76 Z" fill="#FF8F00"/>
+
+    <!-- ===================== GREEN HOODED COWL (SIGNATURE FEATURE) ===================== -->
+    <!-- Hood Shell Outer Contour -->
+    <path d="M 30 42 C 24 16, 104 16, 98 42 C 102 58, 86 68, 64 68 C 42 68, 26 58, 30 42 Z" fill="url(#hoodGrad)"/>
+    <!-- Hood Rim / Fold Highlight Line -->
+    <path d="M 30 42 C 24 16, 104 16, 98 42" stroke="#4CAF50" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Hood Cowl Neck Wrap / Scarf Fold -->
+    <path d="M 34 52 C 44 64, 84 64, 94 52 C 86 64, 44 64, 34 52 Z" fill="#2E7D32"/>
+    <path d="M 36 54 Q 64 66 92 54" stroke="#4CAF50" stroke-width="2" fill="none" opacity="0.8"/>
+
+    <!-- ===================== FACE INSIDE HOOD ===================== -->
+    <!-- Yellow face area framed by hood cavity -->
+    <path d="M 38 42 C 36 28, 92 28, 90 42 C 90 52, 38 52, 38 42 Z" fill="url(#faceGrad)"/>
+
+    <!-- Eyepatch Strap (Diagonal across head) -->
+    <line x1="36" y1="36" x2="90" y2="44" stroke="#212121" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- ===================== BLACK EYEPATCH (OVER RIGHT EYE) ===================== -->
+    <!-- Oval Eyepatch covering Right Eye (Left side of viewer) -->
+    <ellipse cx="48" cy="40" rx="10" ry="8" transform="rotate(-10 48 40)" fill="#111111"/>
+    <ellipse cx="48" cy="40" rx="10" ry="8" transform="rotate(-10 48 40)" stroke="#212121" stroke-width="1.5"/>
+
+    <!-- ===================== GLOWING CYAN LEFT EYE ===================== -->
+    <g class="el blink">
+      <!-- Open Left Eye (Right side of viewer) -->
+      <ellipse cx="78" cy="42" rx="4.5" ry="6" fill="#00E5FF"/>
+      <ellipse cx="78" cy="42" rx="2.5" ry="4" fill="#00838F"/>
+      <circle cx="76" cy="39" r="1.5" fill="#FFFFFF"/>
+    </g>
+
+    <!-- Determined Brow / Eyepatch Shade -->
+    <path d="M 70 36 Q 78 34 84 38" stroke="#1B5E20" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <!-- Determined Mouth -->
+    <path d="M 64 50 L 70 52" stroke="#3E2723" stroke-width="2" stroke-linecap="round"/>
+
+  </g>
 </svg>

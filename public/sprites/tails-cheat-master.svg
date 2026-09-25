@@ -1,53 +1,143 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <defs>
+    <!-- Matrix Background Gradient -->
+    <radialGradient id="matrixBg" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#00E676" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#052411" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#021007"/>
+    </radialGradient>
+
+    <!-- Matrix Green Body Gradient -->
+    <linearGradient id="matrixBody" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#1B5E20"/>
+      <stop offset="50%" stop-color="#0B381E"/>
+      <stop offset="100%" stop-color="#00240E"/>
+    </linearGradient>
+
+    <!-- Glowing Green Circuit Pattern -->
+    <pattern id="matrixPattern" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M 0 8 H 16 M 8 0 V 16" stroke="#00E676" stroke-width="0.75" opacity="0.35"/>
+      <circle cx="8" cy="8" r="1" fill="#69F0AE" opacity="0.6"/>
+    </pattern>
+
+    <!-- Digital Matrix Skin Gradient -->
+    <linearGradient id="matrixSkin" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#A5D6A7"/>
+      <stop offset="100%" stop-color="#66BB6A"/>
+    </linearGradient>
+  </defs>
+
   <style>
-    .el { transform-box: fill-box; transform-origin: center; }
-    .bob { animation: bob 2.8s ease-in-out infinite; }
-    .sway { animation: sway 3.2s ease-in-out infinite; }
-    .sway-slow { animation: sway 4.4s ease-in-out infinite; }
-    .pulse { animation: pulse 2.4s ease-in-out infinite; }
-    .spin { animation: spin 12s linear infinite; }
-    .spin-rev { animation: spin 16s linear infinite reverse; }
-    .dash { animation: dash 1.6s ease-in-out infinite; }
-    .wag { animation: wag 1.1s ease-in-out infinite; }
-    .wag-opp { animation: wag 1.1s ease-in-out infinite reverse; }
-    .twitch { animation: twitch 2.6s ease-in-out infinite; }
-    .twitch-d { animation: twitch 2.6s ease-in-out infinite; animation-delay: .18s; }
-    .flicker { animation: flicker 1.4s ease-in-out infinite; }
-    .wave { animation: wave 2.2s ease-in-out infinite; }
-    .floaty { animation: floaty 3.6s ease-in-out infinite; }
-    .blink { animation: blink 3.8s steps(1, end) infinite; }
-    .spark { animation: spark 2s ease-in-out infinite; }
-    .flash { animation: flash 2.8s ease-in-out infinite; }
-    .swim { animation: swim 2.4s ease-in-out infinite; }
-    .drip { animation: drip 2.6s ease-in-out infinite; }
-    .halo { opacity: .14; animation: halo 2.8s ease-in-out infinite; pointer-events: none; }
-    @keyframes halo { 0%,100% { opacity: .14; } 50% { opacity: .32; } }
-    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
-    @keyframes sway { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
-    @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: .85; } }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    @keyframes dash { 0%,100% { transform: translateX(-3px); } 50% { transform: translateX(4px); } }
-    @keyframes wag { 0%,100% { transform: rotate(-10deg); } 50% { transform: rotate(10deg); } }
-    @keyframes twitch { 0%,86%,100% { transform: rotate(0); } 90% { transform: rotate(-8deg); } 94% { transform: rotate(6deg); } }
-    @keyframes flicker { 0%,100% { transform: scaleY(1) translateY(0); } 40% { transform: scaleY(1.08) translateY(-2px); } 70% { transform: scaleY(.96) translateY(1px); } }
-    @keyframes wave { 0%,100% { transform: translateX(0); } 50% { transform: translateX(4px); } }
-    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-    @keyframes blink { 0%,92%,100% { transform: scaleY(1); } 94%,96% { transform: scaleY(.12); } }
-    @keyframes spark { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.25); opacity: .7; } }
-    @keyframes flash { 0%,72%,100% { opacity: 1; } 78% { opacity: .35; } 84% { opacity: 1; } }
-    @keyframes swim { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-3px) rotate(2deg); } }
-    @keyframes drip { 0%,100% { transform: translateY(0) scaleY(1); } 50% { transform: translateY(4px) scaleY(1.04); } }
-    @media (prefers-reduced-motion: reduce) {
-      .el, .halo { animation: none !important; }
-    }
-</style>
-  <rect width="128" height="128" rx="28" fill="#E07A2F"/>
-  <ellipse class="halo" cx="64" cy="42" rx="42" ry="28" fill="#ffffff"/>
-  <g transform="rotate(-28 46 72)"><ellipse class="el wag" cx="46" cy="72" rx="16" ry="32" fill="#FFD54A"/></g>
-     <g transform="rotate(28 82 72)"><ellipse class="el wag-opp" cx="82" cy="72" rx="16" ry="32" fill="#FFD54A"/></g>
-     <g class="el bob">
-       <circle cx="64" cy="52" r="20" fill="#F4F0EA"/>
-       <circle class="el blink" cx="58" cy="50" r="3" fill="#1A1A1A"/>
-       <circle class="el blink" cx="70" cy="50" r="3" fill="#1A1A1A"/>
-     </g>
-  <rect x="78" y="6" width="40" height="22" rx="6" fill="#FF1744" opacity=".9"/><text x="98" y="22" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold" font-family="sans-serif">CM</text></svg>
+    .el{transform-box:fill-box;transform-origin:center}
+    .bob{animation:bob 2.8s ease-in-out infinite}
+    .blink{animation:blink 3.8s steps(1,end) infinite}
+    .matrix-rain{animation:rain 4s linear infinite}
+    .scanline{animation:scan 3s ease-in-out infinite}
+    .tail-wag{animation:wag 1.8s ease-in-out infinite alternate}
+    .glow{animation:glow 2.5s ease-in-out infinite}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+    @keyframes blink{0%,92%,100%{transform:scaleY(1)}95%,98%{transform:scaleY(.1)}}
+    @keyframes rain{0%{transform:translateY(-20px)}100%{transform:translateY(20px)}}
+    @keyframes scan{0%,100%{opacity:.2;transform:translateY(0)}50%{opacity:.6;transform:translateY(40px)}}
+    @keyframes wag{0%{transform:rotate(-8deg)}100%{transform:rotate(12deg)}}
+    @keyframes glow{0%,100%{opacity:.3}50%{opacity:.6}}
+    @media(prefers-reduced-motion:reduce){.el{animation:none!important}}
+  </style>
+
+  <!-- Card background -->
+  <rect width="128" height="128" rx="20" fill="url(#matrixBg)"/>
+
+  <!-- Matrix Binary Code Rain Background -->
+  <g opacity="0.35" fill="#00E676" font-family="monospace" font-size="7" class="matrix-rain">
+    <text x="10" y="15">01010101</text>
+    <text x="32" y="35">11001010</text>
+    <text x="80" y="20">10101100</text>
+    <text x="102" y="40">00110101</text>
+    <text x="14" y="65">10010011</text>
+    <text x="96" y="80">01101101</text>
+  </g>
+
+  <!-- Ambient green glow behind Tails -->
+  <ellipse class="glow" cx="64" cy="68" rx="46" ry="42" fill="#00E676"/>
+
+  <g class="el bob">
+    <!-- Drop Shadow under character -->
+    <ellipse cx="64" cy="118" rx="26" ry="6" fill="#000000" opacity="0.6"/>
+
+    <!-- MATRIX TWIN TAILS -->
+    <g class="el tail-wag" style="transform-origin: 85px 80px;">
+      <path d="M 86 70 C 104 60, 122 75, 114 92 C 104 100, 88 92, 84 82 Z" fill="#1B5E20" stroke="#00E676" stroke-width="1"/>
+      <path d="M 104 74 C 118 78, 114 92, 104 92 Z" fill="#A5D6A7"/>
+
+      <path d="M 82 80 C 100 75, 118 88, 108 104 C 96 110, 82 100, 80 90 Z" fill="#0B381E" stroke="#00E676" stroke-width="1"/>
+      <path d="M 98 88 C 112 92, 108 104, 98 104 Z" fill="#66BB6A"/>
+    </g>
+
+    <!-- MATRIX CHUNKY BODY -->
+    <path d="M 32 36 C 30 20, 86 20, 88 36 L 90 94 C 90 106, 30 106, 30 94 Z" fill="url(#matrixBody)"/>
+    <path d="M 32 36 C 30 20, 86 20, 88 36 L 90 94 C 90 106, 30 106, 30 94 Z" fill="url(#matrixPattern)"/>
+
+    <!-- Digital Camouflage Patches -->
+    <rect x="40" y="70" width="10" height="8" rx="2" fill="#00E676" opacity="0.4"/>
+    <rect x="70" y="78" width="12" height="7" rx="2" fill="#69F0AE" opacity="0.4"/>
+    <rect x="52" y="88" width="14" height="9" rx="2" fill="#00C853" opacity="0.5"/>
+
+    <!-- Body Wireframe Outline -->
+    <path d="M 32 36 C 30 20, 86 20, 88 36 L 90 94 C 90 106, 30 106, 30 94 Z" stroke="#00E676" stroke-width="1.5" fill="none" opacity="0.7"/>
+
+    <!-- MATRIX EARS -->
+    <path d="M 34 30 L 26 8 L 48 22 Z" fill="#1B5E20" stroke="#00E676" stroke-width="1"/>
+    <path d="M 36 26 L 30 14 L 44 21 Z" fill="url(#matrixSkin)"/>
+    <path d="M 72 22 L 90 8 L 84 30 Z" fill="#0B381E" stroke="#00E676" stroke-width="1"/>
+
+    <!-- MATRIX HAIR TUFTS -->
+    <path d="M 44 22 C 42 10, 54 10, 52 24 C 50 12, 64 12, 60 26 C 58 14, 70 16, 66 26 Z" fill="#1B5E20" stroke="#00E676" stroke-width="1"/>
+
+    <!-- MATRIX AVIATOR GOGGLES -->
+    <rect x="28" y="24" width="62" height="4" fill="#00240E"/>
+    <rect x="36" y="18" width="18" height="14" rx="3" fill="#0B381E" stroke="#00E676" stroke-width="1.5"/>
+    <rect x="38" y="20" width="14" height="10" rx="2" fill="#00E676" opacity="0.8"/>
+    <rect x="62" y="18" width="18" height="14" rx="3" fill="#0B381E" stroke="#00E676" stroke-width="1.5"/>
+    <rect x="64" y="20" width="14" height="10" rx="2" fill="#00E676" opacity="0.8"/>
+
+    <!-- MATRIX CHEST PATCH -->
+    <ellipse cx="46" cy="74" rx="16" ry="15" fill="url(#matrixSkin)"/>
+
+    <!-- MATRIX CHEEK TUFTS -->
+    <path d="M 32 44 L 16 46 L 30 52 L 18 56 L 32 60 L 22 64 L 34 66 Z" fill="url(#matrixSkin)"/>
+    <path d="M 76 44 L 90 46 L 78 52 L 88 56 L 76 60 L 84 64 L 74 66 Z" fill="url(#matrixSkin)"/>
+
+    <!-- NOSE -->
+    <ellipse cx="46" cy="50" rx="3" ry="2" fill="#00240E"/>
+
+    <!-- SMILE -->
+    <path d="M 42 56 Q 46 60 50 56" stroke="#1B5E20" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <!-- CONNECTED EYES -->
+    <path d="M 36 30 C 32 44, 52 50, 60 46 C 66 43, 76 42, 74 30 C 72 22, 58 22, 54 28 C 50 22, 38 22, 36 30 Z" fill="#C8E6C9"/>
+
+    <!-- GLOWING GREEN MATRIX EYES -->
+    <g class="el blink">
+      <ellipse cx="46" cy="38" rx="4.5" ry="7" fill="#00E676"/>
+      <ellipse cx="46" cy="38" rx="2.5" ry="5" fill="#00240E"/>
+      <circle cx="44" cy="35" r="1.5" fill="#FFFFFF"/>
+
+      <ellipse cx="64" cy="38" rx="4.5" ry="7" fill="#00E676"/>
+      <ellipse cx="64" cy="38" rx="2.5" ry="5" fill="#00240E"/>
+      <circle cx="62" cy="35" r="1.5" fill="#FFFFFF"/>
+    </g>
+
+    <!-- SHOES -->
+    <rect x="36" y="94" width="12" height="12" rx="3" fill="#052B14"/>
+    <rect x="32" y="102" width="18" height="12" rx="4" fill="#1B5E20" stroke="#00E676" stroke-width="1"/>
+    <rect x="32" y="102" width="18" height="4" rx="2" fill="#69F0AE"/>
+
+    <rect x="58" y="94" width="12" height="12" rx="3" fill="#031F0E"/>
+    <rect x="56" y="102" width="18" height="12" rx="4" fill="#0B381E" stroke="#00E676" stroke-width="1"/>
+    <rect x="56" y="102" width="18" height="4" rx="2" fill="#69F0AE"/>
+
+    <!-- Scanline effect -->
+    <line class="scanline" x1="20" y1="50" x2="108" y2="50" stroke="#00E676" stroke-width="1.5" opacity="0.5"/>
+
+  </g>
+</svg>

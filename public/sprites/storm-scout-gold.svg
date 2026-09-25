@@ -1,18 +1,143 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <defs>
+    <!-- Gold Background Gradient -->
+    <radialGradient id="goldBg" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#8D6E63" stop-opacity="0.4"/>
+      <stop offset="40%" stop-color="#3E2723" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#1A0C03"/>
+    </radialGradient>
+
+    <!-- Metallic Gold Body Gradient -->
+    <linearGradient id="goldBodyGrad" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#FFFDE7"/>
+      <stop offset="30%" stop-color="#FFD54F"/>
+      <stop offset="70%" stop-color="#FFB300"/>
+      <stop offset="100%" stop-color="#E65100"/>
+    </linearGradient>
+
+    <!-- Metallic Gold Horn Gradient Left -->
+    <linearGradient id="goldHornLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF9C4"/>
+      <stop offset="50%" stop-color="#FFD54F"/>
+      <stop offset="100%" stop-color="#F57F17"/>
+    </linearGradient>
+
+    <!-- Metallic Gold Horn Gradient Right -->
+    <linearGradient id="goldHornRight" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF9C4"/>
+      <stop offset="50%" stop-color="#FFD54F"/>
+      <stop offset="100%" stop-color="#F57F17"/>
+    </linearGradient>
+
+    <!-- Gold Shimmer Overlay -->
+    <linearGradient id="goldShimmerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFFDE7" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Eye Glow Filter -->
+    <filter id="goldEyeGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
   <style>
-    .el { transform-box: fill-box; transform-origin: center; }
-    .bob { animation: bob 2.8s ease-in-out infinite; }
-    .sway { animation: sway 3.2s ease-in-out infinite; }
-    .floaty { animation: floaty 3.6s ease-in-out infinite; }
-    .flash { animation: flash 2.8s ease-in-out infinite; }
-    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
-    @keyframes sway { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
-    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-    @keyframes flash { 0%,72%,100% { opacity: 1; } 78% { opacity: .35; } 84% { opacity: 1; } }
-    @media (prefers-reduced-motion: reduce) { .el { animation: none !important; } }
+    .el{transform-box:fill-box;transform-origin:center}
+    .bob{animation:bob 2.8s ease-in-out infinite}
+    .pulse-eye{animation:eyePulse 2.4s ease-in-out infinite alternate}
+    .shimmer{animation:shimmer 2.5s ease-in-out infinite}
+    .glow{animation:glow 3s ease-in-out infinite}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+    @keyframes eyePulse{0%{opacity:.85;transform:scale(.98)}100%{opacity:1;transform:scale(1.03)}}
+    @keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+    @keyframes glow{0%,100%{opacity:.3}50%{opacity:.6}}
+    @media(prefers-reduced-motion:reduce){.el{animation:none!important}}
   </style>
-  <rect width="128" height="128" rx="28" fill="#4a4a1a"/>
-  <ellipse class="el floaty" cx="58" cy="56" rx="28" ry="18" fill="#ffee58"/>
-  <ellipse class="el floaty" cx="80" cy="60" rx="22" ry="16" fill="#fff176"/>
-  <path class="el flash" d="M60 76 L52 96 L66 96 L58 114 L84 86 L70 86 L78 76 Z" fill="#ffee58"/>
+
+  <!-- Background card -->
+  <rect width="128" height="128" rx="20" fill="url(#goldBg)"/>
+
+  <!-- Ambient golden glow behind Gold Storm Scout -->
+  <ellipse class="glow" cx="64" cy="68" rx="48" ry="44" fill="#FFD54F"/>
+
+  <g class="el bob">
+    <!-- Drop Shadow under character -->
+    <ellipse cx="64" cy="118" rx="28" ry="6" fill="#000000" opacity="0.55"/>
+
+    <!-- ===================== LEGS / STEPPED BASE ===================== -->
+    <rect x="42" y="104" width="14" height="12" rx="3" fill="#BF360C"/>
+    <rect x="44" y="112" width="10" height="4" rx="2" fill="#8D6E63"/>
+    <rect x="72" y="104" width="14" height="12" rx="3" fill="#8D6E63"/>
+    <rect x="74" y="112" width="10" height="4" rx="2" fill="#5D4037"/>
+
+    <!-- ===================== CURVED SEGMENTED GOLD HORNS ===================== -->
+    <!-- Left Horn -->
+    <path d="M 38 42 C 30 38, 22 40, 18 46 C 16 50, 22 56, 32 50 Z" fill="url(#goldHornLeft)"/>
+    <path d="M 28 42 C 20 36, 16 38, 14 44 C 18 48, 24 46, 26 44 Z" fill="#FFE082"/>
+    <path d="M 24 38 C 16 32, 12 34, 10 40 C 14 44, 20 42, 22 40 Z" fill="#FFD54F"/>
+    <path d="M 18 34 C 12 28, 10 26, 14 24 C 18 24, 18 30, 20 34 Z" fill="#FFFDE7"/>
+    <path d="M 30 42 Q 22 46 26 50" stroke="#FFD54F" stroke-width="1.5" fill="none"/>
+    <path d="M 24 38 Q 16 42 20 46" stroke="#FFD54F" stroke-width="1.5" fill="none"/>
+    <path d="M 18 34 Q 12 36 16 40" stroke="#FFF59D" stroke-width="1.5" fill="none"/>
+
+    <!-- Right Horn -->
+    <path d="M 90 42 C 98 38, 106 40, 110 46 C 112 50, 106 56, 96 50 Z" fill="url(#goldHornRight)"/>
+    <path d="M 100 42 C 108 36, 112 38, 114 44 C 110 48, 104 46, 102 44 Z" fill="#FFE082"/>
+    <path d="M 104 38 C 112 32, 116 34, 118 40 C 114 44, 108 42, 106 40 Z" fill="#FFD54F"/>
+    <path d="M 110 34 C 116 28, 118 26, 114 24 C 110 24, 110 30, 108 34 Z" fill="#FFFDE7"/>
+    <path d="M 98 42 Q 106 46 102 50" stroke="#FFD54F" stroke-width="1.5" fill="none"/>
+    <path d="M 104 38 Q 112 42 108 46" stroke="#FFD54F" stroke-width="1.5" fill="none"/>
+    <path d="M 110 34 Q 116 36 112 40" stroke="#FFF59D" stroke-width="1.5" fill="none"/>
+
+    <!-- ===================== SIDE FINS ===================== -->
+    <!-- Left Fins -->
+    <path d="M 32 68 L 22 72 L 32 76 Z" fill="#FFB300"/>
+    <path d="M 33 80 L 24 84 L 34 88 Z" fill="#F57F17"/>
+    <path d="M 35 92 L 26 95 L 36 98 Z" fill="#E65100"/>
+    <!-- Right Fins -->
+    <path d="M 96 68 L 106 72 L 96 76 Z" fill="#FFB300"/>
+    <path d="M 95 80 L 104 84 L 94 88 Z" fill="#F57F17"/>
+    <path d="M 93 92 L 102 95 L 92 98 Z" fill="#E65100"/>
+
+    <!-- ===================== BLOCKY CUBIC GOLD BODY ===================== -->
+    <path d="M 36 40 C 34 30, 92 30, 92 40 L 96 102 C 96 108, 32 108, 32 102 Z" fill="url(#goldBodyGrad)"/>
+    <path d="M 36 40 C 34 30, 56 32, 46 104 C 36 104, 32 94, 36 40 Z" fill="#FFFDE7" opacity="0.6"/>
+    <path d="M 78 34 C 88 38, 94 48, 96 102 C 86 104, 82 70, 78 34 Z" fill="#BF360C" opacity="0.4"/>
+    <path d="M 38 40 C 44 34, 84 34, 90 40 C 84 43, 44 43, 38 40 Z" fill="#FFFFFF" opacity="0.7"/>
+
+    <!-- ===================== DARK BRONZE STORM VEINS ===================== -->
+    <g stroke="#5D4037" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.8">
+      <path d="M 44 58 Q 40 70 42 82 Q 46 90 44 100"/>
+      <path d="M 42 74 Q 48 82 46 94"/>
+      <path d="M 41 68 Q 36 76 38 88"/>
+      <path d="M 84 58 Q 88 70 86 82 Q 82 90 84 100"/>
+      <path d="M 86 74 Q 80 82 82 94"/>
+      <path d="M 87 68 Q 92 76 90 88"/>
+      <path d="M 52 86 Q 64 94 62 104"/>
+      <path d="M 76 86 Q 64 94 66 104"/>
+    </g>
+
+    <!-- ===================== GLOWING PALE GOLD / WHITE EYES ===================== -->
+    <g class="pulse-eye" filter="url(#goldEyeGlow)">
+      <!-- Left Eye -->
+      <polygon points="40,54 58,60 42,66" fill="#FFF59D"/>
+      <polygon points="43,56 55,60 44,64" fill="#FFFFFF"/>
+
+      <!-- Right Eye -->
+      <polygon points="88,54 70,60 86,66" fill="#FFF59D"/>
+      <polygon points="85,56 73,60 84,64" fill="#FFFFFF"/>
+    </g>
+
+    <!-- MOUTH -->
+    <path d="M 61 67 L 64 64 L 67 67" stroke="#5D4037" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+    <!-- Metallic Gold Shimmer Sweep -->
+    <rect class="shimmer" x="20" y="30" width="20" height="75" fill="url(#goldShimmerGrad)" transform="rotate(-30 40 60)" opacity="0.7"/>
+
+  </g>
 </svg>

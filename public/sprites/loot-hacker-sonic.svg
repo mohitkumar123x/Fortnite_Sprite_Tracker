@@ -1,24 +1,119 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+  <defs>
+    <!-- Cyber Background Gradient -->
+    <radialGradient id="cyberBg" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#D500F9" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#1A0933" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#080314"/>
+    </radialGradient>
+
+    <!-- Cyan Cyber Body Gradient -->
+    <linearGradient id="cyberBody" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#E0F7FA"/>
+      <stop offset="35%" stop-color="#00E5FF"/>
+      <stop offset="70%" stop-color="#00B0FF"/>
+      <stop offset="100%" stop-color="#0072C6"/>
+    </linearGradient>
+
+    <!-- Peach Skin Gradient -->
+    <linearGradient id="peachSkin" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#FFE0B2"/>
+      <stop offset="50%" stop-color="#FFCC80"/>
+      <stop offset="100%" stop-color="#FFB74D"/>
+    </linearGradient>
+
+    <!-- Cyber HUD Grid Pattern -->
+    <pattern id="cyberGrid" width="12" height="12" patternUnits="userSpaceOnUse">
+      <path d="M 12 0 H 0 V 12" stroke="#00E5FF" stroke-width="0.5" opacity="0.35"/>
+    </pattern>
+  </defs>
+
   <style>
-    .el { transform-box: fill-box; transform-origin: center; }
-    .bob { animation: bob 2.8s ease-in-out infinite; }
-    .dash { animation: dash 1.6s ease-in-out infinite; }
-    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
-    @keyframes dash { 0%,100% { transform: translateX(-3px); } 50% { transform: translateX(4px); } }
-    @media (prefers-reduced-motion: reduce) { .el { animation: none !important; } }
+    .el{transform-box:fill-box;transform-origin:center}
+    .bob{animation:bob 2.8s ease-in-out infinite}
+    .blink{animation:blink 3.8s steps(1,end) infinite}
+    .pulse{animation:pulse 2s ease-in-out infinite}
+    .hud-spin{animation:spin 12s linear infinite}
+    .glow{animation:glow 3s ease-in-out infinite}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+    @keyframes blink{0%,92%,100%{transform:scaleY(1)}95%,98%{transform:scaleY(.1)}}
+    @keyframes pulse{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:.8;transform:scale(1.03)}}
+    @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+    @keyframes glow{0%,100%{opacity:.25}50%{opacity:.55}}
+    @media(prefers-reduced-motion:reduce){.el{animation:none!important}}
   </style>
-  <rect width="128" height="128" rx="28" fill="#1a2a4a"/>
+
+  <!-- Card background -->
+  <rect width="128" height="128" rx="20" fill="url(#cyberBg)"/>
+
+  <!-- Tech Corner HUD Brackets -->
+  <path d="M 8 20 V 8 H 20 M 108 8 H 120 V 20 M 120 108 V 120 H 108 M 20 120 H 8 V 108" stroke="#D500F9" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+  <!-- Cyber Grid Background Overlay -->
+  <rect width="128" height="128" rx="20" fill="url(#cyberGrid)" opacity="0.6"/>
+
+  <!-- Ambient magenta-cyan glow behind Sonic -->
+  <ellipse class="glow" cx="64" cy="68" rx="46" ry="42" fill="#D500F9"/>
+
   <g class="el bob">
-    <circle cx="64" cy="56" r="24" fill="#64b5f6"/>
-    <circle cx="56" cy="52" r="6" fill="#fff"/>
-    <circle cx="72" cy="52" r="6" fill="#fff"/>
-    <circle cx="56" cy="52" r="3" fill="#1a1a1a"/>
-    <circle cx="72" cy="52" r="3" fill="#1a1a1a"/>
-    <path d="M56 66 Q64 74 72 66" stroke="#1a1a1a" stroke-width="2" fill="none"/>
-    <g class="el dash">
-      <ellipse cx="40" cy="64" rx="8" ry="4" fill="#64b5f6" opacity=".5"/>
-      <ellipse cx="88" cy="64" rx="8" ry="4" fill="#64b5f6" opacity=".5"/>
+    <!-- Drop Shadow under character -->
+    <ellipse cx="64" cy="118" rx="26" ry="6" fill="#000000" opacity="0.6"/>
+
+    <!-- CYBER BACK QUILLS -->
+    <path d="M 86 36 L 110 44 L 92 56 Z" fill="#00B0FF" stroke="#D500F9" stroke-width="1"/>
+    <path d="M 88 56 L 114 68 L 90 78 Z" fill="#0072C6" stroke="#D500F9" stroke-width="1"/>
+    <path d="M 84 76 L 106 88 L 82 94 Z" fill="#00579B" stroke="#D500F9" stroke-width="1"/>
+
+    <!-- CYBER CHUNKY BODY -->
+    <path d="M 32 36 C 30 20, 86 20, 88 36 L 90 94 C 90 106, 30 106, 30 94 Z" fill="url(#cyberBody)"/>
+
+    <!-- Cyber Circuit Lines on Body (magenta & cyan matching reference) -->
+    <path d="M 32 36 C 30 20, 86 20, 88 36 L 90 94 C 90 106, 30 106, 30 94 Z" fill="url(#cyberGrid)"/>
+
+    <!-- CYBER EARS -->
+    <path d="M 34 32 L 28 10 L 48 24 Z" fill="#00B0FF" stroke="#D500F9" stroke-width="1"/>
+    <path d="M 36 28 L 31 15 L 45 23 Z" fill="url(#peachSkin)"/>
+    <path d="M 72 24 L 90 10 L 84 32 Z" fill="#0072C6" stroke="#D500F9" stroke-width="1"/>
+
+    <!-- PEACH BELLY OVAL -->
+    <ellipse cx="46" cy="74" rx="15" ry="16" fill="url(#peachSkin)"/>
+
+    <!-- PEACH MUZZLE -->
+    <path d="M 28 44 C 24 58, 48 70, 68 62 C 78 58, 80 44, 68 40 C 56 36, 38 36, 28 44 Z" fill="url(#peachSkin)"/>
+
+    <!-- NOSE -->
+    <ellipse cx="26" cy="50" rx="4" ry="3" fill="#1A0933"/>
+
+    <!-- SMILE -->
+    <path d="M 34 58 Q 44 64 52 58" stroke="#4E2A00" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <!-- CONNECTED WHITE EYES -->
+    <path d="M 36 30 C 32 44, 52 52, 60 48 C 66 45, 78 44, 76 30 C 74 22, 58 22, 54 28 C 50 22, 38 22, 36 30 Z" fill="#FFFFFF"/>
+
+    <!-- GREEN PUPILS -->
+    <g class="el blink">
+      <!-- Left Pupil -->
+      <ellipse cx="46" cy="38" rx="4.5" ry="7" fill="#00C853"/>
+      <ellipse cx="46" cy="38" rx="2.5" ry="5" fill="#1B5E20"/>
+      <circle cx="44" cy="35" r="1.5" fill="#FFFFFF"/>
+
+      <!-- Right Pupil -->
+      <ellipse cx="64" cy="38" rx="4.5" ry="7" fill="#00C853"/>
+      <ellipse cx="64" cy="38" rx="2.5" ry="5" fill="#1B5E20"/>
+      <circle cx="62" cy="35" r="1.5" fill="#FFFFFF"/>
     </g>
-    <text x="64" y="68" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold" opacity="0">LH</text>
+
+    <!-- SHOES -->
+    <rect x="36" y="94" width="12" height="12" rx="3" fill="#0072C6"/>
+    <rect x="32" y="102" width="18" height="12" rx="4" fill="#00E5FF" stroke="#D500F9" stroke-width="1"/>
+    <rect x="32" y="102" width="18" height="4" rx="2" fill="#FFFFFF"/>
+
+    <rect x="58" y="94" width="12" height="12" rx="3" fill="#00579B"/>
+    <rect x="56" y="102" width="18" height="12" rx="4" fill="#00B0FF" stroke="#D500F9" stroke-width="1"/>
+    <rect x="56" y="102" width="18" height="4" rx="2" fill="#FFFFFF"/>
+
+    <!-- Pulsing HUD reticle line -->
+    <circle class="pulse" cx="64" cy="68" r="22" stroke="#00E5FF" stroke-width="1" stroke-dasharray="4 4" fill="none" opacity="0.5"/>
+
   </g>
 </svg>

@@ -1,0 +1,287 @@
+[
+  {
+    "id": "s4-crash-bandicoot-normal",
+    "spriteId": "s4-crash-bandicoot",
+    "mainSpriteName": "Crash Bandicoot",
+    "variant": "normal",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "legendary",
+
+    "ability": {
+      "name": "Active – Jump in Air: Triggers a whirlwind attack that damages and knocks back nearby enemies. Damage increases and the cooldown decreases with each level up.",
+      "type": "Standard",
+      "description": "Active – Jump in Air: Triggers a whirlwind attack that damages and knocks back nearby enemies. Damage increases and the cooldown decreases with each level up."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Damage increases and the cooldown decreases with each level up.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 400,
+      "findNotes": "Added in v42.20 update on September 17. Spotted near high and mountainous areas.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Normal",
+      "effect": "Standard Sprite ability"
+    },
+
+    "release": {
+      "patch": "v42.20",
+      "addedAt": "17-sept-2026",
+      "status": "new",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["normal", "crash-bandicoot", "c7-s4"],
+      "searchKeywords": ["Crash Bandicoot Sprite", "Crash Bandicoot Fortnite", "Crash Bandicoot Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-crash-bandicoot-gold",
+    "spriteId": "s4-crash-bandicoot",
+    "mainSpriteName": "Crash Bandicoot",
+    "variant": "gold",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "legendary",
+
+    "ability": {
+      "name": "Active – Jump in Air: Triggers a whirlwind attack that damages and knocks back nearby enemies. Damage increases and the cooldown decreases with each level up.",
+      "type": "Enhanced",
+      "description": "Active – Jump in Air: Triggers a whirlwind attack that damages and knocks back nearby enemies. Damage increases and the cooldown decreases with each level up."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Damage increases and the cooldown decreases with each level up.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 0,
+      "findNotes": "Added in v42.20 update on September 17. Spotted near high and mountainous areas.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Gold",
+      "effect": "Gold variant — 3x elimination XP bonus"
+    },
+
+    "release": {
+      "patch": "v42.20",
+      "addedAt": "17-sept-2026",
+      "status": "new",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["gold", "crash-bandicoot", "c7-s4"],
+      "searchKeywords": ["Crash Bandicoot Sprite", "Crash Bandicoot Fortnite", "Crash Bandicoot Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-crash-bandicoot-cheat-master",
+    "spriteId": "s4-crash-bandicoot",
+    "mainSpriteName": "Crash Bandicoot",
+    "variant": "cheat-master",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "legendary",
+
+    "ability": {
+      "name": "Active – Jump in Air: Triggers a whirlwind attack that damages and knocks back nearby enemies. Damage increases and the cooldown decreases with each level up.",
+      "type": "Cheat",
+      "description": "Active – Jump in Air: Triggers a whirlwind attack that damages and knocks back nearby enemies. Damage increases and the cooldown decreases with each level up."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Damage increases and the cooldown decreases with each level up.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 0,
+      "findNotes": "Added in v42.20 update on September 17. Spotted near high and mountainous areas.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Cheat Master",
+      "effect": "Cheat Master — Button Mash cheat ability"
+    },
+
+    "release": {
+      "patch": "v42.20",
+      "addedAt": "17-sept-2026",
+      "status": "new",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["cheat-master", "crash-bandicoot", "c7-s4"],
+      "searchKeywords": ["Crash Bandicoot Sprite", "Crash Bandicoot Fortnite", "Crash Bandicoot Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-crash-bandicoot-loot-hacker",
+    "spriteId": "s4-crash-bandicoot",
+    "mainSpriteName": "Crash Bandicoot",
+    "variant": "loot-hacker",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "legendary",
+
+    "ability": {
+      "name": "Loot Hacker variant of Crash Bandicoot Sprite.",
+      "type": "Tactical",
+      "description": "Loot Hacker variant of Crash Bandicoot Sprite."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Loot Hacker variant — Crash Bandicoot level bonuses apply.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 0,
+      "findNotes": "Added in v42.20 update on September 17. Found in high and mountainous areas.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Loot Hacker",
+      "effect": "Loot Hacker — High-elevation loot run variant"
+    },
+
+    "release": {
+      "patch": "v42.20",
+      "addedAt": "17-sept-2026",
+      "status": "new",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["loot-hacker", "crash-bandicoot", "c7-s4"],
+      "searchKeywords": ["Crash Bandicoot Sprite", "Crash Bandicoot Fortnite", "Crash Bandicoot Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-crash-bandicoot-bounty-hunter",
+    "spriteId": "s4-crash-bandicoot",
+    "mainSpriteName": "Crash Bandicoot",
+    "variant": "bounty-hunter",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "legendary",
+
+    "ability": {
+      "name": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+      "type": "Combat",
+      "description": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Only levels through eliminations.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 0,
+      "findNotes": "Added in v42.20 update on September 17.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Bounty Hunter",
+      "effect": "Bounty Hunter — Elimination-based sprite finder"
+    },
+
+    "release": {
+      "patch": "v42.20",
+      "addedAt": "17-sept-2026",
+      "status": "upcoming",
+      "available": false
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["bounty-hunter", "crash-bandicoot", "c7-s4"],
+      "searchKeywords": ["Crash Bandicoot Sprite", "Crash Bandicoot Fortnite", "Crash Bandicoot Chapter 7 Season 4"]
+    }
+  }
+]

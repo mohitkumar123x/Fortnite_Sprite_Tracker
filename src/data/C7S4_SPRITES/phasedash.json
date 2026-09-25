@@ -1,0 +1,59 @@
+[
+    {
+        "id": "s4-phase-dash-normal",
+        "spriteId": "s4-phase-dash",
+        "mainSpriteName": "Phase Dash",
+        "variant": "normal",
+        "seasonId": "c7-s4",
+        "chapter": 7,
+        "season": 4,
+        "seasonName": "Override",
+        "rarity": null,
+        "ability": {
+            "name": null,
+            "type": "Unknown",
+            "description": "Ability has not yet been confirmed."
+        },
+        "progression": {
+            "maxLevel": null,
+            "levelNotes": "",
+            "levels": []
+        },
+        "acquisition": {
+            "dustCost": null,
+            "findNotes": "Added to the v42.20 game files on September 17, 2026. Not currently confirmed as obtainable.",
+            "locations": [],
+            "methods": []
+        },
+        "variantInfo": {
+            "name": "Normal",
+            "effect": "Standard Sprite ability"
+        },
+        "release": {
+            "patch": "v42.20",
+            "addedAt": "17-sept-2026",
+            "status": "upcoming",
+            "available": false
+        },
+        "collection": {
+            "trackable": true,
+            "owned": false,
+            "mastered": false,
+            "masteryLevel": 0,
+            "maxMasteryLevel": null
+        },
+        "metadata": {
+            "tags": [
+                "normal",
+                "phase-dash",
+                "c7-s4"
+            ],
+            "searchKeywords": [
+                "Phase Dash Sprite",
+                "Phase Dash Fortnite",
+                "Phase Dash Sprite Fortnite",
+                "Phase Dash Chapter 7 Season 4"
+            ]
+        }
+    }
+]

@@ -1,0 +1,287 @@
+[
+  {
+    "id": "s4-jackrabbit-normal",
+    "spriteId": "s4-jackrabbit",
+    "mainSpriteName": "Jackrabbit",
+    "variant": "normal",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "legendary",
+
+    "ability": {
+      "name": "Grants a second mid-air jump. Cooldown shortens with each level.",
+      "type": "Standard",
+      "description": "Grants a second mid-air jump. Cooldown shortens with each level."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 400,
+      "findNotes": "Legendary Season 4 drop. Extract to add to your locker.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Normal",
+      "effect": "Standard Sprite ability"
+    },
+
+    "release": {
+      "patch": "v42.0",
+      "addedAt": "",
+      "status": "released",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["normal", "jackrabbit", "c7-s4"],
+      "searchKeywords": ["Jackrabbit Sprite", "Jackrabbit Fortnite", "Jackrabbit Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-jackrabbit-gold",
+    "spriteId": "s4-jackrabbit",
+    "mainSpriteName": "Jackrabbit",
+    "variant": "gold",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "legendary",
+
+    "ability": {
+      "name": "Grants a second mid-air jump. Cooldown shortens with each level.",
+      "type": "Enhanced",
+      "description": "Grants a second mid-air jump. Cooldown shortens with each level."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 800,
+      "findNotes": "Legendary Season 4 drop. Extract to add to your locker.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Gold",
+      "effect": "Gold variant — 3x elimination XP bonus"
+    },
+
+    "release": {
+      "patch": "v42.0",
+      "addedAt": "",
+      "status": "released",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["gold", "jackrabbit", "c7-s4"],
+      "searchKeywords": ["Jackrabbit Sprite", "Jackrabbit Fortnite", "Jackrabbit Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-jackrabbit-cheat-master",
+    "spriteId": "s4-jackrabbit",
+    "mainSpriteName": "Jackrabbit",
+    "variant": "cheat-master",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "legendary",
+
+    "ability": {
+      "name": "Grants a second mid-air jump. Cooldown shortens with each level.",
+      "type": "Cheat",
+      "description": "Grants a second mid-air jump. Cooldown shortens with each level."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 900,
+      "findNotes": "Legendary Season 4 drop. Extract to add to your locker.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Cheat Master",
+      "effect": "Cheat Master — Button Mash cheat ability"
+    },
+
+    "release": {
+      "patch": "v42.0",
+      "addedAt": "",
+      "status": "released",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["cheat-master", "jackrabbit", "c7-s4"],
+      "searchKeywords": ["Jackrabbit Sprite", "Jackrabbit Fortnite", "Jackrabbit Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-jackrabbit-loot-hacker",
+    "spriteId": "s4-jackrabbit",
+    "mainSpriteName": "Jackrabbit",
+    "variant": "loot-hacker",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "epic",
+
+    "ability": {
+      "name": "Loot Hacker variant of Jackrabbit Sprite.",
+      "type": "Tactical",
+      "description": "Loot Hacker variant of Jackrabbit Sprite."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Jump height and cooldown improve with each level.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 0,
+      "findNotes": "Added in v42.10 update on September 3. Found in high and mountainous areas.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Loot Hacker",
+      "effect": "Loot Hacker — High-elevation loot run variant"
+    },
+
+    "release": {
+      "patch": "v42.10",
+      "addedAt": "3-sept-2026",
+      "status": "new",
+      "available": true
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["loot-hacker", "jackrabbit", "c7-s4"],
+      "searchKeywords": ["Jackrabbit Sprite", "Jackrabbit Fortnite", "Jackrabbit Chapter 7 Season 4"]
+    }
+  },
+  {
+    "id": "s4-jackrabbit-bounty-hunter",
+    "spriteId": "s4-jackrabbit",
+    "mainSpriteName": "Jackrabbit",
+    "variant": "bounty-hunter",
+
+    "seasonId": "c7-s4",
+    "chapter": 7,
+    "season": 4,
+    "seasonName": "Override",
+
+    "rarity": "legendary",
+
+    "ability": {
+      "name": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules.",
+      "type": "Combat",
+      "description": "Chance to find Sprites when eliminating opponents. Only gains Sprite XP from eliminations, unless Sprite has special XP rules."
+    },
+
+    "progression": {
+      "maxLevel": 5,
+      "levelNotes": "Only levels through eliminations.",
+      "levels": []
+    },
+
+    "acquisition": {
+      "dustCost": 0,
+      "findNotes": "Added in v42.20 update on September 17.",
+      "locations": [],
+      "methods": []
+    },
+
+    "variantInfo": {
+      "name": "Bounty Hunter",
+      "effect": "Bounty Hunter — Elimination-based sprite finder"
+    },
+
+    "release": {
+      "patch": "v42.20",
+      "addedAt": "17-sept-2026",
+      "status": "upcoming",
+      "available": false
+    },
+
+    "collection": {
+      "trackable": true,
+      "owned": false,
+      "mastered": false,
+      "masteryLevel": 0,
+      "maxMasteryLevel": 5
+    },
+
+    "metadata": {
+      "tags": ["bounty-hunter", "jackrabbit", "c7-s4"],
+      "searchKeywords": ["Jackrabbit Sprite", "Jackrabbit Fortnite", "Jackrabbit Chapter 7 Season 4"]
+    }
+  }
+]
