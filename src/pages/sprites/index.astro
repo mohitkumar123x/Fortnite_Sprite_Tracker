@@ -6,7 +6,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import SpriteCard from '../../components/SpriteCard.astro';
 import { allSeasons as rawSeasons, allSprites, getSeasonById } from '../../lib/catalog';
 import { localeFromPath, localizedPath, t } from '../../lib/i18n';
-import { localizeSeason, localizeSeasons } from '../../lib/localizeData';
+import { localizeSeason, localizeSeasons, localizeSpriteAbility } from '../../lib/localizeData';
 
 const locale = localeFromPath(Astro.url.pathname);
 const lp = (href: string) => localizedPath(locale, href);
@@ -73,7 +73,7 @@ const bySeason = seasons.map((season) => ({
                   rarity={sprite.rarity}
                   seasonLabel={getSeasonById(sprite.seasonId)?.shortLabel ?? sprite.seasonId}
                   variantCount={sprite.variants.length}
-                  ability={sprite.ability}
+                  ability={localizeSpriteAbility(sprite.id, sprite.ability, locale)}
                   href={lp(`/sprites/${sprite.id}`)}
                   isNew={sprite.new ?? false}
                   launchedAt={sprite.launchedAt}

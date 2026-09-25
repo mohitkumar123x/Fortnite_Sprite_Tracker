@@ -368,8 +368,9 @@ const obtainableJson = JSON.stringify(obtainableTotal);
           ) : null;
           const newCells = newCatalog.map((entry) => (
               <article
-                class="sprite-cell group rounded-md border border-hairline bg-canvas p-4 shadow-card transition-transform duration-200 data-[hidden=true]:hidden data-[owned=true]:bg-canvas-soft data-[unreleased=true]:opacity-60 data-[view=list]:flex data-[view=list]:items-center data-[view=list]:gap-4 data-[view=list]:p-3"
+                class="sprite-cell group cursor-pointer rounded-md border border-hairline bg-canvas p-4 shadow-card transition-transform duration-200 data-[hidden=true]:hidden data-[owned=true]:bg-canvas-soft data-[unreleased=true]:opacity-60 data-[view=list]:flex data-[view=list]:items-center data-[view=list]:gap-4 data-[view=list]:p-3"
                 data-key={entry.key}
+                data-href={lp(`/sprites/${entry.spriteId}`)}
                 data-rarity={entry.rarity}
                 data-variant={entry.variantId}
                 data-name={entry.spriteName.toLowerCase()}
@@ -438,8 +439,9 @@ const obtainableJson = JSON.stringify(obtainableTotal);
           ));
           return [...oldSprites.length > 0 ? oldSprites.map((entry) => (
               <article
-                class="sprite-cell group rounded-md border border-hairline bg-canvas p-4 shadow-card transition-transform duration-200 data-[hidden=true]:hidden data-[owned=true]:bg-canvas-soft data-[unreleased=true]:opacity-60 data-[view=list]:flex data-[view=list]:items-center data-[view=list]:gap-4 data-[view=list]:p-3"
+                class="sprite-cell group cursor-pointer rounded-md border border-hairline bg-canvas p-4 shadow-card transition-transform duration-200 data-[hidden=true]:hidden data-[owned=true]:bg-canvas-soft data-[unreleased=true]:opacity-60 data-[view=list]:flex data-[view=list]:items-center data-[view=list]:gap-4 data-[view=list]:p-3"
                 data-key={entry.key}
+                data-href={lp(`/sprites/${entry.spriteId}`)}
                 data-rarity={entry.rarity}
                 data-variant={entry.variantId}
                 data-name={entry.spriteName.toLowerCase()}
@@ -722,6 +724,16 @@ const obtainableJson = JSON.stringify(obtainableTotal);
       }
       syncHuntToggle();
       render();
+    });
+
+    root.addEventListener('click', (event) => {
+      const target = event.target as HTMLElement | null;
+      if (!target || target.closest('a, button, input, textarea, select, label')) return;
+      const selection = window.getSelection();
+      if (selection && selection.toString()) return;
+      const card = target.closest('.sprite-cell') as HTMLElement | null;
+      const href = card?.dataset.href;
+      if (href) window.location.href = href;
     });
 
     root.querySelectorAll('.sprite-cell').forEach((cell) => {

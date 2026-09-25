@@ -39,8 +39,8 @@
     "release": {
       "patch": "v42.20",
       "addedAt": "17-sept-2026",
-      "status": "upcoming",
-      "available": false
+      "status": "new",
+      "available": true
     },
 
     "collection": {
@@ -96,8 +96,8 @@
     "release": {
       "patch": "v42.20",
       "addedAt": "17-sept-2026",
-      "status": "upcoming",
-      "available": false
+      "status": "new",
+      "available": true
     },
 
     "collection": {
@@ -153,8 +153,8 @@
     "release": {
       "patch": "v42.20",
       "addedAt": "17-sept-2026",
-      "status": "upcoming",
-      "available": false
+      "status": "new",
+      "available": true
     },
 
     "collection": {
@@ -210,8 +210,8 @@
     "release": {
       "patch": "v42.20",
       "addedAt": "17-sept-2026",
-      "status": "upcoming",
-      "available": false
+      "status": "new",
+      "available": true
     },
 
     "collection": {
@@ -267,8 +267,8 @@
     "release": {
       "patch": "v42.20",
       "addedAt": "17-sept-2026",
-      "status": "upcoming",
-      "available": false
+      "status": "new",
+      "available": true
     },
 
     "collection": {

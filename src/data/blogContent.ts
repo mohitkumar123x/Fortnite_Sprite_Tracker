@@ -27,7 +27,41 @@ function table(caption: string, headers: string[], rows: (string | { text: strin
 }
 function badge(text: string): BadgeBlock { return { type: 'badge', text }; }
 
-const v42_10: Record<Locale, PostContent> = {
+const v42_10: Partial<Record<Locale, PostContent>> = {
+  de: {
+    intro: `Die Kapitel-7-Season 4 erhielt am 3. September 2026 den ersten großen Inhaltsdrop. Das v42.10-Update fügte fünf neue Basis-Begleiter hinzu und führte das Loot-Hacker-Variantensystem ein — eine neue Kategorie sammelbarer Sprites, die in hoch gelegenen und gebirgigen Gebieten vorkommen.`,
+    sections: [
+      {
+        heading: 'Neue Basis-Sprites',
+        blocks: [
+          img('/season-4-patch-timeline.svg', 'Zeitleiste der Kapitel-7-Season-4-Patches in Fortnite: Launch am 24. August, Storm Scout ergänzt am 29. August, Loot-Hacker-System und vier neue Sprites am 3. September im Update v42.10', 720, 160),
+          p('Der Patch hat außerdem bestehende Sprites angepasst: Der Erkennungsradius von X-Ray wächst pro Level schneller. Hier ist jeder neue Sprite mit seiner Seltenheit, seiner Fähigkeit und dem Status, ob er gerade live im Spiel ist.'),
+          table('Neuigkeiten in v42.10', ['Sprite-Name', 'Typ', 'Seltenheit', 'Fähigkeit', 'Status'], [
+            ['X-Ray', 'Neuer Basis', 'Legendär', 'Markiert periodisch Gegner in der Nähe auf dem Bildschirm', 'Verfügbar'],
+            ['Mega Man', 'Neuer Basis', 'Selten', 'Verringert die Reibung beim Rutschen', 'Verfügbar'],
+            ['Overshield', 'Neuer Basis', 'Episch', 'Gibt zusätzlich zu deinen normalen LP einen Schildpuffer', 'Verfügbar'],
+            ['Onigiri', 'Neuer Basis', 'Selten', 'Löst nach dem Verbrauch eines konsumierbaren Items Overdrive aus', 'Verfügbar'],
+            ['Storm Scout', 'Neuer Basis', 'Episch', 'Löst Overdrive nach Sturmschaden aus; Maximales Level zeigt künftige Sturm-Kreise', 'Verfügbar'],
+          ]),
+          p('Fünf Basis-Sprites sind in den Live-Lootpool gekommen. X-Ray ist der herausragende Legendär: Er markiert periodisch Gegner in deiner Nähe auf dem Bildschirm, und der Erkennungsradius wächst mit jedem Level, auf das du ihn anhebst. Mega Man ist ein seltener Begleiter, der die Reibung beim Rutschen verringert, damit du weiter über die Karte rutschst. Overshield gibt zusätzlich zu deinen normalen LP einen Schildpuffer, der mit jedem Level mehr wird. Onigiri löst nach dem Verbrauch eines konsumierbaren Items einen Overdrive-Speed-Boost aus. Und Storm Scout aktiviert Overdrive, sobald du Sturmschaden nimmst, mit einem Bonus auf Maximalem Level, der die künftigen Positionen des Sturm-Kreises anzeigt.'),
+          img('/sprites/xray', 'Sprite-Icon X-Ray, Legendär, Normalvariante — Fortnite Kapitel 7 Season 4', 128, 128),
+        ],
+      },
+      {
+        heading: 'Das Loot-Hacker-System',
+        blocks: [
+          p('Loot-Hacker-Varianten sind eigene Sprites — keine alternativen Skins bestehender Sprites. Jeder Loot Hacker erscheint in Gebieten in großer Höhe und hat genau eine Variantenstufe. Alle Loot-Hacker-Varianten sind jetzt im Spiel verfügbar. Loot-Hacker-Crown trackt eine veränderte Version der Sieg-Fortschrittsfähigkeit des Sprites Crown.'),
+          p('Loot-Hacker-Sprites teilen sich denselben Roster-Platz wie ihr Basis-Pendant — zum Beispiel sind Loot-Hacker-X-Ray und X-Ray beide dem X-Ray-Begleiter zugeordnet, belegen aber getrennte Zellen im Tracker. Das bedeutet, du kannst beide besitzen und sie unabhängig voneinander tracken.'),
+        ],
+      },
+      {
+        heading: 'So trackst du v42.10-Sprites',
+        blocks: [
+          p('Öffne den Tracker auf der Startseite. Die neuen Sprites erscheinen in der Seitenleiste „Neue Sprites“ und sind im Hauptgitter mit einem Badge markiert. Setze bei jedem den Haken „Gesammelt“, sobald du ihn extrahiert hast, und vergebe danach „Meistert“, sobald du das Meisterschaftslevel im Spiel erreichst. Nutze den Jagdmodus, um nur die v42.10-Sprites zu sehen, die dir noch fehlen.'),
+        ],
+      },
+    ],
+  },
   en: {
     intro: `Chapter 7 Season 4 received its first major content drop on September 3, 2026. The v42.10 update added five new base companions and introduced the Loot Hacker variant system — a new category of collectible sprites found in high and mountainous areas.`,
     sections: [
@@ -166,7 +200,38 @@ const v42_10: Record<Locale, PostContent> = {
   },
 };
 
-const howToTrack: Record<Locale, PostContent> = {
+const howToTrack: Partial<Record<Locale, PostContent>> = {
+  de: {
+    intro: `Jeder Begleiter, den du in Kapitel 7 Season 4 extrahierst, bleibt dauerhaft in deinem Locker — aber im Auge zu behalten, welche du bereits besitzt und welche du meistert, wird schnell kompliziert, sobald Gold-, Cheat-Master- und Loot-Hacker-Varianten dazukommen. Dieser Leitfaden beschreibt den kompletten Ablauf: Sprites markieren, Fortschritt sichern und einen Nur-Lesen-Snapshot mit Freunden teilen.`,
+    sections: [
+      {
+        heading: 'Sprites als Gesammelt markieren',
+        blocks: [
+          img('/sprite-variant-hierarchy.svg', 'Variantenhierarchie der Fortnite-Sprites: Jeder Basis-Sprite hat Versionen Normal, Gold, Cheat Master und Loot Hacker mit steigenden Staubkosten', 620, 220),
+          p('Scrolle zum Tracker-Gitter auf der Startseite. Jede Zelle steht für ein Sprite-Varianten-Paar — zum Beispiel sind „Bush Normal“ und „Bush Gold“ getrennte Zellen. Wenn du einen Sprite in einem Match extrahierst und die Extraktionsanimation abgeschlossen ist, finde seine Zelle und tippe auf die Schaltfläche „Als gesammelt markieren“. Die Zelle wechselt in einen hervorgehobenen Zustand, sodass du auf einen Blick siehst, welche Begleiter bereits in deinem Locker sind.'),
+          p('Wenn du eine Variante extrahierst, die du noch nie zuvor gesehen hast — etwa einen Gold Shadow aus einer Truhe — markiere nur genau diese Variante. Die Normalvariante bleibt unmarkiert, bis du sie separat extrahierst. Dieser Ansatz mit einer Zelle pro Variante sorgt dafür, dass dein Tracker exakt widerspiegelt, was wirklich in deinem Locker liegt, und nicht, was du glaubst zu besitzen.'),
+        ],
+      },
+      {
+        heading: 'Sprites als Meistert markieren',
+        blocks: [
+          p('Die Meisterschaft ist eine eigene Markierung, unabhängig vom Besitz. Ein Sprite wird meistert, wenn du ihn im regulären Spiel auf Level 5 bringst und danach die Extraktionsanforderung erfüllst. Setze im Tracker nur dann einen Stern auf „Meistert“, wenn beide Bedingungen erfüllt sind. Das Zwei-Status-System existiert, weil das Extrahieren eines Gold Crown nicht dasselbe ist wie dessen Meisterschaft — Meisterschaft bedeutet, dass du den Begleiter komplett aufgelevelt und seinen Bonus freigeschaltet hast.'),
+        ],
+      },
+      {
+        heading: 'Deine Sammlung sichern',
+        blocks: [
+          p('Der gesamte Fortschritt liegt im localStorage deines Browsers. Wenn du deine Browserdaten löschst, den Computer wechselst oder auf ein anderes Gerät möchtest, exportiere deine Sammlung als JSON-Datei. Öffne das Teilen-Panel unter dem Tracker, klicke auf „JSON exportieren“ und speichere die Datei an einem sicheren Ort. Um sie auf einem neuen Gerät wiederherzustellen, öffne dasselbe Teilen-Panel und klicke auf „JSON importieren“ — deine Markierungen „Gesammelt“ und „Meistert“ werden sofort wiederhergestellt.'),
+        ],
+      },
+      {
+        heading: 'Mit Freunden teilen',
+        blocks: [
+          p('Das Teilen-Panel erzeugt außerdem eine Nur-Lesen-URL. Kopiere sie und schicke sie einem Freund — er sieht deine Markierungen „Gesammelt“ und „Meistert“ in seinem Browser, kann sie aber nicht bearbeiten. Das ist nützlich, um vor einer Squad-Session abzustimmen, wer welche Sprites hat, oder um eine fast vollständige Sammlung zu zeigen. Die URL kodiert nur deine Checklisten-Bits, nicht dein Epic-Konto und keine persönlichen Daten.'),
+        ],
+      },
+    ],
+  },
   en: {
     intro: `Every companion you extract in Chapter 7 Season 4 stays in your locker permanently, but keeping track of which ones you own — and which you have mastered — gets complicated fast once Gold, Cheat Master, and Loot Hacker variants enter the picture. This guide walks through the full workflow: marking sprites, backing up your progress, and sharing a read-only snapshot with friends.`,
     sections: [
@@ -293,7 +358,33 @@ const howToTrack: Record<Locale, PostContent> = {
   },
 };
 
-const huntMode: Record<Locale, PostContent> = {
+const huntMode: Partial<Record<Locale, PostContent>> = {
+  de: {
+    intro: `Der Jagdmodus ist ein Board-Filter, der alle Sprites ausblendet, die du bereits besitzt, und nur die fehlenden anzeigt, sortiert nach Seltenheit. Er verwandelt ein 42-Sprites-Gitter in eine fokussierte Checkliste mit genau dem, was du noch extrahieren musst. So aktivierst du ihn und nutzt ihn effektiv.`,
+    sections: [
+      {
+        heading: 'Jagdmodus aktivieren',
+        blocks: [
+          img('/hunt-mode-flow-diagram.svg', 'Ablauf des Jagdmodus: Sprite extrahieren, als gesammelt markieren, Jagdmodus aktivieren, um das Board auf fehlende Varianten nach Seltenheit sortiert zu filtern', 700, 180),
+          p('Im Tracker auf der Startseite findest du die Filterleiste über dem Sprite-Gitter. Tippe auf den Schalter „Jagdmodus“. Das Gitter aktualisiert sich sofort und blendet jede Zelle aus, in der du bereits „Gesammelt“ markiert hast. Übrig bleibt eine kürzere Liste fehlender Sprites, gruppiert nach Seltenheitsstufe — Mythische Begleiter erscheinen zuerst, dann Legendäre, Epische und Seltene.'),
+          p('Der Jagdmodus funktioniert zusammen mit anderen Filtern. Wenn du sowohl den Jagdmodus als auch den Filter „Nur Season 4“ aktivierst, zeigt das Board nur Season-4-Sprites, die du noch nicht extrahiert hast. Der Zusatzfilter „Gold“ verengt die Auswahl weiter auf Gold-Varianten, die dir fehlen. Jeder Filter stapelt sich, sodass du einen sehr genau zugeschnittenen Extraktionsplan aufbauen kannst.'),
+        ],
+      },
+      {
+        heading: 'Die Sortierung nach Seltenheit nutzen',
+        blocks: [
+          p('In den Ergebnissen des Jagdmodus sind Sprites nach Seltenheitsstufe sortiert. Das bedeutet, die seltensten fehlenden Begleiter stehen oben im Gitter. Wenn du in einem Match Truhen öffnest und wissen willst, welche Extraktion die höchste Priorität hat, wirf einen Blick auf den Tracker — der erste Sprite in den Jagdmodus-Ergebnissen ist der, den du dir greifen solltest, falls du ihn findest.'),
+          p('Mythische Sprites wie Crown und Klombo sind in Truhen am schwersten zu finden. Zeigt dir der Jagdmodus einen davon ganz oben in der Liste, weißt du, dass die Truhenbeute dieses Matches für deine Sammlung besonders wertvoll ist. Bleiben nur seltene Sprites übrig, kannst du dich auf andere Spielziele konzentrieren, in dem Wissen, dass die üblichen Begleiter sich später leicht besorgen lassen.'),
+        ],
+      },
+      {
+        heading: 'Jagdmodus mit dem Filter Fehlend kombinieren',
+        blocks: [
+          p('Der Filter „Fehlend“ funktioniert ähnlich wie der Jagdmodus, aber ohne die Sortierung nach Seltenheit. Nutze den Jagdmodus, wenn du eine Prioritätenreihenfolge willst; nutze den einfachen Filter „Fehlend“, wenn du nur schnell zählen möchtest, wie viele Sprites übrig sind. Beide lassen sich unabhängig voneinander schalten, und beide gleichzeitig zu aktivieren ist redundant — der Jagdmodus bedeutet ohnehin „nur fehlende anzeigen“.'),
+        ],
+      },
+    ],
+  },
   en: {
     intro: `Hunt Mode is a board filter that hides every sprite you already own and shows only the missing ones, sorted by rarity. It turns a 42-sprite grid into a focused checklist of exactly what you still need to extract. Here is how to enable it and use it effectively.`,
     sections: [
@@ -400,7 +491,37 @@ const huntMode: Record<Locale, PostContent> = {
   },
 };
 
-const compareLockers: Record<Locale, PostContent> = {
+const compareLockers: Partial<Record<Locale, PostContent>> = {
+  de: {
+    intro: `Das Vergleichswerkzeug zeigt dir zwei Sprite-Sammlungen nebeneinander an — per Share-Codes. Das ist praktisch, um dich mit einem Squad-Mitglied abzustimmen, nachzuschauen, was ein Freund bereits gesammelt hat oder herauszufinden, welche Sprites ihr gemeinsam jagen müsst. Keine Anmeldung nötig — der Vergleich läuft vollständig in deinem Browser.`,
+    sections: [
+      {
+        heading: 'Deinen Share-Code erzeugen',
+        blocks: [
+          p('Öffne den Tracker auf der Startseite und scrolle zum Teilen-Panel. Klicke auf „Share-Link kopieren“, um eine URL zu erhalten, die deine Markierungen „Gesammelt“ und „Meistert“ kodiert. Schicke diesen Link an jeden, mit dem du dich vergleichen möchtest. Die Person kann ihn öffnen und deine Sammlung als Nur-Lesen-Ansicht sehen, oder ihn auf der Vergleichsseite einfügen und eine Gegenüberstellung starten.'),
+          table('Beispiel für ein Vergleichsergebnis', ['Sprite', 'Du besitzt', 'Freund besitzt', 'Status'], [
+            ['Crown — Normal', 'Ja', 'Ja', 'Beide'],
+            ['X-Ray — Gold', 'Ja', 'Nein', 'Nur du'],
+            ['Shadow — Cheat Master', 'Nein', 'Ja', 'Nur Freund'],
+            ['Klombo — Gold', 'Nein', 'Nein', 'Keiner'],
+          ]),
+        ],
+      },
+      {
+        heading: 'Einen Vergleich durchführen',
+        blocks: [
+          p('Gehe zur Vergleichsseite und füge beide Share-Codes in die Eingabefelder ein. Das Werkzeug dekodiert jede URL, liest die Bits für „Gesammelt“ und „Meistert“ und erzeugt eine Tabelle mit jedem Sprite-Varianten-Paar. Die Zeilen sind farblich markiert: Grün bedeutet, beide Spieler besitzen den Sprite, Blau bedeutet, nur du hast ihn, Grau bedeutet, nur dein Freund hat ihn, und Rot bedeutet, keiner von beiden hat diese Variante bisher extrahiert.'),
+          p('Der Vergleich wird vollständig in deinem Browser berechnet. Es werden keine Daten an einen Server geschickt, und die Share-Codes enthalten ausschließlich Checklisten-Informationen — nicht deinen Epic-Benutzernamen, deine E-Mail-Adresse oder Zugangsdaten. Das ist dasselbe Datenschutzmodell, das der Tracker zur Speicherung deines individuellen Fortschritts nutzt.'),
+        ],
+      },
+      {
+        heading: 'Die Ergebnisse nutzen',
+        blocks: [
+          p('Die Zeilen mit „Keiner“ sind die nützlichsten. Sie zeigen dir und deinem Freund, welche Sprites ihr beide extrahieren müsst — das kann eure nächste Squad-Session lenken. Die Zeilen „Nur Freund“ zeigen Sprites, die dein Freund hat und du nicht — hilfreich, um zu wissen, welche Truhen ihr beim gemeinsamen Spielen zuerst öffnen solltet. Und die Zeilen „Beide“ bestätigen, dass keiner von euch diese Begleiter erneut ansehen muss.'),
+        ],
+      },
+    ],
+  },
   en: {
     intro: `The Compare tool lets you see two sprite collections side by side using share codes. This is useful for coordinating with a squad member, checking what a friend has collected, or figuring out which sprites you both need to hunt together. No login is required — the comparison runs entirely in your browser.`,
     sections: [
@@ -523,7 +644,44 @@ const compareLockers: Record<Locale, PostContent> = {
   },
 };
 
-const cheatCodes: Record<Locale, PostContent> = {
+const cheatCodes: Partial<Record<Locale, PostContent>> = {
+  de: {
+    intro: `Cheat-Codes in Kapitel 7 Season 4 schalten Cheat-Master-Sprite-Varianten, Bonus-Sprite-Staub, zusätzliche XP und ein paar Nützlichkeits-Items frei. Jeder Code erfordert eine bestimmte Tastenkombination, die am Cheat-Terminal im Spiel eingegeben wird, und die meisten kosten Sprite-Staub zur Aktivierung. Hier ist jeder geprüfte Code, was er bringt und was er kostet.`,
+    sections: [
+      {
+        heading: 'So gibst du einen Cheat-Code ein',
+        blocks: [
+          table('Alle geprüften Cheat-Codes — Kapitel 7 Season 4', ['Code', 'Schaltet frei', 'Kategorie', 'Staub-Kosten'], [
+            ['MAGILUME', '2.000 Sprite-Staub', 'Staub', '—'],
+            ['CHISPAMBO', '2.000 Sprite-Staub', 'Staub', '—'],
+            ['ABGESTAUBT', '2.000 Sprite-Staub', 'Staub', '—'],
+            ['OVERRIDEXP', '40.000 XP', 'XP', '—'],
+            ['02OVERRIDE', 'Llama-Vorratsdrop + Tragbarer Extraktor', 'Item', '—'],
+            ['TAKEYOURHEART', 'Extraktionsbeschleuniger', 'Item', '—'],
+            ['PERFECTORDER', 'Würzige Tacos', 'Item', '—'],
+            ['BEMOREALIEN', 'Ladebildschirm', 'Kosmetik', '—'],
+            ['REACHYOURIMPOSSIBLE', 'Ladebildschirm', 'Kosmetik', '—'],
+          ]),
+          img('/sprites/bush', 'Sprite-Icon Bush, Selten, Cheat-Master-Variante — Fortnite Kapitel 7 Season 4', 128, 128),
+          p('Suche dir im Spiel ein Cheat-Terminal — sie befinden sich an bestimmten POIs und sind auf der Karte markiert. Gehe zum Terminal und interagiere damit. Eine Eingabeoberfläche erscheint. Gib den Code genau so ein, wie er angezeigt wird (Groß- und Kleinschreibung zählt), und bestätige dann. Wenn der Code gültig ist und du genug Sprite-Staub hast, läuft die Freischalt-Animation und das Item oder die Variante wird sofort deinem Konto hinzugefügt.'),
+          p('Die Tastenkombination, die in der Tabelle oben neben jedem Code steht, ist eine alternative Eingabemethode für Controller-Spieler. Statt den Textcode zu tippen, kannst du die Richtungs- und Face-Button-Sequenz am Terminal eingeben. Beide Methoden führen zum selben Ergebnis — wähle die, die für dein Setup schneller ist.'),
+        ],
+      },
+      {
+        heading: 'Staub- und XP-Codes',
+        blocks: [
+          p('Neben Sprite-Varianten gewähren mehrere Codes direkt Sprite-Staub. Codes wie Magilume, Chispambo und Abgestaubt geben jeweils 2.000 Staub — genug, um auf einem beliebigen seltenen Sprite eine Normalvariante freizuschalten. Der OverrideXP-Code gewährt 40.000 XP für deinen Saison-Fortschritt. Diese sind pro Konto nur einmal verwendbar, gib sie also einmal ein und mach dir keine Sorgen um Duplikate.'),
+        ],
+      },
+      {
+        heading: 'Item- und Kosmetik-Codes',
+        blocks: [
+          p('Ein paar Codes schalten verbrauchbare Items frei: 02Override gibt einen Llama-Vorratsdrop und einen Tragbaren Extraktor, TakeYourHeart gewährt Extraktionsbeschleuniger und PerfectOrder liefert würzige Tacos. Die Kosmetik-Codes BeMoreAlien und ReachYourImpossible schalten Ladebildschirme frei. Keiner davon beeinflusst deine Sprite-Sammlung direkt, aber die Extraktionsbeschleuniger sind nützlich, um Begleiter schneller aufzuleveln.'),
+          p('Die vollständige interaktive Cheat-Code-Seite mit Erfassung bereits eingelöster Codes findest du auf der Seite Cheat-Codes.'),
+        ],
+      },
+    ],
+  },
   en: {
     intro: `Cheat codes in Chapter 7 Season 4 unlock Cheat Master sprite variants, bonus Sprite Dust, extra XP, and a handful of utility items. Each code requires a specific button combo entered at the cheat terminal in-game, and most cost Sprite Dust to activate. Here is every verified code, what it gives you, and how much it costs.`,
     sections: [
@@ -674,7 +832,31 @@ const cheatCodes: Record<Locale, PostContent> = {
   },
 };
 
-const seasonArchives: Record<Locale, PostContent> = {
+const seasonArchives: Partial<Record<Locale, PostContent>> = {
+  de: {
+    intro: `Wenn eine neue Fortnite-Season beginnt, wandert der Sprite-Roster der Vorsaison ins Archiv. Das bedeutet: Diese Begleiter fallen in Live-Matches nicht mehr aus Truhen, aber jeder Sprite, den du während dieser Season extrahiert hast, bleibt in deiner Sammlung. Der Tracker bewahrt alle davon auf, damit dein historischer Fortschritt nie verloren geht.`,
+    sections: [
+      {
+        heading: 'Was mit archivierten Sprites passiert',
+        blocks: [
+          table('Archive vergangener Seasons', ['Season', 'Roster-Highlights', 'Archiv-Link'], [
+            ['Kapitel 7 — Season 3', 'Batman, Zero Point, King, Seven, John Wick, Ghost, Peeky Peely, Llama, dazu Element-Sprites (Luft, Erde, Feuer, Wasser) mit Gummy-, Galaxy-, Holofoil-, Cube- und Quack-Varianten', 'Archiv ansehen →'],
+          ]),
+          img('/sprites/s3-batman', 'Sprite-Icon Batman, Legendär, Basisvariante — Archiv der Fortnite Kapitel-7-Season 3', 128, 128),
+          p('Archivierte Sprites behalten alle ihre Daten: Name, Seltenheit, Fähigkeit, Varianten und die Markierungen, die du ihnen gegeben hast. Wenn du Batman in Season 3 als „Gesammelt“ und „Meistert“ markiert hast, bleiben diese Markierungen im Tracker dauerhaft erhalten. Die einzige Änderung ist, dass der Sprite nicht mehr im live Season-4-Gitter erscheint — du musst in die Archivansicht der Season 3 wechseln, um ihn zu sehen.'),
+          p('Die Archivansicht erreichst du über die Season-Seite. Wähle Kapitel 7 Season 3, und der Tracker füllt sich mit dem kompletten Roster dieser Season. Im Archiv kannst du weiterhin Sprites markieren und Markierungen entfernen — falls du also eine Extraktion aus Season 3 vergessen hast, kannst du zurückgehen und sie nachtragen.'),
+        ],
+      },
+      {
+        heading: 'Unterschiede bei den Varianten zwischen den Seasons',
+        blocks: [
+          p('Season-3-Sprites nutzten ein anderes Variantensystem als Season 4. Statt Normal, Gold und Cheat Master hatten Season-3-Begleiter die Varianten Basis, Gold, Gummy, Galaxy, Edelstein, Holofoil, Cube und Quack — jede mit einem anderen visuellen Erscheinungsbild. Manche Sprites hatten bis zu acht Varianten (wie Zero Point), andere wie John Wick nur eine einzige Basisvariante.'),
+          p('Der Tracker beherrscht beide Systeme. Season-3-Zellen zeigen die ursprünglichen Variantennamen, Season-4-Zellen die neuen Stufennamen. So bleibt die Historie deiner Sammlung genau — unabhängig davon, welches Season-Namensschema ein Sprite verwendet.'),
+          p('Das komplette Season-3-Archiv findest du auf der Season-Seite, oder springe direkt auf die Sprite-Seite von Batman, um alle sechs Varianten und ihre Freischaltanforderungen zu sehen.'),
+        ],
+      },
+    ],
+  },
   en: {
     intro: `When a new Fortnite season begins, the previous season's sprite roster moves to the archive. This means those companions no longer drop from chests in live matches, but every sprite you extracted during that season stays in your collection. The tracker preserves all of them so your historical progress is never lost.`,
     sections: [
@@ -773,7 +955,105 @@ const seasonArchives: Record<Locale, PostContent> = {
   },
 };
 
-const sept10Release: Record<Locale, PostContent> = {
+const sept10Release: Partial<Record<Locale, PostContent>> = {
+  de: {
+    intro: `Epic Games hat am 10. September 2026 die vollständige Ausspielung des Loot-Hacker-Rosters der Kapitel-7-Season 4 abgeschlossen. Vierzehn Sprite-Varianten, die am 3. September stillschweigend in den v42.10-Client eingeschleust wurden, fallen jetzt aus Loot-Spawns in Live-Matches. Wenn du darauf gewartet hast, deine Sammlung zu vervollständigen, hier ist alles, was du über jeden Loot-Hacker-Sprite wissen musst, was er jeweils tut und wann er in deiner Region erschienen ist.`,
+    sections: [
+      {
+        heading: 'Was sind Loot-Hacker-Sprites?',
+        blocks: [
+          img('/season-4-patch-timeline.svg', 'Zeitleiste der Fortnite Kapitel-7-Season-4-Patches mit der Ausspielung von Loot Hacker im September 2026', 720, 160),
+          p('Loot Hacker ist eine neue Kategorie Begleiter-Sprites, die in Kapitel 7 Season 4 eingeführt wurde. Anders als Standard-Sprites, die einen einzelnen Basis-Begleiter repräsentieren, sind Loot-Hacker-Varianten eigenständige Sammelobjekte — jede erscheint unabhängig und belegt ihren eigenen Platz im Tracker. Sie teilen eine thematische Verbindung zu einem Basis-Begleiter, tragen aber eine eigene Fähigkeit, die auf Loot-Läufe in großer Höhe ausgerichtet ist.'),
+          p('Der erste Loot-Hacker-Sprite, Crown, ging am 3. September zusammen mit dem v42.10-Patch live. Die übrigen 14 Varianten wurden in den Spieldateien zurückgehalten, bis Epic am 10. September den Schalter umlegte und sie auf allen Servern verfügbar machte. Alle davon sind jetzt im aktuellen Lootpool zu finden.'),
+        ],
+      },
+      {
+        heading: 'Vollständige Liste der Loot-Hacker-Sprites mit Fähigkeiten',
+        blocks: [
+          p('Es gibt insgesamt 15 Loot-Hacker-Sprites — zwei Legendäre, sechs Epische und sieben Seltene. Jeder verstärkt eine bestimmte Spielmechanik, die mit seinem Basis-Begleiter verknüpft ist. Hier ist die vollständige Übersicht mit Sprite-Icons, Seltenheitsstufen und dem, was jede Fähigkeit auf Maximalem Level tut.'),
+          h2('Legendäre Loot-Hacker-Sprites'),
+          img('/sprites/loot-hacker-xray', 'Sprite-Icon Loot Hacker X-Ray — Seltenheit legendär, Fortnite Kapitel 7 Season 4', 128, 128),
+          p('<strong>Loot Hacker X-Ray</strong> — Vergrößert den Erkennungsradius für die Gegnermarkierung des Basis-Begleiters X-Ray. Auf höheren Levels reicht der Puls weiter, sodass du Gegner in der Nähe früher bemerkst. Das ist der begehrteste Loot-Hacker-Sprite für aggressive Spielweisen.'),
+          img('/sprites/loot-hacker-storm-scout', 'Sprite-Icon Loot Hacker Storm Scout — Seltenheit legendär, Fortnite Kapitel 7 Season 4', 128, 128),
+          p('<strong>Loot Hacker Storm Scout</strong> — Verbessert die Genauigkeit der Sturm-Kreis-Prognose. Je mehr du ihn auflevelst, desto präziser wird die Vorhersage, sodass du dich zuversichtlich vor die nächste sichere Zone positionieren kannst.'),
+          h2('Epische Loot-Hacker-Sprites'),
+          img('/sprites/loot-hacker-klombo', 'Sprite-Icon Loot Hacker Klombo — Seltenheit episch, Fortnite Kapitel 7 Season 4', 128, 128),
+          p('<strong>Loot Hacker Klombo</strong> — Erhöht die Qualitätsstufe der Items aus Loot-Quellen und beschleunigt das Verbrauchen konsumierbarer Items. Eine solide Wahl für Spieler, die auf schnellen Inventarwechsel setzen.'),
+          img('/sprites/loot-hacker-jackrabbit', 'Sprite-Icon Loot Hacker Jackrabbit — Seltenheit episch, Fortnite Kapitel 7 Season 4', 128, 128),
+          p('<strong>Loot Hacker Jackrabbit</strong> — Erhöht die Sprunghöhe und verringert die Abklingzeit zwischen Sprüngen. Nützlich im Gebirge, wo Loot-Hacker-Sprites üblicherweise spawnen.'),
+          img('/sprites/loot-hacker-crown', 'Sprite-Icon Loot Hacker Crown — Seltenheit episch, Fortnite Kapitel 7 Season 4', 128, 128),
+          p('<strong>Loot Hacker Crown</strong> — Verstärkt den Sieg-Fortschrittsbonus, den der Basis-Begleiter Crown trackt. Jedes Level fügt deinem Sieg-Kranz-Fortschritt einen größeren prozentualen Bonus hinzu.'),
+          img('/sprites/loot-hacker-tails', 'Sprite-Icon Loot Hacker Tails — Seltenheit episch, Fortnite Kapitel 7 Season 4', 128, 128),
+          p('<strong>Loot Hacker Tails</strong> — Beschleunigt die Schwebegeschwindigkeit. Der Basis-Begleiter Tails lässt dich bereits gleiten, und diese Variante macht diesen Flug auf höheren Levels spürbar schneller.'),
+          img('/sprites/loot-hacker-sonic', 'Sprite-Icon Loot Hacker Sonic — Seltenheit episch, Fortnite Kapitel 7 Season 4', 128, 128),
+          p('<strong>Loot Hacker Sonic</strong> — Verbessert die Sprintgeschwindigkeit. Mehrere Levels ergeben einen deutlich schnelleren Sprint, was in späten Kreisbewegungen zählt.'),
+          img('/sprites/loot-hacker-shadow', 'Sprite-Icon Loot Hacker Shadow — Seltenheit episch, Fortnite Kapitel 7 Season 4', 128, 128),
+          p('<strong>Loot Hacker Shadow</strong> — Verkürzt die Nachladezeit ausgerüsteter Waffen. Ein dezenter, aber wirkungsvoller Bonus für anhaltende Feuergefechte.'),
+          h2('Seltene Loot-Hacker-Sprites'),
+          img('/sprites/loot-hacker-8bit', 'Sprite-Icon Loot Hacker 8-Bit — Seltenheit selten, Fortnite Kapitel 7 Season 4', 128, 128),
+          p('<strong>Loot Hacker 8-Bit</strong> — Multipliziert deine Punktzahl. Praktisch für Spieler, die Highscore-Challenges oder Saisonziele jagen.'),
+          img('/sprites/loot-hacker-bushranger', 'Sprite-Icon Loot Hacker Bushranger — Seltenheit selten, Fortnite Kapitel 7 Season 4', 128, 128),
+          p('<strong>Loot Hacker Bushranger</strong> — Erhöht die Haltbarkeit von Büschen. Du bleibst länger verborgen, bevor das Laub deinen Standort verrät.'),
+          img('/sprites/loot-hacker-adventure', 'Sprite-Icon Loot Hacker Adventure — Seltenheit selten, Fortnite Kapitel 7 Season 4', 128, 128),
+          p('<strong>Loot Hacker Adventure</strong> — Verbessert die Qualität der Upgrade-Würfe. Wenn du Ressourcen investierst, um Ausrüstung aufzuwerten, neigt dieses Sprite das Ergebnis zu deinen Gunsten.'),
+          img('/sprites/loot-hacker-jonesy', 'Sprite-Icon Loot Hacker Jonesy — Seltenheit selten, Fortnite Kapitel 7 Season 4', 128, 128),
+          p('<strong>Loot Hacker Jonesy</strong> — Erhöht die Heilbeträge. Heilitems stellen auf höheren Levels pro Anwendung mehr LP her.'),
+          img('/sprites/loot-hacker-overshield', 'Sprite-Icon Loot Hacker Overshield — Seltenheit selten, Fortnite Kapitel 7 Season 4', 128, 128),
+          p('<strong>Loot Hacker Overshield</strong> — Erweitert den Schildpuffer des Basis-Begleiters Overshield. Du startest jedes Gefecht mit einer dickeren Schutzschicht.'),
+          img('/sprites/loot-hacker-onigiri', 'Sprite-Icon Loot Hacker Onigiri — Seltenheit selten, Fortnite Kapitel 7 Season 4', 128, 128),
+          p('<strong>Loot Hacker Onigiri</strong> — Verlängert die Overdrive-Dauer nach dem Verbrauch eines Items. Der Speed-Boost hält länger, sodass du mehr Zeit zum Umpositionieren hast.'),
+          img('/sprites/loot-hacker-killswitch', 'Sprite-Icon Loot Hacker Killswitch — Seltenheit selten, Fortnite Kapitel 7 Season 4', 128, 128),
+          p('<strong>Loot Hacker Killswitch</strong> — Verkleinert den Präzisionsbonus beim gezielten Schießen. Schüsse treffen zuverlässiger, besonders auf mittlere Distanz.'),
+        ],
+      },
+      {
+        heading: 'Das Loot-Hack-Upgrade-System und Sprite-Staub',
+        blocks: [
+          p('Zusätzlich zur Sprite-Freischaltung führte Epic eine neue Loot-Hack-Upgradestufe ein. Über das Sprite-Verwaltungsmenü erreichbar, kannst du mit diesem System Sprite-Staub ausgeben, um deine Chancen auf Loot-Hacker-Sprites in Matches zu erhöhen.'),
+          table('Loot-Hack-Upgradestufen', ['Level', 'Staub-Kosten', 'Wirkung'], [
+            ['1', '50', 'Erhöht die Spawn-Chance für Loot Hacker leicht'],
+            ['2', '100', 'Moderater Bonus auf die Spawn-Chance'],
+            ['3', '200', 'Deutlich höhere Trefferquote'],
+            ['4', '350', 'Seltene Loot-Hacker-Sprites erscheinen häufiger'],
+            ['5', '500', 'Epische und legendäre Varianten lassen sich leichter finden'],
+            ['6', '750', 'Maximale Spawn-Chance — alle Stufen deutlich häufiger'],
+          ]),
+          p('Sprite-Staub verdient man beim regulären Spiel — Truhen öffnen, Gegner ausschalten und Wochen-Challenges abschließen tragen alle bei. Wenn du seit dem Start von Season 4 Staub gehortet hast, ist jetzt die Zeit, ihn auszugeben.'),
+        ],
+      },
+      {
+        heading: 'Regionale Veröffentlichungszeiten',
+        blocks: [
+          p('Die Aktivierung am 10. September folgte dem Standard-Tagesreset von Fortnite. Die Sprites begannen um 6:00 Uhr Ortszeit Pazifik in Matches zu erscheinen, wobei jede Region nach ihrem lokalen Zeitplan freigeschaltet wurde.'),
+          table('Loot-Hacker-Freischaltzeiten nach Region', ['Region', 'Ortszeit', 'UTC-Offset'], [
+            ['Pazifik (US West)', '6:00 Uhr', 'UTC-7'],
+            ['Mountain (US Central)', '7:00 Uhr', 'UTC-6'],
+            ['Central (US East)', '8:00 Uhr', 'UTC-5'],
+            ['Ostküste (US Atlantic)', '9:00 Uhr', 'UTC-4'],
+            ['Brasilien', '10:00 Uhr', 'UTC-3'],
+            ['Vereinigtes Königreich', '14:00 Uhr', 'UTC+1'],
+            ['Mitteleuropa', '15:00 Uhr', 'UTC+2'],
+            ['Türkei', '16:00 Uhr', 'UTC+3'],
+            ['VAE / Golfregion', '17:00 Uhr', 'UTC+4'],
+            ['Indien', '18:30 Uhr', 'UTC+5:30'],
+            ['China', '21:00 Uhr', 'UTC+8'],
+            ['Japan / Südkorea', '22:00 Uhr', 'UTC+9'],
+            ['Ostaustralien', '23:00 Uhr', 'UTC+10'],
+            ['Neuseeland', '1:00 Uhr (11. Sept.)', 'UTC+12'],
+          ]),
+        ],
+      },
+      {
+        heading: 'Deine Loot-Hacker-Sammlung tracken',
+        blocks: [
+          p('Der Sprite-Tracker auf dieser Seite wurde auf den kompletten Roster vom 10. September aktualisiert. Alle 15 Loot-Hacker-Sprites — inklusive Crown aus der früheren Welle vom 3. September — sind im Katalog jetzt als verfügbar markiert.'),
+          img('/sprites/loot-hacker-killswitch', 'Sprite-Icon Loot Hacker Killswitch mit dem Tracker-Badge — Fortnite Kapitel 7 Season 4', 128, 128),
+          p('Um einen Sprite zu sammeln, finde ihn im Gitter und tippe auf die Schaltfläche „Als gesammelt markieren“. Sobald du das entsprechende Meisterschaftslevel im Spiel erreicht hast, tippe auf das Sternsymbol, um ihn als „Meistert“ zu markieren. Dein Fortschritt wird lokal in deinem Browser gespeichert und jederzeit als JSON-Sicherung exportiert.'),
+          p('Der Verfügbarkeitsfilter lässt dich zwischen den Ansichten „Alle“, „Verfügbar“ und „Noch nicht veröffentlicht“ wechseln. Mit der Freischaltung am 10. September fällt jetzt jeder Loot-Hacker-Sprite unter die Kategorie „Verfügbar“. Wechsle in den Jagdmodus, um nur die Sprites zu sehen, die du noch nicht gesammelt hast — sortiert nach Seltenheit, damit du weißt, was Vorrang hat.'),
+        ],
+      },
+    ],
+  },
   en: {
     intro: `Epic Games completed the full rollout of Chapter 7 Season 4's Loot Hacker roster on September 10, 2026. Fourteen sprite variants that were quietly seeded into the v42.10 client on September 3 are now dropping from loot spawns in live matches. If you've been waiting to complete your collection, here's everything you need to know about every Loot Hacker sprite, what each one does, and when they appeared in your region.`,
     sections: [
@@ -1165,7 +1445,69 @@ const sept10Release: Record<Locale, PostContent> = {
   },
 };
 
-const v42_20: Record<Locale, PostContent> = {
+const v42_20: Partial<Record<Locale, PostContent>> = {
+  de: {
+    intro: `Das Fortnite-Update vom 17. September (v42.20) hat ganze 42 neue Sprites in die Spieldateien gebracht. Zwar sind aktuell nur 13 davon freischaltbar, aber das Update bringt fünf völlig neue Sprite-Charaktere — Crash Bandicoot, Blinky, Pond, Morgana und Birthday — sowie 20 neue Bounty-Hunter-Varianten.`,
+    sections: [
+      {
+        heading: 'Neue Sprite-Charaktere',
+        blocks: [
+          p('Das v42.20-Update führt fünf neue Basis-Sprites ein, jeder mit eigenen Fähigkeiten, die an Spielmechaniken geknüpft sind. Drei sind sofort verfügbar, während Morgana und Birthday in den kommenden Wochen erscheinen sollen.'),
+          table('Neue Basis-Sprites', ['Sprite', 'Seltenheit', 'Fähigkeit', 'Status'], [
+            ['Crash Bandicoot', 'Legendär', 'Wirbelangriff beim Springen in der Luft — verursacht Schaden und stößt Gegner zurück', 'Verfügbar'],
+            ['Blinky', 'Legendär', 'Temporäre Tarnung bei Schadensannahme — Pac-Man-Collab', 'Verfügbar'],
+            ['Pond', 'Legendär', 'Super-Sprung nach der Landung — Aufladungen regenerieren mit der Zeit', 'Verfügbar'],
+            ['Morgana', 'Mythisch', 'Erhöht die Wirkung von Heilitems — Persona-5-Collab', 'Nächste Woche'],
+            ['Birthday', 'Mythisch', 'Truhen spawnen Kuchen; Eliminierungen spawnen auf Maximalem Level Kuchen', '26. September'],
+          ]),
+          p('Crash Bandicoot findet man in hoch gelegenen und gebirgigen Gebieten. Sein Wirbelangriff löst aus, wenn du in die Luft springst, verursacht Schaden und stößt Gegner in der Nähe zurück. Der Schaden steigt und die Abklingzeit wird mit jedem Level kürzer.'),
+          p('Blinky (der rote Geist aus Pac-Man) erscheint nachts in der Welt. Wenn du Schaden nimmst, gewährt er eine temporäre Tarnung. Die Tarnungsdauer steigt mit jedem Level, was ihn zu einer defensiven Kraft in Kämpfen in der Endphase macht.'),
+          p('Pond war einer der Gewinner der Community-Creation-Challenge der Kapitel-7-Season 3. Springe kurz nach der Landung, um einen Super-Sprung auszulösen, sofern Aufladungen verfügbar sind. Aufladungen regenerieren mit der Zeit, und die Sprungkraft steigt mit jedem Level.'),
+        ],
+      },
+      {
+        heading: 'Variantensystem',
+        blocks: [
+          p('Jeder neue Sprite bringt Gold-, Loot-Hacker- und Cheat-Master-Varianten mit, nach demselben System, das in v42.10 etabliert wurde. Gold-Varianten gewähren das 3-fache Eliminierungs-XP, Loot-Hacker-Varianten spawnen in Gebieten in großer Höhe und Cheat-Master-Varianten bieten den Button-Mash-Bonus.'),
+        ],
+      },
+      {
+        heading: 'Bounty-Hunter-Varianten',
+        blocks: [
+          p('Die größte Ergänzung ist die neue Bounty-Hunter-Variantenstufe — 20 neue Bounty-Hunter-Sprites, die Spielern die Chance geben, nach dem Ausschalten von Gegnern Sprites zu finden. Diese lassen sich ausschließlich durch Eliminierungen aufleveln.'),
+          p('Um eine Bounty-Hunter-Variante freizuschalten, musst du zuerst die entsprechende Loot-Hacker-Variante meistern, indem du ein Match damit gewinnst. Der Bounty-Hunter-Crown-Sprite erfordert zum Beispiel, zuerst Loot-Hacker-Crown zu meistern.'),
+          table('Bounty-Hunter-Sprites', ['Sprite', 'Basis-Seltenheit', 'Status'], [
+            ['Bounty Hunter X-Ray', 'Legendär', 'Verfügbar'],
+            ['Bounty Hunter Onigiri', 'Selten', 'Verfügbar'],
+            ['Bounty Hunter Pond', 'Legendär', 'Verfügbar'],
+            ['Bounty Hunter Overshield', 'Selten', 'Verfügbar'],
+            ['Bounty Hunter Storm Scout', 'Selten', 'Verfügbar'],
+            ['Bounty Hunter Klombo', 'Mythisch', 'Verfügbar'],
+            ['Bounty Hunter Shadow', 'Episch', 'Verfügbar'],
+            ['Bounty Hunter Tails', 'Episch', 'Verfügbar'],
+            ['Bounty Hunter Sonic', 'Episch', 'Verfügbar'],
+            ['Bounty Hunter Jonesy', 'Selten', 'Verfügbar'],
+            ['Bounty Hunter Killswitch', 'Episch', 'Verfügbar'],
+            ['Bounty Hunter Adventure', 'Selten', 'Verfügbar'],
+            ['Bounty Hunter Crash Bandicoot', 'Legendär', 'Verfügbar'],
+            ['Bounty Hunter Bush', 'Selten', 'Verfügbar'],
+            ['Bounty Hunter Blinky', 'Legendär', 'Verfügbar'],
+            ['Bounty Hunter Jackrabbit', 'Legendär', 'Verfügbar'],
+            ['Bounty Hunter Crown', 'Mythisch', 'Verfügbar'],
+            ['Bounty Hunter 8-Bit', 'Selten', 'Verfügbar'],
+            ['Bounty Hunter Morgana', 'Mythisch', 'Nächste Woche'],
+            ['Bounty Hunter Birthday', 'Mythisch', 'Nächste Woche'],
+          ]),
+        ],
+      },
+      {
+        heading: 'So trackst du v42.20-Sprites',
+        blocks: [
+          p('Alle 42 neuen Sprites wurden zum Tracker hinzugefügt. Sprites, die als „Nächste Woche“ oder mit einem künftigen Datum markiert sind, gelten als noch nicht veröffentlicht. Nutze den Jagdmodus, um nur die v42.20-Sprites zu sehen, die dir noch fehlen.'),
+        ],
+      },
+    ],
+  },
   en: {
     intro: `Fortnite's September 17 update (v42.20) added a staggering 42 new sprites to the game's files. While only 13 are currently available to unlock, the update brings five entirely new sprite characters — Crash Bandicoot, Blinky, Pond, Morgana, and Birthday — alongside 20 new Bounty Hunter variants.`,
     sections: [
@@ -1416,7 +1758,7 @@ const v42_20: Record<Locale, PostContent> = {
   },
 };
 
-const contentMap: Record<string, Record<Locale, PostContent>> = {
+const contentMap: Record<string, Partial<Record<Locale, PostContent>>> = {
   'september-10-loot-hacker-release': sept10Release,
   'v42-10-update': v42_10,
   'v42-20-update': v42_20,
@@ -1428,7 +1770,7 @@ const contentMap: Record<string, Record<Locale, PostContent>> = {
 };
 
 export function getBlogPostContent(slug: string, locale: Locale): PostContent | undefined {
-  return contentMap[slug]?.[locale];
+  return contentMap[slug]?.[locale] ?? contentMap[slug]?.en;
 }
 
 export type { PostContent, ContentBlock };

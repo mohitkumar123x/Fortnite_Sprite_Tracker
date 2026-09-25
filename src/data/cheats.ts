@@ -835,6 +835,132 @@ const cheatTranslations: Record<Locale, Record<string, { title?: string; note?: 
       note: '(Effet temporaire dans le lobby)',
     },
   },
+  de: {
+    '9YEARS': {
+      title: 'Sprite-Spray zum 9. Geburtstag',
+    },
+    'almostScaringSeason': {
+      title: '2 Cheat-Code-Locators',
+    },
+    'magicisreal': {
+      title: '5.000 Sprite-Staub',
+      note: '(Erfordert Bastians Story-Quest)',
+    },
+    'nocturneop55n1': {
+      title: '2 Extraktionsbeschleuniger',
+    },
+    'blinkyinkypinkyclyde': {
+      title: '5.000 Sprite-Staub',
+    },
+    'destinyawaits': {
+      title: '2 Llama-Versorgungslieferungen',
+    },
+    'chatfindmeanothercode': {
+      title: '2 Cheat-Code-Locators',
+    },
+    'playtolevelup': {
+      title: '2.000 Sprite-Staub',
+    },
+    'sayh12wr1x3l': {
+      title: 'Wrixels Heldenporträt-Spray',
+    },
+    'beamemeup': {
+      title: '2 Extraktionsbeschleuniger',
+    },
+    'dustinthewind': {
+      title: '5.000 Sprite-Staub',
+    },
+    'whereisthedustytree': {
+      title: '5.000 Sprite-Staub',
+    },
+    'brb': {
+      title: 'Toilettenverwandlung',
+      note: '(Temporärer Effekt in der Lobby)',
+    },
+    'insertcointocontinue': {
+      title: 'Verwandlung in einen Arcade-Automaten',
+      note: '(Temporärer Effekt in der Lobby)',
+    },
+    'chatwheredoyoufindthekey': {
+      title: '2 Extraktionsbeschleuniger',
+    },
+    'invalidcheat': {
+      title: '2 Cheat-Code-Locators',
+    },
+    'yourthoughtsaremine': {
+      title: '5.000 Sprite-Staub + kosmetische Geno-Stile',
+      note: '(Erfordert Fortschritt in Genos Story-Quests)',
+    },
+    'jonesyisgolden': {
+      title: 'Goldener Jonesy-Sprite',
+    },
+    'gatherandcraft': {
+      title: 'Cheat-Meister-Busch-Sprite',
+      note: '(Erfordert Wrixel (Ziggy), um die Quest zu starten)',
+    },
+    'play4all': {
+      title: 'Cheat-Meister-Jonesy-Sprite',
+    },
+    'gottagofast': {
+      title: 'Cheat-Meister-Sonic-Sprite',
+    },
+    'iwannaflyhigh': {
+      title: 'Cheat-Meister-Tails-Sprite',
+    },
+    '8bitblast': {
+      title: 'Cheat-Meister-8-Bit-Sprite',
+    },
+    'born2play': {
+      title: 'Cheat-Meister-Adventure-Sprite',
+    },
+    'override-xp': {
+      title: '40.000 EP',
+    },
+    'o2override': {
+      title: '1 Llama-Versorgungslieferung + 5 tragbare Extraktoren',
+    },
+    'takeyourheart': {
+      title: '2 Extraktionsbeschleuniger',
+    },
+    'survivethenight': {
+      title: '2 Cheat-Code-Locators',
+    },
+    'finditchat': {
+      title: '2 Cheat-Code-Locators',
+    },
+    'perfectorder': {
+      title: '4 scharfe Tacos',
+    },
+    'h0p0nvc': {
+      title: '2.000 Sprite-Staub',
+    },
+    'magilume': {
+      title: '2.000 Sprite-Staub',
+    },
+    'chispambo': {
+      title: '2.000 Sprite-Staub',
+    },
+    'abgestaubt': {
+      title: '2.000 Sprite-Staub',
+    },
+    'perlimpinpin': {
+      title: '2.000 Sprite-Staub',
+    },
+    'reachyourimpossible': {
+      title: 'Block Party-Ladebildschirm',
+    },
+    'bemorealien': {
+      title: 'Override Ready-Ladebildschirm',
+    },
+    'letsblockandroll': {
+      title: 'Tetrimino-Verwandlung',
+      note: '(Temporärer Effekt in der Lobby)',
+    },
+    'dontblockme': {
+      title: 'Tetrimino-Verwandlung',
+      note: '(Temporärer Effekt in der Lobby)',
+    },
+  },
 };
 
 export function getLocalizedCheats(locale: Locale = 'en'): CheatCodeItem[] {

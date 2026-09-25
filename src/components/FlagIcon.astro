@@ -78,6 +78,20 @@ const { locale, class: className = 'w-5 h-3.5' } = Astro.props;
 }
 
 {
+  locale === 'de' && (
+    <svg
+      class:list={['inline-block overflow-hidden rounded-[2px] border border-black/15 shrink-0 align-middle', className]}
+      viewBox="0 0 640 396"
+      aria-hidden="true"
+    >
+      <rect width="640" height="132" fill="#000000" />
+      <rect y="132" width="640" height="132" fill="#DD0000" />
+      <rect y="264" width="640" height="132" fill="#FFCE00" />
+    </svg>
+  )
+}
+
+{
   locale === 'es' && (
     <svg
       class:list={['inline-block overflow-hidden rounded-[2px] border border-black/15 shrink-0 align-middle', className]}

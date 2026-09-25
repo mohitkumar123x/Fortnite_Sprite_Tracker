@@ -1,4 +1,4 @@
-export const LOCALES = ['en', 'es', 'pt', 'fr'] as const;
+export const LOCALES = ['en', 'de', 'es', 'pt', 'fr'] as const;
 export type Locale = (typeof LOCALES)[number];
 
 export const DEFAULT_LOCALE: Locale = 'en';
@@ -8,6 +8,7 @@ export const localeMeta: Record<
   { label: string; htmlLang: string; ogLocale: string; dateLocale: string; flag: string }
 > = {
   en: { label: 'English', htmlLang: 'en', ogLocale: 'en_US', dateLocale: 'en-US', flag: '🇺🇸' },
+  de: { label: 'Deutsch', htmlLang: 'de', ogLocale: 'de_DE', dateLocale: 'de-DE', flag: '🇩🇪' },
   es: { label: 'Español', htmlLang: 'es', ogLocale: 'es_ES', dateLocale: 'es', flag: '🇪🇸' },
   pt: { label: 'Português', htmlLang: 'pt-BR', ogLocale: 'pt_BR', dateLocale: 'pt-BR', flag: '🇧🇷' },
   fr: { label: 'Français', htmlLang: 'fr', ogLocale: 'fr_FR', dateLocale: 'fr-FR', flag: '🇫🇷' },
@@ -29,7 +30,7 @@ const ui = {
     language: 'Language',
     heroTitle: 'Fortnite Sprite Tracker',
     heroBody:
-      'Free online Fortnite Sprite Tracker checklist and chart. Track my collection — Owned, Mastered, Hunt Mode — plus a printable missing list and Batman season archive.',
+      'Free online Fortnite Sprite Tracker checklist and chart. Track my collection — Owned, Mastered, Hunt Mode.',
     browseSprites: 'Browse sprites',
     footerBlurb:
       'Free online Fortnite Sprite Tracker checklist — track Owned and Mastered, Hunt Mode, share my collection, and season archives including Batman.',
@@ -128,7 +129,7 @@ const ui = {
     spritesEyebrow: 'Reference',
     spritesTitle: 'Fortnite Sprite Tracker list.',
     spritesIntro:
-      'Browse every sprite in the Fortnite Sprite Tracker chart — rarity, variants, and abilities — then open the checklist to mark Owned and Mastered. Icons on this site are original diagrams we drew for the tracker. They are not Epic, Sega, or DC game art.',
+      'Browse every sprite in the Fortnite Sprite Tracker chart — rarity, variants, and abilities — then open the checklist to mark Owned and Mastered.',
     openChecklist: 'Open checklist →',
     archives: 'Archives',
     seasonsTitle: 'Seasons.',
@@ -327,6 +328,343 @@ const ui = {
     pageDisclaimerDesc:
       'Disclaimer for Fortnite Sprite Tracker: unofficial fan site, no Epic affiliation, fan-made content, and third-party links.',
   },
+  de: {
+    navTracker: 'Tracker',
+    navSeasons: 'Seasons',
+    navSprites: 'Sprites',
+    navCompare: 'Vergleichen',
+    navCheatCodes: 'Cheat-Codes',
+    navFaq: 'FAQ',
+    navPrimary: 'Hauptnavigation',
+    navMobile: 'Mobile Navigation',
+    openTracker: 'Tracker öffnen',
+    openMenu: 'Menü öffnen',
+    closeMenu: 'Menü schließen',
+    language: 'Sprache',
+    heroTitle: 'Fortnite Sprite Tracker',
+    heroBody:
+      'Kostenlose Online-Checkliste und Übersicht für den Fortnite Sprite Tracker. Erfasse meine Sammlung — Gesammelt, Meistert, Jagdmodus.',
+    browseSprites: 'Sprites durchsuchen',
+    footerBlurb:
+      'Kostenlose Fortnite-Sprite-Tracker-Checkliste — Gesammeltes und Meistertes erfassen, Jagdmodus, Sammlung teilen und Season-Archive inklusive Batman.',
+    product: 'Produkt',
+    trackerChecklist: 'Tracker-Checkliste',
+    aboutGuide: 'Über uns / SEO-Guide',
+    spriteList: 'Sprite-Liste',
+    legal: 'Rechtliches',
+    aboutUs: 'Über uns',
+    privacyPolicy: 'Datenschutzerklärung',
+    terms: 'AGB',
+    contactUs: 'Kontakt',
+    footerLocal:
+      'Dein Fortschritt bleibt im Browser. Kein Konto. Share-Codes enthalten nur die Checklisten-Angaben, die du bewusst kopierst.',
+    copyright:
+      '© {year} Fortnite Sprite Tracker. Inoffizielles Fanprojekt. Nicht verknüpft mit Epic Games, Inc.',
+    privacy: 'Datenschutz',
+    contact: 'Kontakt',
+    checklist: 'Checkliste',
+    seasonPage: 'Season-Seite',
+    owned: 'Gesammelt',
+    mastered: 'Meistert',
+    all: 'Alle',
+    missing: 'Fehlend',
+    huntMode: 'Jagdmodus',
+    searchSprites: 'Sprites durchsuchen',
+    searchPlaceholder: 'Sprites suchen…',
+    allRarities: 'Alle Seltenheiten',
+    allVariants: 'Alle Varianten',
+    shown: '{n} angezeigt',
+    unreleased: 'Noch nicht erhältlich',
+    available: 'Erhältlich',
+    viewGrid: 'Raster',
+    viewList: 'Liste',
+    sortBy: 'Sortieren nach',
+    sortType: 'Typ',
+    sortLevelHigh: 'Level: Hoch zu niedrig',
+    sortLevelLow: 'Level: Niedrig zu hoch',
+    sortRarityHigh: 'Seltenheit: Hoch zu niedrig',
+    sortRarityLow: 'Seltenheit: Niedrig zu hoch',
+    obtainableCount: '{n} erhältliche Varianten',
+    knownCount: '{n} bekannt · {m} noch nicht erhältlich',
+    emptyFilters: 'Nichts passt zu diesen Filtern. Lösche die Suche oder deaktiviere den Jagdmodus.',
+    markOwned: 'Als gesammelt markieren',
+    dust: 'Dust',
+    shareBackup: 'Teilen & Sicherung',
+    shareBackupBody:
+      'Kopiere einen Share-Link, exportiere JSON für ein anderes Gerät oder füge eine Sicherung zum Wiederherstellen ein.',
+    copyShare: 'Share-Link kopieren',
+    copyMissing: 'Liste der fehlenden kopieren',
+    exportJson: 'JSON exportieren',
+    importJson: 'JSON importieren',
+    applyImport: 'Import anwenden',
+    huntBody:
+      'Konzentriere das Board auf fehlende Varianten, sortiert nach Seltenheit, damit dein nächster Truhentreff sitzt.',
+    huntEnable: 'Aktiviere den Jagdmodus, um deine Prioritätenliste zu sehen.',
+    huntComplete: 'Nichts mehr zu jagen — Sammlung komplett.',
+    resetNeed: 'Brauchst du einen frischen Start für diese Season?',
+    resetSeason: 'Season-Fortschritt zurücksetzen',
+    confirmReset:
+      'Alle Markierungen „Gesammelt“ und „Meistert“ für diese Season zurücksetzen?',
+    shareCopied: 'Share-Link kopiert.',
+    missingCopied: 'Liste der fehlenden kopiert.',
+    jsonCopied: 'JSON-Sicherung in die Zwischenablage kopiert.',
+    jsonParseFail: 'JSON-Sicherung konnte nicht gelesen werden.',
+    jsonWrongSeason: 'Diese Sicherung ist für {got}, nicht für {want}.',
+    backupRestored: 'Sicherung für diese Season wiederhergestellt.',
+    seasonCleared: 'Season-Fortschritt zurückgesetzt.',
+    variantsCount: '{n} Varianten',
+    whyEyebrow: 'Warum dieser Tracker',
+    whyHeading: 'Gebaut für die nächste Truhe, nicht für einen weiteren Screenshot-Haufen.',
+    whyHuntTitle: 'Jagdmodus',
+    whyHuntBody:
+      'Fortnite-Sprite-Tracker-Übersicht nur mit fehlenden Einträgen, sortiert nach Seltenheit — damit du vor dem Extrahieren weißt, was du brauchst.',
+    whyLocalTitle: 'Lokal zuerst',
+    whyLocalBody:
+      'Meine Sammlung im Fortnite Sprite Tracker bleibt auf diesem Gerät. Exportiere JSON oder kopiere einen Share-Link, wenn du sie woanders brauchst.',
+    whySeasonTitle: 'Season-Gedächtnis',
+    whySeasonBody:
+      'Das aktuelle Line-up steht vorne; vergangene Seasons und Kollabs wie Batman liegen im Archiv, ohne das Board zu überladen.',
+    whyLinks: 'Lies den vollständigen Guide unten oder springe zur',
+    whyChecklist: 'Checkliste',
+    compareEyebrow: 'Alleinstellungsmerkmal',
+    compareTitle: 'Locker vergleichen.',
+    compareBody:
+      'Füge zwei Share-Links oder Codes aus dem Tracker der aktuellen Season ein. Wir heben hervor, was nur du besitzt, was nur dein Gegenüber besitzt und was beiden noch fehlt.',
+    yourCode: 'Dein Share-Code / deine URL',
+    friendCode: 'Share-Code / URL deines Freundes',
+    pasteCode: 'Link oder Code einfügen…',
+    compare: 'Vergleichen',
+    onlyYou: 'Nur du',
+    onlyThem: 'Nur dein Gegenüber',
+    bothMissing: 'Beiden fehlt es',
+    runCompare: 'Starte einen Vergleich, um die Übersicht zu füllen.',
+    none: 'Keine',
+    compareFail: 'Mindestens ein Share-Code konnte nicht gelesen werden.',
+    compareSeason: 'Der Vergleich unterstützt derzeit nur Share-Codes von {season}.',
+    compareStatus:
+      'Verglichen: {both} gemeinsam besessen · {onlyA} nur du · {onlyB} nur dein Gegenüber.',
+    spritesEyebrow: 'Referenz',
+    spritesTitle: 'Fortnite-Sprite-Tracker-Liste.',
+    spritesIntro:
+      'Durchsuche alle Sprites in der Fortnite-Sprite-Tracker-Übersicht — Seltenheit, Varianten und Fähigkeiten — und öffne dann die Checkliste, um Gesammeltes und Meistertes zu markieren.',
+    openChecklist: 'Checkliste öffnen →',
+    archives: 'Archive',
+    seasonsTitle: 'Seasons.',
+    seasonsIntro:
+      'Erfasse die laufende Season auf der Startseite oder öffne ein vergangenes Board erneut, ohne deinen lokalen Fortschritt zu verlieren.',
+    current: 'Aktuell',
+    archive: 'Archiv',
+    pastSeason: 'Vergangene Season',
+    allSeasons: '← Alle Seasons',
+    ability: 'Fähigkeit',
+    leveling: 'Hinweise zum Leveln',
+    whereFind: 'Wo finden',
+    variants: 'Varianten',
+    backSprites: '← Alle Sprites',
+    lastUpdated: 'Zuletzt aktualisiert',
+    backTracker: 'Zurück zum Tracker',
+    notFound: 'Nicht gefunden',
+    notFoundHeading: 'Diese Seite ist nicht im Locker.',
+    notFoundIntro:
+      'Die URL ist möglicherweise falsch geschrieben oder die Seite wurde verschoben. Tracker, Sprite-Liste und FAQ sind weiterhin hier.',
+    faqEyebrow: 'FAQ',
+    faqHeading: 'Fortnite-Sprite-Tracker-FAQ',
+    faqIntro:
+      'Klare Antworten zu Sprites, Seltenheit, diesem Tracker und weiteren Fortnite-Fragen.',
+    faqPageHeading: 'FAQ',
+    faqPageEyebrow: 'Hilfe',
+    faqPageIntro: 'Sprites, dieser Tracker, Seltenheit und weitere Fortnite-Fragen.',
+    faqReady: 'Bereit, etwas abzuhaken?',
+    faqOpenChecklist: 'Die Fortnite-Sprite-Tracker-Checkliste öffnen',
+    faqOrBrowse: 'oder durchsuche die',
+    loadedShare: 'Geteilte Sammlung für diese Season geladen.',
+    markOnTracker: 'Im Tracker markieren',
+    compareLockers: 'Locker vergleichen',
+    seasonArchiveIntro:
+      'Dieses Board droppt nicht mehr in Live-Matches, aber deine Checkliste liegt weiterhin lokal unter dieser Season gespeichert.',
+    spritesMeta: '{sprites} Sprites · {variants} Varianten',
+    dustAmount: '{n} Dust',
+    spriteStats: 'Sprite-Statistiken',
+    summonCost: 'Beschwörungskosten',
+    dropChance: 'Drop-Chance',
+    location: 'Standort',
+    legalEnglishNote: 'Rechtliche Seiten werden auf Englisch bereitgestellt.',
+    pageHomeTitle:
+      'Fortnite Sprite Tracker | Kostenlose Online-Checkliste, Übersicht & Sammlungs-Tracker',
+    pageHomeDesc:
+      'Mit diesem kostenlosen Fortnite Sprite Tracker markierst du gesammelte und meisterte Sprites, jagst fehlende Varianten, teilst meine Sammlung und behältst eine druckbare Checkliste. Aktualisierte Fortnite-Sprite-Tracker-Website mit Batman-Archiv.',
+    pageSpritesTitle: 'Fortnite-Sprite-Tracker-Liste — alle Sprites & Varianten',
+    pageSpritesDesc:
+      'Vollständige Fortnite-Sprite-Tracker-Liste über alle Seasons: Fähigkeiten, Seltenheiten, Varianten, Batman-Archiv und Links zum Markieren auf der Checkliste.',
+    pageCompareTitle: 'Fortnite-Sprite-Tracker-Sammlungen vergleichen',
+    pageCompareDesc:
+      'Vergleiche zwei Fortnite-Sprite-Tracker-Sharcodes nebeneinander — sieh meine Sammlung im Vergleich zum Locker eines Freundes für Trades.',
+    pageSeasonsTitle:
+      'Fortnite-Sprite-Tracker-Seasons — aktuelle & Archiv-Checklisten',
+    pageSeasonsDesc:
+      'Fortnite-Sprite-Tracker-Seasons: aktuelle Checkliste für Season 4 plus Season-3-Archiv (Batman und mehr). Behalte vergangene Fortnite-Sprite-Tracker-Übersichten, ohne Fortschritt zu verlieren.',
+    pageFaqTitle:
+      'Fortnite-Sprite-Tracker-FAQ — so funktionieren Sprites, Seltenheit & Sicherheit',
+    pageFaqDesc:
+      'FAQ: Wofür gibt es Sprites in Fortnite, wie funktionieren sie, wo findet man sie, wie selten sind sie, welche sind die besten und schwersten, das Batman-Archiv und ob dieser Fortnite Sprite Tracker sicher ist.',
+    pageNotFoundTitle: 'Seite nicht gefunden — Fortnite Sprite Tracker',
+    pageNotFoundDesc:
+      'Diese Fortnite-Sprite-Tracker-Seite existiert nicht. Öffne stattdessen die Checkliste, die Sprite-Liste oder die FAQ.',
+    pageSpriteDetailTitle: '{name} | Fortnite-Sprite-Tracker-Liste',
+    pageSpriteDetailDesc:
+      'Erfasse {name} in der Fortnite-Sprite-Tracker-Checkliste. {rarity} — Fähigkeit, Varianten und wo du sie findest. Markiere sie als gesammelt in der Fortnite-Sprite-Tracker-Übersicht.',
+    pageSeasonDetailTitle: '{label} | Fortnite-Sprite-Tracker-Checkliste',
+    pageSeasonDetailDesc:
+      'Fortnite-Sprite-Tracker-Archiv für {label}. Markiere gesammelte und meisterte Varianten auf dieser Season-Checkliste — Teil der Fortnite-Sprite-Tracker-Übersicht.',
+    pageCheatCodesTitle:
+      'Cheats — Fortnite-Sprite-Codes kopieren & Freischaltungen verfolgen',
+    pageCheatCodesDesc:
+      'Vollständige Liste der Fortnite-Sprite-Cheat-Codes, Button-Mash-Kombinationen und Varianten-Freischaltungen. Codes mit einem Klick kopieren und als benutzt markieren.',
+    cheatCodesPageTitle: 'Cheats',
+    cheatCodesEyebrow: 'Freischaltbar',
+    cheatCodesTitle: 'Sprite-Cheat-Codes.',
+    cheatCodesIntro:
+      'Öffne in der Fortnite-Lobby das Admin-Panel und gib einen Code ein. Jeder Code funktioniert einmal pro Konto.',
+    cheatLobbyInstructions:
+      'Öffne in der Fortnite-Lobby das Admin-Panel und gib einen Code ein. Jeder Code funktioniert einmal pro Konto.',
+    cheatUsedProgress: '{used} von {total} benutzt',
+    cheatProgressLabel: 'Fortschritt',
+    copyCode: 'Code kopieren',
+    codeCopied: 'Kopiert!',
+    markClaimed: 'Als benutzt markieren',
+    claimed: 'Benutzt',
+    searchCheatsPlaceholder: 'Cheat-Codes oder Belohnungen suchen…',
+    codeCopiedToast: '„{code}“ in die Zwischenablage kopiert!',
+    combo: 'Kombination',
+    filterStatus: 'Filterstatus',
+    howToOpenAdmin: 'Admin-Panel öffnen',
+    howToEnterCode: 'Cheat-Code eingeben',
+    howToEnterCodeText: 'Kopiere einen der Cheat-Codes und gib ihn ein.',
+    howToMarkUsed: 'Als benutzt markieren',
+    confirmResetCheats: 'Alle markierten Cheat-Codes zurücksetzen?',
+    allCheatsResetToast: 'Alle Cheat-Codes zurückgesetzt.',
+    backToTracker: 'Zurück zum Tracker',
+    navBlog: 'Blog',
+    blogPageTitle: 'Blog',
+    blogEyebrow: 'AUS DEM BLOG',
+    blogTitle: 'Sprite-Tracker-Blog',
+    blogIntro:
+      'Guides, Patch Notes und Tipps zum Erfassen deiner Fortnite-Sprite-Sammlung.',
+    blogReadMore: 'Weiterlesen →',
+    blogPublished: 'Veröffentlicht',
+    blogUpdated: 'Aktualisiert',
+    blogBackToPosts: '← Zurück zu allen Beiträgen',
+    blogPost_v42_10_title:
+      'Fortnite-Update v42.10: Alle neuen Sprites und die Loot-Hacker-Sprites',
+    blogPost_v42_10_meta:
+      'Vollständige Analyse des v42.10-Patches: fünf neue Basis-Sprites, das Loot-Hacker-System, Seltenheiten, Fähigkeiten und Verfügbarkeit.',
+    blogPost_v42_10_excerpt:
+      'Das v42.10-Update fügte fünf neue Basis-Sprites hinzu und führte das Loot-Hacker-Variantensystem ein. Hier ist jeder Sprite, seine Seltenheit und ob er heute erhältlich ist.',
+    blogPost_sept10_title:
+      'Update vom 10. September: Alle 14 Loot-Hacker-Sprites sind jetzt erhältlich',
+    blogPost_sept10_meta:
+      'Epic Games hat alle 14 Loot-Hacker-Sprites am 10. September freigeschaltet. Vollständige Liste mit Kräften, Seltenheiten, Release-Zeiten und wie du sie verfolgst.',
+    blogPost_sept10_excerpt:
+      'Alle 14 Loot-Hacker-Sprites sind jetzt in Fortnite live. Sieh dir jede Variante mit ihrer besonderen Kraft, Seltenheit und den genauen Release-Zeiten in allen Regionen an.',
+    blogPost_v42_20_title:
+      'Fortnite-Update v42.20: 42 neue Sprites mit Crash Bandicoot, Blinky und mehr',
+    blogPost_v42_20_meta:
+      'Vollständige Analyse des v42.20-Patches: 42 neue Sprites, darunter Crash Bandicoot, Blinky, Pond, Morgana und Birthday. Außerdem 20 Bounty-Hunter-Varianten und die Kingdom-Hearts-Kollab.',
+    blogPost_v42_20_excerpt:
+      'Das Update vom 17. September fügte 42 neue Sprites zu den Dateien hinzu — 13 davon sofort erhältlich, angeführt von Crash Bandicoot, Blinky und Pond. Hier ist jeder Sprite, seine Fähigkeit und die Freischaltvoraussetzung.',
+    blogPost_howToTrack_title: 'So verwaltest du deine Fortnite-Sprite-Sammlung',
+    blogPost_howToTrack_meta:
+      'Schritt-für-Schritt-Anleitung zum Markieren gesammelter und meisteter Sprites, zum Export von JSON-Sicherungen und zum Teilen deiner Sammlung mit Freunden.',
+    blogPost_howToTrack_excerpt:
+      'So markierst du Sprites als gesammelt oder meistert, sicherst deinen Fortschritt und teilst einen schreibgeschützten Link mit Freunden — alles direkt im Browser.',
+    blogPost_huntMode_title: 'Jagdmodus: Fehlende Sprites schneller finden',
+    blogPost_huntMode_meta:
+      'So nutzt du den Jagdmodus, um dein Board nur auf fehlende Sprites zu filtern — sortiert nach Seltenheit, damit du genau weißt, was als Nächstes ansteht.',
+    blogPost_huntMode_excerpt:
+      'Der Jagdmodus blendet alle Sprites aus, die du bereits besitzt, und zeigt nur die fehlenden — sortiert nach Seltenheit. So aktivierst du ihn und nutzt ihn effektiv.',
+    blogPost_compare_title: 'Locker mit einem Freund vergleichen',
+    blogPost_compare_meta:
+      'Vergleiche mit Share-Codes deine Sprite-Sammlung mit der eines Freundes und sieh, wem was gehört — nebeneinander, ohne Anmeldung.',
+    blogPost_compare_excerpt:
+      'Zwei Share-Codes, eine Ansicht nebeneinander. Finde heraus, welche Sprites ihr beide besitzt, welche nur du hast und welche deinem Freund fehlen.',
+    blogPost_cheatCodes_title:
+      'Fortnite-Cheat-Codes: So schaltest du Sprite-Varianten frei',
+    blogPost_cheatCodes_meta:
+      'Vollständige Liste der Cheat-Codes, die Cheat-Master-Sprite-Varianten, Dust, XP und Gegenstände freischalten — mit Tastenkombinationen und Dust-Kosten.',
+    blogPost_cheatCodes_excerpt:
+      'Jeder Cheat-Code in Kapitel 7, Season 4, was er freischaltet, die Tastenkombination zum Eingeben und wie viel Sprite-Dust jeder Code kostet.',
+    blogPost_seasonArchives_title: 'Season-Archive: Vergangenen Fortschritt nie verlieren',
+    blogPost_seasonArchives_meta:
+      'Wie Sprites aus vergangenen Seasons (Kapitel 7, Season 3) auch nach dem Start einer neuen Season in deiner Sammlung bleiben.',
+    blogPost_seasonArchives_excerpt:
+      'Deine Season-3-Sprites — darunter Batman, Zero Point und King — bleiben weiterhin erfasst, auch wenn Season 4 das aktuelle Line-up ist.',
+    navDustCalc: 'Dust-Rechner',
+    dustCalcPageTitle: 'Sprite-Dust-Rechner',
+    dustCalcEyebrow: 'Planungswerkzeug',
+    dustCalcTitle: 'Fortnite-Sprite-Dust-Rechner',
+    dustCalcIntro:
+      'Wähle einen Sprite, eine Variante und die Anzahl der Beschwörungen, um zu berechnen, wie viel Sprite-Dust du brauchst. Vergleiche die Seltenheitsstufen, sieh, was sich dein Guthaben leisten kann, und vermeide es, ohne genug Währung am Schrein anzukommen.',
+    dustCalcSprite: 'Sprite',
+    dustCalcVariant: 'Variante',
+    dustCalcQuantity: 'Anzahl der Beschwörungen',
+    dustCalcBalance: 'Dein aktuelles Sprite-Dust-Guthaben',
+    dustCalcCostPer: 'Kosten pro Beschwörung',
+    dustCalcTotalCost: 'Benötigter Dust insgesamt',
+    dustCalcRemaining: 'Verbleibender Dust nach dem Plan',
+    dustCalcAfford: 'Dein Guthaben reicht bei diesen Kosten für {n} Beschwörungen.',
+    dustCalcAffordZero:
+      'Dein Guthaben reicht bei diesen Kosten für keine Beschwörung.',
+    dustCalcRarityLabel: 'Seltenheit',
+    dustCalcNormal: 'Normal',
+    dustCalcSpecial: 'Spezialvariante',
+    dustCalcCostTableTitle: 'Sprite-Dust-Kostentabelle',
+    dustCalcCostTableDesc:
+      'Normale Beschwörungen und spezielle Behandlungen verwenden unterschiedliche Preisspannen. Behandlungen sind Gold, Gummy, Galaxy oder Holofoil, sofern diese Variante für den gewählten Sprite existiert.',
+    dustCalcHowTitle: 'Wie man Sprite-Dust verdient und ausgibt',
+    dustCalcHowExtract: 'Konsistent extrahieren',
+    dustCalcHowExtractBody:
+      'Bevorzuge Routen, die du zuverlässig abschließen kannst, statt jedes Risikokampfes einzugehen. Ein spektakulärer Fund nützt deiner Sammlung langfristig nur, wenn der Durchlauf gelingt.',
+    dustCalcHowGummy: 'Nach Gummy Ausschau halten',
+    dustCalcHowGummyBody:
+      'Gummy-Varianten bringen bei erfolgreichem Extrahieren Bonus-Sprite-Dust. Nimm sie in deinen Farmplan auf, auch wenn du den Basis-Sprite bereits besitzt.',
+    dustCalcHowBudget: 'Budget nach Seltenheit',
+    dustCalcHowBudgetBody:
+      'Lege ein Mythic-Budget zurück, bevor du in günstige Rare-Beschwörungen investierst. Der Rechner macht die Opportunitätskosten sichtbar, bevor du dich entscheidest.',
+    dustCalcHowEvents: 'Event-Fenster nutzen',
+    dustCalcHowEventsBody:
+      'Zeitlich begrenzte Fenster können den Zugang zu bestimmten Sprites oder Varianten verbessern. Schau vor einer langen Session in den Eventplan.',
+    dustCalcDisclaimer:
+      'Dies ist ein inoffizielles Fan-Werkzeug. Die Kosten basieren auf Community-Tests und können sich nach Spielupdates ändern. Prüfe den Preis im Spiel immer am Schrein.',
+    dustCalcPageDesc:
+      'Kostenloser online Fortnite-Sprite-Dust-Rechner. Gib Sprite, Variante und Menge ein, um die Dust-Kosten zu schätzen und Seltenheitsstufen zu vergleichen.',
+    printPage: 'Seite drucken',
+    heroCheatCodes: 'Cheat-Codes',
+    heroDustCalc: 'Dust-Rechner',
+    heroSprites: 'Neue Sprites',
+    spritesSectionEyebrow: 'v42.10-Update',
+    spritesSectionTitle: 'Neue Sprites',
+    spritesSectionV4220Eyebrow: 'v42.20-Update',
+    spritesSectionV4220Title: 'Neue Sprites',
+    newTag: 'Neu',
+    printSprites: 'Sprite-Liste drucken',
+    bcHome: 'Start',
+    bcSprites: 'Sprites',
+    bcSeasons: 'Seasons',
+    bcCompare: 'Vergleichen',
+    bcCheatCodes: 'Cheats',
+    bcFaq: 'FAQ',
+    bcAbout: 'Über uns',
+    bcBlog: 'Blog',
+    bcDustCalc: 'Dust-Rechner',
+    bcContact: 'Kontakt',
+    bcPrivacy: 'Datenschutz',
+    bcTerms: 'AGB',
+    bcDisclaimer: 'Haftungsausschluss',
+    disclaimer: 'Haftungsausschluss',
+    pageDisclaimerTitle: 'Haftungsausschluss — Fortnite Sprite Tracker',
+    pageDisclaimerDesc:
+      'Haftungsausschluss für Fortnite Sprite Tracker: inoffizielle Fanseite, keine Verbindung zu Epic, Fan-Inhalte und Links zu Drittanbietern.',
+  },
   es: {
     navTracker: 'Tracker',
     navSeasons: 'Temporadas',
@@ -342,7 +680,7 @@ const ui = {
     language: 'Idioma',
     heroTitle: 'Fortnite Sprite Tracker',
     heroBody:
-      'Lista y tabla gratuita del Fortnite Sprite Tracker. Marca mi colección — Obtenidos, Dominados, modo Caza — más una lista de faltantes e historial de Batman.',
+      'Lista y tabla gratuita del Fortnite Sprite Tracker. Marca mi colección — Obtenidos, Dominados, modo Caza.',
     browseSprites: 'Ver sprites',
     footerBlurb:
       'Lista gratuita del Fortnite Sprite Tracker: Obtenidos y Dominados, modo Caza, comparte tu colección y archivos de temporada incluido Batman.',
@@ -438,7 +776,7 @@ const ui = {
     spritesEyebrow: 'Referencia',
     spritesTitle: 'Lista del Fortnite Sprite Tracker.',
     spritesIntro:
-      'Consulta cada sprite: rareza, variantes y habilidades. Luego abre la lista para marcar Obtenido y Dominado. Los iconos son diagramas originales; no son arte oficial de Epic, Sega o DC.',
+      'Consulta cada sprite: rareza, variantes y habilidades. Luego abre la lista para marcar Obtenido y Dominado.',
     openChecklist: 'Abrir lista →',
     archives: 'Archivo',
     seasonsTitle: 'Temporadas.',
@@ -652,7 +990,7 @@ const ui = {
     language: 'Idioma',
     heroTitle: 'Fortnite Sprite Tracker',
     heroBody:
-      'Lista e tabela gratuita do Fortnite Sprite Tracker. Marque minha coleção — Obtidos, Dominados, modo Caça — mais uma lista do que falta e o arquivo do Batman.',
+      'Lista e tabela gratuita do Fortnite Sprite Tracker. Marque minha coleção — Obtidos, Dominados, modo Caça.',
     browseSprites: 'Ver sprites',
     footerBlurb:
       'Lista gratuita do Fortnite Sprite Tracker: Obtidos e Dominados, modo Caça, compartilhe a coleção e arquivos de temporada, incluindo Batman.',
@@ -748,7 +1086,7 @@ const ui = {
     spritesEyebrow: 'Referência',
     spritesTitle: 'Lista do Fortnite Sprite Tracker.',
     spritesIntro:
-      'Veja cada sprite: raridade, variantes e habilidades. Depois abra a lista para marcar Obtido e Dominado. Os ícones são diagramas originais; não são arte oficial da Epic, Sega ou DC.',
+      'Veja cada sprite: raridade, variantes e habilidades. Depois abra a lista para marcar Obtido e Dominado.',
     openChecklist: 'Abrir lista →',
     archives: 'Arquivo',
     seasonsTitle: 'Temporadas.',
@@ -962,7 +1300,7 @@ const ui = {
     language: 'Langue',
     heroTitle: 'Fortnite Sprite Tracker',
     heroBody:
-      'Liste et tableau gratuits du Fortnite Sprite Tracker. Suivez ma collection — Possédés, Maîtrisés, Mode Chasse — plus une liste imprimable et les archives de la saison Batman.',
+      'Liste et tableau gratuits du Fortnite Sprite Tracker. Suivez ma collection — Possédés, Maîtrisés, Mode Chasse.',
     browseSprites: 'Parcourir les sprites',
     footerBlurb:
       'Liste gratuite du Fortnite Sprite Tracker : Possédés et Maîtrisés, Mode Chasse, partagez votre collection et archives de saison incluant Batman.',
@@ -1058,7 +1396,7 @@ const ui = {
     spritesEyebrow: 'Référence',
     spritesTitle: 'Liste du Fortnite Sprite Tracker.',
     spritesIntro:
-      'Parcourez chaque sprite : rareté, variantes et capacités. Puis ouvrez la liste pour marquer Possédé et Maîtrisé. Les icônes sont des diagrammes originaux ; ce n\'est pas l\'art officiel d\'Epic, Sega ou DC.',
+      'Parcourez chaque sprite : rareté, variantes et capacités. Puis ouvrez la liste pour marquer Possédé et Maîtrisé.',
     openChecklist: 'Ouvrir la liste →',
     archives: 'Archives',
     seasonsTitle: 'Saisons.',
@@ -1263,12 +1601,12 @@ export type UiKey = keyof typeof ui.en;
 
 export function localeFromPath(pathname: string): Locale {
   const seg = pathname.split('/').filter(Boolean)[0];
-  if (seg === 'es' || seg === 'pt' || seg === 'fr') return seg;
+  if (seg === 'de' || seg === 'es' || seg === 'pt' || seg === 'fr') return seg;
   return DEFAULT_LOCALE;
 }
 
 export function stripLocale(pathname: string): string {
-  const stripped = pathname.replace(/^\/(es|pt|fr)(?=\/|$)/, '');
+  const stripped = pathname.replace(/^\/(de|es|pt|fr)(?=\/|$)/, '');
   return stripped === '' ? '/' : stripped;
 }
 

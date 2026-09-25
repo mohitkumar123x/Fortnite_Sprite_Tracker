@@ -1,0 +1,107 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import LegalDoc from '../../components/LegalDoc.astro';
+import { breadcrumbJsonLd, SITE_NAME, SITE_URL } from '../../lib/seo';
+import { localeFromPath, localizedPath, t } from '../../lib/i18n';
+
+const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
+
+const jsonLd = [
+  breadcrumbJsonLd([{ name: 'Haftungsausschluss', path: '/disclaimer' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: `Haftungsausschluss · ${SITE_NAME}`,
+    url: `${SITE_URL}/de/disclaimer`,
+  },
+];
+---
+
+<Layout
+  title="Haftungsausschluss — Fortnite Sprite Tracker"
+  description="Haftungsausschluss für Fortnite Sprite Tracker: inoffizielle Fanseite, keine Verbindung zu Epic, Fan-Inhalte und Links zu Drittanbietern."
+  canonicalPath={lp('/disclaimer')}
+  jsonLd={jsonLd}
+>
+  <Header slot="header" />
+  <div class="mx-auto max-w-[800px] px-4 pt-4 md:px-6">
+    <Breadcrumb locale={locale} items={[{ label: t(locale, 'bcDisclaimer') }]} />
+  </div>
+  <LegalDoc
+    eyebrow="Haftungsausschluss"
+    heading="Haftungsausschluss."
+    intro="Diese Seite erklärt wichtige Einschränkungen rund um den Fortnite Sprite Tracker. Bitte lies sie, bevor du dich auf die hier bereitgestellten Informationen verlässt."
+    updated="2026-09-13"
+  >
+    <h2>Keine Verbindung zu Epic Games</h2>
+    <p>
+      Fortnite Sprite Tracker ist ein unabhängiges, inoffizielles Fanprojekt. Es steht in keiner Verbindung
+      zu Epic Games, Inc. und wird weder von dieser unterstützt noch gesponsert. Alle Spielnamen, Logos und
+      zugehörigen Marken sind Eigentum der jeweiligen Inhaber. Diese Seite verkauft, stellt oder verteilt
+      weder V-Bucks noch Kosmetik-Items oder andere In-Game-Gegenstände.
+    </p>
+
+    <h2>Fan-Inhalte</h2>
+    <p>
+      Alle Inhalte dieser Seite — einschließlich Sprite-Icons, Diagramme, Guides und Tracker-Funktionen —
+      werden von Fans erstellt und dienen ausschließlich Informations- und Unterhaltungszwecken. Auch wenn wir
+      auf Genauigkeit achten, spiegeln die Informationen nicht immer die neuesten Spielupdates oder offiziellen
+      Epic-Games-Daten wider. Prüfe Details immer am live Spiel.
+    </p>
+
+    <h2>Keine Gewährleistung</h2>
+    <p>
+      Die Informationen auf dieser Seite werden „wie besehen“ ohne jegliche Gewährleistung bereitgestellt.
+      Wir garantieren weder Richtigkeit, Vollständigkeit noch Aktualität irgendeines Inhalts, einschließlich
+      Sprite-Daten, Seltenheits-Einstufungen, Verfügbarkeitsstatus oder Kostenberechnungen. Nutze die
+      Informationen auf eigenes Risiko.
+    </p>
+
+    <h2>Spiel-Daten und Verfügbarkeit</h2>
+    <ul>
+      <li>Sprite-Roster, Seltenheiten und Fähigkeiten können sich durch Spielupdates ohne Ankündigung ändern.</li>
+      <li>Der Verfügbarkeitsstatus (veröffentlicht / noch nicht veröffentlicht) spiegelt das Community-Wissen wider und kann hinter offiziellen Veröffentlichungen hinterherhinken.</li>
+      <li>Dust-Kosten, Drop-Chancen und Beschwörungspreise basieren auf Community-Tests und können von den In-Game-Werten abweichen.</li>
+      <li>Saisonale Inhalte (Roster, Challenges, Belohnungen) richten sich nach dem Zeitplan von Epic Games und können je nach Region variieren.</li>
+    </ul>
+
+    <h2>Links zu Drittanbietern</h2>
+    <p>
+      Diese Seite kann Links zu externen Websites enthalten, darunter Epic-Games-Angebote, Community-Wikis und
+      Social-Media-Plattformen. Für Inhalte, Datenschutzpraktiken oder die Verfügbarkeit externer Seiten sind
+      wir nicht verantwortlich. Der Zugriff auf externe Links erfolgt nach eigenem Ermessen.
+    </p>
+
+    <h2>Tracker-Funktionalität</h2>
+    <p>
+      Die Checkliste und die Vergleichstools speichern Daten lokal in deinem Browser. Wir garantieren nicht,
+      dass dein Fortschritt Geräte, Browser-Updates oder das Löschen des lokalen Speichers überdauert. Nutze
+      immer „JSON exportieren“, um Sicherungen deiner Checklisten-Daten zu erstellen.
+    </p>
+
+    <h2>Haftungsbeschränkung</h2>
+    <p>
+      Soweit gesetzlich zulässig haften Fortnite Sprite Tracker und seine Ersteller nicht für Schäden,
+      Verluste oder Folgen aus der Nutzung dieser Seite — einschließlich, aber nicht beschränkt auf unrichtige
+      Spiel-Daten, verlorenen Tracker-Fortschritt oder Entscheidungen auf Grundlage der bereitgestellten
+      Informationen.
+    </p>
+
+    <h2>Änderungen</h2>
+    <p>
+      Dieser Haftungsausschluss kann jederzeit ohne vorherige Ankündigung aktualisiert werden. Wenn du die
+      Seite nach Veröffentlichung von Änderungen weiter nutzt, gilt der aktualisierte Haftungsausschluss als
+      akzeptiert. Das Datum oben zeigt die letzte Überarbeitung an.
+    </p>
+
+    <h2>Kontakt</h2>
+    <p>
+      Wenn du Fragen zu diesem Haftungsausschluss hast, <a href={lp('/contact')}>kontaktiere uns</a> bitte.
+    </p>
+  </LegalDoc>
+  <Footer slot="footer" />
+</Layout>

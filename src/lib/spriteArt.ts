@@ -35,11 +35,11 @@ const variantIdToFile: Record<string, string> = {
 
 export function spriteArtSrc(id: string, variantId?: string): string {
   const mapped = variantIdToFile[id];
-  if (mapped) return `/sprites/${mapped}.svg?v=4`;
+  if (mapped) return `/sprites/${mapped}.svg?v=5`;
   if (variantId && variantId !== 'normal' && !id.startsWith(`${variantId}-`)) {
-    return `/sprites/${id}-${variantId}.svg?v=4`;
+    return `/sprites/${id}-${variantId}.svg?v=5`;
   }
-  return `/sprites/${id}.svg?v=4`;
+  return `/sprites/${id}.svg?v=5`;
 }
 
 const glowById: Record<string, string> = {

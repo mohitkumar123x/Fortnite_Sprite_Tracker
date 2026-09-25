@@ -63,6 +63,63 @@ const seoFaqsByLocale: Record<Locale, FaqItem[]> = {
         '<p>Find a Sprite in a chest or supply drop, then extract it before the match ends to keep it permanently. Summon it later with Sprite Dust. Each Sprite has a passive that levels up — often to level 5 for mastery. Crown levels from wins; Klombo levels by consuming items. Variants are separate collectibles. This Fortnite Sprite Tracker checklist stores Owned (extracted) and Mastered (typically level 5) in your browser.</p>',
     },
   ],
+  de: [
+    {
+      question: 'Wozu gibt es Sprites in Fortnite?',
+      answer:
+        '<p>Sprites sind sammelbare Begleiter in Fortnite Battle Royale. Finde einen, extrahiere ihn, bevor die Partie endet, und er bleibt freigeschaltet, sodass du ihn später mit Sprite-Dust beschwören kannst. Jeder Sprite bringt eine passive Fähigkeit mit (Bewegung, Heilung, Beute, Nachladen und mehr), die mit dem Level aufsteigt. Varianten wie Gold oder Cheat Master sind zusätzliche Sammelobjekte obendrauf. Nutze diese Fortnite-Sprite-Tracker-Checkliste, um Gesammeltes und Meistertes zu markieren.</p>',
+    },
+    {
+      question: 'Was macht der Fortnite Sprite Tracker?',
+      answer:
+        '<p>Wenn viele von „Fortnite Tracker“ sprechen, meinen sie Statistik-Seiten (KD, Siege, Rang). Dieser Fortnite Sprite Tracker ist etwas anderes: eine kostenlose Online-Checkliste für Sprite-Begleiter — Gesammelt, Meistert, Jagdmodus, Share-Links, JSON-Sicherung und Season-Archive (inklusive Batman). Er meldet sich nicht bei Epic an, zeigt keine Partienhistorie und schaltet keine Sprites im Spiel frei. Er erfasst nur die Sammlung, die du markierst.</p>',
+    },
+    {
+      question: 'Ist der Fortnite Sprite Tracker sicher?',
+      answer:
+        '<p>Diese Fortnite-Sprite-Tracker-Website speichert deinen Fortschritt im Browser (localStorage). Es gibt kein Epic-Konto, kein Passwort und keinen Cloud-Login in v1. Share-Codes enthalten nur die Checklisten-Angaben, die du selbst kopierst. Das Projekt ist inoffiziell und kann deinen Fortnite-Locker nicht verändern. Meide jedes Drittanbieter-Werkzeug, das dein Epic-Passwort verlangt. Wir verkaufen keine Konten und injizieren nichts in den Spielclient.</p>',
+    },
+    {
+      question: 'Welche Sprites gibt es in Fortnite?',
+      answer:
+        '<p>Kapitel 7 Season 4 (Override) umfasst Bush, Adventure, 8-Bit, Jonesy, Killswitch, Sonic, Tails, Shadow, Jackrabbit, Crown und Klombo — jeweils mit Normal-, Gold- und Cheat-Master-Varianten. Das Season-3-Archiv enthält Begleiter wie Air, Aura, Batman und weitere mit Gummy-, Galaxy-, Gem-, Holofoil-, Cube- und Quack-Varianten. Durchsuche die vollständige Fortnite-Sprite-Tracker-Liste auf der Sprite-Seite.</p>',
+    },
+    {
+      question: 'Sind Sprites in Fortnite selten?',
+      answer:
+        '<p>Ja. Season 4 nutzt die Stufen Selten, Episch, Legendär und Mythisch. Mythische Sprites (Crown, Klombo) und Premium-Varianten (Gold, Cheat Master) sind in Truhen seltener als gewöhnliche seltene Drops. Manche Varianten haben zudem eine geringe Community-Besitzquote. Die Seltenheitsfilter und der Jagdmodus dieses Trackers helfen dir, seltene zu jagen, ohne sie mit gewöhnlichen Normal-Kopien zu verwechseln.</p>',
+    },
+    {
+      question: 'Warum heißen sie in Fortnite Sprites?',
+      answer:
+        '<p>Epic hat diese kleinen Begleiterwesen „Sprites“ genannt — wie ein Familiar oder Haustier, das dir folgt und dir etwas Passives gewährt. Der Begriff passt zur verspielten, elementaren und Kollab-Figuren-Grafik. Er ist nicht dasselbe wie ein Sprite in der Computergrafik (ein 2D-Bild). Auf dieser Seite bedeutet Sprite immer den sammelbaren Fortnite-Begleiter.</p>',
+    },
+    {
+      question: 'Wo finde ich Sprites in Fortnite?',
+      answer:
+        '<p>Die meisten Kapitel-7-Sprites fallen aus Truhen und Versorgungsdrops, nicht aus festen Kartenpunkten. Schnapp dir den Sprite und extrahiere ihn, bevor die Partie endet. Gold-, Cheat-Master- und ältere Varianten (Gummy, Galaxy und Ähnliches) findest du genauso wie die Normale. Nutze den Jagdmodus in diesem Fortnite Sprite Tracker, um zu sehen, welche Varianten dir noch fehlen, bevor du abspringst.</p>',
+    },
+    {
+      question: 'Was sind die 5 besten Sprites in Fortnite?',
+      answer:
+        '<p>Das hängt von deinem Loadout ab. Eine praktische Kurzliste für Season 4: (1) Jackrabbit — zusätzlicher Sprung in der Luft; (2) Tails — Schweben nach dem Doppelsprung; (3) Sonic — Sprintgeschwindigkeit; (4) Shadow — automatisches Nachladen eingepackter Waffen; (5) Jonesy — verzögerte Heilung nach Schaden. Crown ist stark, wenn du oft gewinnst; Klombo ist bei Beute stark, wenn du ihn füttern kannst. Markiere, was du besitzt, in der Fortnite-Sprite-Tracker-Übersicht, statt einer einzigen Meta-Liste hinterherzujagen.</p>',
+    },
+    {
+      question: 'Was sind die 10 schwersten Sprites in Fortnite?',
+      answer:
+        '<p>„Am schwersten“ meint normalerweise mythische Basis-Sprites plus seltene Varianten, nicht einen geheimen Spawn. Eine realistische, schwer zu vollendende Liste: Crown (mythisch), Klombo (mythisch), Jackrabbit (legendär), Gold-Crown, Cheat-Master-Crown, Gold-Klombo, Cheat-Master-Klombo, Cheat-Master-Jackrabbit, Gold-Shadow oder Gold-Sonic (Kollab-Epics) sowie übrige Season-3-Varianten wie Galaxy- oder Holofoil-Batman, die nicht mehr live fallen. Noch nicht erhältliche Zeilen sind noch seltener. Aktiviere den Jagdmodus, damit das Board nur zeigt, was dir noch fehlt.</p>',
+    },
+    {
+      question: 'Wie kann ich einen Sprite für Fortnite entwerfen?',
+      answer:
+        '<p>Du kannst über diese Seite oder einen beliebigen inoffiziellen Tracker keinen eigenen Sprite ins live Fortnite hochladen. Epic besitzt das Begleiter-Line-up. Du kannst einen Sprite als Concept-Art gestalten (Silhouette, Fähigkeit, Variantenfarben) und ihn als Fan-Art teilen. Offizielle Ergänzungen kommen nur von Epic und Kollabs. Nutze diesen Fortnite Sprite Tracker als Checkliste für offizielle Sprites, nicht als Einreichungswerkzeug für eigene Designs.</p>',
+    },
+    {
+      question: 'Wie funktionieren Sprites in Fortnite?',
+      answer:
+        '<p>Finde einen Sprite in einer Truhe oder einem Versorgungsdrop und extrahiere ihn vor dem Ende der Partie, um ihn dauerhaft zu behalten. Beschwöre ihn später mit Sprite-Dust. Jeder Sprite hat eine passive Fähigkeit, die mit dem Level aufsteigt — oft bis Level 5 für die Meisterschaft. Crown steigt durch Siege auf; Klombo durch das Verbrauchen von Gegenständen. Varianten sind eigene Sammelobjekte. Diese Fortnite-Sprite-Tracker-Checkliste speichert „Gesammelt“ (extrahiert) und „Meistert“ (in der Regel Level 5) in deinem Browser.</p>',
+    },
+  ],
   es: [
     {
       question: '¿Para qué sirven los Sprites en Fortnite?',
@@ -252,6 +309,23 @@ const trackerFaqsByLocale: Record<Locale, FaqItem[]> = {
       question: 'Can I print the Fortnite Sprite Tracker checklist?',
       answer:
         '<p>Filter to Missing, then use your browser print dialog for a printable sheet. You can also copy a share link instead of sending a locker screenshot.</p>',
+    },
+  ],
+  de: [
+    {
+      question: 'Was bedeuten „Gesammelt“ und „Meistert“ in diesem Fortnite Sprite Tracker?',
+      answer:
+        '<p>„Gesammelt“ bedeutet, dass du genau diesen Sprite und diese Variante extrahiert hast. „Meistert“ ist eine eigene Markierung für einen Sprite, den du auf Level 5 gebracht hast (und den du bei Bedarf zusätzlich extrahiert hast). Die Checkliste hält beides fest, damit du Vervollständigung und Meisterschaft getrennt verfolgen kannst.</p>',
+    },
+    {
+      question: 'Braucht diese Fortnite-Sprite-Tracker-Website ein Konto?',
+      answer:
+        '<p>Nein. Der Fortschritt wird in deinem Browser (localStorage) gespeichert. Nutze „JSON exportieren“ oder einen Share-Link, um Fortschritt zu übertragen. Es gibt keinen Epic-Login und keine Cloud-Synchronisierung in v1.</p>',
+    },
+    {
+      question: 'Kann ich die Fortnite-Sprite-Tracker-Checkliste ausdrucken?',
+      answer:
+        '<p>Filtere auf „Fehlend“ und nutze dann den Druckdialog deines Browsers für ein druckbares Blatt. Alternativ kannst du einen Share-Link kopieren, statt einen Locker-Screenshot zu senden.</p>',
     },
   ],
   es: [

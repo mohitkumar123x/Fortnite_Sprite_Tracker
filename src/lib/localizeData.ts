@@ -1,5 +1,6 @@
 import type { CatalogEntry, Rarity, Season } from './types';
 import type { Locale } from './i18n';
+import { spriteTextTranslations } from '../data/spriteTextTranslations';
 
 const rarityTranslations: Record<Locale, Record<Rarity, string>> = {
   en: {
@@ -8,6 +9,13 @@ const rarityTranslations: Record<Locale, Record<Rarity, string>> = {
     legendary: 'Legendary',
     mythic: 'Mythic',
     special: 'Special',
+  },
+  de: {
+    rare: 'Selten',
+    epic: 'Episch',
+    legendary: 'Legendär',
+    mythic: 'Mythisch',
+    special: 'Spezial',
   },
   es: {
     rare: 'Rara',
@@ -47,6 +55,21 @@ const variantLabelTranslations: Record<Locale, Record<string, string>> = {
     Gem: 'Gem',
     Cube: 'Cube',
     Quack: 'Quack',
+  },
+  de: {
+    Normal: 'Normal',
+    Base: 'Normal',
+    Gold: 'Gold',
+    'Cheat Master': 'Cheat Master',
+    'Loot Hacker': 'Loot Hacker',
+    Reaper: 'Schnitter',
+    Gummy: 'Gummy',
+    Galaxy: 'Galaxie',
+    Holofoil: 'Holografisch',
+    Holo: 'Holo',
+    Gem: 'Edelstein',
+    Cube: 'Würfel',
+    Quack: 'Quak',
   },
   es: {
     Normal: 'Normal',
@@ -99,23 +122,106 @@ const bonusTranslations: Record<Locale, Record<string, string>> = {
   en: {
     '3× elimination XP': '3× elimination XP',
     'Button Mash': 'Button Mash',
+    'Gold variant — 3x elimination XP bonus': 'Gold variant — 3x elimination XP bonus',
+    'Cheat Master — Button Mash cheat ability': 'Cheat Master — Button Mash cheat ability',
+    'Loot Hacker — High-elevation loot run variant': 'Loot Hacker — High-elevation loot run variant',
+    'Bounty Hunter — Elimination-based sprite finder': 'Bounty Hunter — Elimination-based sprite finder',
+  },
+  de: {
+    '3× elimination XP': '3× Eliminierungs-XP',
+    'Button Mash': 'Tastenmash',
+    'Gold variant — 3x elimination XP bonus': 'Gold-Variante — 3× Bonus für Eliminierungs-XP',
+    'Cheat Master — Button Mash cheat ability': 'Cheat Master — Fähigkeit Tastenmash',
+    'Loot Hacker — High-elevation loot run variant': 'Loot Hacker — Variante für Loot-Läufe in großer Höhe',
+    'Bounty Hunter — Elimination-based sprite finder': 'Bounty Hunter — eliminierungsbasierter Sprite-Finder',
   },
   es: {
     '3× elimination XP': '3× XP por eliminación',
     'Button Mash': 'Machacar Botones',
+    'Gold variant — 3x elimination XP bonus': 'Variante dorada — bonus de 3× XP por eliminación',
+    'Cheat Master — Button Mash cheat ability': 'Maestro del Truco — habilidad Machacar Botones',
+    'Loot Hacker — High-elevation loot run variant': 'Loot Hacker — variante de rutas de loot en altura',
+    'Bounty Hunter — Elimination-based sprite finder': 'Cazador de Recompensas — buscador de sprites basado en eliminaciones',
   },
   pt: {
     '3× elimination XP': '3× XP por eliminação',
     'Button Mash': 'Aperto de Botões',
+    'Gold variant — 3x elimination XP bonus': 'Variante dourada — bônus de 3× XP por eliminação',
+    'Cheat Master — Button Mash cheat ability': 'Mestre da Trapaça — habilidade Aperto de Botões',
+    'Loot Hacker — High-elevation loot run variant': 'Loot Hacker — variante de rotas de loot em altura',
+    'Bounty Hunter — Elimination-based sprite finder': 'Caçador de Recompensas — localizador de sprites baseado em eliminações',
   },
   fr: {
     '3× elimination XP': '3× XP par élimination',
     'Button Mash': 'Mélange de boutons',
+    'Gold variant — 3x elimination XP bonus': 'Variante or — bonus de 3× XP par élimination',
+    'Cheat Master — Button Mash cheat ability': 'Maître de la Triche — capacité Mélange de boutons',
+    'Loot Hacker — High-elevation loot run variant': 'Loot Hacker — variante de tournée de loot en altitude',
+    'Bounty Hunter — Elimination-based sprite finder': 'Chasseur de primes — trouveur de sprites basé sur les éliminations',
   },
 };
 
 const spriteAbilityTranslations: Record<Locale, Record<string, string>> = {
   en: {},
+  de: {
+    bush: 'Gewährt nach einer Weile einen Busch; auf Maximalebene auch einen Busch bei einer Eliminierung. Die Wartezeit wird mit jedem Level kürzer.',
+    adventure: 'Verbessert mit jedem Levelaufstieg ein zufälliges Objekt in deinem Inventar.',
+    '8-bit': 'Platziert in deiner ersten Truhe ein Schrotflinten-Gewehr im 8-Bit-Look und gewährt dafür einen Punkte-Multiplikator.',
+    jonesy: 'Stellt kurz nach erlittenem Schaden Gesundheit oder Schilde wieder her. Die Heilungsmenge steigt mit jedem Level.',
+    killswitch: 'Ziele in die Luft, um zu bremsen und die Trefferquote zu verbessern. Die Genauigkeit steigt mit den Leveln.',
+    sonic: 'Sprinte mit jedem Levelaufstieg schneller.',
+    tails: 'Doppelsprung zum Schweben in der Luft. Die Schwebegeschwindigkeit steigt mit jedem Level.',
+    shadow: 'Lädt automatisch nicht ausgerüstete Waffen im Laufe der Zeit nach. Auf Maximalebene lädt es auch die ausgerüstete Waffe nach.',
+    jackrabbit: 'Gewährt einen zweiten Sprung in der Luft. Die Nachladezeit wird mit jedem Level kürzer.',
+    crown: 'Steigt nur auf, wenn du Partien gewinnst (schneller mit Majestäts-Siegen). Meistern schaltet neue Varianten frei.',
+    klombo: 'Gewährt auf jedem Level zufällige Gegenstände. Du steigst auf, indem du Gegenstände verbrauchst; die Qualität verbessert sich mit jedem Level.',
+    xray: 'Markiert regelmäßig nahe Gegner. Frequenz und Radius steigen mit jedem Level.',
+    'mega-man': 'Verringert die Reibung beim Rutschen, sodass du mit jedem Level weiter gleitest.',
+    overshield: 'Gewährt einen Overshield; die Menge steigt mit dem Levelaufstieg des Sprites.',
+    onigiri: 'Gewährt Overdrive nach der Verwendung eines verbrauchbaren Gegenstands und hält je Level länger.',
+    's3-batman': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung für die aktuellen Werte.',
+    's3-air': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-aura': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-earth': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-fire': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-water': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-ghost': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-llama': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-peeky-peely': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-zero-point': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-storm-scout': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-fishy': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-demon': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-king': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-john-wick': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-duck': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-dream': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-punk': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-vini-jr': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-burnt-peanut': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-striker': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-boss': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-grim': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-seven': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-ironmouse': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    's3-pollo': 'Begleiterfähigkeit der Season 3. Siehe die Spielbeschreibung.',
+    'storm-scout': 'Löst Overdrive nach Sturmschaden aus — gewährt unbegrenzte Ausdauer und Bewegungsverbesserungen. Auf Maximalebene zeigt es zukünftige Sturmzirkel.',
+    'loot-hacker-xray': 'Loot-Hacker-Variante des Sprites X-Ray.',
+    'loot-hacker-tails': 'Loot-Hacker-Variante des Sprites Tails.',
+    'loot-hacker-sonic': 'Loot-Hacker-Variante des Sprites Sonic.',
+    'loot-hacker-shadow': 'Loot-Hacker-Variante des Sprites Shadow.',
+    'loot-hacker-8bit': 'Loot-Hacker-Variante des Sprites 8-Bit.',
+    'loot-hacker-bushranger': 'Loot-Hacker-Variante des Sprites Bush.',
+    'loot-hacker-adventure': 'Loot-Hacker-Variante des Sprites Adventure.',
+    'loot-hacker-jonesy': 'Loot-Hacker-Variante des Sprites Jonesy.',
+    'loot-hacker-overshield': 'Loot-Hacker-Variante des Sprites Overshield.',
+    'loot-hacker-onigiri': 'Loot-Hacker-Variante des Sprites Onigiri.',
+    'loot-hacker-storm-scout': 'Loot-Hacker-Variante des Sprites Storm Scout.',
+    'loot-hacker-crown': 'Loot-Hacker-Variante des Sprites Crown.',
+    'loot-hacker-klombo': 'Loot-Hacker-Variante des Sprites Klombo.',
+    'loot-hacker-jackrabbit': 'Loot-Hacker-Variante des Sprites Jackrabbit.',
+    'loot-hacker-killswitch': 'Loot-Hacker-Variante des Sprites Killswitch.',
+  },
   es: {
     bush: 'Otorga un arbusto tras cierto tiempo; al nivel máximo también otorga un arbusto por eliminación. El tiempo de espera se reduce con cada nivel.',
     adventure: 'Mejora un objeto aleatorio de tu inventario con cada subida de nivel.',
@@ -309,7 +415,24 @@ export function localizeBonus(bonus: string | undefined, locale: Locale): string
 }
 
 export function localizeSpriteAbility(spriteId: string, originalAbility: string, locale: Locale): string {
-  return spriteAbilityTranslations[locale]?.[spriteId] ?? originalAbility;
+  return (
+    spriteTextTranslations[locale]?.ability?.[originalAbility] ??
+    spriteAbilityTranslations[locale]?.[spriteId] ??
+    originalAbility
+  );
+}
+
+export function localizeLevelNotes(levelNotes: string | undefined, locale: Locale): string | undefined {
+  if (!levelNotes) return levelNotes;
+  return spriteTextTranslations[locale]?.levelNotes?.[levelNotes] ?? levelNotes;
+}
+
+export function localizeFindNotes(findNotes: string, locale: Locale): string {
+  return spriteTextTranslations[locale]?.findNotes?.[findNotes] ?? findNotes;
+}
+
+export function localizeLocation(location: string, locale: Locale): string {
+  return spriteTextTranslations[locale]?.location?.[location] ?? location;
 }
 
 export function localizeCatalogEntry(entry: CatalogEntry, locale: Locale): CatalogEntry {
@@ -319,6 +442,7 @@ export function localizeCatalogEntry(entry: CatalogEntry, locale: Locale): Catal
     ability: localizeSpriteAbility(entry.spriteId, entry.ability, locale),
     variantLabel: localizeVariantLabel(entry.variantLabel, locale),
     bonus: localizeBonus(entry.bonus, locale),
+    location: entry.location ? localizeLocation(entry.location, locale) : undefined,
   };
 }
 
@@ -328,6 +452,17 @@ export function localizeCatalog(catalog: CatalogEntry[], locale: Locale): Catalo
 
 const seasonTranslations: Record<Locale, Record<string, { label?: string; patchNote?: string; archiveNote?: string | null }>> = {
   en: {},
+  de: {
+    'c7-s4': {
+      label: 'Kapitel 7 Season 4 - Override',
+      patchNote: 'Live-Checkliste: Extrahiere Sprites in Partien, um „Gesammelt“ zu markieren, und erreiche Level 5, um „Meistert“ zu markieren.',
+    },
+    'c7-s3': {
+      label: 'Kapitel 7 Season 3 - Archiv',
+      patchNote: 'Season-3-Archiv-Checkliste: Batman und klassische Varianten.',
+      archiveNote: 'Dieses Board erscheint nicht mehr in Live-Matches, aber deine Checkliste bleibt lokal für diese Season gespeichert.',
+    },
+  },
   es: {
     'c7-s4': {
       label: 'Capítulo 7 Temporada 4 — Override',

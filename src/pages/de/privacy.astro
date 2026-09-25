@@ -1,0 +1,125 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import LegalDoc from '../../components/LegalDoc.astro';
+import { breadcrumbJsonLd, CONTACT_EMAIL, SITE_NAME, SITE_URL } from '../../lib/seo';
+import { localeFromPath, localizedPath, t } from '../../lib/i18n';
+
+const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
+
+const jsonLd = [
+  breadcrumbJsonLd([{ name: 'Datenschutzerklärung', path: '/privacy' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: `Datenschutzerklärung · ${SITE_NAME}`,
+    url: `${SITE_URL}/de/privacy`,
+  },
+];
+---
+
+<Layout
+  title="Datenschutzerklärung — Fortnite Sprite Tracker"
+  description="Datenschutzerklärung für Fortnite Sprite Tracker: Fortschritt bleibt im Browser, kein Konto, kein Epic-Login. So funktionieren localStorage, Share-Links und Hosting-Protokolle."
+  canonicalPath={lp('/privacy')}
+  jsonLd={jsonLd}
+>
+  <Header slot="header" />
+  <div class="mx-auto max-w-[800px] px-4 pt-4 md:px-6">
+    <Breadcrumb locale={locale} items={[{ label: t(locale, 'bcPrivacy') }]} />
+  </div>
+  <LegalDoc
+    eyebrow="Datenschutz"
+    heading="Datenschutzerklärung."
+    intro="Diese Erklärung beschreibt, wie fortnitespritetracking.com mit Informationen umgeht. Der Tracker ist lokal: Der Checklisten-Fortschritt wird auf deinem Gerät gespeichert, nicht in einem Konto auf unseren Servern."
+    updated="2026-08-26"
+  >
+    <h2>Wer wir sind</h2>
+    <p>
+      Fortnite Sprite Tracker („wir“, „die Seite“) ist eine inoffizielle Fanwebsite unter
+      fortnitespritetracking.com. Für Datenschutzfragen nutze <a href={lp('/contact')}>Kontakt</a> oder
+      schreibe an <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+    </p>
+
+    <h2>Was wir nicht erheben</h2>
+    <ul>
+      <li>Für die Checkliste brauchst du kein Konto, keine E-Mail und keinen Epic-Games-Login.</li>
+      <li>Wir fragen nicht nach Passwörtern, 2FA-Codes oder V-Bucks-Zahlungsdaten.</li>
+      <li>In dieser Version der Seite gibt es keine Cloud-Synchronisierung deines Lockers.</li>
+    </ul>
+
+    <h2>Informationen auf deinem Gerät</h2>
+    <p>
+      Die Seite nutzt den localStorage deines Browsers (und ähnlichen lokalen Speicher), um sich zu merken:
+    </p>
+    <ul>
+      <li>Den Status „Gesammelt / Meistert“ der Seasons, die du verfolgst</li>
+      <li>Deine Design-Einstellung (hell oder dunkel), sofern du sie gesetzt hast</li>
+    </ul>
+    <p>
+      Diese Daten bleiben in diesem Browserprofil, bis du die Websitedaten löschst, den Browser deinstallierst
+      oder sie mit „JSON importieren“ überschreibst. Wir können von unserer Seite aus nicht auf deinen
+      localStorage zugreifen.
+    </p>
+
+    <h2>Share-Links und exportierte Dateien</h2>
+    <p>
+      Share-Codes und „JSON exportieren“ enthalten die Checklisten-Angaben, die du bewusst kopierst. Wenn du
+      einen Link in Discord, ein Wiki oder eine E-Mail einfügst, kann jeder mit diesem Link den kodierten
+      Fortschritt sehen. Behandle Share-URLs wie einen Screenshot deines Boards.
+    </p>
+
+    <h2>Informationen beim Besuch</h2>
+    <p>
+      Wie die meisten Websites kann unser Host oder das Content-Delivery-Network technische Protokolle
+      aufzeichnen (z. B. IP-Adresse, Browsertyp, angeforderte URL und Uhrzeit), um die Seite zu betreiben,
+      Missbrauch zu stoppen und Ausfälle zu debuggen. Wir verkaufen diese Protokolle nicht. Die Aufbewahrung
+      folgt den Voreinstellungen des Hosts, sofern wir kein kürzeres Fenster konfigurieren.
+    </p>
+    <p>
+      Wir nutzen Google Analytics (Google-Tag G-2VQN0PC7BF), um zu verstehen, wie Menschen die Seite nutzen —
+      beispielsweise Seitenaufrufe und allgemeinen Traffic. Google kann deine IP-Adresse verarbeiten und Cookies
+      oder ähnliche Kennungen auf deinem Gerät setzen. Siehe
+      <a href="https://policies.google.com/privacy">Googles Datenschutzerklärung</a> und
+      <a href="https://tools.google.com/dlpage/gaoptout">Google-Analytics-Opt-out</a>.
+    </p>
+
+    <h2>Cookies</h2>
+    <p>
+      Die Checkliste speichert Fortschritt und Design im localStorage, nicht in einem Werbe-Cookie. Google
+      Analytics kann beim Besuch eigene Cookies setzen. Du kannst sie in deinem Browser oder mit Googles
+      Opt-out-Erweiterung blockieren.
+    </p>
+
+    <h2>Kontaktformular und E-Mail</h2>
+    <p>
+      Wenn du uns schreibst oder die Kontaktseite nutzt, erhalten wir, was du sendest (Name, Adresse,
+      Nachricht). Wir verwenden das ausschließlich, um zu antworten und den Vorgang festzuhalten. Sende keine
+      Epic-Passwörter oder Kontowiederherstellungscodes.
+    </p>
+
+    <h2>Kinder</h2>
+    <p>
+      Die Seite ist ein Fan-Werkzeug für ein allgemeines Publikum. Wir erheben wissentlich keine
+      personenbezogenen Daten von Kindern. Wenn du glaubst, dass ein Kind personenbezogene Daten per E-Mail
+      gesendet hat, kontaktiere uns — wir löschen die Nachricht, sobald wir sie zuordnen können.
+    </p>
+
+    <h2>Deine Auswahlmöglichkeiten</h2>
+    <ul>
+      <li>Lösche die Daten dieser Seite in deinem Browser, um lokalen Fortschritt und Design zu entfernen.</li>
+      <li>Nutze „JSON exportieren“, bevor du das Gerät wechselst, wenn du eine Sicherung behalten möchtest.</li>
+      <li>Verzichte auf Share-Links, wenn andere deinen kodierten Checklistenstand nicht laden sollen.</li>
+    </ul>
+
+    <h2>Änderungen</h2>
+    <p>
+      Wir können diese Erklärung aktualisieren, wenn sich das Produkt ändert. Das Datum oben zeigt die letzte
+      Fassung an. Wesentliche Änderungen werden auf dieser Seite veröffentlicht.
+    </p>
+  </LegalDoc>
+  <Footer slot="footer" />
+</Layout>

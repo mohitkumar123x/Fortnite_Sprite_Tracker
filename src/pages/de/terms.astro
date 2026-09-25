@@ -1,0 +1,106 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import LegalDoc from '../../components/LegalDoc.astro';
+import { breadcrumbJsonLd, CONTACT_EMAIL, SITE_NAME, SITE_URL } from '../../lib/seo';
+import { localeFromPath, localizedPath, t } from '../../lib/i18n';
+
+const locale = localeFromPath(Astro.url.pathname);
+const lp = (href: string) => localizedPath(locale, href);
+
+const jsonLd = [
+  breadcrumbJsonLd([{ name: 'AGB', path: '/terms' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: `AGB · ${SITE_NAME}`,
+    url: `${SITE_URL}/de/terms`,
+  },
+];
+---
+
+<Layout
+  title="AGB — Fortnite Sprite Tracker"
+  description="Allgemeine Geschäftsbedingungen für die Nutzung von Fortnite Sprite Tracker: inoffizielle Fanseite, keine Verbindung zu Epic, lokaler Fortschritt, zulässige Nutzung und Haftungsbeschränkung."
+  canonicalPath={lp('/terms')}
+  jsonLd={jsonLd}
+>
+  <Header slot="header" />
+  <div class="mx-auto max-w-[800px] px-4 pt-4 md:px-6">
+    <Breadcrumb locale={locale} items={[{ label: t(locale, 'bcTerms') }]} />
+  </div>
+  <LegalDoc
+    eyebrow="Rechtliches"
+    heading="AGB."
+    intro="Diese Bedingungen regeln die Nutzung von fortnitespritetracking.com. Mit der Nutzung der Seite stimmst du ihnen zu. Wenn du nicht zustimmst, nutze den Tracker nicht."
+    updated="2026-08-25"
+  >
+    <h2>Inoffizielles Fanprojekt</h2>
+    <p>
+      Fortnite Sprite Tracker ist eine unabhängige Fanwebsite. Sie steht in keiner Verbindung zu Epic Games,
+      Inc. und wird weder von dieser unterstützt noch gesponsert. Fortnite und andere Epic-Marken gehören
+      Epic. Wir bieten weder Fortnite selbst noch V-Bucks, Kosmetik-Items oder Kontodienste an.
+    </p>
+
+    <h2>Der Dienst</h2>
+    <p>
+      Wir stellen eine kostenlose Browser-Checkliste und Referenz für Sprites bereit. Funktionen können sich
+      ändern, brechen oder ohne Ankündigung eingestellt werden. Roster-Daten, Seltenheiten und Hinweise zum
+      Auffinden können unvollständig oder im Vergleich zum live Spiel veraltet sein.
+    </p>
+    <p>
+      Der Fortschritt wird lokal in deinem Browser gespeichert, solange du ihn nicht exportierst. Wir haften
+      nicht für verlorene Checklisten-Daten, nachdem du den Speicher gelöscht, das Gerät gewechselt oder einen
+      Share-Link falsch verwendet hast.
+    </p>
+
+    <h2>Zulässige Nutzung</h2>
+    <ul>
+      <li>Benutze die Seite nicht zum Phishing, zum Abgriff von Epic-Zugangsdaten oder zur Verbreitung von Malware.</li>
+      <li>Versuche nicht, das Hosting zu stören, das Angebot auf eine schädliche Weise zu scrapen oder die Seite zu impersonieren.</li>
+      <li>Stelle dieses Tool nicht als offizielles Epic-Produkt dar.</li>
+      <li>Share-Links sollten nur deine eigene Checkliste (oder die eines Freundes, mit dessen Erlaubnis) kodieren.</li>
+    </ul>
+
+    <h2>Geistiges Eigentum</h2>
+    <p>
+      Layout, Texte und eigener Code der Seite dienen dem persönlichen, nicht kommerziellen Gebrauch dieser
+      Website. Spielnamen, Sprite-Konzepte und zugehörige Grafiken verbleiben bei ihren Eigentümern. Du darfst
+      die Seite nicht vollständig kopieren oder sie als bezahlten „offiziellen“ Tracker vermarkten.
+    </p>
+
+    <h2>Keine Gewährleistung</h2>
+    <p>
+      Die Seite wird „wie besehen“ bereitgestellt. Wir garantieren weder unterbrechungsfreie Verfügbarkeit
+      noch fehlerfreie Daten noch die Eignung für einen bestimmten Zweck — einschließlich Wettkampfspiel,
+      Handel oder Sammler-Ansprüchen.
+    </p>
+
+    <h2>Haftungsbeschränkung</h2>
+    <p>
+      Soweit gesetzlich zulässig haften wir nicht für indirekte, beiläufige oder folgeschäden sowie für
+      verlorenen Fortschritt, entgangenen Gewinn oder Streitigkeiten aus von dir veröffentlichten Share-Codes.
+      Dein alleiniges Rechtsmittel bei Unzufriedenheit ist die Einstellung der Seitennutzung.
+    </p>
+
+    <h2>Datenschutz</h2>
+    <p>
+      Wie lokaler Speicher, Share-Links und Hosting-Protokolle funktionieren, beschreibt die
+      <a href={lp('/privacy')}>Datenschutzerklärung</a>.
+    </p>
+
+    <h2>Änderungen</h2>
+    <p>
+      Wir können diese Bedingungen aktualisieren. Wenn du die Seite nach einer veröffentlichten Änderung
+      weiter nutzt, stimmst du den neuen Bedingungen zu. Das Datum oben zeigt die letzte Fassung an.
+    </p>
+
+    <h2>Kontakt</h2>
+    <p>
+      Fragen: <a href={lp('/contact')}>Kontakt</a> oder <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+    </p>
+  </LegalDoc>
+  <Footer slot="footer" />
+</Layout>
