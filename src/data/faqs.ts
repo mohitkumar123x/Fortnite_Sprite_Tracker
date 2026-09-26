@@ -23,6 +23,11 @@ const seoFaqsByLocale: Record<Locale, FaqItem[]> = {
         '<p>This Fortnite Sprite Tracker website stores progress in your browser (localStorage). There is no Epic account, no password, and no cloud login in v1. Share codes only contain checklist bits you copy yourself. It is unofficial and cannot change your Fortnite locker. Avoid any third-party tool that asks for your Epic password. We do not sell accounts or inject into the game client.</p>',
     },
     {
+      question: 'Is the Fortnite Sprite Tracker updated with the latest Fortnite updates?',
+      answer:
+        '<p>Yes. The Fortnite Sprite Tracker is regularly updated with new Fortnite updates, Sprite releases, variants, and changes to the current roster. Recent tracker updates include:</p><ul><li>September 24, 2026 — Updated for the latest Fortnite content</li><li>September 17, 2026 — Updated Sprite data and roster information</li><li>September 3, 2026 — Updated Sprite data and seasonal information</li></ul><p>Older updates and previous-season Sprites remain available in the season archives.</p>',
+    },
+    {
       question: 'What are some Sprites in Fortnite?',
       answer:
         '<p>Chapter 7 Season 4 (Override) includes Bush, Adventure, 8-Bit, Jonesy, Killswitch, Sonic, Tails, Shadow, Jackrabbit, Crown, and Klombo — each with Normal, Gold, and Cheat Master variants. Season 3 archives include companions such as Air, Aura, Batman, and others with Gummy, Galaxy, Gem, Holofoil, Cube, and Quack treatments. Browse the full Fortnite Sprite Tracker list on the Sprites page.</p>',
@@ -78,6 +83,11 @@ const seoFaqsByLocale: Record<Locale, FaqItem[]> = {
       question: 'Ist der Fortnite Sprite Tracker sicher?',
       answer:
         '<p>Diese Fortnite-Sprite-Tracker-Website speichert deinen Fortschritt im Browser (localStorage). Es gibt kein Epic-Konto, kein Passwort und keinen Cloud-Login in v1. Share-Codes enthalten nur die Checklisten-Angaben, die du selbst kopierst. Das Projekt ist inoffiziell und kann deinen Fortnite-Locker nicht verändern. Meide jedes Drittanbieter-Werkzeug, das dein Epic-Passwort verlangt. Wir verkaufen keine Konten und injizieren nichts in den Spielclient.</p>',
+    },
+    {
+      question: 'Wird der Fortnite Sprite Tracker mit den neuesten Fortnite-Updates aktualisiert?',
+      answer:
+        '<p>Ja. Der Fortnite Sprite Tracker wird regelmäßig mit neuen Fortnite-Updates, Sprite-Veröffentlichungen, Varianten und Änderungen am aktuellen Line-up aktualisiert. Die neuesten Tracker-Updates:</p><ul><li>24. September 2026 — Aktualisiert für die neuesten Fortnite-Inhalte</li><li>17. September 2026 — Sprite-Daten und Line-up-Informationen aktualisiert</li><li>3. September 2026 — Sprite-Daten und saisonale Informationen aktualisiert</li></ul><p>Ältere Updates und Sprites früherer Seasons bleiben in den Season-Archiven verfügbar.</p>',
     },
     {
       question: 'Welche Sprites gibt es in Fortnite?',
@@ -137,6 +147,11 @@ const seoFaqsByLocale: Record<Locale, FaqItem[]> = {
         '<p>Sí. Este sitio guarda tu progreso localmente en tu navegador (localStorage). No solicita contraseñas ni datos de Epic Games. Es un proyecto no oficial y seguro para seguir tu colección.</p>',
     },
     {
+      question: '¿Se actualiza el Fortnite Sprite Tracker con las últimas actualizaciones de Fortnite?',
+      answer:
+        '<p>Sí. El Fortnite Sprite Tracker se actualiza regularmente con las nuevas actualizaciones de Fortnite, lanzamientos de Sprites, variantes y cambios en la lista actual. Las actualizaciones recientes del tracker incluyen:</p><ul><li>24 de septiembre de 2026 — Actualizado con el contenido más reciente de Fortnite</li><li>17 de septiembre de 2026 — Datos de Sprites y información de la lista actualizados</li><li>3 de septiembre de 2026 — Datos de Sprites y información de temporada actualizados</li></ul><p>Las actualizaciones anteriores y los Sprites de temporadas pasadas siguen disponibles en los archivos de temporadas.</p>',
+    },
+    {
       question: '¿Cuáles son algunos Sprites en Fortnite?',
       answer:
         '<p>En el Capítulo 7 Temporada 4 se incluyen Bush, Adventure, 8-Bit, Jonesy, Killswitch, Sonic, Tails, Shadow, Jackrabbit, Crown y Klombo, con variantes Normal, Oro y Maestro de Trucos. En los archivos de la Temporada 3 se incluyen Batman, Air, Aura y más.</p>',
@@ -194,6 +209,11 @@ const seoFaqsByLocale: Record<Locale, FaqItem[]> = {
         '<p>Sim. Este site salva seu progresso localmente no navegador (localStorage). Não pede senhas nem dados da Epic Games. É um projeto não oficial e seguro para acompanhar sua coleção.</p>',
     },
     {
+      question: 'O Fortnite Sprite Tracker é atualizado com as últimas atualizações do Fortnite?',
+      answer:
+        '<p>Sim. O Fortnite Sprite Tracker é atualizado regularmente com as novas atualizações do Fortnite, lançamentos de Sprites, variantes e mudanças na lista atual. As atualizações recentes do tracker incluem:</p><ul><li>24 de setembro de 2026 — Atualizado com o conteúdo mais recente do Fortnite</li><li>17 de setembro de 2026 — Dados de Sprites e informações da lista atualizados</li><li>3 de setembro de 2026 — Dados de Sprites e informações sazonais atualizados</li></ul><p>Atualizações antigas e Sprites de temporadas anteriores continuam disponíveis nos arquivos de temporadas.</p>',
+    },
+    {
       question: 'Quais são alguns Sprites no Fortnite?',
       answer:
         '<p>No Capítulo 7 Temporada 4 estão incluídos Bush, Adventure, 8-Bit, Jonesy, Killswitch, Sonic, Tails, Shadow, Jackrabbit, Crown e Klombo, com variantes Normal, Ouro e Mestre de Trapaça. O arquivo da Temporada 3 inclui Batman, Air, Aura e mais.</p>',
@@ -249,6 +269,11 @@ const seoFaqsByLocale: Record<Locale, FaqItem[]> = {
       question: 'Le Fortnite Sprite Tracker est-il sûr ?',
       answer:
         '<p>Oui. Ce site enregistre votre progression localement dans votre navigateur (localStorage). Il ne demande pas de mot de passe ni de données Epic Games. C\'est un projet non officiel et sûr pour suivre votre collection.</p>',
+    },
+    {
+      question: 'Le Fortnite Sprite Tracker est-il mis à jour avec les dernières mises à jour de Fortnite ?',
+      answer:
+        '<p>Oui. Le Fortnite Sprite Tracker est régulièrement mis à jour avec les nouvelles mises à jour de Fortnite, les sorties de Sprites, les variantes et les changements de la liste actuelle. Les mises à jour récentes du tracker incluent :</p><ul><li>24 septembre 2026 — Mis à jour pour le contenu Fortnite le plus récent</li><li>17 septembre 2026 — Données de Sprites et informations de la liste mises à jour</li><li>3 septembre 2026 — Données de Sprites et informations saisonnières mises à jour</li></ul><p>Les anciennes mises à jour et les Sprites des saisons précédentes restent disponibles dans les archives de saisons.</p>',
     },
     {
       question: 'Quels sont quelques Sprites dans Fortnite ?',

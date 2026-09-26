@@ -18,7 +18,14 @@ const {
 } = Astro.props;
 
 function answerPlain(html: string) {
-  return html.replace(/<\/?p>/g, '').replace(/<[^>]+>/g, '');
+  return html
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/(p|li|h[1-6])>/gi, '\n')
+    .replace(/<li[^>]*>/gi, '• ')
+    .replace(/<[^>]+>/g, '')
+    .replace(/\n[ \t]+/g, '\n')
+    .replace(/\n{2,}/g, '\n')
+    .trim();
 }
 ---
 
@@ -39,7 +46,7 @@ function answerPlain(html: string) {
                 </span>
               </span>
             </summary>
-            <p class="mt-3 text-sm leading-6 text-body">{answerPlain(item.answer)}</p>
+            <div class="mt-3 whitespace-pre-line text-sm leading-6 text-body">{answerPlain(item.answer)}</div>
           </details>
         ))
       }
