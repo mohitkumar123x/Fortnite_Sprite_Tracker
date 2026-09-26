@@ -1,23 +1,901 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" aria-hidden="true">
+
+  <defs>
+
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
+
+    <radialGradient id="bg" cx="50%" cy="42%" r="75%">
+      <stop offset="0%" stop-color="#3B2E86"/>
+      <stop offset="55%" stop-color="#241B5E"/>
+      <stop offset="100%" stop-color="#100C36"/>
+    </radialGradient>
+
+
+    <!-- =========================
+         HEAD
+    ========================== -->
+
+    <linearGradient id="headPink" x1="15%" y1="5%" x2="90%" y2="100%">
+      <stop offset="0%" stop-color="#EAFBFF"/>
+      <stop offset="25%" stop-color="#A8E4FB"/>
+      <stop offset="58%" stop-color="#6ECDF2"/>
+      <stop offset="82%" stop-color="#42B0E2"/>
+      <stop offset="100%" stop-color="#1E7FB8"/>
+    </linearGradient>
+
+    <linearGradient id="headHighlight" x1="0%" y1="0%" x2="100%" y2="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="35%" stop-color="#D6F5FF"/>
+      <stop offset="100%" stop-color="#5BC0E8"/>
+    </linearGradient>
+
+    <linearGradient id="sidePink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9FE2F9"/>
+      <stop offset="45%" stop-color="#46B4E2"/>
+      <stop offset="100%" stop-color="#0A6E96"/>
+    </linearGradient>
+
+
+    <!-- =========================
+         EYES
+    ========================== -->
+
+    <radialGradient id="eyeOuter" cx="35%" cy="28%" r="75%">
+      <stop offset="0%" stop-color="#55eaff"/>
+      <stop offset="35%" stop-color="#0bbbdc"/>
+      <stop offset="72%" stop-color="#0085b9"/>
+      <stop offset="100%" stop-color="#004f83"/>
+    </radialGradient>
+
+    <radialGradient id="eyeInner" cx="38%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#273d4c"/>
+      <stop offset="35%" stop-color="#081a28"/>
+      <stop offset="100%" stop-color="#00070d"/>
+    </radialGradient>
+
+
+    <!-- =========================
+         BODY
+    ========================== -->
+
+    <linearGradient id="bodyPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8FD8F6"/>
+      <stop offset="35%" stop-color="#3FA9DC"/>
+      <stop offset="70%" stop-color="#2288BC"/>
+      <stop offset="100%" stop-color="#0A5E86"/>
+    </linearGradient>
+
+    <linearGradient id="bodyScreen" x1="15%" y1="5%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#f8f7f2"/>
+      <stop offset="45%" stop-color="#e7e6e2"/>
+      <stop offset="100%" stop-color="#aaa8aa"/>
+    </linearGradient>
+
+
+    <!-- =========================
+         TEETH
+    ========================== -->
+
+    <linearGradient id="teeth" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff9dc"/>
+      <stop offset="60%" stop-color="#ded3b5"/>
+      <stop offset="100%" stop-color="#a89b82"/>
+    </linearGradient>
+
+
+    <!-- =========================
+         FINS
+    ========================== -->
+
+    <linearGradient id="fin" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#D9F6FF"/>
+      <stop offset="45%" stop-color="#7FD3F3"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+
+
+    <!-- =========================
+         FILTERS
+    ========================== -->
+
+    <filter id="softShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+
+    <filter id="smallBlur">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+
+
+    <!-- =========================
+         HEAD TEXTURE
+    ========================== -->
+
+    <pattern id="cracks" width="52" height="48" patternUnits="userSpaceOnUse">
+
+      <path
+        d="
+          M7 4 L13 9 L11 15 L19 20
+          M33 2 L28 10 L31 17 L25 23
+          M44 25 L38 30 L41 37
+          M9 31 L16 27 L20 34 L16 42
+          M29 39 L34 33 L30 28
+        "
+        fill="none"
+        stroke="#0A6E96"
+        stroke-width="1.3"
+        opacity=".30"
+      />
+
+      <path
+        d="
+          M14 12 L20 14 L22 10
+          M32 17 L36 21 L34 26
+        "
+        fill="none"
+        stroke="#FFFFFF"
+        stroke-width="1"
+        opacity=".20"
+      />
+
+    </pattern>
+
+
+    <!-- =========================
+         HEAD CLIP
+    ========================== -->
+
+    <clipPath id="headClip">
+      <path
+        d="
+          M74 113
+          Q82 83 113 73
+          L384 82
+          Q423 88 432 120
+          L448 208
+          Q452 239 426 253
+          L104 257
+          Q62 251 58 221
+          Z
+        "
+      />
+    </clipPath>
+
+    <pattern id="klhStripes" width="24" height="24" patternUnits="userSpaceOnUse"><rect width="24" height="12" fill="#000000" opacity="0.18"/></pattern>
+
+  </defs>
+
+
   <style>
-    .el { transform-box: fill-box; transform-origin: center; }
-    .bob { animation: bob 2.8s ease-in-out infinite; }
-    .twitch { animation: twitch 2.6s ease-in-out infinite; }
-    .twitch-d { animation: twitch 2.6s ease-in-out infinite; animation-delay: .18s; }
-    .blink { animation: blink 3.8s steps(1, end) infinite; }
-    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
-    @keyframes twitch { 0%,86%,100% { transform: rotate(0); } 90% { transform: rotate(-8deg); } 94% { transform: rotate(6deg); } }
-    @keyframes blink { 0%,92%,100% { transform: scaleY(1); } 94%,96% { transform: scaleY(.12); } }
-    @media (prefers-reduced-motion: reduce) { .el { animation: none !important; } }
+    .el{transform-box:fill-box;transform-origin:center}
+    .bob{transform-box:fill-box;transform-origin:center;animation:bob 2.8s ease-in-out infinite}
+    .blink{animation:blink 4.2s steps(1,end) infinite}
+    .glow{animation:glow 3.4s ease-in-out infinite}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+    @keyframes blink{0%,93%,100%{transform:scaleY(1)}96%,98.5%{transform:scaleY(.08)}}
+    @keyframes glow{0%,100%{opacity:.14}50%{opacity:.3}}
+    .scan{animation:scan 4.8s linear infinite}
+    @keyframes scan{0%{transform:translateY(0);opacity:.1}40%,60%{opacity:.45}100%{transform:translateY(120px);opacity:.1}}
+    .scan-slow{animation:scan-slow 6.4s linear infinite}
+    @keyframes scan-slow{0%{transform:translateY(0);opacity:.08}50%{opacity:.35}100%{transform:translateY(-100px);opacity:.08}}
+    @media(prefers-reduced-motion:reduce){.el,.bob,.spark,.rain,.scanline,.scan,.scan-slow,.swirl,.twinkle,.twinkle-2{animation:none!important}}
   </style>
-  <rect width="128" height="128" rx="28" fill="#1a2a1a"/>
-  <ellipse class="el twitch" cx="46" cy="36" rx="10" ry="28" fill="#9CCC65"/>
-  <ellipse class="el twitch-d" cx="82" cy="36" rx="10" ry="28" fill="#9CCC65"/>
+
+
+  <!-- =========================================================
+       BACKGROUND
+  ========================================================== -->
+
+  <rect
+    width="512"
+    height="512"
+    rx="64"
+    fill="url(#bg)"
+  />
+
+  <rect width="512" height="512" fill="url(#klhStripes)"/>
+
+  <!-- Ambient magenta glow behind Klombo -->
+  <ellipse
+    class="glow"
+    cx="256"
+    cy="264"
+    rx="184"
+    ry="176"
+    fill="#22D3EE"
+  />
+
   <g class="el bob">
-    <circle cx="64" cy="74" r="26" fill="#C5E1A5"/>
-    <circle class="el blink" cx="56" cy="72" r="4" fill="#1A1A1A"/>
-    <circle class="el blink" cx="72" cy="72" r="4" fill="#1A1A1A"/>
-    <ellipse cx="64" cy="86" rx="6" ry="4" fill="#8BC34A"/>
-    <text x="64" y="112" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold" opacity="0">LH</text>
+
+  <ellipse
+    cx="256"
+    cy="455"
+    rx="170"
+    ry="25"
+    fill="#090909"
+    opacity=".75"
+    filter="url(#softShadow)"
+  />
+
+
+  <!-- =========================================================
+       TOP FINS
+  ========================================================== -->
+
+  <!-- Left fin -->
+  <path
+    d="
+      M122 80
+      Q120 53 130 36
+      Q139 20 157 25
+      L173 70
+      Z
+    "
+    fill="url(#fin)"
+    stroke="#4FD8FF"
+    stroke-width="3"
+  />
+
+  <!-- Center fin -->
+  <path
+    d="
+      M174 69
+      Q166 38 177 17
+      Q184 4 199 17
+      L225 73
+      Z
+    "
+    fill="url(#fin)"
+    stroke="#7FE6FF"
+    stroke-width="3"
+  />
+
+  <!-- Right-center fin -->
+  <path
+    d="
+      M303 79
+      Q304 47 320 35
+      Q336 25 354 38
+      L358 86
+      Z
+    "
+    fill="url(#fin)"
+    stroke="#35CCF5"
+    stroke-width="3"
+  />
+
+  <!-- Far-right fin -->
+  <path
+    d="
+      M366 88
+      Q370 57 386 48
+      Q399 43 409 58
+      L402 101
+      Z
+    "
+    fill="url(#fin)"
+    stroke="#29BCEB"
+    stroke-width="3"
+  />
+
+
+  <!-- =========================================================
+       HEAD SHADOW
+  ========================================================== -->
+
+  <path
+    d="
+      M74 119
+      Q83 88 115 77
+      L385 85
+      Q424 90 433 121
+      L450 209
+      Q456 240 427 258
+      L103 264
+      Q64 258 57 225
+      Z
+    "
+    fill="#0A5E86"
+    opacity=".8"
+    transform="translate(3 8)"
+    filter="url(#smallBlur)"
+  />
+
+
+  <!-- =========================================================
+       MAIN HEAD
+  ========================================================== -->
+
+  <path
+    d="
+      M74 113
+      Q82 83 113 73
+      L384 82
+      Q423 88 432 120
+      L448 208
+      Q452 239 426 253
+      L104 257
+      Q62 251 58 221
+      Z
+    "
+    fill="url(#headPink)"
+    stroke="#4FD8FF"
+    stroke-width="4"
+    stroke-linejoin="round"
+  />
+
+  <!-- Head highlight -->
+  <path
+    d="
+      M78 119
+      Q88 91 116 82
+      L380 91
+      Q410 94 419 121
+      L429 161
+      Q346 136 252 142
+      Q155 148 68 172
+      Z
+    "
+    fill="url(#headHighlight)"
+    opacity=".42"
+    clip-path="url(#headClip)"
+  />
+
+  <!-- Cracked texture -->
+  <rect
+    x="55"
+    y="70"
+    width="400"
+    height="200"
+    fill="url(#cracks)"
+    clip-path="url(#headClip)"
+  />
+
+  <!-- Center seam -->
+  <path
+    d="M255 77 Q251 129 255 252"
+    fill="none"
+    stroke="#C9F4FF"
+    stroke-width="2"
+    opacity=".48"
+  />
+
+  <path
+    d="M259 78 Q255 134 260 252"
+    fill="none"
+    stroke="#0A6E96"
+    stroke-width="2"
+    opacity=".35"
+  />
+
+
+  <!-- =========================================================
+       HEAD HIGHLIGHTS
+  ========================================================== -->
+
+  <path
+    d="
+      M77 122
+      Q83 96 111 84
+      Q101 140 92 207
+      Q89 231 104 250
+    "
+    fill="none"
+    stroke="#E4FAFF"
+    stroke-width="4"
+    opacity=".7"
+  />
+
+  <path
+    d="
+      M424 119
+      Q437 157 443 209
+      Q447 235 426 249
+    "
+    fill="none"
+    stroke="#08597E"
+    stroke-width="5"
+    opacity=".6"
+  />
+
+
+  <!-- =========================================================
+       EYES (BLINK)
+  ========================================================== -->
+
+  <g class="el blink">
+
+    <!-- LEFT EYE -->
+    <ellipse
+      cx="125"
+      cy="150"
+      rx="42"
+      ry="49"
+      fill="#005b8e"
+      opacity=".55"
+    />
+
+    <ellipse
+      cx="125"
+      cy="148"
+      rx="37"
+      ry="45"
+      fill="url(#eyeOuter)"
+      stroke="#008bc0"
+      stroke-width="3"
+    />
+
+    <ellipse
+      cx="126"
+      cy="150"
+      rx="26"
+      ry="34"
+      fill="url(#eyeInner)"
+    />
+
+    <ellipse
+      cx="115"
+      cy="135"
+      rx="9"
+      ry="14"
+      fill="#174b63"
+      opacity=".45"
+    />
+
+    <ellipse
+      cx="113"
+      cy="132"
+      rx="7"
+      ry="10"
+      fill="white"
+    />
+
+    <ellipse
+      cx="125"
+      cy="123"
+      rx="3"
+      ry="5"
+      fill="white"
+      opacity=".9"
+    />
+
+
+    <!-- RIGHT EYE -->
+    <ellipse
+      cx="388"
+      cy="170"
+      rx="40"
+      ry="47"
+      fill="#00537f"
+      opacity=".55"
+    />
+
+    <ellipse
+      cx="388"
+      cy="168"
+      rx="36"
+      ry="44"
+      fill="url(#eyeOuter)"
+      stroke="#008bc0"
+      stroke-width="3"
+    />
+
+    <ellipse
+      cx="388"
+      cy="170"
+      rx="25"
+      ry="33"
+      fill="url(#eyeInner)"
+    />
+
+    <ellipse
+      cx="378"
+      cy="154"
+      rx="8"
+      ry="12"
+      fill="#16485f"
+      opacity=".45"
+    />
+
+    <ellipse
+      cx="377"
+      cy="151"
+      rx="7"
+      ry="10"
+      fill="white"
+    />
+
+    <ellipse
+      cx="389"
+      cy="143"
+      rx="3"
+      ry="5"
+      fill="white"
+      opacity=".9"
+    />
+
+  </g>
+
+
+  <!-- =========================================================
+       MOUTH / UPPER LIP
+  ========================================================== -->
+
+  <!-- Dark mouth cavity -->
+  <path
+    d="
+      M92 213
+      Q103 202 121 204
+      L385 210
+      Q408 210 421 223
+      L413 255
+      L104 253
+      Z
+    "
+    fill="#08394F"
+    stroke="#4FD8FF"
+    stroke-width="3"
+  />
+
+
+  <!-- =========================================================
+       UPPER LIP / GUM
+  ========================================================== -->
+
+  <path
+    d="
+      M96 213
+      Q119 209 143 212
+      L388 217
+      Q405 218 414 227
+      L410 232
+      L104 227
+      Z
+    "
+    fill="#e8e5de"
+    stroke="#b7aeb0"
+    stroke-width="2"
+    stroke-linejoin="round"
+  />
+
+  <!-- Dark line immediately above the gum -->
+  <path
+    d="
+      M99 212
+      Q121 208 144 211
+      L389 216
+      Q405 217 414 227
+    "
+    fill="none"
+    stroke="#4b2631"
+    stroke-width="4"
+    stroke-linecap="round"
+  />
+
+
+  <!-- =========================================================
+       TEETH
+  ========================================================== -->
+
+  <g
+    fill="url(#teeth)"
+    stroke="#8c7564"
+    stroke-width="1.25"
+    stroke-linejoin="round"
+  >
+
+    <path d="M90 226 L108 226 L99 243 Z" />
+    <path d="M121 227 L139 227 L130 246 Z" />
+    <path d="M168 228 L188 228 L178 249 Z" />
+    <path d="M247 229 L269 229 L258 249 Z" />
+    <path d="M309 230 L330 230 L319 250 Z" />
+    <path d="M349 231 L369 231 L359 251 Z" />
+    <path d="M379 232 L400 232 L389 252 Z" />
+
+  </g>
+
+
+  <!-- =========================================================
+       NECK / UPPER BODY
+  ========================================================== -->
+
+  <path
+    d="
+      M117 252
+      L392 254
+      L382 288
+      L128 289
+      Z
+    "
+    fill="url(#sidePink)"
+    stroke="#4FD8FF"
+    stroke-width="3"
+  />
+
+  <path
+    d="M125 258 L387 260"
+    stroke="#D6F7FF"
+    stroke-width="3"
+    opacity=".65"
+  />
+
+
+  <!-- =========================================================
+       BODY SHADOW
+  ========================================================== -->
+
+  <path
+    d="
+      M124 278
+      L386 282
+      L371 427
+      Q367 447 348 451
+      L164 447
+      Q142 444 137 424
+      Z
+    "
+    fill="#0A5E86"
+    opacity=".8"
+  />
+
+
+  <!-- =========================================================
+       MAIN BODY
+  ========================================================== -->
+
+  <path
+    d="
+      M119 277
+      L386 281
+      L370 421
+      Q367 440 348 444
+      L164 440
+      Q143 437 138 419
+      Z
+    "
+    fill="url(#bodyPink)"
+    stroke="#35CCF5"
+    stroke-width="4"
+  />
+
+  <path
+    d="
+      M132 287
+      L370 290
+      L357 418
+      Q355 428 344 431
+      L164 428
+      Q153 426 151 414
+      Z
+    "
+    fill="none"
+    stroke="#8FE6FF"
+    stroke-width="3"
+    opacity=".65"
+  />
+
+
+  <!-- =========================================================
+       SCREEN
+  ========================================================== -->
+
+  <path
+    d="
+      M158 302
+      Q165 294 178 295
+      L335 298
+      Q349 298 353 310
+      L343 391
+      Q341 405 328 408
+      L174 405
+      Q158 403 156 390
+      Z
+    "
+    fill="#0A5E86"
+    stroke="#4FD8FF"
+    stroke-width="4"
+  />
+
+  <path
+    d="
+      M168 306
+      Q175 301 184 302
+      L327 304
+      Q340 304 342 315
+      L333 383
+      Q331 396 320 398
+      L179 396
+      Q166 395 165 383
+      Z
+    "
+    fill="url(#bodyScreen)"
+    stroke="#d2cfd0"
+    stroke-width="2"
+  />
+
+  <path
+    d="
+      M178 310
+      Q245 298 331 310
+      L329 330
+      Q249 320 170 334
+      Z
+    "
+    fill="white"
+    opacity=".12"
+  />
+
+
+  <!-- =========================================================
+       LEFT SIDE MECHANICAL PARTS
+  ========================================================== -->
+
+  <g
+    fill="url(#sidePink)"
+    stroke="#4FD8FF"
+    stroke-width="3"
+  >
+
+    <path d="M121 292 L92 301 L91 326 L119 321 Z" />
+    <path d="M119 333 L88 341 L88 367 L122 361 Z" />
+    <path d="M126 373 L98 382 L104 409 L133 401 Z" />
+
+  </g>
+
+  <path d="M99 307 L111 310 L102 317 Z" fill="#084E6E" />
+  <path d="M96 348 L109 350 L100 359 Z" fill="#084E6E" />
+  <path d="M107 388 L120 390 L112 398 Z" fill="#084E6E" />
+
+
+  <!-- =========================================================
+       RIGHT SIDE MECHANICAL PARTS
+  ========================================================== -->
+
+  <g
+    fill="url(#sidePink)"
+    stroke="#4FD8FF"
+    stroke-width="3"
+  >
+
+    <path d="M378 296 L408 303 L414 327 L382 322 Z" />
+    <path d="M376 334 L410 341 L415 366 L374 360 Z" />
+    <path d="M372 374 L402 382 L398 409 L366 401 Z" />
+
+  </g>
+
+  <path d="M399 309 L386 311 L398 319 Z" fill="#084E6E" />
+  <path d="M401 349 L388 351 L401 359 Z" fill="#084E6E" />
+  <path d="M393 389 L380 391 L392 399 Z" fill="#084E6E" />
+
+
+  <!-- =========================================================
+       ONLY 2 BOTTOM LEGS
+  ========================================================== -->
+
+  <g
+    fill="url(#sidePink)"
+    stroke="#4FD8FF"
+    stroke-width="3"
+    stroke-linejoin="round"
+  >
+
+    <!-- LEFT LEG -->
+    <path d="M143 432 L171 436 L166 463 L147 468 L138 458 Z" />
+
+    <!-- RIGHT LEG -->
+    <path d="M282 441 L308 440 L313 468 L297 475 L284 466 Z" />
+
+  </g>
+
+
+  <!-- =========================================================
+       BOTTOM BODY RIM
+  ========================================================== -->
+
+  <path
+    d="
+      M143 420
+      Q151 439 169 442
+      L347 445
+      Q365 441 371 421
+    "
+    fill="none"
+    stroke="#7FE6FF"
+    stroke-width="4"
+    opacity=".7"
+  />
+
+  <path
+    d="
+      M151 429
+      Q164 450 186 452
+      L332 454
+      Q358 451 365 430
+    "
+    fill="none"
+    stroke="#0A5E86"
+    stroke-width="5"
+  />
+
+
+  <!-- =========================================================
+       HIGHLIGHTS
+  ========================================================== -->
+
+  <path
+    d="
+      M91 108
+      Q104 90 130 85
+      L232 87
+    "
+    fill="none"
+    stroke="#E9FAFF"
+    stroke-width="3"
+    stroke-linecap="round"
+    opacity=".48"
+  />
+
+  <path
+    d="
+      M276 89
+      L374 94
+      Q401 97 411 116
+    "
+    fill="none"
+    stroke="#D6F7FF"
+    stroke-width="2"
+    stroke-linecap="round"
+    opacity=".35"
+  />
+
+  <g
+    fill="#D6F7FF"
+    opacity=".35"
+  >
+    <circle cx="154" cy="104" r="2"/>
+    <circle cx="181" cy="113" r="1.5"/>
+    <circle cx="224" cy="101" r="2"/>
+    <circle cx="284" cy="110" r="1.5"/>
+    <circle cx="340" cy="103" r="2"/>
+    <circle cx="371" cy="125" r="1.5"/>
+  </g>
+
+
+  <!-- =========================================================
+       FINAL OUTLINE
+  ========================================================== -->
+
+  <path
+    d="
+      M74 113
+      Q82 83 113 73
+      L384 82
+      Q423 88 432 120
+      L448 208
+      Q452 239 426 253
+    "
+    fill="none"
+    stroke="#D6F7FF"
+    stroke-width="2"
+    opacity=".7"
+  />
+
+  <path
+    d="
+      M104 257
+      Q62 251 58 221
+    "
+    fill="none"
+    stroke="#35CCF5"
+    stroke-width="3"
+  />
+
+  <line class="scan" x1="74" y1="228" x2="438" y2="228" stroke="#67E8F9" stroke-width="6" opacity=".4"/>
+  <line class="scan-slow" x1="74" y1="356" x2="438" y2="356" stroke="#67E8F9" stroke-width="6" opacity=".3"/>
+  <g stroke="#0284C7" stroke-width="6" opacity=".55" stroke-linecap="round"><path d="M74 344 L98 356"/><path d="M438 344 L414 356"/><path d="M256 96 V122"/></g>
+  <g fill="#0EA5E9" opacity=".8"><circle cx="98" cy="356" r="7"/><circle cx="414" cy="356" r="7"/><circle cx="256" cy="122" r="7"/></g>
+
   </g>
 </svg>
